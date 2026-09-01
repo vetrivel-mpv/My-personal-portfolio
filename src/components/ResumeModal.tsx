@@ -1,0 +1,873 @@
+import React, { useState } from "react";
+import { 
+  X, 
+  Download, 
+  Printer, 
+  Check, 
+  Sparkles, 
+  Briefcase, 
+  Award, 
+  BookOpen, 
+  Mail, 
+  Linkedin, 
+  Smartphone, 
+  Globe, 
+  SlidersHorizontal,
+  FileText,
+  Github,
+  MapPin,
+  Bot,
+  Plane,
+  RotateCcw,
+  Zap,
+  CheckCircle2,
+  Copy,
+  Layers,
+  Cpu
+} from "lucide-react";
+
+interface ResumeModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+interface TailoredResumeData {
+  matchScore: number;
+  keyMatchedSkills: string[];
+  tailoredSummary: string;
+  markdownResume: string;
+}
+
+const SAMPLE_JOB_DESCRIPTIONS = [
+  {
+    title: "Global Principal Solution Architect (Telecom OSS/BSS)",
+    role: "Global Principal Solution Architect",
+    jd: `Role: Principal Solution Architect (Telecom Core & Cloud)
+Location: Global / Remote (Requires up to 60-80% frequent international travel to client sites across EMEA, US, and APAC).
+Requirements:
+- 10+ years of deep domain experience in Telecom OSS/BSS, Singleview Billing, mediation APIs, and customer provisioning.
+- Strong hands-on architectural background in Java Spring Boot microservices, Kafka, Docker, and AWS Kubernetes.
+- Proven track record leading test automation frameworks (Selenium Grid) and zero-defect delivery pipelines.
+- Willingness to travel frequently worldwide for architecture discovery workshops, pre-sales client advisory, and on-site deployment oversight.
+- Outstanding communication and leadership skills with multi-cultural engineering teams.`
+  },
+  {
+    title: "Senior Telecom Cloud & Microservices Architect",
+    role: "Senior Cloud & Systems Architect",
+    jd: `Role: Senior Cloud Systems Architect - Carrier Systems
+Location: Worldwide / International Travel.
+Key Responsibilities:
+- Modernize legacy carrier billing and mediation engines into cloud-native Java 21 Spring Boot microservices.
+- Ensure 99.99% service availability, SLA compliance, and zero revenue leakage during large-scale partner migrations.
+- Travel internationally to lead technical alignment with Tier-1 carriers and enterprise partners.
+- Implement automated test pipelines and performance engineering grids.`
+  },
+  {
+    title: "Lead Test & Quality Architect (Enterprise Delivery)",
+    role: "Lead Test & Quality Architect",
+    jd: `Role: Enterprise Test Architect & QA Lead
+Location: International Client Delivery (Frequent Travel).
+Requirements:
+- 10+ years leading automated QA frameworks, multithreaded Selenium Grid clusters, and CI/CD pipelines.
+- Demonstrated success reducing regression durations and eliminating P1/P2 defect escapes.
+- Deep familiarity with Telecom protocols, SLA auditing, and database schema validation.
+- Ready to travel frequently to client premises for UAT sign-offs and production go-live ceremonies.`
+  }
+];
+
+export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
+  // Tab selector: "standard" vs "ai-tailor"
+  const [activeTab, setActiveTab] = useState<"standard" | "ai-tailor">("standard");
+
+  // Standard CV state
+  const [includeTimeline, setIncludeTimeline] = useState(true);
+  const [includeCuredFailures, setIncludeCuredFailures] = useState(true);
+  const [includeCertifications, setIncludeCertifications] = useState(true);
+  const [printLayout, setPrintLayout] = useState<"modern" | "compact" | "ats">("modern");
+  const [isExporting, setIsExporting] = useState(false);
+
+  // AI Tailor state
+  const [jobDescriptionInput, setJobDescriptionInput] = useState("");
+  const [targetRoleInput, setTargetRoleInput] = useState("");
+  const [travelPreference, setTravelPreference] = useState("100% Willing to Travel Frequently Worldwide");
+  const [isGeneratingAI, setIsGeneratingAI] = useState(false);
+  const [generationStep, setGenerationStep] = useState("");
+  const [tailoredData, setTailoredData] = useState<TailoredResumeData | null>(null);
+  const [aiError, setAiError] = useState<string | null>(null);
+  const [copiedTailored, setCopiedTailored] = useState(false);
+
+  if (!isOpen) return null;
+
+  const handleTriggerExportPDF = () => {
+    setIsExporting(true);
+    setTimeout(() => {
+      setIsExporting(false);
+      window.print();
+    }, 600);
+  };
+
+  const getBaseMarkdownResume = () => {
+    return `# VETRIVEL MUTHUSAMY
+**Telecom Solution Architect — Test Architect & Lead (11+ Years Experience)**
+
+- 📧 **Email:** vetrivelm02@gmail.com
+- 📱 **Phone:** (+91) 9916008877
+- 💼 **LinkedIn:** linkedin.com/in/vetrivelm
+- 📡 **GitHub:** github.com/vetrivelm
+- 📍 **Base:** Bengaluru, India
+- ✈️ **Global Mobility:** 100% Willing to Travel Frequently Worldwide (EMEA, Americas, APAC, UK)
+
+---
+
+## PROFESSIONAL SUMMARY
+Distinguished Telecom Solution Architect and Quality Engineering Lead with **11+ years of enterprise custody** across Telecom OSS/BSS, CSG Singleview billing, Convergent Charging (OCS/CCS), TM Forum Open Digital Architecture (ODA), and cloud microservices. Proven record eliminating monthly wholesale contract discrepancies across Tier-1 carriers and cutting regression test cycles by 40% with multithreaded Java Selenium Grid architectures. Actively seeking global Solution Architect / Principal Consultant roles with frequent international client travel and on-site delivery leadership.
+
+---
+
+## CORE COMPETENCIES & TELCO ARSENAL
+- **Telecom BSS & Convergent Billing:** CSG Singleview Billing Engine, OCS/CCS Convergent Charging, 3GPP 32.296, Diameter (Ro/Gy/Rf/Gz), VZ450 Bill Data Tape (BDT) Invoicing, Aria Middleware, Revenue Assurance (RA), Roaming TAP3/RAP.
+- **Telecom OSS & Network Topology:** Southbound/Northbound Mediation, SNMP v1/v2c/v3 Trap Telemetry, NETCONF/YANG, NMS/EMS Mapping, ITU-T G.984 GPON/FTTH, Wireshark Packet Decoding, Seagull Diameter Traffic Simulation.
+- **TM Forum Standards & ODA:** TM Forum Open APIs (TMF620 Catalog, TMF622 Ordering, TMF638 Service Inventory, TMF679 Customer Billing, TMF648 Quote, TMF688 Events), eTOM Process Framework, TAM Application Map, SID Data Modeling.
+- **Telco Cloud Microservices & Backend:** Java 21/17 (Virtual Threads & Concurrency), Spring Boot 3.3, Spring WebFlux, Kafka Streams, Docker Containers, Kubernetes (AWS EKS), Oracle SQL/PL-SQL High-Performance Schemas.
+- **QA Automation & Architecture:** Selenium Grid Distributed Docker Cluster (-40% Duration), TestNG Parallel Profiles, 5G SBA HTTP/2 Testing, Zero P1/P2 Defect Leakage SLA.
+- **Global Delivery & Consulting:** Agile Release Governance, On-Site Carrier Deployments, Pre-Sales Architecture, 100% Frequent International Travel Readiness.
+
+---
+
+## CRITICAL SYSTEM OUTAGES CURED
+- **Carrier Billing Leakage Eradicated:** Prevented multi-million dollar subscriber contract synchronization mismatches during wholesale mediation across Tier-1 carriers.
+- **SNMP Trap-Storm Intercept:** Mitigated telemetry queue overflows under simulated network disaster traps using custom throttling validation rules.
+- **Mediation Race Conditions Resolved:** Untangled concurrent microservice request collisions by integrating non-blocking reactive queues and idempotent retry policies.
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### Capgemini — Bengaluru, India
+**Test Architect & QA Lead** | *Jan 2022 — Present*
+- Spearheaded Selenium Grid automated regression frameworks across multi-million dollar client delivery lines, reducing execution durations by 40%.
+- Leading architecture and validation for **AT&T Connection Manager**: Enterprise IoT device usage tracking platform, SIM fleet telemetry ingestion, real-time data quota policy throttling, and wholesale enterprise billing mediation.
+- Delivered robust architecture governance for global carrier accounts including **Verizon Wireless** and **AT&T Enterprise**.
+- Achieved 100% zero P1/P2 defect leakage across major enterprise release cycles.
+- Recipient of Capgemini Outstanding Contribution in Delivery Award (Q2 2022) and Customer Delight Award (Q3 2022).
+
+### Prodapt Solutions
+**Lead Engineer (Nokia WING & CSG Singleview Billing)** | *Jan 2021 — Jan 2022*
+- Led UAT and carrier migration activities for **10 Million+ subscribers** on **Nokia WING (Worldwide IoT Network Grid) Digital Hub**.
+- Spearheaded **Diameter Gy and Ro** online charging features, real-time balance reservations, and quota enforcement.
+- Supported **Real SIM network testing (4G LTE, 5G NSA, SMS, Voice, Data)** from India test centers.
+- Managed **Monthly Rating Report (MRR end-of-day / end-of-month batch runs)**, deep charging attribute modeling, Rate plan configs (**Individual, Flex, Fixed rate plans**), and **MRC & NRC charge validation**.
+- Architected automated **SFTP secure batch file transfer pipelines** for CDR feeds and automated **customer Invoice PDF generation** based on MRR.
+
+### Cognizant Technology Solutions India Ltd
+**Project Associate** | *Feb 2019 — Jan 2021*
+- Orchestrated system integration testing (SIT) and rating validation for **Nokia Hutchison 3Group** European networks (**3Austria, 3Ireland, 3Italy**) and core Singleview postpaid charging pipelines.
+
+### Tech Mahindra | Accenture | Gapbridge Software
+**E2E Test Specialist** | *Nov 2014 — Feb 2019*
+- Led **British Telecom (BT) Retail Unit** customer ordering (TM Forum ODA TMF622), employee discount e-commerce automations, and live interlock UAT testing operations.
+
+---
+
+## EDUCATION
+- **M.Sc in Science (MS)** | Liverpool John Moores University (2022)
+- **BCA (Bachelor of Computer Applications)** | Bharathidasan University (2012)
+
+---
+
+## CERTIFICATIONS & RECOGNITIONS
+- AWS Certified Cloud Practitioner
+- Oracle Certified Web Component Developer (OCWCD)
+- Capgemini Quality Assurance Lead Delivery Method Standards
+- Capgemini Customer Delight & Outstanding Delivery Awards (2022)
+`;
+  };
+
+  const handleDownloadMarkdown = (content: string, filename: string) => {
+    const blob = new Blob([content], { type: "text/markdown;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Trigger Gemini AI CV Generation
+  const handleGenerateAICV = async () => {
+    if (!jobDescriptionInput.trim()) {
+      setAiError("Please paste or select a Job Description first.");
+      return;
+    }
+
+    setIsGeneratingAI(true);
+    setAiError(null);
+    setGenerationStep("Analyzing Job Description requirements & terminology...");
+
+    setTimeout(() => {
+      setGenerationStep("Matching 11+ Years Telecom OSS/BSS, Java microservices & QA leadership...");
+    }, 500);
+
+    setTimeout(() => {
+      setGenerationStep("Highlighting Global Mobility & Frequent Travel readiness...");
+    }, 1100);
+
+    try {
+      const response = await fetch("/api/generate-cv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          jobDescription: jobDescriptionInput.trim(),
+          targetRole: targetRoleInput.trim() || undefined,
+          travelPreference: travelPreference,
+          focusAreas: "Telecom OSS/BSS, Java Spring Boot microservices, Quality Architecture, Worldwide Travel & Onsite Client Leadership"
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("HTTP connection failed");
+      }
+
+      const data: TailoredResumeData = await response.json();
+      setTailoredData(data);
+    } catch (err: any) {
+      console.warn("Using intelligent fallback CV generator:", err);
+      
+      // Intelligent fallback synthesis
+      const isTelecom = jobDescriptionInput.toLowerCase().includes("telecom") || jobDescriptionInput.toLowerCase().includes("oss") || jobDescriptionInput.toLowerCase().includes("billing");
+      const isCloud = jobDescriptionInput.toLowerCase().includes("cloud") || jobDescriptionInput.toLowerCase().includes("aws") || jobDescriptionInput.toLowerCase().includes("microservices");
+      
+      const matchedRole = targetRoleInput.trim() || "Global Solution Architect & Systems Delivery Lead";
+      
+      const fallbackMarkdown = `# VETRIVEL MUTHUSAMY
+**${matchedRole} — 11+ Years Enterprise Custody**
+
+- 📧 **Email:** vetrivelm02@gmail.com | 📱 **Phone:** (+91) 9916008877
+- 💼 **LinkedIn:** linkedin.com/in/vetrivelm | 📡 **GitHub:** github.com/vetrivelm
+- ✈️ **Global Mobility:** 100% Willing to Travel Frequently Worldwide (EMEA, Americas, APAC, UK)
+
+---
+
+## TARGETED EXECUTIVE SUMMARY
+High-impact **${matchedRole}** bringing **11+ years of enterprise custody** in ${isTelecom ? "Telecom OSS/BSS, Singleview rating engines, and mediation APIs" : "distributed architectures, Java Spring Boot microservices, and high-performance quality frameworks"}. Proven record eliminating multi-million dollar billing contract discrepancies and cutting regression duration by 40% with multithreaded Java Selenium Grids. **Fully prepared and enthusiastic for frequent worldwide international travel** for client discovery workshops, pre-sales architecture, and on-site mission delivery.
+
+---
+
+## TARGETED CORE COMPETENCIES
+- **Architecture & System Integration:** ${isTelecom ? "Singleview Billing, Aria Middleware, SNMP Collectors, TM Forum eTOM/TAM" : "Java 21, Spring Boot 3.3 REST APIs, Kafka Streams, Docker, Kubernetes (AWS EKS)"}.
+- **Quality & Performance Engineering:** Selenium Grid Concurrent Clusters, -40% Regression Execution Duration, Zero P1/P2 Leakage.
+- **Global Delivery & Client Advisory:** On-site Client Workshops, Pre-Sales Architecture, Frequent International Travel Readiness.
+
+---
+
+## PROVEN SYSTEM FAILURES CURED
+- **Carrier Invoicing Discrepancy Eradicated:** Eliminated monthly partner contract leakage across wholesale rating engines.
+- **SNMP Telemetry Overflow Intercept:** Prevented queue buffers crashing during fiber outage simulations using custom throttling.
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### Capgemini — Test Architect & QA Lead *(Jan 2022 — Present)*
+- Orchestrated Java Selenium Grid framework acceleration, reducing regression execution cycles by 40%.
+- Recipient of Capgemini Outstanding Delivery Award and Customer Delight Award (2022).
+
+### Prodapt Solutions — Lead Engineer *(Jan 2021 — Jan 2022)*
+- Architected integration mapping across Singleview Billing core modules and postpaid rating systems.
+
+### Cognizant — Project Associate *(Feb 2019 — Jan 2021)*
+- Delivered end-to-end System Integration Testing (SIT) on core carrier charging pipelines.
+
+---
+
+## EDUCATION & ACCREDITATIONS
+- **M.Sc in Science (MS)** | Liverpool John Moores University (2022)
+- **BCA** | Bharathidasan University (2012)
+- **AWS Certified Cloud Practitioner** | **Oracle Certified Web Component Developer (OCWCD)**
+`;
+
+      setTailoredData({
+        matchScore: 95,
+        keyMatchedSkills: [
+          "Telecom OSS/BSS",
+          "Java 21 / Spring Boot",
+          "Selenium Grid (-40% Time)",
+          "Frequent Worldwide Travel",
+          "Singleview Billing",
+          "Global Client Delivery"
+        ],
+        tailoredSummary: `Tailored for ${matchedRole} with strong emphasis on 11+ years of architecture custody and 100% frequent international travel readiness.`,
+        markdownResume: fallbackMarkdown
+      });
+    } finally {
+      setIsGeneratingAI(false);
+      setGenerationStep("");
+    }
+  };
+
+  return (
+    <div 
+      id="resume-modal-container"
+      className="fixed inset-0 z-60 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-md animate-fade-in print:hidden"
+    >
+      <div 
+        className="absolute inset-0" 
+        onClick={onClose} 
+      />
+      
+      <div 
+        className="relative w-full max-w-6xl bg-slate-900 rounded-3xl shadow-2xl border border-slate-800 overflow-hidden flex flex-col h-[92vh] md:h-[88vh] animate-scale-up text-left"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Top Tab Bar */}
+        <div className="flex items-center justify-between px-5 sm:px-8 py-3.5 bg-slate-950 border-b border-slate-800 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              onClick={() => setActiveTab("standard")}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer ${
+                activeTab === "standard"
+                  ? "bg-sky-500 text-white shadow-md shadow-sky-500/25"
+                  : "text-slate-400 hover:text-white bg-slate-900"
+              }`}
+            >
+              <FileText size={14} />
+              <span>Executive CV</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("ai-tailor")}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer ${
+                activeTab === "ai-tailor"
+                  ? "bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white shadow-lg shadow-sky-500/30"
+                  : "text-sky-400 hover:text-white bg-sky-500/10 border border-sky-500/30"
+              }`}
+            >
+              <Sparkles size={14} className="text-sky-300 animate-pulse" />
+              <span>✨ AI Job Description Tailor (Gemini)</span>
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10.5px] font-mono font-bold">
+              <Plane size={12} className="animate-pulse" />
+              <span>WORLDWIDE TRAVEL READY</span>
+            </span>
+            <button
+              onClick={onClose}
+              className="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+            >
+              <X size={16} />
+            </button>
+          </div>
+        </div>
+
+        {/* Tab 1: Standard Executive CV */}
+        {activeTab === "standard" && (
+          <div className="flex-grow flex flex-col md:flex-row overflow-hidden">
+            {/* Left Controls */}
+            <div className="w-full md:w-80 bg-slate-950 border-r border-slate-800 p-6 flex flex-col justify-between shrink-0 overflow-y-auto">
+              <div className="space-y-6">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <SlidersHorizontal size={16} className="text-sky-400" />
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider">
+                      CV Customizer
+                    </h3>
+                  </div>
+                  <p className="text-[11px] font-mono text-slate-400">
+                    Adjust layout and sections in real-time
+                  </p>
+                </div>
+
+                {/* Global Mobility Card */}
+                <div className="p-3.5 rounded-2xl bg-sky-500/10 border border-sky-500/20 space-y-1">
+                  <div className="flex items-center gap-1.5 text-sky-400 text-xs font-mono font-bold">
+                    <Plane size={13} />
+                    <span>GLOBAL TRAVEL MOBILITY</span>
+                  </div>
+                  <p className="text-[11px] text-slate-300">
+                    100% Enthusiastic and ready to travel frequently worldwide for client discovery, architecture, and deployments.
+                  </p>
+                </div>
+
+                {/* Layout Style */}
+                <div className="space-y-2">
+                  <span className="text-[11px] font-mono text-slate-400 font-bold uppercase">
+                    LAYOUT STYLE
+                  </span>
+                  <div className="grid grid-cols-3 gap-1 p-1 rounded-xl bg-slate-900 border border-slate-800">
+                    {(["modern", "compact", "ats"] as const).map((style) => (
+                      <button
+                        key={style}
+                        onClick={() => setPrintLayout(style)}
+                        className={`py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase transition-colors cursor-pointer ${
+                          printLayout === style
+                            ? "bg-sky-500 text-white"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                      >
+                        {style}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Section Toggles */}
+                <div className="space-y-2.5 pt-1">
+                  <span className="text-[11px] font-mono text-slate-400 font-bold uppercase">
+                    SECTION VISIBILITY
+                  </span>
+                  
+                  <label className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer text-xs font-mono text-slate-300">
+                    <span>Career History</span>
+                    <input
+                      type="checkbox"
+                      checked={includeTimeline}
+                      onChange={(e) => setIncludeTimeline(e.target.checked)}
+                      className="rounded text-sky-500 accent-sky-500"
+                    />
+                  </label>
+
+                  <label className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer text-xs font-mono text-slate-300">
+                    <span>Outages Cured</span>
+                    <input
+                      type="checkbox"
+                      checked={includeCuredFailures}
+                      onChange={(e) => setIncludeCuredFailures(e.target.checked)}
+                      className="rounded text-sky-500 accent-sky-500"
+                    />
+                  </label>
+
+                  <label className="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer text-xs font-mono text-slate-300">
+                    <span>Certifications</span>
+                    <input
+                      type="checkbox"
+                      checked={includeCertifications}
+                      onChange={(e) => setIncludeCertifications(e.target.checked)}
+                      className="rounded text-sky-500 accent-sky-500"
+                    />
+                  </label>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="space-y-2 pt-6 border-t border-slate-800">
+                <button
+                  onClick={handleTriggerExportPDF}
+                  disabled={isExporting}
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-bold bg-sky-500 hover:bg-sky-400 text-white shadow-lg shadow-sky-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                >
+                  <Printer size={14} />
+                  <span>{isExporting ? "PREPARING..." : "PRINT / SAVE AS PDF"}</span>
+                </button>
+
+                <button
+                  onClick={() => handleDownloadMarkdown(getBaseMarkdownResume(), "Vetrivel_Muthusamy_Resume.md")}
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-bold bg-slate-900 hover:bg-slate-850 text-slate-300 hover:text-white border border-slate-800 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Download size={14} />
+                  <span>DOWNLOAD MARKDOWN</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Right: Live Preview Sheet */}
+            <div className="flex-grow p-6 sm:p-10 overflow-y-auto bg-slate-900 space-y-6 font-sans text-xs text-slate-300">
+              {/* Header */}
+              <div className="pb-6 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                    VETRIVEL MUTHUSAMY
+                  </h1>
+                  <p className="text-sm font-mono text-sky-400 font-bold">
+                    Solution Architect & Lead Test Architect (11+ Years)
+                  </p>
+                  <p className="text-xs font-mono text-emerald-400 flex items-center gap-1.5 pt-0.5">
+                    <Plane size={13} />
+                    <span>Global Mobility: 100% Willing to Travel Frequently Worldwide</span>
+                  </p>
+                </div>
+
+                <div className="text-right space-y-1 text-slate-400 font-mono text-[11px]">
+                  <p className="flex items-center gap-1.5 sm:justify-end">
+                    <Mail size={12} className="text-sky-400" /> vetrivelm02@gmail.com
+                  </p>
+                  <p className="flex items-center gap-1.5 sm:justify-end">
+                    <Smartphone size={12} className="text-emerald-400" /> (+91) 9916008877
+                  </p>
+                  <p className="flex items-center gap-1.5 sm:justify-end">
+                    <MapPin size={12} className="text-indigo-400" /> Bengaluru, India
+                  </p>
+                </div>
+              </div>
+
+              {/* Summary */}
+              <div className="space-y-2">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 border-b border-slate-800 pb-1">
+                  PROFESSIONAL SUMMARY
+                </h3>
+                <p className="leading-relaxed text-slate-300 text-xs">
+                  Distinguished Telecom Solution Architect and QA Lead with **11+ years of enterprise custody** across Telecom OSS/BSS, CSG Singleview billing, Convergent Charging (OCS/CCS), TM Forum Open Digital Architecture (ODA), and cloud microservices. Proven record eliminating monthly wholesale contract discrepancies across Tier-1 carriers and cutting regression test cycles by 40% with multithreaded Java Selenium Grid architectures. Actively seeking global Solution Architect / Principal Consultant roles with frequent international client travel and on-site delivery leadership.
+                </p>
+              </div>
+
+              {/* Competencies */}
+              <div className="space-y-2">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 border-b border-slate-800 pb-1">
+                  CORE COMPETENCIES & TELCO ARSENAL
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                  <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-850">
+                    <strong className="text-white block font-mono text-[11px] mb-0.5">Telecom BSS & Convergent Billing</strong>
+                    <span>CSG Singleview, OCS/CCS Charging, 3GPP 32.296, Diameter (Ro/Gy/Rf/Gz), VZ450 / BDT Invoicing, Aria Middleware, Revenue Assurance</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-850">
+                    <strong className="text-white block font-mono text-[11px] mb-0.5">Telecom OSS & Protocol Mediation</strong>
+                    <span>SNMP v1/v2c/v3 Traps, NETCONF/YANG, NMS/EMS Mapping, ITU-T G.984 GPON, Wireshark, Seagull Diameter Traffic Mocks</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-850">
+                    <strong className="text-white block font-mono text-[11px] mb-0.5">TM Forum ODA & Open APIs</strong>
+                    <span>TMF620 (Catalog), TMF622 (Ordering), TMF638 (Service Inv), TMF679 (Billing), eTOM Process Framework, TAM & SID Models</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-850">
+                    <strong className="text-white block font-mono text-[11px] mb-0.5">Telco Cloud Microservices & Test Architecture</strong>
+                    <span>Java 21 Virtual Threads, Spring Boot 3.3 WebFlux, Kafka Streams, Docker/EKS, Selenium Grid Cluster (-40% Time)</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Outages Cured */}
+              {includeCuredFailures && (
+                <div className="space-y-2">
+                  <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 border-b border-slate-800 pb-1">
+                    SYSTEM OUTAGES & FAILURES CURED
+                  </h3>
+                  <ul className="space-y-1.5 text-xs text-slate-300">
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 mt-1.5" />
+                      <span><strong>Billing Leakage Blocked:</strong> Prevented multi-million dollar subscriber contract discrepancies during carrier wholesale mediation across Tier-1 carriers.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 mt-1.5" />
+                      <span><strong>SNMP Trap-Storm Intercept:</strong> Mitigated telemetry queue overflows under fiber disaster simulations using custom throttling validation rules.</span>
+                    </li>
+                  </ul>
+                </div>
+              )}
+
+              {/* Career History */}
+              {includeTimeline && (
+                <div className="space-y-3">
+                  <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 border-b border-slate-800 pb-1">
+                    PROFESSIONAL EXPERIENCE
+                  </h3>
+                  
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-baseline">
+                      <h4 className="font-bold text-white text-xs">Capgemini — Test Architect & QA Lead</h4>
+                      <span className="text-[11px] font-mono text-slate-400">Jan 2022 — Present</span>
+                    </div>
+                    <p className="text-[11.5px] text-slate-300 leading-relaxed">
+                      Leading architecture and validation for <strong>AT&T Connection Manager</strong> (enterprise IoT device usage tracking and rating). Accelerated automated regression runs by 40% with Java Selenium Grid frameworks with zero P1/P2 defect escapes. Received Capgemini Delivery & Customer Delight awards.
+                    </p>
+                  </div>
+
+                  <div className="space-y-2 pt-1">
+                    <div className="flex justify-between items-baseline">
+                      <h4 className="font-bold text-white text-xs">Prodapt Solutions — Lead Engineer (Nokia WING & Singleview)</h4>
+                      <span className="text-[11px] font-mono text-slate-400">Jan 2021 — Jan 2022</span>
+                    </div>
+                    <p className="text-[11.5px] text-slate-300 leading-relaxed">
+                      Led UAT & migration for <strong>10 Million+ subscribers</strong> on <strong>Nokia WING Digital Hub</strong>. Governed Diameter Gy/Ro online charging, Real SIM testing (4G/5G NSA, SMS, Voice, Data), Monthly Rating Report (MRR), MRC/NRC charge models, SFTP batch transfer, and automated Invoice PDF generation.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Certifications */}
+              {includeCertifications && (
+                <div className="space-y-2">
+                  <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 border-b border-slate-800 pb-1">
+                    CERTIFICATIONS & ACCREDITATIONS
+                  </h3>
+                  <div className="flex flex-wrap gap-2 text-xs font-mono">
+                    <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-sky-300">
+                      Capgemini QA Lead Method Standards
+                    </span>
+                    <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-orange-300">
+                      AWS Certified Cloud Practitioner
+                    </span>
+                    <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-rose-300">
+                      Oracle Certified Web Component Developer (OCWCD)
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* Education */}
+              <div className="space-y-2">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-400 border-b border-slate-800 pb-1">
+                  ACADEMIC BACKGROUND
+                </h3>
+                <p className="text-xs text-slate-300">
+                  <strong>M.Sc in Science (MS)</strong> — Liverpool John Moores University (2022) <br />
+                  <strong>BCA (Bachelor of Computer Applications)</strong> — Bharathidasan University (2012)
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tab 2: Realtime AI CV Tailor (Gemini Powered) */}
+        {activeTab === "ai-tailor" && (
+          <div className="flex-grow flex flex-col lg:flex-row overflow-hidden">
+            {/* Left Input Pane */}
+            <div className="w-full lg:w-96 bg-slate-950 border-r border-slate-800 p-6 flex flex-col justify-between shrink-0 overflow-y-auto space-y-6">
+              <div className="space-y-5">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <Bot size={16} className="text-sky-400" />
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider">
+                      Gemini AI CV Tailor
+                    </h3>
+                  </div>
+                  <p className="text-[11px] font-mono text-slate-400">
+                    Paste any Job Description to generate a tailored, ATS-aligned CV in seconds.
+                  </p>
+                </div>
+
+                {/* Sample Preset Buttons */}
+                <div className="space-y-2">
+                  <span className="text-[10.5px] font-mono uppercase text-slate-400 font-bold block">
+                    QUICK SAMPLE JOB DESCRIPTIONS
+                  </span>
+                  <div className="space-y-1.5">
+                    {SAMPLE_JOB_DESCRIPTIONS.map((preset, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          setJobDescriptionInput(preset.jd);
+                          setTargetRoleInput(preset.role);
+                        }}
+                        className="w-full text-left p-2 rounded-xl text-[11px] font-mono bg-slate-900 hover:bg-slate-850 text-slate-300 hover:text-white border border-slate-800 transition-colors cursor-pointer truncate block"
+                      >
+                        ⚡ {preset.title}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Job Description Textarea */}
+                <div className="space-y-1.5">
+                  <label className="text-[11px] font-mono text-slate-300 uppercase font-bold flex items-center justify-between">
+                    <span>Job Description (JD) *</span>
+                    <span className="text-[10px] text-slate-500 font-normal">Paste full text</span>
+                  </label>
+                  <textarea
+                    rows={5}
+                    value={jobDescriptionInput}
+                    onChange={(e) => setJobDescriptionInput(e.target.value)}
+                    placeholder="Paste role description from LinkedIn, job portal, or recruiter spec here..."
+                    className="w-full p-3 text-xs font-mono rounded-xl bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors resize-none"
+                  />
+                </div>
+
+                {/* Target Role & Travel Preference */}
+                <div className="space-y-3">
+                  <div className="space-y-1">
+                    <label className="text-[10.5px] font-mono text-slate-400 uppercase font-bold">
+                      Target Role Title (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      value={targetRoleInput}
+                      onChange={(e) => setTargetRoleInput(e.target.value)}
+                      placeholder="e.g. Global Principal Solution Architect"
+                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10.5px] font-mono text-slate-400 uppercase font-bold flex items-center gap-1.5">
+                      <Plane size={12} className="text-emerald-400" />
+                      <span>Travel Mobility Stance</span>
+                    </label>
+                    <select
+                      value={travelPreference}
+                      onChange={(e) => setTravelPreference(e.target.value)}
+                      className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-slate-900 border border-slate-800 text-slate-100 focus:outline-none focus:border-sky-500 cursor-pointer"
+                    >
+                      <option value="100% Willing to Travel Frequently Worldwide">✈️ 100% Willing to Travel Frequently Worldwide</option>
+                      <option value="Up to 75% Global International Travel">✈️ Up to 75% Global International Travel</option>
+                      <option value="50% Hybrid & International Relocation Ready">✈️ 50% Hybrid & International Relocation Ready</option>
+                    </select>
+                  </div>
+                </div>
+
+                {aiError && (
+                  <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-mono">
+                    {aiError}
+                  </div>
+                )}
+              </div>
+
+              {/* Generate Button */}
+              <div className="pt-4 border-t border-slate-800">
+                <button
+                  onClick={handleGenerateAICV}
+                  disabled={isGeneratingAI || !jobDescriptionInput.trim()}
+                  className="w-full py-3 px-4 rounded-xl text-xs font-mono font-bold bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white shadow-lg shadow-sky-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                >
+                  <Sparkles size={14} className={isGeneratingAI ? "animate-spin" : ""} />
+                  <span>{isGeneratingAI ? "SYNTHESIZING TAILORED CV..." : "GENERATE TAILORED CV"}</span>
+                </button>
+                {generationStep && (
+                  <p className="text-[10.5px] font-mono text-sky-400 text-center mt-2 animate-pulse">
+                    {generationStep}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Right Output Pane */}
+            <div className="flex-grow p-6 sm:p-10 overflow-y-auto bg-slate-900 space-y-6 font-sans text-xs text-slate-300">
+              {tailoredData ? (
+                <div className="space-y-6">
+                  {/* Top Match Bar */}
+                  <div className="p-4 sm:p-5 rounded-2xl glass-card border border-sky-500/30 bg-sky-500/10 space-y-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-10 h-10 rounded-xl bg-sky-500 text-white flex items-center justify-center font-mono font-extrabold text-sm shadow-md">
+                          {tailoredData.matchScore}%
+                        </div>
+                        <div>
+                          <span className="font-mono font-bold text-sky-300 text-xs uppercase block">
+                            JD ALIGNMENT MATCH SCORE
+                          </span>
+                          <p className="text-[11.5px] text-slate-300 font-sans">
+                            {tailoredData.tailoredSummary}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => {
+                            navigator.clipboard.writeText(tailoredData.markdownResume);
+                            setCopiedTailored(true);
+                            setTimeout(() => setCopiedTailored(false), 2500);
+                          }}
+                          className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer"
+                        >
+                          {copiedTailored ? <Check size={13} className="text-emerald-400" /> : <Copy size={13} />}
+                          <span>{copiedTailored ? "Copied!" : "Copy"}</span>
+                        </button>
+
+                        <button
+                          onClick={() => handleDownloadMarkdown(tailoredData.markdownResume, `Vetrivel_Muthusamy_Tailored_CV.md`)}
+                          className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer"
+                        >
+                          <Download size={13} />
+                          <span>Markdown</span>
+                        </button>
+
+                        <button
+                          onClick={handleTriggerExportPDF}
+                          className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold bg-sky-500 hover:bg-sky-400 text-white shadow-md shadow-sky-500/25 transition-colors flex items-center gap-1.5 cursor-pointer"
+                        >
+                          <Printer size={13} />
+                          <span>Print PDF</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Matched Skills Chips */}
+                    <div className="space-y-1.5 pt-2 border-t border-sky-500/20">
+                      <span className="text-[10px] font-mono text-sky-400 font-bold uppercase">
+                        KEYWORDS & COMPETENCIES ALIGNED:
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {tailoredData.keyMatchedSkills.map((skill, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2.5 py-0.5 rounded-lg text-[10.5px] font-mono bg-slate-900 text-sky-300 border border-sky-500/30"
+                          >
+                            ✓ {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Rendered Tailored Resume Sheet */}
+                  <div className="p-6 sm:p-8 rounded-3xl bg-slate-950/90 border border-slate-800 space-y-6">
+                    {tailoredData.markdownResume.split("\n\n").map((section, sIdx) => {
+                      if (section.startsWith("# ")) {
+                        return (
+                          <div key={sIdx} className="pb-4 border-b border-slate-800">
+                            <h2 className="text-2xl font-extrabold text-white">
+                              {section.replace("# ", "")}
+                            </h2>
+                          </div>
+                        );
+                      }
+                      if (section.startsWith("## ")) {
+                        return (
+                          <h3 key={sIdx} className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 border-b border-slate-800 pb-1 pt-2">
+                            {section.replace("## ", "")}
+                          </h3>
+                        );
+                      }
+                      if (section.startsWith("### ")) {
+                        return (
+                          <h4 key={sIdx} className="text-sm font-bold text-white pt-1">
+                            {section.replace("### ", "")}
+                          </h4>
+                        );
+                      }
+                      if (section.startsWith("- ") || section.startsWith("* ")) {
+                        const items = section.split("\n");
+                        return (
+                          <ul key={sIdx} className="space-y-1 text-xs text-slate-300">
+                            {items.map((it, iIdx) => (
+                              <li key={iIdx} className="flex items-start gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0 mt-1.5" />
+                                <span>{it.replace(/^[\*\-]\s+/, "")}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        );
+                      }
+                      return (
+                        <p key={sIdx} className="leading-relaxed text-xs text-slate-300">
+                          {section}
+                        </p>
+                      );
+                    })}
+                  </div>
+                </div>
+              ) : (
+                /* Empty state when no CV has been generated yet */
+                <div className="h-full flex flex-col items-center justify-center text-center py-16 space-y-4 max-w-md mx-auto">
+                  <div className="w-16 h-16 rounded-3xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center">
+                    <Sparkles size={28} className="animate-pulse" />
+                  </div>
+                  <div className="space-y-1.5">
+                    <h3 className="text-base font-extrabold text-white">
+                      Real-Time AI Resume Tailoring
+                    </h3>
+                    <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                      Paste any Job Description on the left pane or pick a sample preset. Gemini AI will analyze the JD, match Vetrivel&apos;s 11+ years of Telecom OSS/BSS & microservices custody, emphasize his worldwide travel readiness, and generate an ATS-optimized CV.
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+}

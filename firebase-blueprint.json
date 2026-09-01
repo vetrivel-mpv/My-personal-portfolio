@@ -1,0 +1,135 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "A showcase project in Vetrivel's portfolio",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the project"
+        },
+        "title": {
+          "type": "string",
+          "description": "Project title"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed project description"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category like Test Architecture, Telecom, Full Stack"
+        },
+        "icon": {
+          "type": "string",
+          "description": "An emoji or icon representation"
+        },
+        "techs": {
+          "type": "array",
+          "description": "List of technologies used"
+        },
+        "impact": {
+          "type": "string",
+          "description": "The measured business or technical impact"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "Optional image URL"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the project was added"
+        }
+      },
+      "required": ["id", "title", "description", "category", "impact", "techs", "createdAt"]
+    },
+    "Blog": {
+      "title": "Blog",
+      "description": "A blog post containing Vetrivel's reflections",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the blog post"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the post"
+        },
+        "content": {
+          "type": "string",
+          "description": "Markdown body content of the blog post"
+        },
+        "summary": {
+          "type": "string",
+          "description": "Brief summary text for cards"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category/Topic of the post"
+        },
+        "readTime": {
+          "type": "string",
+          "description": "Estimated reading time (e.g., '5 min read')"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the post was written"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "published"],
+          "description": "Publish status of the post"
+        }
+      },
+      "required": ["id", "title", "content", "summary", "category", "readTime", "createdAt", "status"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "A contact form submission from a visitor",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the contact query"
+        },
+        "name": {
+          "type": "string",
+          "description": "Sender name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Sender email"
+        },
+        "message": {
+          "type": "string",
+          "description": "Deep query content"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the message was sent"
+        }
+      },
+      "required": ["id", "name", "email", "message", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Portfolio showcase projects"
+    },
+    "/blogs/{blogId}": {
+      "schema": "Blog",
+      "description": "Professional reflections & articles"
+    },
+    "/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Contact form submissions from visitors"
+    }
+  }
+}
