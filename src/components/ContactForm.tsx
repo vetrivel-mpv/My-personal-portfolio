@@ -118,13 +118,13 @@ export default function ContactForm({ onMessageSubmitted }: ContactFormProps) {
                 </div>
                 <div>
                   <span className="block text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase font-bold">VOIP & MOBILE</span>
-                  <a href="tel:+919790240974" className="text-xs font-mono font-bold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors">
-                    +91 9790240974
+                  <a href="tel:+919916008877" className="text-xs font-mono font-bold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors">
+                    +91 9916008877
                   </a>
                 </div>
               </div>
               <button
-                onClick={() => handleCopy("+919790240974", "phone")}
+                onClick={() => handleCopy("+919916008877", "phone")}
                 title="Copy Phone"
                 className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
               >
@@ -140,7 +140,10 @@ export default function ContactForm({ onMessageSubmitted }: ContactFormProps) {
               <div>
                 <span className="block text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase font-bold">GLOBAL MOBILITY & RESIDENCE</span>
                 <span className="text-xs font-mono font-bold text-slate-900 dark:text-white">
-                  Bengaluru, India (100% Worldwide Travel Ready)
+                  Bengaluru, Karnataka, India (100% Worldwide Travel Ready)
+                </span>
+                <span className="block text-[10.5px] font-mono text-slate-500 dark:text-slate-400 pt-0.5">
+                  Languages: English (Professional) • Tamil (Native) • Telugu (Elementary)
                 </span>
               </div>
             </div>
@@ -157,10 +160,10 @@ export default function ContactForm({ onMessageSubmitted }: ContactFormProps) {
               <Linkedin size={18} />
             </a>
             <a
-              href="https://github.com/vetrivelm"
+              href="https://github.com/vetrivel-mpv"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition-colors cursor-pointer"
+              className="p-3 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 hover:border-sky-500 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors cursor-pointer"
             >
               <Github size={18} />
             </a>

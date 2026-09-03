@@ -25,69 +25,79 @@ import {
   Legend
 } from "recharts";
 
-// Trajectory telemetry dataset
+// Trajectory telemetry dataset from real LinkedIn career history
 const growthTimelineData = [
   {
-    year: "2014",
-    stage: "Telecom Analyst",
-    verifiedEndpoints: 15,
-    automatedTestCases: 150,
-    carrierSubscribersM: 2.5
+    year: "2014-17",
+    stage: "GapBridge (QA Engineer)",
+    company: "GapBridge",
+    verifiedEndpoints: 20,
+    automatedTestCases: 250,
+    carrierSubscribersM: 3.5,
+    highlight: "Pricing & Billing UAT"
   },
   {
-    year: "2016",
-    stage: "QA Lead",
-    verifiedEndpoints: 45,
-    automatedTestCases: 480,
-    carrierSubscribersM: 10.0
+    year: "2017-19",
+    stage: "Tech Mahindra (Test Analyst)",
+    company: "Tech Mahindra",
+    verifiedEndpoints: 60,
+    automatedTestCases: 750,
+    carrierSubscribersM: 12.0,
+    highlight: "CIT Domain Excellence Award & BT Retail"
   },
   {
-    year: "2019",
-    stage: "Lead QA Specialist",
-    verifiedEndpoints: 90,
-    automatedTestCases: 1250,
-    carrierSubscribersM: 24.5
+    year: "2019-21",
+    stage: "Cognizant (Project Engineer)",
+    company: "Cognizant",
+    verifiedEndpoints: 110,
+    automatedTestCases: 1600,
+    carrierSubscribersM: 28.0,
+    highlight: "Inmarsat Star Performer & Nokia 3Group"
   },
   {
-    year: "2022",
-    stage: "Test Architect",
-    verifiedEndpoints: 160,
-    automatedTestCases: 2900,
-    carrierSubscribersM: 52.0
+    year: "2021-22",
+    stage: "Prodapt (Lead Test Engineer)",
+    company: "Prodapt",
+    verifiedEndpoints: 180,
+    automatedTestCases: 3100,
+    carrierSubscribersM: 65.0,
+    highlight: "Nokia WING 10M+ Subs UAT & Singleview"
   },
   {
-    year: "2026",
-    stage: "Solution Architect",
-    verifiedEndpoints: 250,
-    automatedTestCases: 4500,
-    carrierSubscribersM: 85.0
+    year: "2022-25",
+    stage: "Capgemini (Senior Professional / QA Lead)",
+    company: "Capgemini Engineering",
+    verifiedEndpoints: 260,
+    automatedTestCases: 4800,
+    carrierSubscribersM: 100.0,
+    highlight: "Customer Delight Award & AT&T Connection Mgr"
   }
 ];
 
 const efficiencyImpactData = [
   {
-    metric: "Selenium Grid Automation",
-    beforeSkill: 20,
-    afterArchitect: 98,
+    metric: "Manual Testing Effort",
+    beforeSkill: 100,
+    afterArchitect: 50,
+    unit: "% (-50% CUT)"
+  },
+  {
+    metric: "Post-Release Defect Escapes",
+    beforeSkill: 100, 
+    afterArchitect: 70, 
+    unit: "% (-30% DROP)"
+  },
+  {
+    metric: "Regression Cycle Duration",
+    beforeSkill: 100, 
+    afterArchitect: 60, 
+    unit: "% (-40% FASTER)"
+  },
+  {
+    metric: "Automation Coverage",
+    beforeSkill: 25, 
+    afterArchitect: 98, 
     unit: "%"
-  },
-  {
-    metric: "Execution Velocity Speed",
-    beforeSkill: 1, 
-    afterArchitect: 6.5, 
-    unit: "x"
-  },
-  {
-    metric: "Integration Leakage Errors",
-    beforeSkill: 35, 
-    afterArchitect: 0.5, 
-    unit: "%"
-  },
-  {
-    metric: "SLA Release Cycle",
-    beforeSkill: 14, 
-    afterArchitect: 1, 
-    unit: "Days"
   }
 ];
 

@@ -127,7 +127,7 @@ export default function Navbar({
             <div className="relative">
               <div className="w-10 h-10 rounded-2xl overflow-hidden border border-sky-500/50 shadow-md group-hover:border-sky-400 transition-all duration-300 group-hover:scale-105">
                 <img
-                  src="/assets/vetrivel_avatar_architect.jpg"
+                  src="/assets/vetrivel_comic_tech_architect.jpg"
                   alt="Vetrivel Muthusamy"
                   className="w-full h-full object-cover"
                 />

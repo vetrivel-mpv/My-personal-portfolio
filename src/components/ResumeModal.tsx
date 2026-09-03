@@ -108,78 +108,102 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
   const getBaseMarkdownResume = () => {
     return `# VETRIVEL MUTHUSAMY
-**Telecom Solution Architect — Test Architect & Lead (11+ Years Experience)**
+**Architect & Lead Consultant | Telecommunications Industry (10+ Years Experience)**
 
+- 📱 **Mobile:** (+91) 9916008877
 - 📧 **Email:** vetrivelm02@gmail.com
-- 📱 **Phone:** (+91) 9916008877
 - 💼 **LinkedIn:** linkedin.com/in/vetrivelm
-- 📡 **GitHub:** github.com/vetrivelm
-- 📍 **Base:** Bengaluru, India
-- ✈️ **Global Mobility:** 100% Willing to Travel Frequently Worldwide (EMEA, Americas, APAC, UK)
+- 📡 **GitHub:** github.com/vetrivel-mpv
+- 📍 **Location:** Bengaluru, Karnataka, India
+- ✈️ **Global Mobility:** 100% Willing & Ready to Travel Frequently Worldwide (EMEA, Americas, APAC, UK)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Distinguished Telecom Solution Architect and Quality Engineering Lead with **11+ years of enterprise custody** across Telecom OSS/BSS, CSG Singleview billing, Convergent Charging (OCS/CCS), TM Forum Open Digital Architecture (ODA), and cloud microservices. Proven record eliminating monthly wholesale contract discrepancies across Tier-1 carriers and cutting regression test cycles by 40% with multithreaded Java Selenium Grid architectures. Actively seeking global Solution Architect / Principal Consultant roles with frequent international client travel and on-site delivery leadership.
+Distinguished Telecom Architect & Lead Consultant with **over 10 years of experience** in Mobile OSS/BSS stacks, CSG Singleview billing, Nokia WING Digital Hub (10M+ subscribers), AT&T Connection Manager IoT telemetry, and automated testing frameworks. Passionate about driving quality assurance, continuous improvement, and cross-functional Agile leadership. **Proven track record cutting manual testing efforts in half (50%) and reducing post-release issues by 30%** while ensuring 100% zero P1/P2 defect leakage across Tier-1 carrier releases. Highly enthusiastic about international client travel and on-site architecture delivery.
 
 ---
 
-## CORE COMPETENCIES & TELCO ARSENAL
-- **Telecom BSS & Convergent Billing:** CSG Singleview Billing Engine, OCS/CCS Convergent Charging, 3GPP 32.296, Diameter (Ro/Gy/Rf/Gz), VZ450 Bill Data Tape (BDT) Invoicing, Aria Middleware, Revenue Assurance (RA), Roaming TAP3/RAP.
-- **Telecom OSS & Network Topology:** Southbound/Northbound Mediation, SNMP v1/v2c/v3 Trap Telemetry, NETCONF/YANG, NMS/EMS Mapping, ITU-T G.984 GPON/FTTH, Wireshark Packet Decoding, Seagull Diameter Traffic Simulation.
-- **TM Forum Standards & ODA:** TM Forum Open APIs (TMF620 Catalog, TMF622 Ordering, TMF638 Service Inventory, TMF679 Customer Billing, TMF648 Quote, TMF688 Events), eTOM Process Framework, TAM Application Map, SID Data Modeling.
-- **Telco Cloud Microservices & Backend:** Java 21/17 (Virtual Threads & Concurrency), Spring Boot 3.3, Spring WebFlux, Kafka Streams, Docker Containers, Kubernetes (AWS EKS), Oracle SQL/PL-SQL High-Performance Schemas.
-- **QA Automation & Architecture:** Selenium Grid Distributed Docker Cluster (-40% Duration), TestNG Parallel Profiles, 5G SBA HTTP/2 Testing, Zero P1/P2 Defect Leakage SLA.
-- **Global Delivery & Consulting:** Agile Release Governance, On-Site Carrier Deployments, Pre-Sales Architecture, 100% Frequent International Travel Readiness.
+## TOP SKILLS & TELECOM ARSENAL
+- **Core Specializations:** UAT Coordination, Project Delivery, Defect Management, Test Strategy & Team Leadership.
+- **Telecom BSS & Convergent Billing:** CSG Singleview Core Billing (Rating, Invoicing, Billing Engine state machines), Nokia WING Digital Hub (10M+ Subs UAT/Migration), OCS/CCS Convergent Charging (3GPP 32.296, Diameter Ro/Gy/Rf/Gz), Monthly Rating Report (MRR), MRC & NRC Charge Models, Wholesale Invoicing (VZ450 BDT), Automated SFTP Pipelines, End-to-End Invoice PDF Generation.
+- **Enterprise IoT & OSS:** AT&T Connection Manager (IoT Device Telemetry & Quota Throttling), Real SIMs Testing (4G LTE, 5G NSA, Voice, SMS, Data from India test centers), SNMP v1/v2c/v3 Trap Telemetry, NETCONF/YANG, NMS/EMS Mapping.
+- **TM Forum Standards & ODA:** TM Forum Open APIs (TMF620 Catalog, TMF622 Ordering, TMF638 Service Inventory, TMF679 Billing, TMF648 Quote), eTOM Process Framework, SID Data Modeling.
+- **Full-Stack & Cloud Architecture:** Java 21/17 (Virtual Threads), Spring Boot 3.3, Docker, Kubernetes (AWS EKS), Kafka Streams, Oracle PL/SQL, React 19, TypeScript.
+- **QA Automation Frameworks:** Multithreaded Selenium Grid Docker Cluster (-40% Duration), Python Automation, TestNG Parallel Profiling.
 
 ---
 
-## CRITICAL SYSTEM OUTAGES CURED
-- **Carrier Billing Leakage Eradicated:** Prevented multi-million dollar subscriber contract synchronization mismatches during wholesale mediation across Tier-1 carriers.
-- **SNMP Trap-Storm Intercept:** Mitigated telemetry queue overflows under simulated network disaster traps using custom throttling validation rules.
-- **Mediation Race Conditions Resolved:** Untangled concurrent microservice request collisions by integrating non-blocking reactive queues and idempotent retry policies.
+## HONORS & AWARDS
+- **Customer Delight Award (Capgemini Engineering):** Recognized for prioritizing customer satisfaction and putting customers first (Q3, July 1 – Sept 30, 2022).
+- **Outstanding Contribution in Delivery Award (Capgemini ER&D):** Acknowledged for outstanding delivery in Engineering Research & Development sector (Q2, April 1 – June 30, 2022).
+- **Star Performer Award (Cognizant):** Awarded for providing consistently high-quality and valuable contributions to the Inmarsat BTP Project.
+- **CIT Domain Excellence Award (Tech Mahindra):** Awarded for bringing loads of domain knowledge to CIT and being result-oriented.
 
 ---
 
 ## PROFESSIONAL EXPERIENCE
 
-### Capgemini — Bengaluru, India
-**Test Architect & QA Lead** | *Jan 2022 — Present*
-- Spearheaded Selenium Grid automated regression frameworks across multi-million dollar client delivery lines, reducing execution durations by 40%.
-- Leading architecture and validation for **AT&T Connection Manager**: Enterprise IoT device usage tracking platform, SIM fleet telemetry ingestion, real-time data quota policy throttling, and wholesale enterprise billing mediation.
-- Delivered robust architecture governance for global carrier accounts including **Verizon Wireless** and **AT&T Enterprise**.
-- Achieved 100% zero P1/P2 defect leakage across major enterprise release cycles.
-- Recipient of Capgemini Outstanding Contribution in Delivery Award (Q2 2022) and Customer Delight Award (Q3 2022).
+### Capgemini Engineering — Bengaluru, Karnataka, India
+**Senior Professional / Test Architect & QA Lead** | *January 2022 — August 2025 (3 years 8 months)*
+- Implemented automated testing frameworks that cut manual testing efforts in half (50%) and reduced post-release issues by 30%.
+- Leading architecture and validation for **AT&T Connection Manager**: Enterprise IoT device usage tracking, SIM fleet telemetry ingestion, real-time data quota policy throttling, and enterprise billing mediation.
+- Delivered robust architecture governance for global carrier accounts including **Verizon Wireless** and **AT&T Enterprise** with 0 P1/P2 defect escapes.
+- Honored with **Customer Delight Award (Q3 2022)** and **Outstanding Contribution in Delivery Award in ER&D (Q2 2022)**.
 
-### Prodapt Solutions
-**Lead Engineer (Nokia WING & CSG Singleview Billing)** | *Jan 2021 — Jan 2022*
+### Prodapt Solutions — Chennai, Tamil Nadu, India
+**Lead Software Test Engineer** | *January 2021 — January 2022 (1 year 1 month)*
 - Led UAT and carrier migration activities for **10 Million+ subscribers** on **Nokia WING (Worldwide IoT Network Grid) Digital Hub**.
-- Spearheaded **Diameter Gy and Ro** online charging features, real-time balance reservations, and quota enforcement.
+- Governed **Diameter Gy and Ro** online charging, real-time balance reservations, and quota enforcement.
 - Supported **Real SIM network testing (4G LTE, 5G NSA, SMS, Voice, Data)** from India test centers.
-- Managed **Monthly Rating Report (MRR end-of-day / end-of-month batch runs)**, deep charging attribute modeling, Rate plan configs (**Individual, Flex, Fixed rate plans**), and **MRC & NRC charge validation**.
-- Architected automated **SFTP secure batch file transfer pipelines** for CDR feeds and automated **customer Invoice PDF generation** based on MRR.
+- Managed **Monthly Rating Report (MRR)** runs, rate plan configs (**Individual, Flex, Fixed rate plans**), **MRC & NRC charges**, automated **SFTP file transfer pipelines**, and automated **Invoice PDF generation**.
 
-### Cognizant Technology Solutions India Ltd
-**Project Associate** | *Feb 2019 — Jan 2021*
+### Cognizant — Bangaon Area / Chennai, India
+**Associate Project Engineer** | *February 2019 — January 2021 (2 years)*
+- Awarded **Star Performer** for consistently high-quality contributions to the **Inmarsat BTP Project**.
 - Orchestrated system integration testing (SIT) and rating validation for **Nokia Hutchison 3Group** European networks (**3Austria, 3Ireland, 3Italy**) and core Singleview postpaid charging pipelines.
 
-### Tech Mahindra | Accenture | Gapbridge Software
-**E2E Test Specialist** | *Nov 2014 — Feb 2019*
-- Led **British Telecom (BT) Retail Unit** customer ordering (TM Forum ODA TMF622), employee discount e-commerce automations, and live interlock UAT testing operations.
+### Tech Mahindra — Bangalore, India
+**Software Test Analyst** | *October 2017 — February 2019 (1 year 5 months)*
+- Awarded for bringing deep telecom domain knowledge to CIT and executing high-impact test automation strategies.
+- Led **British Telecom (BT) Retail Unit** customer ordering (TM Forum ODA TMF622) and employee discount e-commerce automations.
+
+### Accenture — Chennai Area, India
+**Application Development Associate** | *February 2017 — September 2017 (8 months)*
+- Developed and validated application integrations across enterprise telecom client stacks.
+
+### GapBridge — Chennai Area, India
+**Software Test Engineer** | *November 2014 — February 2017 (2 years 4 months)*
+- Gathered and translated business requirements into meticulous test plans and test designs.
+- Executed end-to-end test cases for User Acceptance Testing (UAT) ensuring comprehensive coverage.
+- Collaborated with business analysts to align clients' objectives with testing strategies.
+- Played a pivotal role in defining service packages, pricing structures, and billing components.
+- Actively participated in defect meetings, handoff sessions, and daily triage calls for seamless coordination.
 
 ---
 
 ## EDUCATION
-- **M.Sc in Science (MS)** | Liverpool John Moores University (2022)
-- **BCA (Bachelor of Computer Applications)** | Bharathidasan University (2012)
+- **Master of Science (MS) in Computer Software Engineering**  
+  *Liverpool John Moores University* | *July 2021 — July 2022*
+- **PG Diploma in Software Development (Full Stack Development)**  
+  *International Institute of Information Technology Bangalore (IIIT Bangalore)* | *March 2020 — May 2021*
+- **Bachelor of Computer Application (BCA) in Computer Programming**  
+  *Valluvar College of Science and Management* | *2009 — 2012*
 
 ---
 
-## CERTIFICATIONS & RECOGNITIONS
-- AWS Certified Cloud Practitioner
-- Oracle Certified Web Component Developer (OCWCD)
-- Capgemini Quality Assurance Lead Delivery Method Standards
-- Capgemini Customer Delight & Outstanding Delivery Awards (2022)
+## CERTIFICATIONS
+- **SDC16 - PG Diploma in Software Development (Full Stack)** — IIIT Bangalore (March 2020)
+- **Google IT Automation with Python Specialization**
+- **AWS Certified Cloud Practitioner**
+- **Oracle Certified Web Component Developer (OCWCD)**
+
+---
+
+## LANGUAGES
+- **English:** Professional Working Proficiency
+- **Tamil:** Native or Bilingual Proficiency
+- **Telugu:** Elementary Proficiency
 `;
   };
 
@@ -481,11 +505,11 @@ High-impact **${matchedRole}** bringing **11+ years of enterprise custody** in $
                     VETRIVEL MUTHUSAMY
                   </h1>
                   <p className="text-sm font-mono text-sky-400 font-bold">
-                    Solution Architect & Lead Test Architect (11+ Years)
+                    Architect & Lead Consultant | Telecommunications Industry
                   </p>
                   <p className="text-xs font-mono text-emerald-400 flex items-center gap-1.5 pt-0.5">
                     <Plane size={13} />
-                    <span>Global Mobility: 100% Willing to Travel Frequently Worldwide</span>
+                    <span>Global Mobility: 100% Willing & Ready to Travel Frequently Worldwide</span>
                   </p>
                 </div>
 
@@ -497,7 +521,7 @@ High-impact **${matchedRole}** bringing **11+ years of enterprise custody** in $
                     <Smartphone size={12} className="text-emerald-400" /> (+91) 9916008877
                   </p>
                   <p className="flex items-center gap-1.5 sm:justify-end">
-                    <MapPin size={12} className="text-indigo-400" /> Bengaluru, India
+                    <MapPin size={12} className="text-indigo-400" /> Bengaluru, Karnataka, India
                   </p>
                 </div>
               </div>
@@ -508,53 +532,59 @@ High-impact **${matchedRole}** bringing **11+ years of enterprise custody** in $
                   PROFESSIONAL SUMMARY
                 </h3>
                 <p className="leading-relaxed text-slate-300 text-xs">
-                  Distinguished Telecom Solution Architect and QA Lead with **11+ years of enterprise custody** across Telecom OSS/BSS, CSG Singleview billing, Convergent Charging (OCS/CCS), TM Forum Open Digital Architecture (ODA), and cloud microservices. Proven record eliminating monthly wholesale contract discrepancies across Tier-1 carriers and cutting regression test cycles by 40% with multithreaded Java Selenium Grid architectures. Actively seeking global Solution Architect / Principal Consultant roles with frequent international client travel and on-site delivery leadership.
+                  As an Architect, Test Lead and QA Engineer with over 10 years of experience in telecom, passionate about driving quality assurance, continuous improvement, and cross-functional Agile leadership. Expertise lies in Mobile OSS/BSS stacks (CSG Singleview, Nokia WING 10M+ subscribers, AT&T Connection Manager IoT), where I have led cross-functional teams and implemented automated testing frameworks that cut manual testing efforts in half (50%) and reduced post-release issues by 30%.
                 </p>
               </div>
 
               {/* Competencies */}
               <div className="space-y-2">
                 <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 border-b border-slate-800 pb-1">
-                  CORE COMPETENCIES & TELCO ARSENAL
+                  TOP SKILLS & TELECOM ARSENAL
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                   <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-850">
-                    <strong className="text-white block font-mono text-[11px] mb-0.5">Telecom BSS & Convergent Billing</strong>
-                    <span>CSG Singleview, OCS/CCS Charging, 3GPP 32.296, Diameter (Ro/Gy/Rf/Gz), VZ450 / BDT Invoicing, Aria Middleware, Revenue Assurance</span>
+                    <strong className="text-white block font-mono text-[11px] mb-0.5">UAT Coordination & Project Delivery</strong>
+                    <span>Defect Management, End-to-End Test Strategy, Agile Release Governance, Cross-Functional Team Leadership</span>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-850">
-                    <strong className="text-white block font-mono text-[11px] mb-0.5">Telecom OSS & Protocol Mediation</strong>
-                    <span>SNMP v1/v2c/v3 Traps, NETCONF/YANG, NMS/EMS Mapping, ITU-T G.984 GPON, Wireshark, Seagull Diameter Traffic Mocks</span>
+                    <strong className="text-white block font-mono text-[11px] mb-0.5">Telecom BSS & Nokia WING (10M+ Subs)</strong>
+                    <span>CSG Singleview Billing, Nokia WING Digital Hub UAT/Migration, Diameter Gy/Ro, MRR, MRC/NRC Plans, SFTP & Invoice PDF Gen</span>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-850">
-                    <strong className="text-white block font-mono text-[11px] mb-0.5">TM Forum ODA & Open APIs</strong>
-                    <span>TMF620 (Catalog), TMF622 (Ordering), TMF638 (Service Inv), TMF679 (Billing), eTOM Process Framework, TAM & SID Models</span>
+                    <strong className="text-white block font-mono text-[11px] mb-0.5">Enterprise IoT & Real SIMs Testing</strong>
+                    <span>AT&T Connection Manager Telemetry & Quota Throttling, 4G LTE & 5G NSA Real SIMs (Voice, SMS, Data from India test centers)</span>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-850">
-                    <strong className="text-white block font-mono text-[11px] mb-0.5">Telco Cloud Microservices & Test Architecture</strong>
-                    <span>Java 21 Virtual Threads, Spring Boot 3.3 WebFlux, Kafka Streams, Docker/EKS, Selenium Grid Cluster (-40% Time)</span>
+                    <strong className="text-white block font-mono text-[11px] mb-0.5">TM Forum ODA & Full-Stack Cloud</strong>
+                    <span>TMF620/622/638/679 APIs, Java 21, Spring Boot 3.3, Docker, Kubernetes (AWS EKS), Kafka Streams, Selenium Grid Cluster (-40% Time)</span>
                   </div>
                 </div>
               </div>
 
-              {/* Outages Cured */}
-              {includeCuredFailures && (
-                <div className="space-y-2">
-                  <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 border-b border-slate-800 pb-1">
-                    SYSTEM OUTAGES & FAILURES CURED
-                  </h3>
-                  <ul className="space-y-1.5 text-xs text-slate-300">
-                    <li className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 mt-1.5" />
-                      <span><strong>Billing Leakage Blocked:</strong> Prevented multi-million dollar subscriber contract discrepancies during carrier wholesale mediation across Tier-1 carriers.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 mt-1.5" />
-                      <span><strong>SNMP Trap-Storm Intercept:</strong> Mitigated telemetry queue overflows under fiber disaster simulations using custom throttling validation rules.</span>
-                    </li>
-                  </ul>
+              {/* Honors & Awards */}
+              <div className="space-y-2">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 border-b border-slate-800 pb-1">
+                  HONORS & AWARDS
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-850">
+                    <strong className="text-amber-400 block font-mono text-[11px]">🏆 Customer Delight Award</strong>
+                    <span className="text-[11px] text-slate-300">Capgemini Engineering — Recognized for putting customers first (Q3 2022).</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-850">
+                    <strong className="text-amber-400 block font-mono text-[11px]">🏆 Outstanding Delivery in ER&D</strong>
+                    <span className="text-[11px] text-slate-300">Capgemini Engineering Research & Development Sector (Q2 2022).</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-850">
+                    <strong className="text-amber-400 block font-mono text-[11px]">⭐ Star Performer Award</strong>
+                    <span className="text-[11px] text-slate-300">Cognizant — Consistently high-quality contributions to Inmarsat BTP Project.</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-850">
+                    <strong className="text-amber-400 block font-mono text-[11px]">⭐ CIT Domain Excellence Award</strong>
+                    <span className="text-[11px] text-slate-300">Tech Mahindra — For bringing deep telecom domain knowledge to CIT.</span>
+                  </div>
                 </div>
-              )}
+              </div>
 
               {/* Career History */}
               {includeTimeline && (
@@ -565,21 +595,51 @@ High-impact **${matchedRole}** bringing **11+ years of enterprise custody** in $
                   
                   <div className="space-y-2">
                     <div className="flex justify-between items-baseline">
-                      <h4 className="font-bold text-white text-xs">Capgemini — Test Architect & QA Lead</h4>
-                      <span className="text-[11px] font-mono text-slate-400">Jan 2022 — Present</span>
+                      <h4 className="font-bold text-white text-xs">Capgemini Engineering — Senior Professional / Test Architect & QA Lead</h4>
+                      <span className="text-[11px] font-mono text-slate-400">Jan 2022 — Aug 2025 (3 yrs 8 mos)</span>
                     </div>
                     <p className="text-[11.5px] text-slate-300 leading-relaxed">
-                      Leading architecture and validation for <strong>AT&T Connection Manager</strong> (enterprise IoT device usage tracking and rating). Accelerated automated regression runs by 40% with Java Selenium Grid frameworks with zero P1/P2 defect escapes. Received Capgemini Delivery & Customer Delight awards.
+                      Implemented automated testing frameworks cutting manual testing efforts in half (50%) and reducing post-release issues by 30%. Led architecture and validation for <strong>AT&T Connection Manager</strong> (enterprise IoT device usage tracking and rating). Honored with Customer Delight and Outstanding Delivery in ER&D awards.
                     </p>
                   </div>
 
                   <div className="space-y-2 pt-1">
                     <div className="flex justify-between items-baseline">
-                      <h4 className="font-bold text-white text-xs">Prodapt Solutions — Lead Engineer (Nokia WING & Singleview)</h4>
-                      <span className="text-[11px] font-mono text-slate-400">Jan 2021 — Jan 2022</span>
+                      <h4 className="font-bold text-white text-xs">Prodapt Solutions — Lead Software Test Engineer (Nokia WING & Singleview)</h4>
+                      <span className="text-[11px] font-mono text-slate-400">Jan 2021 — Jan 2022 (1 yr 1 mo)</span>
                     </div>
                     <p className="text-[11.5px] text-slate-300 leading-relaxed">
                       Led UAT & migration for <strong>10 Million+ subscribers</strong> on <strong>Nokia WING Digital Hub</strong>. Governed Diameter Gy/Ro online charging, Real SIM testing (4G/5G NSA, SMS, Voice, Data), Monthly Rating Report (MRR), MRC/NRC charge models, SFTP batch transfer, and automated Invoice PDF generation.
+                    </p>
+                  </div>
+
+                  <div className="space-y-2 pt-1">
+                    <div className="flex justify-between items-baseline">
+                      <h4 className="font-bold text-white text-xs">Cognizant — Associate Project Engineer</h4>
+                      <span className="text-[11px] font-mono text-slate-400">Feb 2019 — Jan 2021 (2 yrs)</span>
+                    </div>
+                    <p className="text-[11.5px] text-slate-300 leading-relaxed">
+                      Awarded <strong>Star Performer</strong> for Inmarsat BTP Project. Orchestrated system integration testing (SIT) and rating validation for Nokia Hutchison 3Group European networks (3Austria, 3Ireland, 3Italy).
+                    </p>
+                  </div>
+
+                  <div className="space-y-2 pt-1">
+                    <div className="flex justify-between items-baseline">
+                      <h4 className="font-bold text-white text-xs">Tech Mahindra — Software Test Analyst</h4>
+                      <span className="text-[11px] font-mono text-slate-400">Oct 2017 — Feb 2019 (1 yr 5 mos)</span>
+                    </div>
+                    <p className="text-[11.5px] text-slate-300 leading-relaxed">
+                      Awarded CIT Domain Excellence Award. Led British Telecom (BT) Retail Unit mobile ordering (TMF622) and employee discount e-commerce automations.
+                    </p>
+                  </div>
+
+                  <div className="space-y-2 pt-1">
+                    <div className="flex justify-between items-baseline">
+                      <h4 className="font-bold text-white text-xs">Accenture & GapBridge — Early Formative QA Engineering</h4>
+                      <span className="text-[11px] font-mono text-slate-400">Nov 2014 — Sep 2017 (3 yrs)</span>
+                    </div>
+                    <p className="text-[11.5px] text-slate-300 leading-relaxed">
+                      Gathered business requirements into test plans, executed E2E test cases for UAT, aligned client objectives, and defined service pricing and billing structures.
                     </p>
                   </div>
                 </div>
@@ -593,7 +653,10 @@ High-impact **${matchedRole}** bringing **11+ years of enterprise custody** in $
                   </h3>
                   <div className="flex flex-wrap gap-2 text-xs font-mono">
                     <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-sky-300">
-                      Capgemini QA Lead Method Standards
+                      SDC16 - PG Diploma in Software Development (Full Stack) — IIIT Bangalore
+                    </span>
+                    <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">
+                      Google IT Automation with Python Specialization
                     </span>
                     <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-orange-300">
                       AWS Certified Cloud Practitioner
@@ -610,10 +673,38 @@ High-impact **${matchedRole}** bringing **11+ years of enterprise custody** in $
                 <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-400 border-b border-slate-800 pb-1">
                   ACADEMIC BACKGROUND
                 </h3>
-                <p className="text-xs text-slate-300">
-                  <strong>M.Sc in Science (MS)</strong> — Liverpool John Moores University (2022) <br />
-                  <strong>BCA (Bachelor of Computer Applications)</strong> — Bharathidasan University (2012)
-                </p>
+                <div className="space-y-2 text-xs text-slate-300">
+                  <p>
+                    <strong>Master of Science (MS) in Computer Software Engineering</strong><br />
+                    <span className="text-slate-400 font-mono text-[11px]">Liverpool John Moores University (July 2021 — July 2022)</span>
+                  </p>
+                  <p>
+                    <strong>PG Diploma in Software Development (Full Stack Development)</strong><br />
+                    <span className="text-slate-400 font-mono text-[11px]">International Institute of Information Technology Bangalore (IIIT Bangalore) (March 2020 — May 2021)</span>
+                  </p>
+                  <p>
+                    <strong>Bachelor of Computer Application (BCA) in Computer Programming</strong><br />
+                    <span className="text-slate-400 font-mono text-[11px]">Valluvar College of Science and Management (2009 — 2012)</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Languages */}
+              <div className="space-y-2 pt-2 border-t border-slate-800">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 pb-1">
+                  LANGUAGES
+                </h3>
+                <div className="flex flex-wrap gap-3 text-xs font-mono">
+                  <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-slate-200">
+                    🗣️ English: <strong>Professional Working</strong>
+                  </span>
+                  <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-slate-200">
+                    🗣️ Tamil: <strong>Native / Bilingual</strong>
+                  </span>
+                  <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-slate-200">
+                    🗣️ Telugu: <strong>Elementary</strong>
+                  </span>
+                </div>
               </div>
             </div>
           </div>

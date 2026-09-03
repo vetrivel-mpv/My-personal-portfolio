@@ -22,7 +22,8 @@ import {
   Github,
   Mail,
   Copy,
-  Check
+  Check,
+  Bot
 } from "lucide-react";
 
 interface HeroProps {
@@ -33,7 +34,7 @@ interface HeroProps {
 }
 
 type SimulationScenario = "idle" | "burst" | "failover" | "idempotency" | "audit";
-type AvatarMode = "architect" | "noc" | "travel";
+type AvatarMode = "real" | "comic-architect" | "comic-travel" | "comic-noc";
 
 const TELECOM_OPERATORS = [
   { name: "Nokia WING Digital Hub", code: "NOKIA 10M+", region: "Global IoT Grid", logo: "🌐", desc: "10M+ Subs Migration, Gy/Ro, MRR & PDF Invoicing" },
@@ -62,8 +63,8 @@ export default function Hero({
     "[14:20:07] ⚡ Ingestion cluster healthy across 8 Kafka consumer nodes"
   ]);
 
-  // Avatar persona state
-  const [avatarMode, setAvatarMode] = useState<AvatarMode>("architect");
+  // Avatar persona state (Real Photo + Comic Tech Guy styles)
+  const [avatarMode, setAvatarMode] = useState<AvatarMode>("comic-architect");
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [copiedEmail, setCopiedEmail] = useState(false);
 
@@ -98,35 +99,29 @@ export default function Hero({
       setLatencyValue(5.4);
       setSimulationLogs(prev => [
         `[${timestamp}] ⚡ BURST: Ingested 10k TPS CDR batch into Kafka mediation cluster`,
-        `[${timestamp}] 🚀 TM Forum TMF688 event router autoscaled to 6 partitions`,
-        `[${timestamp}] ✅ 0 packet loss. 100% Singleview rating accounts updated safely`,
-        ...prev.slice(0, 3)
+        `[${timestamp}] 🚀 Scaled 12 reactive consumer pods; 0 message drop`,
+        ...prev.slice(0, 2)
       ]);
-      setTimeout(() => {
-        setTpsRate(2480);
-        setLatencyValue(3.2);
-        setSimScenario("idle");
-      }, 3500);
+      setTimeout(() => setSimScenario("idle"), 4000);
     } else if (type === "failover") {
+      setTpsRate(1950);
+      setLatencyValue(4.8);
       setSimulationLogs(prev => [
-        `[${timestamp}] ⚠️ FAILOVER: Diameter OCS Ro/Gy link simulated network timeout`,
-        `[${timestamp}] 🔄 Reactive WebFlux circuit-breaker triggered -> rerouted to standby CCS`,
-        `[${timestamp}] 🛡️ Recovery complete in 95ms with 0 subscriber rating leakage`,
-        ...prev.slice(0, 3)
+        `[${timestamp}] ⚠️ FAILOVER: Primary Diameter Ro link dropped; initiating secondary OCS`,
+        `[${timestamp}] 🛡️ Session state restored via Redis cache; 0 session loss`,
+        ...prev.slice(0, 2)
       ]);
-      setTimeout(() => setSimScenario("idle"), 3500);
+      setTimeout(() => setSimScenario("idle"), 4000);
     } else if (type === "idempotency") {
       setSimulationLogs(prev => [
-        `[${timestamp}] 🔄 IDEMPOTENCY: Injected duplicate $450 VZ450 wholesale settlement record`,
-        `[${timestamp}] 🔍 Hash key deduplication matched (TX-9948271) against Singleview ledger`,
-        `[${timestamp}] ✅ Prevented duplicate invoice charge successfully`,
-        ...prev.slice(0, 3)
+        `[${timestamp}] 🔄 IDEMPOTENCY: Injected 5,000 duplicate charge events (MRR simulation)`,
+        `[${timestamp}] 🔒 Deduplication filter caught 100% duplicate CDRs; balance preserved`,
+        ...prev.slice(0, 2)
       ]);
       setTimeout(() => setSimScenario("idle"), 3500);
     } else if (type === "audit") {
       setSimulationLogs(prev => [
-        `[${timestamp}] 📊 AUDIT: Executing TM Forum eTOM SID 21.0 & ODA API Conformance`,
-        `[${timestamp}] 🎯 TMF620 Catalog, TMF622 Ordering & TMF679 Billing score: 99.98%`,
+        `[${timestamp}] 🔍 AUDIT: Verified 10M+ accounts on Nokia WING Digital Hub`,
         `[${timestamp}] 🏆 Zero architectural debt detected across carrier transport nodes`,
         ...prev.slice(0, 3)
       ]);
@@ -135,9 +130,10 @@ export default function Hero({
   };
 
   const getAvatarImageSrc = () => {
-    if (avatarMode === "architect") return "/assets/vetrivel_avatar_architect.jpg";
-    if (avatarMode === "noc") return "/assets/vetrivel_avatar_command_center.jpg";
-    return "/assets/vetrivel_avatar_global_travel.jpg";
+    if (avatarMode === "real") return "/assets/vetrivel_original_blazer.jpg";
+    if (avatarMode === "comic-architect") return "/assets/vetrivel_comic_tech_architect.jpg";
+    if (avatarMode === "comic-travel") return "/assets/vetrivel_comic_global_traveler.jpg";
+    return "/assets/vetrivel_comic_noc_commander.jpg";
   };
 
   const handleCopyEmail = () => {
@@ -180,9 +176,9 @@ export default function Hero({
                 <span>100% WORLDWIDE TRAVEL READY</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-xs font-mono font-bold">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-mono font-bold">
                 <Award size={13} />
-                <span>11+ YRS TELECOM & FULL-STACK</span>
+                <span>CUSTOMER DELIGHT AWARDEE</span>
               </span>
             </div>
 
@@ -197,18 +193,18 @@ export default function Hero({
               
               <div className="flex flex-wrap items-center gap-2.5 pt-1 text-sm sm:text-base font-mono">
                 <span className="px-2.5 py-0.5 rounded-lg bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-700 dark:text-sky-400 font-bold">
-                  Telecom Solution Architect
+                  Architect & Lead Consultant
                 </span>
                 <span className="text-slate-400 dark:text-slate-600">•</span>
-                <span className="text-slate-700 dark:text-slate-300 font-medium">Lead Test Architect</span>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">Telecommunications Industry</span>
                 <span className="text-slate-400 dark:text-slate-600">•</span>
-                <span className="text-emerald-700 dark:text-emerald-400 font-medium">Full-Stack Engineer</span>
+                <span className="text-emerald-700 dark:text-emerald-400 font-medium">Full-Stack Lead</span>
               </div>
             </div>
 
             {/* Narrative Passage */}
             <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl font-sans font-normal">
-              Architecting mission-critical <strong>Telecom OSS/BSS, CSG Singleview Convergent Billing, 5G/4G Mediation, and TM Forum ODA</strong> architectures alongside modern <strong>Full-Stack React 19, Java 21, and Spring Boot microservices</strong>. Trusted by Tier-1 operators including <strong>British Telecom, Verizon, Inmarsat, AT&T, and Nokia (3Austria, 3Ireland, 3Italy)</strong>. <strong>100% Enthusiastic for frequent worldwide travel.</strong>
+              Test Lead and QA Architect with <strong>over 10 years of enterprise experience</strong> in Mobile OSS/BSS stacks (CSG Singleview, Nokia WING 10M+ subscribers, AT&T Connection Manager IoT). <strong>Cut manual testing efforts in half (-50%) and reduced post-release issues by 30%</strong> across Tier-1 carriers including <strong>British Telecom, Verizon, Inmarsat, AT&T, and Nokia (3Austria, 3Ireland, 3Italy)</strong>. <strong>100% enthusiastic for frequent worldwide client deployments.</strong>
             </p>
 
             {/* 3 Strategic Key Focus Pillars */}
@@ -216,44 +212,51 @@ export default function Hero({
               <div className="p-3 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/90 hover:border-sky-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 text-xs font-mono font-bold mb-1">
                   <Network size={14} />
-                  <span>01 / BSS & BILLING</span>
+                  <span>01 / BSS & 10M+ WING</span>
                 </div>
-                <p className="text-[11px] text-slate-600 dark:text-slate-300">CSG Singleview, OCS/CCS, VZ450 BDT, Revenue Assurance</p>
+                <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">
+                  Nokia WING 10M+ migration, CSG Singleview, Diameter Gy/Ro, MRR, MRC/NRC.
+                </p>
               </div>
 
               <div className="p-3 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/90 hover:border-indigo-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-bold mb-1">
                   <Cpu size={14} />
-                  <span>02 / FULL-STACK & CLOUD</span>
+                  <span>02 / AT&T IoT & CLOUD</span>
                 </div>
-                <p className="text-[11px] text-slate-600 dark:text-slate-300">React 19, Java 21, Spring Boot 3.3, Kafka, Docker/EKS</p>
+                <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">
+                  AT&T Connection Manager telemetry, Java 21, Spring Boot 3.3, Docker & Kafka.
+                </p>
               </div>
 
               <div className="p-3 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/90 hover:border-emerald-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold mb-1">
                   <Globe2 size={14} />
-                  <span>03 / GLOBAL OPERATORS</span>
+                  <span>03 / -50% MANUAL EFFORT</span>
                 </div>
-                <p className="text-[11px] text-slate-600 dark:text-slate-300">BT, Verizon, Inmarsat, AT&T, Nokia 3Group delivery</p>
+                <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">
+                  Selenium Grid cluster (-40% time), 0 defect leakage, customer delight record.
+                </p>
               </div>
             </div>
 
-            {/* Recruiter Fast Action CTAs */}
+            {/* Recruiter Fast-Action Bar */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button
                 onClick={onOpenResume}
-                className="px-6 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 transition-all duration-300 flex items-center gap-2 cursor-pointer hover:scale-[1.02]"
+                id="hero-ai-tailor-trigger"
+                className="px-5 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white shadow-lg shadow-sky-500/25 transition-all duration-300 flex items-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
               >
-                <Sparkles size={14} className="text-sky-200" />
-                <span>AI TAILOR CV (GEMINI)</span>
+                <Bot size={15} className="animate-pulse" />
+                <span>AI Tailor CV (Gemini)</span>
               </button>
 
               <button
                 onClick={onExploreProjects}
-                className="px-5 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase glass-panel hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 transition-all duration-300 cursor-pointer flex items-center gap-2"
+                className="px-5 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase glass-card border border-slate-300 dark:border-slate-700 hover:border-sky-500/50 text-slate-800 dark:text-white transition-all duration-200 flex items-center gap-2 cursor-pointer"
               >
-                <span>Case Studies & GitHub</span>
-                <ArrowRight size={14} />
+                <Layers size={14} />
+                <span>View Projects</span>
               </button>
 
               <button
@@ -267,7 +270,7 @@ export default function Hero({
 
           </div>
 
-          {/* RIGHT 5 COLS: Animated Futuristic Avatar & Persona Card */}
+          {/* RIGHT 5 COLS: Animated Comic Tech Guy & Avatar Persona Card */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center">
             
             {/* 3D Holographic Perspective Container */}
@@ -292,39 +295,48 @@ export default function Hero({
                 {/* Persona Switcher Tabs */}
                 <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800 relative z-10">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-sky-500 animate-ping" />
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-600 dark:text-sky-300">
-                      HOLOGRAPHIC AVATAR
+                    <Sparkles size={13} className="text-purple-500 animate-pulse" />
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-800 dark:text-sky-300">
+                      AVATAR TRANSLATOR
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-950 p-0.5 rounded-xl border border-slate-200 dark:border-slate-800">
+                  <div className="flex flex-wrap items-center gap-1 bg-slate-100 dark:bg-slate-950 p-0.5 rounded-xl border border-slate-200 dark:border-slate-800">
                     <button
-                      onClick={() => setAvatarMode("architect")}
-                      title="Architect Persona"
-                      className={`px-2 py-1 rounded-lg text-[10px] font-mono font-bold transition-colors cursor-pointer ${
-                        avatarMode === "architect" ? "bg-sky-500 text-white" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                      onClick={() => setAvatarMode("real")}
+                      title="Real Original Photo"
+                      className={`px-2 py-1 rounded-lg text-[9.5px] font-mono font-bold transition-colors cursor-pointer ${
+                        avatarMode === "real" ? "bg-emerald-600 text-white shadow-xs" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                       }`}
                     >
-                      ARCHITECT
+                      👔 REAL
                     </button>
                     <button
-                      onClick={() => setAvatarMode("noc")}
-                      title="Telecom NOC Persona"
-                      className={`px-2 py-1 rounded-lg text-[10px] font-mono font-bold transition-colors cursor-pointer ${
-                        avatarMode === "noc" ? "bg-emerald-500 text-white" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                      onClick={() => setAvatarMode("comic-architect")}
+                      title="Comic Tech Architect"
+                      className={`px-2 py-1 rounded-lg text-[9.5px] font-mono font-bold transition-colors cursor-pointer ${
+                        avatarMode === "comic-architect" ? "bg-purple-600 text-white shadow-xs" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                       }`}
                     >
-                      NOC
+                      ⚡ COMIC
                     </button>
                     <button
-                      onClick={() => setAvatarMode("travel")}
-                      title="Global Mobility Persona"
-                      className={`px-2 py-1 rounded-lg text-[10px] font-mono font-bold transition-colors cursor-pointer ${
-                        avatarMode === "travel" ? "bg-amber-500 text-white" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                      onClick={() => setAvatarMode("comic-travel")}
+                      title="Comic Global Traveler"
+                      className={`px-2 py-1 rounded-lg text-[9.5px] font-mono font-bold transition-colors cursor-pointer ${
+                        avatarMode === "comic-travel" ? "bg-amber-500 text-white shadow-xs" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                       }`}
                     >
-                      GLOBAL
+                      🌍 TRAVEL
+                    </button>
+                    <button
+                      onClick={() => setAvatarMode("comic-noc")}
+                      title="Comic NOC Commander"
+                      className={`px-2 py-1 rounded-lg text-[9.5px] font-mono font-bold transition-colors cursor-pointer ${
+                        avatarMode === "comic-noc" ? "bg-sky-500 text-white shadow-xs" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                      }`}
+                    >
+                      📡 NOC
                     </button>
                   </div>
                 </div>
@@ -333,42 +345,83 @@ export default function Hero({
                 <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700/80 aspect-square group shadow-xl bg-slate-100 dark:bg-slate-950">
                   <img
                     src={getAvatarImageSrc()}
-                    alt="Vetrivel Muthusamy - Telecom Solution Architect"
+                    alt="Vetrivel Muthusamy - Architect & Lead Consultant"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   
                   {/* Persona Badge Overlay */}
-                  <div className="absolute bottom-3 inset-x-3 flex items-center justify-between text-[11px] font-mono">
-                    <div className="px-2.5 py-1 rounded-xl bg-slate-950/90 backdrop-blur-md border border-slate-800 text-slate-100 font-bold flex items-center gap-1.5 shadow-md">
-                      {avatarMode === "architect" && <Zap size={12} className="text-sky-400" />}
-                      {avatarMode === "noc" && <Activity size={12} className="text-emerald-400" />}
-                      {avatarMode === "travel" && <Plane size={12} className="text-amber-400" />}
-                      <span>
-                        {avatarMode === "architect" && "Solution Architect Core"}
-                        {avatarMode === "noc" && "Telecom NOC & QA Lead"}
-                        {avatarMode === "travel" && "Global Mobility Mode"}
+                  <div className="absolute bottom-3 left-3 right-3 p-2 rounded-xl glass-panel border border-white/20 dark:border-slate-700/80 text-xs font-mono text-white flex items-center justify-between bg-slate-950/80 backdrop-blur-md">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                      <span className="font-bold text-[10.5px]">
+                        {avatarMode === "real" && "VETRIVEL (ORIGINAL PHOTO)"}
+                        {avatarMode === "comic-architect" && "COMIC TECH HERO (5G/CLOUD)"}
+                        {avatarMode === "comic-travel" && "COMIC GLOBAL TRAVELER"}
+                        {avatarMode === "comic-noc" && "COMIC NOC COMMANDER"}
                       </span>
                     </div>
-
-                    <span className="px-2 py-1 rounded-xl bg-sky-500/20 border border-sky-500/40 text-sky-300 font-bold text-[10px]">
-                      LIVE HUD
+                    <span className="text-[9.5px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold border border-sky-500/30">
+                      {avatarMode === "real" ? "REAL" : "COMIC"}
                     </span>
                   </div>
+                </div>
+
+                {/* 4 Quick Switcher Thumbnails Strip */}
+                <div className="grid grid-cols-4 gap-2 pt-1">
+                  <button
+                    onClick={() => setAvatarMode("real")}
+                    title="Original Photo"
+                    className={`rounded-xl overflow-hidden aspect-square border-2 transition-all cursor-pointer ${
+                      avatarMode === "real" ? "border-emerald-500 scale-105 shadow-md" : "border-slate-200 dark:border-slate-800 opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    <img src="/assets/vetrivel_original_blazer.jpg" alt="Real Portrait" className="w-full h-full object-cover" />
+                  </button>
+
+                  <button
+                    onClick={() => setAvatarMode("comic-architect")}
+                    title="Comic Tech Hero"
+                    className={`rounded-xl overflow-hidden aspect-square border-2 transition-all cursor-pointer ${
+                      avatarMode === "comic-architect" ? "border-purple-500 scale-105 shadow-md" : "border-slate-200 dark:border-slate-800 opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    <img src="/assets/vetrivel_comic_tech_architect.jpg" alt="Comic Tech Hero" className="w-full h-full object-cover" />
+                  </button>
+
+                  <button
+                    onClick={() => setAvatarMode("comic-travel")}
+                    title="Comic Global Traveler"
+                    className={`rounded-xl overflow-hidden aspect-square border-2 transition-all cursor-pointer ${
+                      avatarMode === "comic-travel" ? "border-amber-500 scale-105 shadow-md" : "border-slate-200 dark:border-slate-800 opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    <img src="/assets/vetrivel_comic_global_traveler.jpg" alt="Comic Traveler" className="w-full h-full object-cover" />
+                  </button>
+
+                  <button
+                    onClick={() => setAvatarMode("comic-noc")}
+                    title="Comic NOC Commander"
+                    className={`rounded-xl overflow-hidden aspect-square border-2 transition-all cursor-pointer ${
+                      avatarMode === "comic-noc" ? "border-sky-500 scale-105 shadow-md" : "border-slate-200 dark:border-slate-800 opacity-60 hover:opacity-100"
+                    }`}
+                  >
+                    <img src="/assets/vetrivel_comic_noc_commander.jpg" alt="Comic NOC" className="w-full h-full object-cover" />
+                  </button>
                 </div>
 
                 {/* Telemetry Live Meters */}
                 <div className="grid grid-cols-3 gap-2 pt-1 text-center font-mono">
                   <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-850">
                     <span className="block text-[9px] text-slate-500 dark:text-slate-400 uppercase">EXPERIENCE</span>
-                    <span className="text-xs font-bold text-sky-600 dark:text-sky-400">11+ YRS</span>
+                    <span className="text-xs font-bold text-sky-600 dark:text-sky-400">10+ YRS</span>
                   </div>
                   <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-850">
-                    <span className="block text-[9px] text-slate-500 dark:text-slate-400 uppercase">LEAKAGE</span>
-                    <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400">0.00%</span>
+                    <span className="block text-[9px] text-slate-500 dark:text-slate-400 uppercase">MANUAL EFFORT</span>
+                    <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400">-50%</span>
                   </div>
                   <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-850">
-                    <span className="block text-[9px] text-slate-500 dark:text-slate-400 uppercase">MOBILITY</span>
-                    <span className="text-xs font-bold text-amber-600 dark:text-amber-400">100% ✈️</span>
+                    <span className="block text-[9px] text-slate-500 dark:text-slate-400 uppercase">POST-RELEASE</span>
+                    <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">-30% DEF</span>
                   </div>
                 </div>
 

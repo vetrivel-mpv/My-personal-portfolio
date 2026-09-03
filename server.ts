@@ -81,15 +81,27 @@ Your goal is to tailor the real professional resume of **Vetrivel Muthusamy** (S
 
 ### Target Candidate Background:
 - **Name:** Vetrivel Muthusamy
-- **Primary Title:** Telecom Solution Architect / Lead Test Architect
-- **Experience:** 11+ years in Enterprise Telecom OSS/BSS, CSG Singleview Billing, Nokia WING Digital Hub (10M+ Subscribers UAT & Migration), AT&T Connection Manager (Enterprise IoT Tracking), OCS/CCS Convergent Charging, Diameter (Ro/Gy/Rf/Gz), Monthly Rating Report (MRR), MRC/NRC rate plan modeling (Individual, Flex, Fixed), SFTP batch data pipelines, End-to-End Invoice PDF generation, TM Forum ODA (TMF620/622/638/679), Java 21, Spring Boot 3.3, Docker, Kubernetes (AWS EKS), Selenium Grid, Kafka, Oracle PL/SQL.
+- **Official Title:** Architect & Lead Consultant | Telecommunications Industry
+- **Phone:** 9916008877 (Mobile) | **Email:** vetrivelm02@gmail.com | **Location:** Bengaluru, Karnataka, India
+- **Experience:** 10+ years in Mobile OSS/BSS, CSG Singleview Billing, Nokia WING Digital Hub (10M+ Subscribers UAT & Migration), AT&T Connection Manager (Enterprise IoT Tracking), OCS/CCS Convergent Charging, Diameter (Ro/Gy/Rf/Gz), Monthly Rating Report (MRR), MRC/NRC rate plan modeling (Individual, Flex, Fixed), SFTP batch data pipelines, End-to-End Invoice PDF generation, TM Forum ODA (TMF620/622/638/679), Java 21, Spring Boot 3.3, Docker, Kubernetes (AWS EKS), Selenium Grid, Kafka, Oracle PL/SQL.
+- **Key Metrics:** Reduced post-release issues by 30% and cut manual testing efforts in half (-50%).
 - **Work History:**
-  1. Capgemini (Jan 2022 – Present): Test Architect & QA Lead (-40% regression cycle duration, 0 P1/P2 leaks, AT&T Connection Manager enterprise IoT usage tracking platform, Q2 & Q3 Delivery Awards).
-  2. Prodapt Solutions (Jan 2021 – Jan 2022): Lead Engineer (Nokia WING Digital Hub 10M+ migration, CSG Singleview Billing, Customer Provisioning, Rating, Invoicing, VZ450 BDT).
-  3. Cognizant (Feb 2019 – Jan 2021): Project Associate (Nokia 3Group Europe & Singleview postpaid charging, SIT integration).
-  4. Tech Mahindra | Accenture | Gapbridge (Nov 2014 – Feb 2019): E2E Test Specialist (BT Retail mobile ordering, wholesale rating, TM Forum eTOM).
-- **Education:** M.Sc in Science (MS) - Liverpool John Moores University (2022); BCA - Bharathidasan University (2012).
-- **Certifications:** AWS Certified Cloud Practitioner, Oracle Certified Web Component Developer (OCWCD), Capgemini Quality Lead Delivery Standards.
+  1. Capgemini Engineering (Jan 2022 – Aug 2025, 3 yrs 8 mos): Senior Professional / Test Architect & QA Lead (Customer Delight Award Q3 2022, Outstanding Contribution in Delivery Award ER&D Q2 2022, AT&T Connection Manager enterprise IoT usage tracking platform, zero P1/P2 defect escapes).
+  2. Prodapt Solutions (Jan 2021 – Jan 2022, 1 yr 1 mo): Lead Software Test Engineer (Nokia WING Digital Hub 10M+ migration, CSG Singleview Billing, Customer Provisioning, Rating, Invoicing, VZ450 BDT).
+  3. Cognizant (Feb 2019 – Jan 2021, 2 yrs): Associate Project Engineer (Awarded Star Performer for Inmarsat BTP Project, Nokia 3Group Europe & Singleview postpaid charging, SIT integration).
+  4. Tech Mahindra (Oct 2017 – Feb 2019, 1 yr 5 mos): Software Test Analyst (Awarded CIT Domain Excellence Award for deep telecom domain knowledge).
+  5. Accenture (Feb 2017 – Sep 2017, 8 mos): Application Development Associate.
+  6. GapBridge (Nov 2014 – Feb 2017, 2 yrs 4 mos): Software Test Engineer (Business requirements translation, UAT execution, pricing structures, and billing components).
+- **Education:**
+  - Master of Science (MS) in Computer Software Engineering — Liverpool John Moores University (July 2021 – July 2022)
+  - PG Diploma in Software Development (Specialisation in Full Stack Development) — IIIT Bangalore (March 2020 – May 2021)
+  - Bachelor of Computer Application (BCA) in Computer Programming — Valluvar College of Science and Management (2009 – 2012)
+- **Certifications:**
+  - SDC16 - PG Diploma in Software Development (Full Stack) — IIIT Bangalore (March 2020)
+  - Google IT Automation with Python Specialization
+  - AWS Certified Cloud Practitioner
+  - Oracle Certified Web Component Developer (OCWCD)
+- **Languages:** English (Professional Working), Tamil (Native/Bilingual), Telugu (Elementary)
 - **Global Mobility & Travel:** High enthusiasm and 100% readiness for **frequent worldwide travel** (EMEA, Americas, APAC, UK, Europe) for client on-site workshops, pre-sales architecture, and deployment oversight.
 
 ### Input Job Description (JD):
