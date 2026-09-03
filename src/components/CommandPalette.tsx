@@ -66,6 +66,15 @@ export default function CommandPalette({
       keywords: ["intro", "hero", "about", "vetrivel", "experience", "home"]
     },
     {
+      id: "nav-storyboard",
+      title: "Interactive Graphic Novel Chronicles",
+      category: "Navigation",
+      icon: <Sparkles size={16} className="text-purple-500" />,
+      shortcut: "C",
+      action: () => { onNavigateSection("storyboard"); onClose(); },
+      keywords: ["comic", "storyboard", "chronicles", "nokia", "wing", "satellite", "ai", "episodes"]
+    },
+    {
       id: "nav-vision",
       title: "Why Solution Architect? (Career Evolution)",
       category: "Navigation",

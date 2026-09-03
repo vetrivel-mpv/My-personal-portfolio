@@ -30,7 +30,6 @@ import Milestones from "./components/Milestones";
 import SkillMap from "./components/SkillMap";
 import AIChatbot from "./components/AIChatbot";
 import ProjectGallery from "./components/ProjectGallery";
-import LearningRadar from "./components/LearningRadar";
 import BlogSection from "./components/BlogSection";
 import ContactForm from "./components/ContactForm";
 import AdminDashboard from "./components/AdminDashboard";
@@ -90,7 +89,6 @@ export default function App() {
         "milestones-analytics",
         "skills-analytics-section",
         "projects",
-        "learning-radar",
         "reflections",
         "contact"
       ];
@@ -330,10 +328,7 @@ export default function App() {
             {/* 6. Featured Projects & Case Studies */}
             <ProjectGallery projects={projects} />
 
-            {/* 7. AI & High-Yield Learning Radar */}
-            <LearningRadar />
-
-            {/* 8. Engineering Reflections & Technical Chronicles */}
+            {/* 7. Engineering Reflections & Technical Chronicles */}
             <BlogSection blogs={blogs} />
 
             {/* 9. Contact & Consultation Scheduler */}

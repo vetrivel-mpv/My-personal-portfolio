@@ -101,9 +101,8 @@ export default function Navbar({
     { href: "#blueprint-section", label: "Blueprint", id: "blueprint-section", num: "03" },
     { href: "#skills-analytics-section", label: "Skills", id: "skills-analytics-section", num: "04" },
     { href: "#projects", label: "Showcase", id: "projects", num: "05" },
-    { href: "#learning-radar", label: "AI & Growth", id: "learning-radar", num: "06" },
-    { href: "#reflections", label: "Memoirs", id: "reflections", num: "07" },
-    { href: "#contact", label: "Contact", id: "contact", num: "08" }
+    { href: "#reflections", label: "Memoirs", id: "reflections", num: "06" },
+    { href: "#contact", label: "Contact", id: "contact", num: "07" }
   ];
 
   return (
