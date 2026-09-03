@@ -70,7 +70,7 @@ const INITIAL_PROJECTS: Project[] = [
     icon: "🚀",
     techs: ["React 19", "TypeScript", "Java 21", "Spring Boot 3.3", "Kafka", "Docker", "TM Forum ODA"],
     impact: "Production-ready reference microservice architecture for rapid TMF API compliance testing.",
-    githubUrl: "https://github.com/vetrivelm",
+    githubUrl: "https://github.com/vetrivel-mpv",
     stars: 42,
     forks: 14,
     createdAt: "2024-07-01T10:00:00Z"
@@ -83,7 +83,7 @@ const INITIAL_PROJECTS: Project[] = [
     icon: "⚡",
     techs: ["Java 21", "Selenium Grid", "Docker Compose", "AWS EKS", "TestNG", "Spring WebFlux"],
     impact: "Containerized test cluster capable of running 50+ concurrent browser threads with 0 flakiness.",
-    githubUrl: "https://github.com/vetrivelm",
+    githubUrl: "https://github.com/vetrivel-mpv",
     stars: 68,
     forks: 21,
     createdAt: "2024-08-10T14:00:00Z"
@@ -96,7 +96,7 @@ const INITIAL_PROJECTS: Project[] = [
     icon: "💎",
     techs: ["Java 21", "Spring Boot 3", "Diameter Ro/Gy", "Oracle PL/SQL", "Kafka Streams", "Redis"],
     impact: "Simulates Tier-1 carrier charging pipelines with real-time balance reservations and wholesale settlement.",
-    githubUrl: "https://github.com/vetrivelm",
+    githubUrl: "https://github.com/vetrivel-mpv",
     stars: 35,
     forks: 9,
     createdAt: "2024-08-20T09:30:00Z"
@@ -109,7 +109,7 @@ const INITIAL_PROJECTS: Project[] = [
     icon: "✨",
     techs: ["React 19", "Gemini AI", "Express", "TypeScript", "Tailwind CSS", "Vite"],
     impact: "Generates tailored executive CVs with real-time alignment scoring and markdown/PDF compilation.",
-    githubUrl: "https://github.com/vetrivelm",
+    githubUrl: "https://github.com/vetrivel-mpv",
     stars: 54,
     forks: 18,
     createdAt: "2024-09-01T12:00:00Z"
