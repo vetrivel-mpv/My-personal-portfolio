@@ -97,9 +97,9 @@ export default function Navbar({
 
   const navLinks = [
     { href: "#home", label: "Story", id: "home", num: "01" },
-    { href: "#vision-section", label: "Evolution", id: "vision-section", num: "02" },
+    { href: "#storyboard", label: "Chronicles", id: "storyboard", num: "02" },
     { href: "#blueprint-section", label: "Blueprint", id: "blueprint-section", num: "03" },
-    { href: "#skills-analytics-section", label: "Skill Galaxy", id: "skills-analytics-section", num: "04" },
+    { href: "#skills-analytics-section", label: "Skills", id: "skills-analytics-section", num: "04" },
     { href: "#projects", label: "Showcase", id: "projects", num: "05" },
     { href: "#learning-radar", label: "AI & Growth", id: "learning-radar", num: "06" },
     { href: "#reflections", label: "Memoirs", id: "reflections", num: "07" },

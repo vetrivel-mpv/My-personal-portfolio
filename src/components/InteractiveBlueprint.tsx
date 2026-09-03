@@ -126,6 +126,53 @@ export default function InteractiveBlueprint() {
           </div>
         </div>
 
+        {/* Visual Architecture Studio Showcase Banner */}
+        <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-950">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+            {/* Left 7 cols: 16:9 Image */}
+            <div className="lg:col-span-7 relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+              <img 
+                src="/assets/vetrivel_comic_cloud_architect.jpg" 
+                alt="Vetrivel Muthusamy - Cloud Architecture Studio" 
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-950/90 hidden lg:block" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent lg:hidden" />
+              <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-xl bg-slate-950/80 backdrop-blur-md border border-sky-500/30 text-sky-300 text-xs font-mono font-bold flex items-center gap-1.5">
+                <Sparkles size={13} className="text-sky-400" />
+                <span>ACTIVE ARCHITECTURAL CANVAS</span>
+              </div>
+            </div>
+
+            {/* Right 5 cols: Live Architecture Specs */}
+            <div className="lg:col-span-5 p-6 sm:p-8 space-y-4 text-left">
+              <div className="space-y-1">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
+                  FULL-STACK CARRIER CLOUD ENGINEERING
+                </span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white font-sans">
+                  Java 21, Spring Boot & TM Forum ODA
+                </h3>
+              </div>
+              
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                Vetrivel sketches and deploys robust, production-grade microservice meshes handling <strong>15,000+ TPS</strong> with Kafka event streaming, Docker containers, and TM Forum SID compliant REST/OpenAPI models.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 pt-2 text-[11px] font-mono">
+                <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <span className="text-slate-400 block text-[9.5px]">THROUGHPUT RATE</span>
+                  <span className="text-emerald-400 font-bold">15,000+ TPS</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <span className="text-slate-400 block text-[9.5px]">LATENCY PROFILE</span>
+                  <span className="text-sky-400 font-bold">&lt; 15ms SUB-SECOND</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Blueprint Explorer Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           

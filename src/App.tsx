@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import ComicStoryboard from "./components/ComicStoryboard";
 import ResumeModal from "./components/ResumeModal";
 import InteractiveBlueprint from "./components/InteractiveBlueprint";
 import Milestones from "./components/Milestones";
@@ -84,6 +85,7 @@ export default function App() {
       const sections = [
         "home",
         "vision-section",
+        "storyboard",
         "blueprint-section",
         "milestones-analytics",
         "skills-analytics-section",
@@ -311,7 +313,10 @@ export default function App() {
               </div>
             </section>
 
-            {/* 3. Interactive Carrier Systems Blueprint */}
+            {/* 3. Interactive Graphic Novel Comic Chronicles */}
+            <ComicStoryboard />
+
+            {/* 4. Interactive Carrier Systems Blueprint */}
             <div id="blueprint-section">
               <InteractiveBlueprint />
             </div>

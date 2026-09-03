@@ -452,7 +452,53 @@ export default function LearningRadar() {
 
         {/* TAB 2: AI-Native Telco Architect Vision & Live Diagnostic Copilot */}
         {activeTab === "ai-vision" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start text-left">
+          <div className="space-y-8 text-left">
+            {/* Visual AI Laboratory Header Banner */}
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-950">
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+                <div className="lg:col-span-7 relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+                  <img
+                    src="/assets/vetrivel_comic_ai_laboratory.jpg"
+                    alt="Vetrivel Muthusamy - AI Telco Laboratory"
+                    className="w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-950/90 hidden lg:block" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent lg:hidden" />
+                  <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-xl bg-slate-950/80 backdrop-blur-md border border-purple-500/30 text-purple-300 text-xs font-mono font-bold flex items-center gap-1.5">
+                    <Sparkles size={13} className="text-purple-400" />
+                    <span>AUTONOMOUS AI RESEARCH LAB</span>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 p-6 sm:p-8 space-y-4 text-left">
+                  <div className="space-y-1">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-purple-400">
+                      AGENTIC WORKFLOWS & GEMINI LLMS
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-white font-sans">
+                      Autonomous Self-Healing Telecom Fabrics
+                    </h3>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                    Bridging <strong>11+ years of carrier domain custody</strong> with <strong>LangGraph multi-agent systems and Gemini AI models</strong> to automate network root cause analysis (RCA) and eliminate unbilled roaming leakage.
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-2 pt-2 text-[11px] font-mono">
+                    <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                      <span className="text-slate-400 block text-[9.5px]">MTTR REDUCTION</span>
+                      <span className="text-purple-400 font-bold">UP TO 60% FASTER</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                      <span className="text-slate-400 block text-[9.5px]">REVENUE LEAKAGE</span>
+                      <span className="text-emerald-400 font-bold">0.00% AUDITED</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             {/* Left 5 Cols: Strategic AI Vision Narrative */}
             <div className="lg:col-span-5 space-y-6">
@@ -566,7 +612,8 @@ export default function LearningRadar() {
             </div>
 
           </div>
-        )}
+        </div>
+      )}
 
         {/* TAB 3: Executive English & C-Level Phrasing Lab */}
         {activeTab === "english-lab" && (

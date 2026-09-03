@@ -80,6 +80,51 @@ export default function BlogSection({ blogs }: BlogSectionProps) {
           </div>
         </div>
 
+        {/* Visual Keynote Speaker Banner */}
+        <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-950">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+            <div className="lg:col-span-7 relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+              <img
+                src="/assets/vetrivel_comic_executive_stage.jpg"
+                alt="Vetrivel Muthusamy - Keynote Speaker & Solution Architect"
+                className="w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-950/90 hidden lg:block" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent lg:hidden" />
+              <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-xl bg-slate-950/80 backdrop-blur-md border border-indigo-500/30 text-indigo-300 text-xs font-mono font-bold flex items-center gap-1.5">
+                <Sparkles size={13} className="text-indigo-400" />
+                <span>KEYNOTE EXECUTIVE MEMOIRS</span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 p-6 sm:p-8 space-y-4 text-left">
+              <div className="space-y-1">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-400">
+                  GLOBAL DISCOVERY & ADVISORY
+                </span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white font-sans">
+                  The Architect&apos;s Field Logs
+                </h3>
+              </div>
+
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                Real-world engineering insights gathered across 11+ years leading Tier-1 carrier transformations, cutting manual testing by 50%, and preventing multi-million dollar billing leakages.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 pt-2 text-[11px] font-mono">
+                <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <span className="text-slate-400 block text-[9.5px]">CARRIER SCALE</span>
+                  <span className="text-indigo-400 font-bold">10M+ SUBS</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <span className="text-slate-400 block text-[9.5px]">GLOBAL MOBILITY</span>
+                  <span className="text-emerald-400 font-bold">100% READY ✈️</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Search Input Bar */}
         <div className="relative max-w-md select-none">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" size={14} />
