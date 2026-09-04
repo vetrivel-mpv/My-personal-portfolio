@@ -163,7 +163,7 @@ export default function Hero({
             
             {/* Status Badges Row */}
             <div className="flex flex-wrap items-center gap-2 select-none">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-sky-500/30 text-sky-700 dark:text-sky-300 text-xs font-mono font-bold shadow-xs">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-bold shadow-xs">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -171,19 +171,19 @@ export default function Hero({
                 <span>SYSTEM ONLINE</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-bold">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-500/10 border border-sky-300 dark:border-sky-500/30 text-sky-700 dark:text-sky-400 text-xs font-mono font-bold shadow-xs">
                 <Globe2 size={13} className="animate-pulse" />
-                <span>OPEN TO OVERSEAS: SINGAPORE 🇸🇬 • UK 🇬🇧 • USA 🇺🇸</span>
+                <span>OVERSEAS READY: SINGAPORE 🇸🇬 • UK 🇬🇧 • USA 🇺🇸</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-xs font-mono font-bold">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-300 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-xs font-mono font-bold shadow-xs">
                 <ShieldCheck size={13} />
                 <span>LED 15+ QA ENGINEERS (AGILE)</span>
               </span>
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-2">
+            <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1] font-sans">
                 Vetrivel <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 dark:from-sky-400 dark:via-blue-400 dark:to-indigo-400">
@@ -191,14 +191,16 @@ export default function Hero({
                 </span>
               </h1>
               
-              <div className="flex flex-wrap items-center gap-2.5 pt-1 text-sm sm:text-base font-mono">
-                <span className="px-2.5 py-0.5 rounded-lg bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-700 dark:text-sky-400 font-bold">
+              <div className="flex flex-wrap items-center gap-2 pt-1 text-xs sm:text-sm font-mono">
+                <span className="px-3 py-1 rounded-xl bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-700 dark:text-sky-400 font-bold shadow-xs">
                   Lead Telecom QA Consultant & UAT Delivery Manager
                 </span>
-                <span className="text-slate-400 dark:text-slate-600">•</span>
-                <span className="text-slate-700 dark:text-slate-300 font-medium">10+ Years Mobile OSS/BSS</span>
-                <span className="text-slate-400 dark:text-slate-600">•</span>
-                <span className="text-emerald-700 dark:text-emerald-400 font-medium">PG Software Development</span>
+                <span className="px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-medium shadow-xs">
+                  10+ Years Mobile OSS/BSS
+                </span>
+                <span className="px-3 py-1 rounded-xl bg-emerald-50 dark:bg-slate-900 border border-emerald-200 dark:border-slate-800 text-emerald-700 dark:text-emerald-400 font-medium shadow-xs">
+                  PG in Software Development
+                </span>
               </div>
             </div>
 
@@ -209,7 +211,7 @@ export default function Hero({
 
             {/* 3 Strategic Key Focus Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
-              <div className="p-3 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/90 hover:border-sky-500/50 transition-colors">
+              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 dark:border-slate-800/90 hover:border-sky-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 text-xs font-mono font-bold mb-1">
                   <Network size={14} />
                   <span>01 / 10M+ WING & BSS</span>
@@ -219,7 +221,7 @@ export default function Hero({
                 </p>
               </div>
 
-              <div className="p-3 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/90 hover:border-indigo-500/50 transition-colors">
+              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 dark:border-slate-800/90 hover:border-indigo-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-bold mb-1">
                   <Cpu size={14} />
                   <span>02 / 15+ QA LEADERSHIP</span>
@@ -229,7 +231,7 @@ export default function Hero({
                 </p>
               </div>
 
-              <div className="p-3 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/90 hover:border-emerald-500/50 transition-colors">
+              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 dark:border-slate-800/90 hover:border-emerald-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold mb-1">
                   <Globe2 size={14} />
                   <span>03 / OVERSEAS READY</span>

@@ -101,7 +101,7 @@ export default function Navbar({
     { href: "#storyboard", label: "Missions", id: "storyboard", num: "03" },
     { href: "#skills-analytics-section", label: "Telecom Matrix", id: "skills-analytics-section", num: "04" },
     { href: "#projects", label: "Carriers", id: "projects", num: "05" },
-    { href: "#milestones-analytics", label: "Track & Awards", id: "milestones-analytics", num: "06" },
+    { href: "#milestones-analytics", label: "Experience", id: "milestones-analytics", num: "06" },
     { href: "#contact", label: "Contact", id: "contact", num: "07" }
   ];
 
@@ -121,34 +121,34 @@ export default function Navbar({
         }`}
       >
         {/* LEFT: Brand Emblem with Mini Avatar & Status Beacon */}
-        <div className="flex items-center gap-3">
-          <a href="#home" className="flex items-center gap-3 group">
+        <div className="flex items-center gap-2.5 shrink-0">
+          <a href="#home" className="flex items-center gap-2.5 group">
             <div className="relative">
-              <div className="w-10 h-10 rounded-2xl overflow-hidden border border-sky-500/50 shadow-md group-hover:border-sky-400 transition-all duration-300 group-hover:scale-105">
+              <div className="w-9 h-9 rounded-2xl overflow-hidden border border-sky-500/50 shadow-md group-hover:border-sky-400 transition-all duration-300 group-hover:scale-105">
                 <img
                   src="/assets/vetrivel_comic_tech_architect.jpg"
                   alt="Vetrivel Muthusamy"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white dark:border-slate-950 animate-pulse" />
+              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white dark:border-slate-950 animate-pulse" />
             </div>
 
-            <div className="flex flex-col text-left">
-              <div className="flex items-center gap-1.5">
-                <span className="font-sans font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white leading-tight group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors">
+            <div className="flex flex-col text-left justify-center">
+              <div className="flex items-center gap-1.5 leading-tight">
+                <span className="font-sans font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors whitespace-nowrap">
                   Vetrivel<span className="text-sky-500 dark:text-sky-400">.M</span>
                 </span>
-                <span className="hidden xl:inline-block px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30">
-                  QA LEAD & ARCHITECT
+                <span className="hidden xl:inline-flex items-center px-2 py-0.2 rounded-full text-[9px] font-mono font-bold bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30 whitespace-nowrap">
+                  QA LEAD
                 </span>
               </div>
-              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 tracking-wider flex items-center gap-1">
-                <span>10+ YRS TELECOM BSS/OSS</span>
+              <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono text-slate-500 dark:text-slate-400 tracking-wider whitespace-nowrap">
+                <span>10+ YRS TELECOM</span>
                 <span className="text-slate-400 dark:text-slate-600">•</span>
-                <span className="text-emerald-600 dark:text-emerald-400 flex items-center gap-0.5">
-                  <Globe2 size={9} />
-                  <span>SG • UK • US READY</span>
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-0.5">
+                  <Globe2 size={10} />
+                  <span>SG • UK • US</span>
                 </span>
               </span>
             </div>
@@ -164,7 +164,7 @@ export default function Navbar({
               <a
                 key={link.id}
                 href={link.href}
-                className={`relative px-3.5 py-1.5 rounded-xl text-xs font-mono tracking-wider transition-all duration-200 flex items-center gap-1.5 ${
+                className={`relative px-3 py-1.5 rounded-xl text-xs font-mono tracking-wider transition-all duration-200 flex items-center gap-1.5 whitespace-nowrap ${
                   isActive
                     ? "bg-white dark:bg-gradient-to-r dark:from-sky-500/20 dark:via-blue-600/20 dark:to-indigo-500/20 text-sky-600 dark:text-sky-300 font-bold border border-slate-200 dark:border-sky-500/40 shadow-xs"
                     : isRecruiter
