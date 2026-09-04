@@ -96,12 +96,12 @@ export default function Navbar({
   }, [themeMode]);
 
   const navLinks = [
-    { href: "#home", label: "Story", id: "home", num: "01" },
-    { href: "#storyboard", label: "Chronicles", id: "storyboard", num: "02" },
-    { href: "#blueprint-section", label: "Blueprint", id: "blueprint-section", num: "03" },
-    { href: "#skills-analytics-section", label: "Skills", id: "skills-analytics-section", num: "04" },
-    { href: "#projects", label: "Showcase", id: "projects", num: "05" },
-    { href: "#reflections", label: "Memoirs", id: "reflections", num: "06" },
+    { href: "#home", label: "Overview", id: "home", num: "01" },
+    { href: "#recruiter-hub", label: "Recruiter Hub", id: "recruiter-hub", num: "02" },
+    { href: "#storyboard", label: "Missions", id: "storyboard", num: "03" },
+    { href: "#skills-analytics-section", label: "Telecom Matrix", id: "skills-analytics-section", num: "04" },
+    { href: "#projects", label: "Carriers", id: "projects", num: "05" },
+    { href: "#milestones-analytics", label: "Track & Awards", id: "milestones-analytics", num: "06" },
     { href: "#contact", label: "Contact", id: "contact", num: "07" }
   ];
 
@@ -140,15 +140,15 @@ export default function Navbar({
                   Vetrivel<span className="text-sky-500 dark:text-sky-400">.M</span>
                 </span>
                 <span className="hidden xl:inline-block px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30">
-                  LEAD ARCHITECT
+                  QA LEAD & ARCHITECT
                 </span>
               </div>
               <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 tracking-wider flex items-center gap-1">
-                <span>TELECOM OSS/BSS</span>
+                <span>10+ YRS TELECOM BSS/OSS</span>
                 <span className="text-slate-400 dark:text-slate-600">•</span>
                 <span className="text-emerald-600 dark:text-emerald-400 flex items-center gap-0.5">
-                  <Plane size={9} />
-                  <span>TRAVEL READY</span>
+                  <Globe2 size={9} />
+                  <span>SG • UK • US READY</span>
                 </span>
               </span>
             </div>
@@ -159,6 +159,7 @@ export default function Navbar({
         <nav className="hidden lg:flex items-center gap-1 p-1 rounded-2xl bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/90 shadow-inner select-none">
           {navLinks.map(link => {
             const isActive = activeSection === link.id;
+            const isRecruiter = link.id === "recruiter-hub";
             return (
               <a
                 key={link.id}
@@ -166,6 +167,8 @@ export default function Navbar({
                 className={`relative px-3.5 py-1.5 rounded-xl text-xs font-mono tracking-wider transition-all duration-200 flex items-center gap-1.5 ${
                   isActive
                     ? "bg-white dark:bg-gradient-to-r dark:from-sky-500/20 dark:via-blue-600/20 dark:to-indigo-500/20 text-sky-600 dark:text-sky-300 font-bold border border-slate-200 dark:border-sky-500/40 shadow-xs"
+                    : isRecruiter
+                    ? "text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 font-bold bg-sky-500/10 dark:bg-sky-500/15 border border-sky-500/30"
                     : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 font-medium"
                 }`}
               >

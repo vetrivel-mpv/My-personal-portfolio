@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import RecruiterHub from "./components/RecruiterHub";
 import ComicStoryboard from "./components/ComicStoryboard";
 import ResumeModal from "./components/ResumeModal";
 import InteractiveBlueprint from "./components/InteractiveBlueprint";
@@ -83,12 +84,12 @@ export default function App() {
       // Section spy
       const sections = [
         "home",
-        "vision-section",
+        "recruiter-hub",
         "storyboard",
-        "blueprint-section",
-        "milestones-analytics",
         "skills-analytics-section",
         "projects",
+        "milestones-analytics",
+        "blueprint-section",
         "reflections",
         "contact"
       ];
@@ -182,139 +183,31 @@ export default function App() {
             {/* 1. Hero Showcase with Live Pipeline Orchestrator */}
             <Hero
               onExploreProjects={() => scrollToSection("projects")}
-              onExploreVision={() => scrollToSection("vision-section")}
+              onExploreVision={() => scrollToSection("recruiter-hub")}
               onOpenResume={() => setIsResumeOpen(true)}
+              onNavigateSection={scrollToSection}
             />
 
-            {/* 2. Career Evolution & Architectural Mission */}
-            <section 
-              id="vision-section" 
-              className="py-24 px-4 md:px-8 xl:px-16 bg-slate-100/70 dark:bg-slate-900/60 border-t border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-500 relative"
-            >
-              <div className="max-w-6xl mx-auto space-y-16">
-                
-                {/* Section Header */}
-                <div className="space-y-4 text-left">
-                  <div className="flex items-center gap-2 select-none">
-                    <span className="h-[1px] w-6 bg-sky-500" />
-                    <span className="font-mono text-xs text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest">
-                      CAREER ALIGNMENT & ARCHITECTURAL EVOLUTION
-                    </span>
-                  </div>
-                  
-                  <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-                    <div className="space-y-2">
-                      <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight font-sans">
-                        Why Solution Architect?
-                      </h2>
-                      <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                        An elite Solution Architect does not simply assemble libraries; they dissect deep domain complexities, eradicate system drag, and craft fault-tolerant architectures with zero financial leakage.
-                      </p>
-                    </div>
-
-                    <div className="shrink-0 flex items-center gap-2 px-3.5 py-1.5 rounded-xl glass-pill text-xs font-mono text-slate-700 dark:text-slate-300">
-                      <Terminal size={13} className="text-sky-500 dark:text-sky-400" />
-                      <span>11+ YRS QUALITY CUSTODY</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 4-Stage Architectural Journey Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 select-none">
-                  
-                  {/* Phase 1 */}
-                  <div className="p-6 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 transition-all duration-300 space-y-4 relative group">
-                    <div className="flex items-center justify-between">
-                      <span className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sky-600 dark:text-sky-400 flex items-center justify-center font-mono font-bold text-xs">
-                        01
-                      </span>
-                      <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-bold">2014 – 2021</span>
-                    </div>
-                    <div>
-                      <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                        Phase 1: Domain Depth
-                      </h4>
-                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white mt-1 font-sans">
-                        Telecom OSS/BSS Explorer
-                      </h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans mt-2">
-                        Tracking protocol validations across network topology, mediation interfaces, SLA audit rules, and Carrier wholesale invoicing.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Phase 2 */}
-                  <div className="p-6 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 transition-all duration-300 space-y-4 relative group">
-                    <div className="flex items-center justify-between">
-                      <span className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-mono font-bold text-xs">
-                        02
-                      </span>
-                      <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-bold">FULL-STACK</span>
-                    </div>
-                    <div>
-                      <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-                        Phase 2: Microservices
-                      </h4>
-                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white mt-1 font-sans">
-                        Full-Stack Fluency
-                      </h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans mt-2">
-                        Java 21, Spring Boot 3.3, Docker containers, relational schemas, RESTful mediators, and React. Built to communicate natively with engineering squads.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Phase 3 */}
-                  <div className="p-6 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 transition-all duration-300 space-y-4 relative group">
-                    <div className="flex items-center justify-between">
-                      <span className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-mono font-bold text-xs">
-                        03
-                      </span>
-                      <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold">CAPGEMINI</span>
-                    </div>
-                    <div>
-                      <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                        Phase 3: QA Lead
-                      </h4>
-                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white mt-1 font-sans">
-                        Test Architect & Lead
-                      </h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans mt-2">
-                        Spearheaded high-performance Selenium frameworks across multi-million dollar client delivery channels, cutting regression duration by 40%.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Phase 4 */}
-                  <div className="p-6 rounded-2xl glass-card border border-sky-500/40 bg-gradient-to-b from-sky-500/10 to-transparent hover:border-sky-400 transition-all duration-300 space-y-4 relative group shadow-lg shadow-sky-500/10">
-                    <div className="flex items-center justify-between">
-                      <span className="w-8 h-8 rounded-xl bg-sky-500 text-white flex items-center justify-center font-mono font-extrabold text-xs shadow-md">
-                        ★
-                      </span>
-                      <span className="text-[10px] font-mono text-sky-600 dark:text-sky-400 font-bold uppercase tracking-wider">TARGET DESTINATION</span>
-                    </div>
-                    <div>
-                      <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                        Destination
-                      </h4>
-                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white mt-1 font-sans">
-                        Solution Architect
-                      </h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans mt-2">
-                        Synthesizing domain depth, full-stack microservices design, carrier integration custody, and global mobility to construct durable enterprise systems worldwide.
-                      </p>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </section>
+            {/* 2. Recruiter & Hiring Manager Hub */}
+            <RecruiterHub
+              onOpenResume={() => setIsResumeOpen(true)}
+              onExploreProjects={() => scrollToSection("projects")}
+              onNavigateSection={scrollToSection}
+            />
 
             {/* 3. Interactive Graphic Novel Comic Chronicles */}
             <ComicStoryboard />
 
-            {/* 4. Interactive Carrier Systems Blueprint */}
+            {/* 4. Telecom Skill Matrix & Live Protocol Simulator */}
+            <SkillMap />
+
+            {/* 5. Enterprise Carrier Engagements & Deep Dives */}
+            <ProjectGallery projects={projects} />
+
+            {/* 6. Career Milestones & Corporate Honors */}
+            <Milestones />
+
+            {/* 7. Interactive Carrier Systems Blueprint */}
             <div id="blueprint-section">
               <InteractiveBlueprint />
             </div>
