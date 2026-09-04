@@ -92,102 +92,102 @@ export default function SkillMap() {
   const skillDomains: DomainSection[] = [
     {
       id: "domain-telecom",
-      name: "Telecom BSS, Convergent Billing & Revenue Management",
-      shortName: "BSS & Singleview",
-      tagline: "CSG Singleview, OCS/CCS, Rating Engines, VZ450 Invoicing & Revenue Assurance",
+      name: "Telecom BSS, Nokia WING 10M+ & Charging Protocols",
+      shortName: "Telecom Domain & Protocols",
+      tagline: "Nokia WING 10M+, Diameter Gy/Ro, Real SIM 4G/5G NSA, MRR SFTP Invoicing & CSG Singleview",
       icon: <Network className="text-sky-500 dark:text-sky-400" size={18} />,
       color: "sky",
       orbitAngle: 0,
       overallRating: 99,
       yearsOfExp: 11,
-      description: "Comprehensive architectural custody over postpaid/prepaid rating state machines, wholesale carrier settlements, bill run cycles (BDT/VZ450), and multi-million dollar contract mediation.",
-      keyHighlight: "Audited complex billing and mediation integrations for Verizon Wholesale and Inmarsat, completely eliminating post-release contract discrepancies.",
-      operators: ["Verizon Wireless (US)", "Inmarsat Satellite", "Nokia 3Group (Austria, Ireland, Italy)"],
+      description: "Deep, battle-tested domain custody over Mobile OSS/BSS, Nokia WING 10M+ subscriber migration UAT, 3GPP Gy/Ro credit control, real-time balance reservations, MRR batch runs, and rating plan models (MRC/NRC).",
+      keyHighlight: "Led migration UAT for 10M+ subscribers on Nokia WING Digital Hub and audited complex rating for Verizon Wholesale and Inmarsat with zero revenue leakage.",
+      operators: ["Nokia WING 10M+ Hub", "AT&T Connection Manager", "Verizon Wireless", "Inmarsat Satellite"],
       skills: [
-        { id: "tel-1", name: "CSG Singleview Billing", proficiency: 98, years: 11, description: "Subscriber schemas, rating engines, billing accounts, invoicing & collections", standard: "Carrier BSS" },
-        { id: "tel-2", name: "OCS / CCS Convergent Charging", proficiency: 95, years: 10, description: "Online/Offline charging, Diameter (Ro/Gy/Rf/Gz), real-time balance reservations", standard: "3GPP 32.296" },
-        { id: "tel-3", name: "TM Forum ODA & Open APIs", proficiency: 96, years: 9, description: "TMF620 (Catalog), TMF622 (Ordering), TMF638 (Service Inv), TMF679 (Billing)", standard: "TM Forum SID/eTOM" },
-        { id: "tel-4", name: "Wholesale Carrier Settlement", proficiency: 97, years: 11, description: "Partner mediation, rate plan setups, Bill Data Tape (BDT), VZ450 invoicing", standard: "Carrier Invoicing" }
-      ]
-    },
-    {
-      id: "domain-oss",
-      name: "Telecom OSS, Network Topology & Protocol Mediation",
-      shortName: "OSS & Protocols",
-      tagline: "Southbound/Northbound Mediation, SNMP v2c/v3, NMS/EMS, GPON & 5G/4G Protocol Validation",
-      icon: <Radio className="text-emerald-500 dark:text-emerald-400" size={18} />,
-      color: "emerald",
-      orbitAngle: 72,
-      overallRating: 97,
-      yearsOfExp: 11,
-      description: "Synchronous and asynchronous telemetry collection across physical & logical network resources, FTTH/GPON topology mapping, and protocol analysis.",
-      keyHighlight: "Engineered SNMP trap-storm collector throttling scripts, preventing telemetry queue buffer overflows under simulated network disaster traps.",
-      operators: ["AT&T Enterprise", "British Telecom Retail", "Nokia Core 3Group"],
-      skills: [
-        { id: "oss-1", name: "SNMP & Telemetry Collectors", proficiency: 96, years: 11, description: "SNMP v1/v2c/v3 MIB parsing, trap throttling, event correlation, NetFlow", standard: "IETF RFC 3416" },
-        { id: "oss-2", name: "5G NR & 4G LTE Protocols", proficiency: 93, years: 9, description: "5G Core SBA HTTP/2, LTE L1/L2/L3 protocol verification, Network Slicing", standard: "3GPP Rel 15/16" },
-        { id: "oss-3", name: "GPON / FTTH Network Topology", proficiency: 94, years: 10, description: "Physical fiber distribution, NMS/EMS element management, GIS inventory sync", standard: "ITU-T G.984" },
-        { id: "oss-4", name: "Protocol Analyzers & Mocks", proficiency: 95, years: 11, description: "Wireshark packet decoding, Seagull Diameter traffic simulation, RESTCONF/NETCONF", standard: "Protocol Testing" }
-      ]
-    },
-    {
-      id: "domain-backend",
-      name: "Full-Stack Telco Microservices & Cloud Middleware",
-      shortName: "Full-Stack & Java 21",
-      tagline: "React 19, TypeScript, Java 21, Spring Boot 3.3, Kafka Streams, Docker & Kubernetes",
-      icon: <Database className="text-indigo-500 dark:text-indigo-400" size={18} />,
-      color: "indigo",
-      orbitAngle: 144,
-      overallRating: 95,
-      yearsOfExp: 8,
-      description: "High-concurrency full-stack pipelines and microservice backbones to process high-velocity subscriber events, asynchronous queue mediation, and reactive UI dashboards.",
-      keyHighlight: "Designed custom Spring Boot REST middleware pipelines for mediation streams, decreasing parsing latency by 35% during heavy concurrent bursts.",
-      operators: ["Capgemini Enterprise Cloud", "Inmarsat Platform", "BT Digital"],
-      skills: [
-        { id: "bak-1", name: "Java 21/17 Enterprise Core", proficiency: 95, years: 8, description: "Multithreading, Virtual Threads, concurrency locks, stream pipelines", standard: "Java SE 21" },
-        { id: "bak-2", name: "Spring Boot 3.3 & WebFlux", proficiency: 92, years: 7, description: "Reactive microservices, RESTful OpenAPIs, Spring Data JPA, resilient circuit breakers", standard: "Spring Cloud" },
-        { id: "bak-3", name: "React 19 & TypeScript", proficiency: 90, years: 6, description: "Modern React architecture, state management, real-time telemetry dashboards", standard: "Frontend" },
-        { id: "bak-4", name: "Kafka Streams & Event Mesh", proficiency: 88, years: 5, description: "High-throughput event pub/sub, partition balancing, asynchronous CDR mediation", standard: "Event Mesh" }
-      ]
-    },
-    {
-      id: "domain-automation",
-      name: "Telecom Test Architecture & Zero-Defect QA",
-      shortName: "Selenium Grid",
-      tagline: "Selenium Grid Concurrent Clusters, -40% Regression Cycles, Performance & SLA Testing",
-      icon: <Cpu className="text-rose-500 dark:text-rose-400" size={18} />,
-      color: "rose",
-      orbitAngle: 216,
-      overallRating: 99,
-      yearsOfExp: 11,
-      description: "Top-tier test checking architectures using parallel thread pools, scalable Selenium Docker clusters, and automated carrier regression boards.",
-      keyHighlight: "Overhauled legacy regression grids at Capgemini into a high-performance Selenium automation pool, reducing execution run-times by 40% with zero P1/P2 leaks.",
-      operators: ["Capgemini Quality Delivery Lines", "British Telecom UAT", "Cognizant SIT"],
-      skills: [
-        { id: "aut-1", name: "Selenium Grid Architecture", proficiency: 99, years: 11, description: "Dockerized scalable grid nodes, concurrent thread execution, robust POM design", standard: "Automation" },
-        { id: "aut-2", name: "Telecom E2E UAT Governance", proficiency: 97, years: 11, description: "Cross-system verification, bill run validation, partner rating audit frameworks", standard: "UAT / Release" },
-        { id: "aut-3", name: "Performance & Stress Testing", proficiency: 94, years: 9, description: "High-load transaction simulation, SNMP trap storm overloading, latency analysis", standard: "SRE / SLA" },
-        { id: "aut-4", name: "CI/CD Pipeline Automation", proficiency: 91, years: 6, description: "GitLab CI/CD automated regression gates on code merge, automated smoke suites", standard: "DevOps" }
+        { id: "tel-1", name: "Nokia WING & 10M+ Migration", proficiency: 99, years: 11, description: "10M+ subscriber migration UAT, digital hub provisioning, real SIM multi-country testing", standard: "Carrier Migration" },
+        { id: "tel-2", name: "Diameter Gy / Ro Charging (OCS)", proficiency: 98, years: 10, description: "Online/Offline credit control, real-time balance reservations, quota threshold events", standard: "3GPP 32.296" },
+        { id: "tel-3", name: "Real SIM 4G & 5G NSA Verification", proficiency: 97, years: 9, description: "Live SIM network testing for Data, SMS, and Voice channels from India testbeds", standard: "4G / 5G NSA" },
+        { id: "tel-4", name: "MRR & Automated SFTP Invoicing", proficiency: 98, years: 11, description: "Monthly Rating Report batch validation, MRC/NRC rate plans, automated PDF invoice push via SFTP", standard: "Billing & MRR" }
       ]
     },
     {
       id: "domain-leadership",
-      name: "Global Solution Consulting & Worldwide Mobility",
-      shortName: "Global Delivery",
-      tagline: "100% Worldwide Travel Readiness, Client Onsite Advisory, TM Forum Architecture Alignment",
-      icon: <Plane className="text-amber-500 dark:text-amber-400" size={18} />,
+      name: "Agile QA Leadership & Team Management (15+ Engineers)",
+      shortName: "Agile QA Leadership (15+ Team)",
+      tagline: "Managing 15+ QA Engineers, Sprint Governance, Carrier UAT Sign-Offs & Zero-Defect Releases",
+      icon: <ShieldCheck className="text-indigo-500 dark:text-indigo-400" size={18} />,
+      color: "indigo",
+      orbitAngle: 72,
+      overallRating: 98,
+      yearsOfExp: 10,
+      description: "Led, mentored, and governed high-velocity QA teams of 15+ test engineers in Agile/Scrum environments. Directed sprint planning, defect triage, risk-based testing, and carrier sign-off ceremonies.",
+      keyHighlight: "Managed 15+ QA engineers across multi-vendor telecom transformation programs, delivering 100% on-time sprint goals with zero post-production defect escapes.",
+      operators: ["Capgemini Agile Delivery", "British Telecom UAT Pods", "Cognizant Delivery Lines"],
+      skills: [
+        { id: "led-1", name: "15+ QA Team Mentorship & Leadership", proficiency: 98, years: 8, description: "Directing resource allocation, skill development, sprint ceremonies, and quality KPIs", standard: "Agile Delivery" },
+        { id: "led-2", name: "Agile / Scrum Sprint Governance", proficiency: 97, years: 9, description: "Backlog grooming, sprint planning, daily standups, defect triage, and velocity tracking", standard: "Scrum Alliance" },
+        { id: "led-3", name: "Carrier UAT Acceptance Governance", proficiency: 99, years: 11, description: "End-to-end acceptance test strategy, multi-carrier sign-offs, and go-live checklists", standard: "Carrier UAT" },
+        { id: "led-4", name: "Defect Lifecycle & Risk Management", proficiency: 96, years: 11, description: "P1-P4 defect severity governance in JIRA/Zephyr, root-cause analysis, zero leakage", standard: "Quality Assurance" }
+      ]
+    },
+    {
+      id: "domain-qa",
+      name: "Telecom Functional & Manual Test Architecture",
+      shortName: "Functional & E2E Testing",
+      tagline: "End-to-End Billing Audits, Data Migration Verification & -50% Effort Optimization",
+      icon: <FileCheck className="text-emerald-500 dark:text-emerald-400" size={18} />,
+      color: "emerald",
+      orbitAngle: 144,
+      overallRating: 99,
+      yearsOfExp: 11,
+      description: "Expertise in designing rigorous manual test matrices, cross-system data reconciliation, rating engine verification, and streamlining test cycles to cut manual effort in half.",
+      keyHighlight: "Cut manual testing efforts by 50% through modular test case design and reduced post-release production issues by 30% across Tier-1 carriers.",
+      operators: ["Nokia Core 3Group", "AT&T Enterprise", "British Telecom Retail"],
+      skills: [
+        { id: "qa-1", name: "End-to-End Billing & CDR Auditing", proficiency: 99, years: 11, description: "Mediation CDR verification, rating matrix validation, invoice balance reconciliation", standard: "BSS Verification" },
+        { id: "qa-2", name: "Subscriber Data Migration Testing", proficiency: 98, years: 11, description: "Pre- and post-migration data integrity checks, account attribute mapping, zero record loss", standard: "Data Migration" },
+        { id: "qa-3", name: "Rate Plan Matrix & Quota Testing", proficiency: 97, years: 10, description: "Individual, Flex, Fixed rate plan testing, MRC/NRC calculations, dynamic quota throttling", standard: "Rating Configs" },
+        { id: "qa-4", name: "Effort Optimization (-50% Cycles)", proficiency: 96, years: 9, description: "Eliminating redundant test steps, modular scenario reuse, high test coverage density", standard: "Process Optimization" }
+      ]
+    },
+    {
+      id: "domain-tech",
+      name: "Technical Literacy & Software Foundation (PG Software Dev)",
+      shortName: "Tech Literacy & Architecture",
+      tagline: "Postgraduate in Software Development, REST APIs, JSON/XML, TM Forum ODA & Microservices",
+      icon: <Database className="text-purple-500 dark:text-purple-400" size={18} />,
+      color: "purple",
+      orbitAngle: 216,
+      overallRating: 94,
+      yearsOfExp: 7,
+      description: "Armed with a Postgraduate Diploma in Software Development, brings high technical literacy to review API contracts, debug database tables, inspect payload structures, and bridge software developers with business teams.",
+      keyHighlight: "Leverages software engineering depth to conduct in-depth API contract verification (TM Forum Open APIs) and communicate seamlessly with development architects.",
+      operators: ["Capgemini Engineering", "TM Forum Open API Labs", "Inmarsat Platform"],
+      skills: [
+        { id: "tch-1", name: "PG Diploma in Software Development", proficiency: 96, years: 7, description: "Academic foundation in full-stack concepts, SDLC, OOP, data structures & cloud basics", standard: "PG Education" },
+        { id: "tch-2", name: "REST API & Postman Contract Testing", proficiency: 95, years: 8, description: "Validating Swagger/OpenAPI endpoints, JSON/XML payloads, HTTP status codes, headers", standard: "OpenAPI 3.0" },
+        { id: "tch-3", name: "TM Forum ODA Open APIs", proficiency: 94, years: 7, description: "TMF620 (Product Catalog), TMF622 (Product Ordering), SID 21.0 data model alignment", standard: "TM Forum ODA" },
+        { id: "tch-4", name: "Database Schema & SQL Auditing", proficiency: 93, years: 9, description: "Relational database queries, table joins, CDR ledger verification, data schema checks", standard: "SQL / RDBMS" }
+      ]
+    },
+    {
+      id: "domain-global",
+      name: "Overseas Delivery & Global Mobility",
+      shortName: "Global Overseas Mobility",
+      tagline: "Targeting Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸 • 100% Relocation & Travel Ready",
+      icon: <Globe2 className="text-amber-500 dark:text-amber-400" size={18} />,
       color: "amber",
       orbitAngle: 288,
-      overallRating: 96,
-      yearsOfExp: 8,
-      description: "Advising enterprise carriers and telecom operators worldwide, leading architecture discovery workshops, pre-sales technical proposals, and multi-vendor delivery.",
-      keyHighlight: "Awarded Capgemini Outstanding Contribution in Delivery Award and Customer Delight Award for exceptional carrier client satisfaction.",
-      operators: ["British Telecom", "Verizon", "Inmarsat", "AT&T", "Nokia 3Austria/Ireland/Italy"],
+      overallRating: 98,
+      yearsOfExp: 10,
+      description: "Dedicated to international telecom client delivery. Proven track record supporting multi-country operators across the UK, USA, Europe, and Asia-Pacific.",
+      keyHighlight: "Awarded Capgemini Customer Delight and Outstanding Delivery in ER&D awards for exceptional carrier client engagement.",
+      operators: ["British Telecom (UK)", "Verizon Wireless (US)", "Inmarsat Satellite", "Nokia 3Austria/Ireland/Italy"],
       skills: [
-        { id: "led-1", name: "Worldwide Client Mobility", proficiency: 100, years: 8, description: "100% ready for frequent international travel across EMEA, Americas, APAC & UK", standard: "Global Travel" },
-        { id: "led-2", name: "Pre-Sales & Solution Advisory", proficiency: 94, years: 8, description: "RFP/RFI technical responses, carrier migration blueprints, customer workshops", standard: "Pre-Sales" },
-        { id: "led-3", name: "Carrier SLA Assurance", proficiency: 95, years: 11, description: "Zero-defect release criteria, SLA audit governance, executive stakeholder reporting", standard: "SLA Governance" },
-        { id: "led-4", name: "Cross-Group Squad Leadership", proficiency: 94, years: 9, description: "Bridging OSS physical network engineers with BSS software and cloud squads", standard: "Leadership" }
+        { id: "glo-1", name: "Overseas Relocation & Mobility", proficiency: 100, years: 10, description: "Actively seeking and ready for opportunities in Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸, and Europe", standard: "Global Roles" },
+        { id: "glo-2", name: "Multi-Country Carrier Alignment", proficiency: 96, years: 10, description: "Coordinating cross-border testing across UK, US, European, and Indian engineering hubs", standard: "Cross-Border Delivery" },
+        { id: "glo-3", name: "Executive & Client Stakeholder Advisory", proficiency: 95, years: 11, description: "Clear presentation of quality metrics, risk heatmaps, and UAT readiness to leadership", standard: "Stakeholder Advisory" },
+        { id: "glo-4", name: "Customer Delight Record", proficiency: 98, years: 10, description: "Recognized with multiple corporate awards for excellence in telecom client satisfaction", standard: "Excellence Awards" }
       ]
     }
   ];

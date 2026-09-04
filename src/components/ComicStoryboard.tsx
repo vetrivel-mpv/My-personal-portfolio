@@ -42,21 +42,21 @@ export default function ComicStoryboard() {
       id: "chapter-1",
       number: "EPISODE 01",
       title: "The 10-Million Subscriber Migration",
-      subtitle: "Nokia WING Digital Hub & Convergent Ro/Gy Charging",
+      subtitle: "Nokia WING Digital Hub & Gy/Ro Charging UAT",
       imageSrc: "/assets/vetrivel_comic_noc_commander.jpg",
-      badge: "NOKIA WING 10M+",
+      badge: "NOKIA WING 10M+ MIGRATION",
       badgeColor: "bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30",
-      location: "India Remote Test Centers → Global IoT Grid",
+      location: "India Remote Test Centers → Global Carrier IoT Grid",
       telecomDomain: "Diameter Gy/Ro, 4G/5G NSA Real SIMs, Monthly Rating Report (MRR)",
       narrative: [
-        "When a global tier-1 carrier prepared to migrate over 10 Million active IoT and cellular subscribers to Nokia WING (Worldwide IoT Network Grid), zero margin for error existed.",
-        "Vetrivel led the end-to-end UAT and migration strategy, validating real-time Diameter Gy/Ro credit-control session triggers, dynamic quota threshold events, and Real SIMs across 4G LTE and 5G NSA networks for Voice, SMS, and high-throughput Data.",
-        "Engineered end-of-day Monthly Rating Report (MRR) batch executions, Individual/Flex/Fixed rate plan configurations (MRC & NRC charges), automated SFTP pipelines, and automated customer Invoice PDF generation with 100% zero revenue leakage."
+        "When a Tier-1 global carrier prepared to migrate over 10 Million active IoT and cellular subscribers to Nokia WING (Worldwide IoT Network Grid), there was zero margin for error.",
+        "Vetrivel spearheaded the end-to-end UAT and carrier migration strategy, validating real-time Diameter Gy/Ro credit-control session triggers, dynamic quota threshold events, and Real SIMs across 4G LTE and 5G NSA networks for Voice, SMS, and high-throughput Data.",
+        "Validated end-of-day Monthly Rating Report (MRR) batch executions, Individual/Flex/Fixed rate plan configurations (MRC & NRC charges), secure SFTP pipelines, and automated customer Invoice PDF generation with 100% zero revenue leakage."
       ],
       keyAchievements: [
-        "10,480,000+ active IoT/cellular subscriber SIM accounts migrated with 100% data fidelity.",
-        "Zero billing leakage across multi-country real SIM 4G/5G NSA sessions.",
-        "100% on-time MRR batch rating runs and automated customer invoice PDF delivery."
+        "10,480,000+ active IoT/cellular subscriber SIM accounts migrated with 100% data integrity.",
+        "Zero billing leakage across multi-country real SIM 4G/5G NSA network testing.",
+        "100% on-time MRR batch rating runs and automated customer invoice PDF delivery via SFTP."
       ],
       architectureStack: [
         "Nokia WING Digital Hub",
@@ -64,124 +64,122 @@ export default function ComicStoryboard() {
         "4G LTE & 5G NSA Real SIM Testbeds",
         "Monthly Rating Report (MRR)",
         "MRC / NRC Rating Configs",
-        "Automated SFTP Pipelines",
+        "Secure SFTP Pipelines",
         "Automated PDF Invoicing Engine"
       ]
     },
     {
       id: "chapter-2",
       number: "EPISODE 02",
-      title: "The Satellite Teleport & Enterprise IoT Telemetry",
-      subtitle: "Inmarsat Global Satellite & AT&T Connection Manager",
+      title: "Enterprise IoT Telemetry & Satellite Billing",
+      subtitle: "AT&T Connection Manager & Inmarsat Global Satellite",
       imageSrc: "/assets/vetrivel_comic_satellite_iot.jpg",
-      badge: "INMARSAT & AT&T IoT",
+      badge: "AT&T IoT & INMARSAT",
       badgeColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30",
-      location: "Earth Station Teleport → Fortune 500 Enterprise Fleets",
-      telecomDomain: "High-Frequency Telemetry Ingestion & Dynamic Quota Throttling",
+      location: "Enterprise IoT Device Fleet → Maritime Teleport",
+      telecomDomain: "Enterprise Device Usage Tracking, Quota Throttling & CSG Singleview",
       narrative: [
-        "Managing mission-critical connectivity over maritime satellite arrays and enterprise IoT device fleets requires sub-second visibility into raw data consumption.",
-        "On the Inmarsat BTP project (where he received the Star Performer Award) and AT&T Connection Manager, Vetrivel architected real-time telemetry ingestion pipelines that track live device SIM consumption across thousands of enterprise fleets.",
-        "Implemented proactive policy-based data quota throttling at 99% consumption thresholds, eliminating overage billing disputes and synchronizing usage directly into wholesale billing mediation ledgers."
+        "Managing mission-critical connectivity over enterprise IoT fleets and maritime satellite arrays requires rigorous verification of real-time telemetry and rating rules.",
+        "On the AT&T Connection Manager platform and Inmarsat BTP project (where he received the Star Performer Award), Vetrivel led verification of enterprise IoT device tracking platforms across thousands of active fleets.",
+        "Validated proactive policy-based data quota throttling at dynamic consumption thresholds, preventing overage billing disputes and ensuring accurate synchronization into wholesale billing mediation ledgers."
       ],
       keyAchievements: [
         "Honored with Cognizant Star Performer Award on Inmarsat BTP satellite billing transformation.",
-        "Sub-15ms telemetry ingestion across hundreds of thousands of active enterprise IoT devices on AT&T Connection Manager.",
+        "Verified telemetry tracking across hundreds of thousands of active enterprise IoT SIMs on AT&T Connection Manager.",
         "Eliminated billing overage disputes through automated threshold alerts and policy controls."
       ],
       architectureStack: [
-        "Inmarsat BTP Core",
-        "AT&T Connection Manager Core",
-        "Enterprise IoT SIM Telemetry APIs",
-        "Policy Throttling State Machines",
-        "Spring Boot 3.3 Reactive Microservices",
-        "Kafka Event Streaming",
+        "AT&T Connection Manager Platform",
+        "Inmarsat BTP Satellite Core",
+        "Enterprise IoT SIM Telemetry Verification",
+        "Policy Throttling & Quota Thresholds",
+        "Rate Plan Configs (Individual, Flex, Fixed)",
         "CSG Singleview BSS"
       ]
     },
     {
       id: "chapter-3",
       number: "EPISODE 03",
-      title: "Full-Stack Microservices & ODA Architecture",
-      subtitle: "Java 21 Virtual Threads, Spring Boot 3.3 & TM Forum Open APIs",
+      title: "Tech-Literate QA: Bridging Code & Carrier Business",
+      subtitle: "Postgraduate in Software Development & TM Forum ODA",
       imageSrc: "/assets/vetrivel_comic_cloud_architect.jpg",
-      badge: "FULL-STACK & TM FORUM ODA",
+      badge: "PG SOFTWARE DEV & TECH LITERACY",
       badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30",
-      location: "High-Rise Cloud Lab → Global Carrier Cloud",
-      telecomDomain: "TM Forum ODA (TMF620, TMF622, TMF638, TMF679), Kafka & Docker",
+      location: "Engineering Center → Cross-Functional Delivery",
+      telecomDomain: "TM Forum ODA (TMF620, TMF622), RESTful APIs, Swagger & Microservices",
       narrative: [
-        "An elite Solution Architect speaks both carrier protocol standards and modern software engineering fluently.",
-        "Vetrivel built production-ready open-source reference implementations of TM Forum Open Digital Architecture (ODA) gateways in React 19, Java 21, and Spring Boot 3.3.",
-        "Leveraging Java 21 Virtual Threads and reactive Spring WebFlux, his reference microservices process over 15,000 TPS with Kafka event streaming, Docker Compose orchestration, and automated OpenAPI 3.0 Swagger compliance testing."
+        "The most impactful QA leaders possess deep software literacy to collaborate directly with developers and system architects.",
+        "Armed with a Postgraduate Diploma in Software Development, Vetrivel understands modern full-stack architectures, Spring Boot microservices, REST APIs, JSON/XML schemas, and event-driven pipelines.",
+        "This academic software engineering foundation allows him to review API contracts, debug network payload issues, analyze database structures, and design foolproof test strategies that software developers respect and trust."
       ],
       keyAchievements: [
-        "Engineered open-source `telco-oda-api-gateway` and `convergent-billing-mediation-engine`.",
-        "Validated against TM Forum SID 21.0 conformance suites with 100% pass score.",
-        "Processes 15,000+ simulated order events per second under sub-15ms latency."
+        "Completed Postgraduate Diploma in Software Development with distinction in architecture & data models.",
+        "Spearheaded API contract validation across TM Forum Open APIs (TMF620 Product Catalog, TMF622 Product Ordering).",
+        "Bridges technical engineering squads with business and carrier operations seamlessly."
       ],
       architectureStack: [
-        "React 19 & TypeScript",
-        "Java 21 (Virtual Threads)",
-        "Spring Boot 3.3 WebFlux",
-        "Apache Kafka Streams",
-        "Docker & Kubernetes (AWS EKS)",
-        "TM Forum TMF620 / TMF622 / TMF679"
+        "PG in Software Development",
+        "TM Forum ODA & Open APIs (TMF620/TMF622)",
+        "REST API Contract Testing (Postman/Swagger)",
+        "Microservices Architecture Comprehension",
+        "SQL Database Schema Auditing",
+        "Event-Driven Architecture (Kafka Concepts)"
       ]
     },
     {
       id: "chapter-4",
       number: "EPISODE 04",
-      title: "The Autonomous AI Telco Diagnostic Lab",
-      subtitle: "Agentic AI, LangGraph Anomaly Detectors & Gemini LLMs",
+      title: "Agile QA Leadership & -50% Testing Effort",
+      subtitle: "Managing 15+ QA Engineers with Zero Defect Leakage",
       imageSrc: "/assets/vetrivel_comic_ai_laboratory.jpg",
-      badge: "AI-NATIVE ARCHITECTURE",
+      badge: "MANAGED 15+ QA ENGINEERS",
       badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30",
-      location: "Autonomous AI Research & Operations Center",
-      telecomDomain: "Autonomous Networks (AN Level 4), Self-Healing Mediation & Root Cause Analysis",
+      location: "Agile Delivery Pods → Carrier Production Sign-Off",
+      telecomDomain: "Agile/Scrum QA Governance, Sprint Planning, Defect Triage & UAT Sign-Offs",
       narrative: [
-        "Generic AI developers lack understanding of Diameter Gy/Ro charging triggers, Singleview state machines, and SNMP trap storms. Vetrivel bridges 11+ years of carrier domain custody with Agentic AI.",
-        "Directing multi-agent LangGraph workflows and Gemini AI models, his systems ingest real-time telemetry anomalies (e.g. roaming link buffer congestions) and execute autonomous Root Cause Analysis (RCA).",
-        "The AI copilot dynamically triggers microservice auto-scaling, reroutes traffic to standby CCS charging nodes, and preserves carrier SLA uptime with zero unbilled revenue leakage."
+        "Leading high-performing quality assurance requires strong mentorship, disciplined Agile processes, and strategic test planning.",
+        "Vetrivel managed cross-functional QA teams of over 15 engineers, directing sprint ceremonies, test case design, defect triage meetings, and carrier UAT governance.",
+        "By structuring modular test architectures and eliminating redundant test workflows, his leadership cut manual testing cycle times by 50% and achieved a flawless zero P1/P2 defect escape record."
       ],
       keyAchievements: [
-        "Automates Mean-Time-To-Repair (MTTR) by up to 60% via autonomous AI diagnostic workflows.",
-        "Reconciles unbilled CDR discrepancies against rating ledgers in milliseconds.",
-        "Designed real-time interactive AI Copilot simulator directly integrated into executive portfolio."
+        "Managed and mentored high-performing QA teams of 15+ engineers under Agile/Scrum.",
+        "Cut manual testing effort in half (-50%) and reduced post-release production issues by 30%.",
+        "Achieved 100% on-time sprint deliveries across complex multi-vendor telecom releases."
       ],
       architectureStack: [
-        "Gemini 2.5 Flash LLMs",
-        "LangChain & LangGraph Multi-Agent Workflows",
-        "AIOps Telco Telemetry Anomaly Detectors",
-        "Vector Embeddings & Semantic Search",
-        "Reactive Circuit-Breakers",
-        "Self-Healing Network Intent (IBN)"
+        "Agile / Scrum QA Delivery Management",
+        "Sprint Planning & Velocity Tracking",
+        "Defect Lifecycle Management (JIRA / Zephyr)",
+        "Carrier UAT Acceptance Sign-Offs",
+        "Risk-Based Testing & Test Coverage Metrics"
       ]
     },
     {
       id: "chapter-5",
       number: "EPISODE 05",
-      title: "Global Mobility & C-Level Keynote Leadership",
-      subtitle: "Worldwide On-Site Architecture & Enterprise Delivery",
+      title: "Overseas Opportunities & Global Client Delivery",
+      subtitle: "Targeting Singapore 🇸🇬 • United Kingdom 🇬🇧 • United States 🇺🇸",
       imageSrc: "/assets/vetrivel_comic_executive_stage.jpg",
-      badge: "100% WORLDWIDE TRAVEL READY",
+      badge: "TARGETING OVERSEAS (SG • UK • US)",
       badgeColor: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30",
-      location: "EMEA • Americas • APAC • United Kingdom • Europe",
-      telecomDomain: "Executive Advisory, Pre-Sales Architecture & Zero-Defect Delivery",
+      location: "Singapore • London • Dallas • Worldwide Carrier Hubs",
+      telecomDomain: "Global Carrier Delivery, Client Advisory, Multi-Vendor Alignment",
       narrative: [
-        "From presenting architectural roadmaps on international keynote stages to conducting intensive on-site discovery workshops across London, Dallas, and Europe, Vetrivel thrives on global mobility.",
-        "Recipient of Capgemini Customer Delight and Outstanding Contribution in Delivery awards, he cut manual testing efforts in half (-50%) and slashed regression run times by 40% using multithreaded Selenium Grid frameworks.",
-        "100% enthusiastic and available for frequent international travel to champion large-scale carrier transformations, lead cross-functional squads, and ensure zero-leakage enterprise success."
+        "With a proven track record delivering Tier-1 carrier transformations across British Telecom (UK), Verizon (US), Inmarsat, AT&T, and Nokia (3Austria, 3Ireland, 3Italy), Vetrivel is ready for international roles.",
+        "Recipient of the Capgemini Customer Delight Award and Outstanding Contribution in Delivery Award, he brings a mature, culturally versatile consulting approach.",
+        "Actively exploring international opportunities in Singapore, the United Kingdom, and the United States, offering deep telecom domain mastery and Agile QA leadership."
       ],
       keyAchievements: [
-        "Honored with Capgemini Customer Delight Award (Q3 2022) & Outstanding Delivery in ER&D (Q2 2022).",
-        "Cut manual testing effort by 50% and reduced post-release issues by 30%.",
-        "100% Enthusiastic and prepared for frequent international deployments worldwide."
+        "Honored with Capgemini Customer Delight Award & Outstanding Delivery in ER&D.",
+        "Track record delivering for global Tier-1 clients: British Telecom (UK), Verizon (US), Inmarsat, Nokia 3Group.",
+        "Actively available for overseas relocation & international deployments (Singapore, UK, USA)."
       ],
       architectureStack: [
-        "Capgemini Lead Delivery Method",
-        "Executive C-Level Phrasing & Advisory",
-        "Selenium Grid Distributed Docker Cluster",
-        "Multi-Carrier Harmonization (BT, VZ, AT&T, Nokia)",
-        "Frequent International Travel Readiness"
+        "Global Telecom Carrier Delivery",
+        "Executive & Client Stakeholder Alignment",
+        "Multi-Vendor Release Management",
+        "Cross-Border QA Coordination",
+        "Targeting Singapore, UK, USA"
       ]
     }
   ];

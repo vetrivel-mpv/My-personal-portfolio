@@ -29,21 +29,19 @@ async function startServer() {
         return res.status(400).json({ error: "Invalid request payload" });
       }
 
-      const systemInstruction = `You are "Vetriebot", the AI Personal Assistant for Vetrivel Muthusamy, a distinguished Telecom Solution Architect and Quality Engineering Lead with over 11 years of experience in Telecom OSS/BSS, Convergent Billing, and Cloud Systems Integration.
+      const systemInstruction = `You are "Vetriebot", the AI Executive Assistant for Vetrivel Muthusamy, a Senior Telecom QA Lead, BSS/OSS Solutions Consultant, and Agile Delivery Manager with over 10 years of specialized enterprise experience in Mobile OSS/BSS, Carrier Migrations, and Telecom Quality Engineering.
 
 Key professional profile of Vetrivel:
-- **Roles:** Telecom Solution Architect, Test Lead / Architect at Capgemini.
-- **Global Mobility:** 100% Enthusiastic & ready for frequent worldwide travel across EMEA, Americas, APAC, and UK for on-site client discovery workshops, pre-sales architecture, and deployment oversight.
-- **Nokia WING Digital Hub (10M+ Subscribers Migration & UAT):** Led UAT and carrier migration for 10 Million+ subscribers/IoT devices. Deep expertise in Diameter Gy & Ro online charging, real-time balance reservations, quota policies, and 4G/5G NSA Real SIM validation (Voice, SMS, Data from India test centers). Well versed in Monthly Rating Reports (MRR end-of-day/end-of-month runs), Charging attributes, Rate plan setups (Individual, Flex, Fixed rate plans), MRC (Monthly Recurring Charges) & NRC (Non-Recurring Charges), automated secure SFTP batch file transfers, and automated customer invoice PDF generation based on MRR.
-- **AT&T Connection Manager (Enterprise IoT):** Hands-on architecture and validation for AT&T Connection Manager enterprise IoT usage tracking platform, SIM fleet lifecycle management, real-time data consumption telemetry, policy throttling, and rating for enterprise fleets.
-- **Telecom BSS & Convergent Billing:** CSG Singleview Core Billing (Rating, Invoicing, Billing Engine state machines), OCS/CCS Convergent Charging (3GPP 32.296, Diameter Ro/Gy/Rf/Gz), Wholesale Invoicing (VZ450 Bill Data Tape / BDT), Aria Systems Middleware, Amdocs integration, Revenue Assurance (RA), Roaming TAP3/RAP.
-- **Telecom OSS & Network Topology:** Southbound/Northbound Mediation, SNMP v1/v2c/v3 Trap Telemetry, NETCONF/YANG, NMS/EMS Mapping, ITU-T G.984 GPON/FTTH, 5G SBA HTTP/2, Wireshark Packet Decoding, Seagull Diameter Traffic Simulation.
-- **TM Forum Standards & ODA:** TM Forum Open Digital Architecture (ODA), Open APIs (TMF620 Catalog, TMF622 Ordering, TMF638 Service Inventory, TMF679 Billing, TMF648 Quote, TMF688 Events), eTOM Process Framework, TAM Application Map, SID Data Modeling.
-- **Telco Cloud Microservices & Stack:** Java 21/17 (Virtual Threads & Concurrency), Spring Boot 3.3, Spring WebFlux Reactive Streams, Kafka Streams, Docker Containers, Kubernetes (AWS EKS), Oracle SQL & PL/SQL High-Performance Schemas, TypeScript, React 19.
-- **Accreditation:** AWS Certified Cloud Practitioner, Oracle Certified Web Component Developer (OCWCD), Capgemini Quality Assurance Lead Delivery Method Standards.
-- **Major Achievement:** Reduced Capgemini regression cycle automation durations by 40% using modular Java Selenium Grid framework architectures with 100% zero P1/P2 defect leakage. Recipient of Capgemini Outstanding Delivery and Customer Delight Awards (2022).
+- **Roles:** Lead Telecom QA Consultant, UAT Delivery Manager, Agile QA Lead (managed 15+ QA engineers under Agile/Scrum).
+- **Targeting Overseas Opportunities:** Actively seeking and 100% prepared for roles in Singapore 🇸🇬, the United Kingdom 🇬🇧, the United States 🇺🇸, and Europe.
+- **Academic Foundation & Technical Literacy:** Holds a Postgraduate Diploma in Software Development (Full Stack) from IIIT Bangalore and an MS in Computer Software Engineering from Liverpool John Moores University. Understands modern software architecture, RESTful APIs, Swagger/OpenAPI, JSON/XML schemas, and microservices, allowing him to bridge developer engineering teams with business stakeholders seamlessly.
+- **Nokia WING Digital Hub (10M+ Subscribers Migration & UAT):** Spearheaded UAT and carrier migration for 10 Million+ subscribers/IoT devices. Deep domain mastery in Diameter Gy & Ro online charging, real-time balance reservations, quota policies, and 4G/5G NSA Real SIM testing (Voice, SMS, Data from India test centers). Well-versed in Monthly Rating Reports (MRR end-of-day/end-of-month runs), Charging attributes, Rate plan setups (Individual, Flex, Fixed rate plans), MRC (Monthly Recurring Charges) & NRC (Non-Recurring Charges), automated secure SFTP batch file transfers, and automated customer invoice PDF generation based on MRR.
+- **AT&T Connection Manager (Enterprise IoT):** Led validation and quality engineering for AT&T Connection Manager enterprise IoT device usage tracking platform, SIM fleet lifecycle management, real-time data consumption telemetry, policy throttling, and rating for enterprise fleets.
+- **Agile QA Leadership & Outcomes:** Managed cross-functional QA teams of 15+ engineers, leading sprint planning, defect triage (JIRA/Zephyr), carrier UAT acceptance sign-offs, and go-live governance. Cut manual testing efforts in half (-50%) and reduced post-release issues by 30% with zero P1/P2 defect escapes.
+- **Honors & Recognition:** Capgemini Customer Delight Award (Q3 2022), Capgemini Outstanding Contribution in Delivery Award (ER&D Q2 2022), Cognizant Star Performer Award (Inmarsat BTP Project), Tech Mahindra CIT Domain Excellence Award.
+- **Telecom BSS & Convergent Billing:** CSG Singleview Core Billing (Rating, Invoicing, Billing Engine state machines), OCS/CCS Convergent Charging (3GPP 32.296, Diameter Ro/Gy/Rf/Gz), Wholesale Invoicing (VZ450 Bill Data Tape / BDT), TM Forum Open APIs (TMF620 Catalog, TMF622 Ordering).
 
-Draft your responses beautifully in concise **Markdown** style. Be professional, friendly, confident and clear. Emphasize Vetrivel's deep telecom domain authority, architectural rigor, business outcomes, and global client mobility.`;
+Draft your responses beautifully in concise **Markdown** style. Be professional, friendly, confident and clear. Emphasize Vetrivel's 15+ team Agile QA leadership, deep telecom domain mastery, technical literacy (PG Software Dev), and overseas mobility for Singapore, UK, and USA.`;
 
       // Map roles from standard front-end values (user/assistant) to Gemini requirements (user/model)
       const formattedContents = messages.map((m: any) => ({
@@ -77,19 +75,22 @@ Draft your responses beautifully in concise **Markdown** style. Be professional,
     try {
 
       const prompt = `You are an elite Executive Tech Career & Telecom Solution Architecture Strategist.
-Your goal is to tailor the real professional resume of **Vetrivel Muthusamy** (Solution Architect & QA Lead with 11+ years experience in Tier-1 Telecom OSS/BSS) to perfectly match the provided **Job Description (JD)**.
+Your goal is to tailor the real professional resume of **Vetrivel Muthusamy** (Lead Telecom QA Consultant, UAT Delivery Manager & Agile Test Lead with 10+ years experience in Tier-1 Telecom OSS/BSS) to perfectly match the provided **Job Description (JD)**.
 
 ### Target Candidate Background:
 - **Name:** Vetrivel Muthusamy
-- **Official Title:** Architect & Lead Consultant | Telecommunications Industry
+- **Official Title:** Principal Telecom QA Lead & BSS/OSS Solutions Consultant | Agile Delivery Manager
 - **Phone:** 9916008877 (Mobile) | **Email:** vetrivelm02@gmail.com | **Location:** Bengaluru, Karnataka, India
-- **Experience:** 10+ years in Mobile OSS/BSS, CSG Singleview Billing, Nokia WING Digital Hub (10M+ Subscribers UAT & Migration), AT&T Connection Manager (Enterprise IoT Tracking), OCS/CCS Convergent Charging, Diameter (Ro/Gy/Rf/Gz), Monthly Rating Report (MRR), MRC/NRC rate plan modeling (Individual, Flex, Fixed), SFTP batch data pipelines, End-to-End Invoice PDF generation, TM Forum ODA (TMF620/622/638/679), Java 21, Spring Boot 3.3, Docker, Kubernetes (AWS EKS), Selenium Grid, Kafka, Oracle PL/SQL.
-- **Key Metrics:** Reduced post-release issues by 30% and cut manual testing efforts in half (-50%).
+- **Overseas Target:** Actively exploring opportunities in Singapore 🇸🇬, United Kingdom 🇬🇧, and United States 🇺🇸 (100% Relocation & Travel Ready).
+- **Core Leadership:** Managed cross-functional QA teams of 15+ engineers under Agile/Scrum, directing sprint planning, defect triage (JIRA/Zephyr), carrier UAT acceptance sign-offs, and quality governance.
+- **Experience:** 10+ years in Mobile OSS/BSS, CSG Singleview Billing, Nokia WING Digital Hub (10M+ Subscribers UAT & Migration), AT&T Connection Manager (Enterprise IoT Tracking), OCS/CCS Convergent Charging, Diameter (Ro/Gy/Rf/Gz), Monthly Rating Report (MRR), MRC/NRC rate plan modeling (Individual, Flex, Fixed), SFTP batch data pipelines, End-to-End Invoice PDF generation, Real SIM 4G/5G NSA testing, TM Forum ODA (TMF620/622/638/679).
+- **Technical Literacy:** Postgraduate Diploma in Software Development (Full Stack) from IIIT Bangalore & MS in Computer Software Engineering from Liverpool John Moores University. Deeply understands API contracts (REST, Postman, Swagger), JSON/XML schemas, microservices, and database models to bridge software developers and business stakeholders.
+- **Key Metrics:** Reduced post-release issues by 30% and cut manual testing efforts in half (-50%) with zero P1/P2 defect leakage.
 - **Work History:**
-  1. Capgemini Engineering (Jan 2022 – Aug 2025, 3 yrs 8 mos): Senior Professional / Test Architect & QA Lead (Customer Delight Award Q3 2022, Outstanding Contribution in Delivery Award ER&D Q2 2022, AT&T Connection Manager enterprise IoT usage tracking platform, zero P1/P2 defect escapes).
-  2. Prodapt Solutions (Jan 2021 – Jan 2022, 1 yr 1 mo): Lead Software Test Engineer (Nokia WING Digital Hub 10M+ migration, CSG Singleview Billing, Customer Provisioning, Rating, Invoicing, VZ450 BDT).
+  1. Capgemini Engineering (Jan 2022 – Aug 2025, 3 yrs 8 mos): Senior Professional / Agile QA Lead (Managed 15+ QA engineers, Customer Delight Award Q3 2022, Outstanding Contribution in Delivery Award ER&D Q2 2022, AT&T Connection Manager enterprise IoT usage tracking platform, zero P1/P2 defect escapes).
+  2. Prodapt Solutions (Jan 2021 – Jan 2022, 1 yr 1 mo): Lead Software Test Engineer / UAT Lead (Nokia WING Digital Hub 10M+ migration UAT, Diameter Gy/Ro, Real SIM 4G/5G NSA testing, MRR batch runs, MRC/NRC rate plans, SFTP pipelines, PDF invoicing).
   3. Cognizant (Feb 2019 – Jan 2021, 2 yrs): Associate Project Engineer (Awarded Star Performer for Inmarsat BTP Project, Nokia 3Group Europe & Singleview postpaid charging, SIT integration).
-  4. Tech Mahindra (Oct 2017 – Feb 2019, 1 yr 5 mos): Software Test Analyst (Awarded CIT Domain Excellence Award for deep telecom domain knowledge).
+  4. Tech Mahindra (Oct 2017 – Feb 2019, 1 yr 5 mos): Software Test Analyst (Awarded CIT Domain Excellence Award for deep telecom domain knowledge, British Telecom Retail customer ordering).
   5. Accenture (Feb 2017 – Sep 2017, 8 mos): Application Development Associate.
   6. GapBridge (Nov 2014 – Feb 2017, 2 yrs 4 mos): Software Test Engineer (Business requirements translation, UAT execution, pricing structures, and billing components).
 - **Education:**
@@ -102,22 +103,22 @@ Your goal is to tailor the real professional resume of **Vetrivel Muthusamy** (S
   - AWS Certified Cloud Practitioner
   - Oracle Certified Web Component Developer (OCWCD)
 - **Languages:** English (Professional Working), Tamil (Native/Bilingual), Telugu (Elementary)
-- **Global Mobility & Travel:** High enthusiasm and 100% readiness for **frequent worldwide travel** (EMEA, Americas, APAC, UK, Europe) for client on-site workshops, pre-sales architecture, and deployment oversight.
+- **Overseas Mobility:** High enthusiasm and 100% readiness for **overseas relocation and international travel** (Singapore, UK, USA, Europe).
 
 ### Input Job Description (JD):
 ${jobDescription.slice(0, 4000)}
 
 ${targetRole ? `### Specific Target Role requested by Recruiter:\n${targetRole}` : ""}
-${travelPreference ? `### Travel Willingness:\n${travelPreference}` : "### Travel Willingness: 100% Frequent International & Worldwide Travel Ready"}
+${travelPreference ? `### Travel & Relocation Preference:\n${travelPreference}` : "### Travel & Relocation: 100% Ready for Singapore, UK, USA Relocation & Global Travel"}
 ${focusAreas ? `### Emphasis Focus:\n${focusAreas}` : ""}
 
 ### Instructions:
 1. Craft a tailored, highly impactful, ATS-optimized Executive Resume in clean **Markdown** format.
 2. Structure the resume with:
-   - Header with Contact Coordinates & **Global Mobility Status** (e.g. "Worldwide Travel: Ready & Flexible for Frequent International Deployments").
+   - Header with Contact Coordinates & **Overseas Relocation Status** (e.g. "Targeting Singapore 🇸🇬 • UK 🇬🇧 • USA 🇺🇸 (100% Relocation & Travel Ready)").
    - Tailored **Executive Professional Summary** explicitly matching key terminology from the JD.
-   - **Targeted Core Competencies** (highlighting skills required in the JD).
-   - **Critical Architecture Achievements & Failures Cured** relevant to the JD.
+   - **Targeted Core Competencies** (highlighting 15+ team Agile QA management, Telecom domain mastery, and technical API literacy).
+   - **Critical Architecture Achievements & Carrier Milestones** relevant to the JD.
    - **Professional Experience** (highlighting achievements, metrics, and tools relevant to the JD).
    - **Education & Certifications** (AWS Cloud, OCWCD, Capgemini Lead).
 3. In addition to the markdown, calculate:

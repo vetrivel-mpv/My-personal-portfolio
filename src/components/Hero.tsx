@@ -172,13 +172,13 @@ export default function Hero({
               </span>
 
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-bold">
-                <Plane size={13} className="animate-pulse" />
-                <span>100% WORLDWIDE TRAVEL READY</span>
+                <Globe2 size={13} className="animate-pulse" />
+                <span>OPEN TO OVERSEAS: SINGAPORE 🇸🇬 • UK 🇬🇧 • USA 🇺🇸</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-mono font-bold">
-                <Award size={13} />
-                <span>CUSTOMER DELIGHT AWARDEE</span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-xs font-mono font-bold">
+                <ShieldCheck size={13} />
+                <span>LED 15+ QA ENGINEERS (AGILE)</span>
               </span>
             </div>
 
@@ -193,18 +193,18 @@ export default function Hero({
               
               <div className="flex flex-wrap items-center gap-2.5 pt-1 text-sm sm:text-base font-mono">
                 <span className="px-2.5 py-0.5 rounded-lg bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-700 dark:text-sky-400 font-bold">
-                  Architect & Lead Consultant
+                  Lead Telecom QA Consultant & UAT Delivery Manager
                 </span>
                 <span className="text-slate-400 dark:text-slate-600">•</span>
-                <span className="text-slate-700 dark:text-slate-300 font-medium">Telecommunications Industry</span>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">10+ Years Mobile OSS/BSS</span>
                 <span className="text-slate-400 dark:text-slate-600">•</span>
-                <span className="text-emerald-700 dark:text-emerald-400 font-medium">Full-Stack Lead</span>
+                <span className="text-emerald-700 dark:text-emerald-400 font-medium">PG Software Development</span>
               </div>
             </div>
 
             {/* Narrative Passage */}
             <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl font-sans font-normal">
-              Test Lead and QA Architect with <strong>over 10 years of enterprise experience</strong> in Mobile OSS/BSS stacks (CSG Singleview, Nokia WING 10M+ subscribers, AT&T Connection Manager IoT). <strong>Cut manual testing efforts in half (-50%) and reduced post-release issues by 30%</strong> across Tier-1 carriers including <strong>British Telecom, Verizon, Inmarsat, AT&T, and Nokia (3Austria, 3Ireland, 3Italy)</strong>. <strong>100% enthusiastic for frequent worldwide client deployments.</strong>
+              Senior Telecom QA Lead & UAT Delivery Manager with <strong>over 10 years of specialized enterprise domain expertise</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong>Managed cross-functional QA teams of 15+ engineers under Agile</strong>, cutting manual testing efforts by <strong>50%</strong> and achieving zero defect leakage. Holds a <strong>Postgraduate Diploma in Software Development</strong>, uniquely bridging the gap between technical engineering, API contracts, and business stakeholder delivery. <strong>Actively exploring global opportunities across Singapore, UK, USA, and Europe.</strong>
             </p>
 
             {/* 3 Strategic Key Focus Pillars */}
@@ -212,30 +212,30 @@ export default function Hero({
               <div className="p-3 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/90 hover:border-sky-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 text-xs font-mono font-bold mb-1">
                   <Network size={14} />
-                  <span>01 / BSS & 10M+ WING</span>
+                  <span>01 / 10M+ WING & BSS</span>
                 </div>
                 <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">
-                  Nokia WING 10M+ migration, CSG Singleview, Diameter Gy/Ro, MRR, MRC/NRC.
+                  Nokia WING 10M+ UAT, Gy/Ro Diameter, Real SIM 4G/5G NSA, MRR & SFTP Invoicing.
                 </p>
               </div>
 
               <div className="p-3 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/90 hover:border-indigo-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-bold mb-1">
                   <Cpu size={14} />
-                  <span>02 / AT&T IoT & CLOUD</span>
+                  <span>02 / 15+ QA LEADERSHIP</span>
                 </div>
                 <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">
-                  AT&T Connection Manager telemetry, Java 21, Spring Boot 3.3, Docker & Kafka.
+                  Led 15+ QA engineers in Agile/Scrum, defect triage, sprint planning & carrier UAT sign-offs.
                 </p>
               </div>
 
               <div className="p-3 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/90 hover:border-emerald-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold mb-1">
                   <Globe2 size={14} />
-                  <span>03 / -50% MANUAL EFFORT</span>
+                  <span>03 / OVERSEAS READY</span>
                 </div>
                 <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-snug">
-                  Selenium Grid cluster (-40% time), 0 defect leakage, customer delight record.
+                  Targeting Singapore, UK & USA. PG in Software Dev for tech-literate delivery leadership.
                 </p>
               </div>
             </div>
@@ -248,7 +248,7 @@ export default function Hero({
                 className="px-5 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white shadow-lg shadow-sky-500/25 transition-all duration-300 flex items-center gap-2 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Bot size={15} className="animate-pulse" />
-                <span>AI Tailor CV (Gemini)</span>
+                <span>AI Tailor CV (Singapore / UK / US)</span>
               </button>
 
               <button
@@ -256,7 +256,7 @@ export default function Hero({
                 className="px-5 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase glass-card border border-slate-300 dark:border-slate-700 hover:border-sky-500/50 text-slate-800 dark:text-white transition-all duration-200 flex items-center gap-2 cursor-pointer"
               >
                 <Layers size={14} />
-                <span>View Projects</span>
+                <span>View Carrier Engagements</span>
               </button>
 
               <button

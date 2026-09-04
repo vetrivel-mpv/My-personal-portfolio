@@ -40,38 +40,38 @@ interface TailoredResumeData {
 
 const SAMPLE_JOB_DESCRIPTIONS = [
   {
-    title: "Global Principal Solution Architect (Telecom OSS/BSS)",
-    role: "Global Principal Solution Architect",
-    jd: `Role: Principal Solution Architect (Telecom Core & Cloud)
-Location: Global / Remote (Requires up to 60-80% frequent international travel to client sites across EMEA, US, and APAC).
+    title: "Telecom QA Lead & UAT Test Manager (Singapore 🇸🇬)",
+    role: "Lead Telecom QA & UAT Manager",
+    jd: `Role: Lead Telecom QA & UAT Manager (Carrier Systems)
+Location: Singapore (APAC Delivery Hub)
 Requirements:
-- 10+ years of deep domain experience in Telecom OSS/BSS, Singleview Billing, mediation APIs, and customer provisioning.
-- Strong hands-on architectural background in Java Spring Boot microservices, Kafka, Docker, and AWS Kubernetes.
-- Proven track record leading test automation frameworks (Selenium Grid) and zero-defect delivery pipelines.
-- Willingness to travel frequently worldwide for architecture discovery workshops, pre-sales client advisory, and on-site deployment oversight.
-- Outstanding communication and leadership skills with multi-cultural engineering teams.`
+- 10+ years of deep domain experience in Mobile OSS/BSS, Convergent Billing, Nokia WING/eSIM, and real-time charging (Diameter Gy/Ro).
+- Proven track record managing cross-functional QA teams of 10-15+ engineers under Agile/Scrum frameworks.
+- Strong technical literacy in API contract testing (REST/JSON, Postman, TM Forum Open APIs) with academic/practical software foundations.
+- End-to-end expertise in carrier UAT sign-offs, data migration audits, and Monthly Rating Report (MRR) invoicing reconciliation.
+- Excellent executive communication and multi-vendor stakeholder coordination.`
   },
   {
-    title: "Senior Telecom Cloud & Microservices Architect",
-    role: "Senior Cloud & Systems Architect",
-    jd: `Role: Senior Cloud Systems Architect - Carrier Systems
-Location: Worldwide / International Travel.
+    title: "Telecom BSS/OSS Solutions Consultant (London, UK 🇬🇧)",
+    role: "Senior Telecom Solutions & Delivery Consultant",
+    jd: `Role: Senior Telecom BSS/OSS Solutions & Delivery Consultant
+Location: London, UK / EMEA
 Key Responsibilities:
-- Modernize legacy carrier billing and mediation engines into cloud-native Java 21 Spring Boot microservices.
-- Ensure 99.99% service availability, SLA compliance, and zero revenue leakage during large-scale partner migrations.
-- Travel internationally to lead technical alignment with Tier-1 carriers and enterprise partners.
-- Implement automated test pipelines and performance engineering grids.`
+- Guide Tier-1 carrier transformations across British Telecom, Vodafone, and European mobile networks.
+- Lead requirement analysis, rating plan modeling (MRC/NRC), and wholesale mediation reconciliation.
+- Bridge development engineering teams with business stakeholders utilizing strong software architecture and API literacy.
+- Ensure zero-defect release governance and seamless UAT acceptance criteria.`
   },
   {
-    title: "Lead Test & Quality Architect (Enterprise Delivery)",
-    role: "Lead Test & Quality Architect",
-    jd: `Role: Enterprise Test Architect & QA Lead
-Location: International Client Delivery (Frequent Travel).
+    title: "Carrier Migration & Agile QA Delivery Lead (Dallas / US 🇺🇸)",
+    role: "Agile QA Delivery & Migration Lead",
+    jd: `Role: Agile QA Delivery Lead - Telecom & IoT Platforms
+Location: Dallas, TX / US Carrier Networks
 Requirements:
-- 10+ years leading automated QA frameworks, multithreaded Selenium Grid clusters, and CI/CD pipelines.
-- Demonstrated success reducing regression durations and eliminating P1/P2 defect escapes.
-- Deep familiarity with Telecom protocols, SLA auditing, and database schema validation.
-- Ready to travel frequently to client premises for UAT sign-offs and production go-live ceremonies.`
+- 10+ years leading QA and migration programs for multi-million subscriber carrier deployments.
+- Hands-on experience with AT&T IoT Connection Manager, CSG Singleview, and 4G/5G NSA network testing.
+- Agile Scrum Master / Delivery Lead capable of mentoring teams of 15+ engineers, managing defect triage in JIRA/Zephyr.
+- Ready for international on-site deployments and client advisory workshops.`
   }
 ];
 
@@ -89,7 +89,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   // AI Tailor state
   const [jobDescriptionInput, setJobDescriptionInput] = useState("");
   const [targetRoleInput, setTargetRoleInput] = useState("");
-  const [travelPreference, setTravelPreference] = useState("100% Willing to Travel Frequently Worldwide");
+  const [travelPreference, setTravelPreference] = useState("100% Ready for Overseas Relocation & Frequent Travel (Singapore, UK, USA)");
   const [isGeneratingAI, setIsGeneratingAI] = useState(false);
   const [generationStep, setGenerationStep] = useState("");
   const [tailoredData, setTailoredData] = useState<TailoredResumeData | null>(null);
@@ -108,29 +108,28 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
   const getBaseMarkdownResume = () => {
     return `# VETRIVEL MUTHUSAMY
-**Architect & Lead Consultant | Telecommunications Industry (10+ Years Experience)**
+**Principal Telecom QA Lead & BSS/OSS Solutions Consultant | Agile Delivery Manager (10+ Years Experience)**
 
 - 📱 **Mobile:** (+91) 9916008877
 - 📧 **Email:** vetrivelm02@gmail.com
 - 💼 **LinkedIn:** linkedin.com/in/vetrivelm
 - 📡 **GitHub:** github.com/vetrivel-mpv
 - 📍 **Location:** Bengaluru, Karnataka, India
-- ✈️ **Global Mobility:** 100% Willing & Ready to Travel Frequently Worldwide (EMEA, Americas, APAC, UK)
+- 🌏 **Overseas Availability:** Actively Seeking Opportunities in Singapore 🇸🇬, United Kingdom 🇬🇧, and United States 🇺🇸 (100% Relocation & Travel Ready)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Distinguished Telecom Architect & Lead Consultant with **over 10 years of experience** in Mobile OSS/BSS stacks, CSG Singleview billing, Nokia WING Digital Hub (10M+ subscribers), AT&T Connection Manager IoT telemetry, and automated testing frameworks. Passionate about driving quality assurance, continuous improvement, and cross-functional Agile leadership. **Proven track record cutting manual testing efforts in half (50%) and reducing post-release issues by 30%** while ensuring 100% zero P1/P2 defect leakage across Tier-1 carrier releases. Highly enthusiastic about international client travel and on-site architecture delivery.
+Senior Telecom QA Lead & UAT Delivery Manager with **over 10 years of specialized enterprise domain experience** in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). **Managed cross-functional QA teams of 15+ engineers under Agile/Scrum**, cutting manual testing efforts by **50%** and reducing post-release issues by 30% with zero defect leakage across Tier-1 carriers (British Telecom, Verizon, Inmarsat, AT&T, Nokia 3Group). Holds a **Postgraduate Diploma in Software Development**, uniquely bridging the gap between technical engineering, API contracts, and business stakeholder delivery. **Actively targeting overseas roles in Singapore, UK, and USA.**
 
 ---
 
 ## TOP SKILLS & TELECOM ARSENAL
-- **Core Specializations:** UAT Coordination, Project Delivery, Defect Management, Test Strategy & Team Leadership.
-- **Telecom BSS & Convergent Billing:** CSG Singleview Core Billing (Rating, Invoicing, Billing Engine state machines), Nokia WING Digital Hub (10M+ Subs UAT/Migration), OCS/CCS Convergent Charging (3GPP 32.296, Diameter Ro/Gy/Rf/Gz), Monthly Rating Report (MRR), MRC & NRC Charge Models, Wholesale Invoicing (VZ450 BDT), Automated SFTP Pipelines, End-to-End Invoice PDF Generation.
-- **Enterprise IoT & OSS:** AT&T Connection Manager (IoT Device Telemetry & Quota Throttling), Real SIMs Testing (4G LTE, 5G NSA, Voice, SMS, Data from India test centers), SNMP v1/v2c/v3 Trap Telemetry, NETCONF/YANG, NMS/EMS Mapping.
-- **TM Forum Standards & ODA:** TM Forum Open APIs (TMF620 Catalog, TMF622 Ordering, TMF638 Service Inventory, TMF679 Billing, TMF648 Quote), eTOM Process Framework, SID Data Modeling.
-- **Full-Stack & Cloud Architecture:** Java 21/17 (Virtual Threads), Spring Boot 3.3, Docker, Kubernetes (AWS EKS), Kafka Streams, Oracle PL/SQL, React 19, TypeScript.
-- **QA Automation Frameworks:** Multithreaded Selenium Grid Docker Cluster (-40% Duration), Python Automation, TestNG Parallel Profiling.
+- **Agile QA Leadership & Team Governance:** Managed 15+ QA Engineers, Sprint Planning & Scrum Ceremonies, Carrier UAT Governance, Defect Lifecycle Management (JIRA/Zephyr), Risk-Based Test Strategy.
+- **Telecom BSS & Convergent Billing:** Nokia WING Digital Hub (10M+ Subs Migration UAT), CSG Singleview Core Billing, OCS/CCS Convergent Charging (3GPP 32.296, Diameter Gy/Ro), Monthly Rating Report (MRR), MRC & NRC Charge Models, Rate Plan Configurations (Individual, Flex, Fixed), Wholesale Invoicing (VZ450 BDT), Automated SFTP Pipelines, End-to-End Invoice PDF Generation.
+- **Enterprise IoT & Network Verification:** AT&T Connection Manager (Enterprise IoT Device Usage Tracking & Dynamic Quota Throttling), Real SIM Network Testing (4G LTE, 5G NSA, Voice, SMS, Data from India testbeds).
+- **Technical Literacy & Software Engineering:** Postgraduate Diploma in Software Development (Full Stack), RESTful API Contract Testing (Postman/Swagger), TM Forum Open APIs (TMF620 Catalog, TMF622 Ordering), JSON/XML Data Validation, Relational Database & SQL Schema Auditing.
+- **Testing Architecture & Optimization:** Functional Testing, Integration & E2E Validation, Data Migration Reconciliation, Test Suite Modularization (-50% Manual Effort Reduction).
 
 ---
 
@@ -138,22 +137,23 @@ Distinguished Telecom Architect & Lead Consultant with **over 10 years of experi
 - **Customer Delight Award (Capgemini Engineering):** Recognized for prioritizing customer satisfaction and putting customers first (Q3, July 1 – Sept 30, 2022).
 - **Outstanding Contribution in Delivery Award (Capgemini ER&D):** Acknowledged for outstanding delivery in Engineering Research & Development sector (Q2, April 1 – June 30, 2022).
 - **Star Performer Award (Cognizant):** Awarded for providing consistently high-quality and valuable contributions to the Inmarsat BTP Project.
-- **CIT Domain Excellence Award (Tech Mahindra):** Awarded for bringing loads of domain knowledge to CIT and being result-oriented.
+- **CIT Domain Excellence Award (Tech Mahindra):** Awarded for bringing deep telecom domain knowledge to CIT and being result-oriented.
 
 ---
 
 ## PROFESSIONAL EXPERIENCE
 
 ### Capgemini Engineering — Bengaluru, Karnataka, India
-**Senior Professional / Test Architect & QA Lead** | *January 2022 — August 2025 (3 years 8 months)*
-- Implemented automated testing frameworks that cut manual testing efforts in half (50%) and reduced post-release issues by 30%.
-- Leading architecture and validation for **AT&T Connection Manager**: Enterprise IoT device usage tracking, SIM fleet telemetry ingestion, real-time data quota policy throttling, and enterprise billing mediation.
-- Delivered robust architecture governance for global carrier accounts including **Verizon Wireless** and **AT&T Enterprise** with 0 P1/P2 defect escapes.
+**Senior Professional / Test Architect & Agile QA Lead** | *January 2022 — August 2025 (3 years 8 months)*
+- **Managed a cross-functional QA team of 15+ test engineers** under Agile/Scrum, directing sprint planning, test strategy, and carrier acceptance milestones.
+- Cut manual testing efforts in half (50%) and reduced post-release production issues by 30% through modular test architecture.
+- Led quality assurance and validation for **AT&T Connection Manager**: Enterprise IoT device usage tracking, SIM fleet telemetry ingestion, real-time data quota policy throttling, and enterprise billing mediation.
+- Delivered robust architecture governance for global carrier accounts including **Verizon Wireless** and **AT&T Enterprise** with zero P1/P2 defect escapes.
 - Honored with **Customer Delight Award (Q3 2022)** and **Outstanding Contribution in Delivery Award in ER&D (Q2 2022)**.
 
 ### Prodapt Solutions — Chennai, Tamil Nadu, India
-**Lead Software Test Engineer** | *January 2021 — January 2022 (1 year 1 month)*
-- Led UAT and carrier migration activities for **10 Million+ subscribers** on **Nokia WING (Worldwide IoT Network Grid) Digital Hub**.
+**Lead Software Test Engineer / UAT Lead** | *January 2021 — January 2022 (1 year 1 month)*
+- Spearheaded UAT and carrier migration activities for **10 Million+ subscribers** on **Nokia WING (Worldwide IoT Network Grid) Digital Hub**.
 - Governed **Diameter Gy and Ro** online charging, real-time balance reservations, and quota enforcement.
 - Supported **Real SIM network testing (4G LTE, 5G NSA, SMS, Voice, Data)** from India test centers.
 - Managed **Monthly Rating Report (MRR)** runs, rate plan configs (**Individual, Flex, Fixed rate plans**), **MRC & NRC charges**, automated **SFTP file transfer pipelines**, and automated **Invoice PDF generation**.
@@ -166,7 +166,7 @@ Distinguished Telecom Architect & Lead Consultant with **over 10 years of experi
 ### Tech Mahindra — Bangalore, India
 **Software Test Analyst** | *October 2017 — February 2019 (1 year 5 months)*
 - Awarded for bringing deep telecom domain knowledge to CIT and executing high-impact test automation strategies.
-- Led **British Telecom (BT) Retail Unit** customer ordering (TM Forum ODA TMF622) and employee discount e-commerce automations.
+- Led **British Telecom (BT) Retail Unit** customer ordering (TM Forum ODA TMF622) and employee discount e-commerce validations.
 
 ### Accenture — Chennai Area, India
 **Application Development Associate** | *February 2017 — September 2017 (8 months)*

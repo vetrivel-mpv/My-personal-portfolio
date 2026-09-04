@@ -35,7 +35,7 @@ interface ProjectDetailDeepDive {
 
 const PROJECT_DEEP_DIVES: Record<string, ProjectDetailDeepDive> = {
   "proj-1": {
-    role: "Senior Lead Telecom OSS/BSS Integration Engineer",
+    role: "Senior Telecom BSS QA Consultant (Inmarsat BTP & Verizon Wholesale)",
     challenges: [
       "Interfacing complex legacy Amdocs & Singleview subscriber databases with external wholesale partner middleware channels.",
       "Validating massive billing transaction volumes in dynamic test environments without causing state overlaps.",
@@ -45,58 +45,56 @@ const PROJECT_DEEP_DIVES: Record<string, ProjectDetailDeepDive> = {
       "CSG Singleview Billing Core",
       "VZ450 / Bill Data Tape (BDT)",
       "Diameter Rf / Gz Mediation",
-      "Spring Boot 3.3 Reactive Middleware",
-      "Oracle Advanced SQL & PL/SQL Collections",
+      "Oracle Advanced SQL & PL/SQL Audits",
       "TM Forum SID Schema Modeling",
-      "GitLab CI Pipeline Integrations"
+      "Postman REST API Validation"
     ],
     metrics: [
+      "Honored with Cognizant Star Performer Award on Inmarsat BTP satellite billing transformation.",
       "Eliminated 100% of major partner SLA contract discrepancies during wholesale mediation.",
       "Saved approx 12 hours of manual balance checking workloads per regression cycle."
     ]
   },
   "proj-2": {
-    role: "Lead QA Automation Architect",
+    role: "Agile QA Delivery Lead (Managed 15+ QA Engineers, -50% Effort)",
     challenges: [
-      "Replacing slow sequential regression suites with high-performance concurrent grids while keeping configurations simple.",
-      "Isolating synchronization issues arising from fragile third-party test environments to avoid false alarms.",
-      "Automating protocol-level and image-based checks across responsive carrier customer ordering portals."
+      "Managing and mentoring 15+ QA engineers across parallel sprint delivery tracks in an Agile/Scrum environment.",
+      "Structuring modular test case architectures to replace slow, redundant manual test workflows.",
+      "Establishing carrier-grade defect triage governance in JIRA/Zephyr with zero P1/P2 defect escapes."
     ],
     granularStack: [
-      "Java 21 Core (Virtual Threads & Concurrency)",
-      "Selenium Grid (Distributed Docker Cluster)",
-      "TestNG & Parallel Maven Profiles",
-      "5G SBA & Diameter Mock Simulators (Seagull)",
-      "Spring Boot 3 REST Endpoints",
-      "Linux Bash Environment Bootstrap Scripts"
+      "Agile / Scrum Team Leadership (15+ Engineers)",
+      "Sprint Planning & Velocity Tracking",
+      "JIRA & Zephyr Defect Lifecycle Management",
+      "Carrier UAT Acceptance Governance",
+      "Modular Functional Test Architecture"
     ],
     metrics: [
-      "Decreased complete regression test durations by 40% across major Capgemini delivery channels.",
-      "Guaranteed solid test stability checks, reducing false-positive test cases to less than 1%."
+      "Cut manual testing effort in half (-50%) and reduced post-release issues by 30%.",
+      "Awarded Capgemini Outstanding Contribution in Delivery & Customer Delight awards."
     ]
   },
   "proj-3": {
-    role: "Billing and Revenue Assurance Specialist",
+    role: "Telecom Rating & Revenue Assurance Specialist (Nokia 3Group Europe)",
     challenges: [
-      "Consolidating multiple international rate structures into a unified Singleview platform without service disruption.",
-      "Crafting automated simulation models to audit diverse subscriber voucher usage across distinct geographic regions.",
+      "Consolidating multiple international rate structures across Austria, Ireland, and Italy without service disruption.",
+      "Crafting rigorous functional verification models to audit diverse subscriber voucher usage across distinct geographic regions.",
       "Ensuring perfect database schema synchronization prior to launching high-value billing pipelines."
     ],
     granularStack: [
       "CSG International Billing Suite",
       "Diameter Ro / Gy Convergent Charging (OCS)",
-      "Relational Database Schema Design",
-      "Aria Middleware Integration Layers",
-      "Revenue Assurance & Fraud Detection Models",
-      "Custom Linux Automation Scripts"
+      "Relational Database Schema Auditing",
+      "Revenue Assurance & Fraud Detection Checks",
+      "Multi-Country Roaming Rate Validation"
     ],
     metrics: [
-      "Ensured zero post-release billing leaks or SLA breaks on wholesale operations.",
+      "Ensured zero post-release billing leaks or SLA breaks on multi-country European operations.",
       "Managed safe balance migrations representing over $4M+ of active wholesale accounts."
     ]
   },
   "proj-4": {
-    role: "Core Systems QA Manager & Principal Analyst",
+    role: "Principal QA Lead & UAT Manager (British Telecom Retail Core)",
     challenges: [
       "Formulating exhaustive end-to-end UAT scenarios for complex employee discount and retail order fulfillment rules.",
       "Resolving ordering request mismatches when upstream CRM records contained missing metadata fields.",
@@ -105,10 +103,9 @@ const PROJECT_DEEP_DIVES: Record<string, ProjectDetailDeepDive> = {
     granularStack: [
       "TM Forum TMF622 (Product Ordering)",
       "TM Forum TMF620 (Product Catalog)",
-      "HP ALM (Quality Center)",
+      "HP ALM / Quality Center Governance",
       "Microsoft SQL Server Core Schema Audit",
-      "SOAP / REST Web Service Mock Clients",
-      "Selenium Cross-Browser Grids"
+      "SOAP / REST Web Service Validation"
     ],
     metrics: [
       "Shipped multiple high-value retail releases with zero critical P1/P2 failures.",
@@ -116,7 +113,7 @@ const PROJECT_DEEP_DIVES: Record<string, ProjectDetailDeepDive> = {
     ]
   },
   "proj-5": {
-    role: "Lead Convergent Charging & Migration Architect (Nokia WING)",
+    role: "Lead Telecom UAT & Migration Consultant (Nokia WING 10M+)",
     challenges: [
       "Orchestrating large-scale UAT and production migration for 10 Million+ subscribers across Nokia WING (Worldwide IoT Network Grid) Digital Hub.",
       "Validating Diameter Gy and Ro online charging triggers, real-time balance reservations, quota threshold events, and session teardowns.",
@@ -133,7 +130,6 @@ const PROJECT_DEEP_DIVES: Record<string, ProjectDetailDeepDive> = {
       "MRC / NRC Rating Engine Configs",
       "Automated SFTP Batch Pipelines",
       "Automated Customer Invoice PDF Engine",
-      "Seagull Diameter Traffic Simulators",
       "Oracle PL/SQL Billing Ledgers"
     ],
     metrics: [
@@ -143,79 +139,73 @@ const PROJECT_DEEP_DIVES: Record<string, ProjectDetailDeepDive> = {
     ]
   },
   "proj-6": {
-    role: "Lead IoT Telemetry & Enterprise Solutions Architect (AT&T)",
+    role: "Principal IoT QA Specialist (AT&T Connection Manager Platform)",
     challenges: [
-      "Architecting enterprise-grade IoT device usage tracking and rating for Fortune 500 enterprise fleets on AT&T Connection Manager.",
-      "Ingesting high-frequency SIM telemetry signals and executing policy-based data quota throttling in real-time.",
+      "Leading verification of enterprise-grade IoT device usage tracking and rating for Fortune 500 enterprise fleets on AT&T Connection Manager.",
+      "Ingesting high-frequency SIM telemetry signals and validating policy-based data quota throttling in real-time.",
       "Bridging raw device data consumption into wholesale enterprise billing mediation and automated usage threshold alerts."
     ],
     granularStack: [
-      "AT&T Connection Manager Core",
-      "Enterprise IoT SIM Telemetry APIs",
+      "AT&T Connection Manager Platform",
+      "Enterprise IoT SIM Telemetry Verification",
       "Real-Time Policy & Throttling Engine",
-      "Spring Boot 3.3 Reactive Microservices",
-      "Kafka Event Streams",
+      "Rate Plan Models (Individual, Flex, Fixed)",
       "Enterprise Invoicing Mediation"
     ],
     metrics: [
-      "Delivered real-time telemetry visibility across hundreds of thousands of active enterprise IoT devices.",
+      "Delivered real-time telemetry verification across hundreds of thousands of active enterprise IoT devices.",
       "Eliminated overage billing disputes through automated threshold alerts and dynamic policy controls."
     ]
   },
   "proj-fs-1": {
-    role: "Full-Stack & Telco Open Source Architect",
+    role: "Technical QA Architect (TM Forum ODA & Open API Harness)",
     challenges: [
-      "Creating a high-performance REST/GraphQL mediator implementing TM Forum Open Digital Architecture (TMF620/622/638/679).",
-      "Streaming live telemetry state updates via Kafka to a responsive React 19 visual dashboard.",
-      "Providing one-click Docker Compose local testing environments."
+      "Verifying RESTful APIs implementing TM Forum Open Digital Architecture (TMF620/622/638/679).",
+      "Validating event payloads streamed via Kafka against TM Forum SID data schemas.",
+      "Bridging developer microservice contracts with functional business requirements."
     ],
     granularStack: [
-      "React 19 & TypeScript",
-      "Java 21 (Virtual Threads)",
-      "Spring Boot 3.3 WebFlux",
-      "Apache Kafka Streams",
-      "Docker Compose & Helm",
-      "OpenAPI 3.0 & Swagger UI"
+      "PG in Software Development",
+      "TM Forum TMF620 / TMF622 / TMF679",
+      "OpenAPI 3.0 & Swagger UI",
+      "RESTful API & JSON/XML Validation",
+      "Postman API Test Suites"
     ],
     metrics: [
       "Validated against TM Forum SID 21.0 conformance suites with 100% pass score.",
-      "Processes 10,000+ simulated order events per second under sub-15ms latency."
+      "Established standard API test validation harness for enterprise carrier integrations."
     ]
   },
   "proj-fs-2": {
-    role: "Cloud Test Automation Lead & Developer",
+    role: "Lead QA Automation Strategist (Distributed Test Architecture)",
     challenges: [
-      "Eliminating browser instance flakiness and scaling test runner nodes on demand in AWS EKS.",
-      "Implementing real-time visual regression snapshot comparisons across viewports.",
-      "Building seamless GitHub Actions CI/CD trigger integrations."
+      "Architecting scalable test strategy to eliminate manual regression bottlenecks across carrier web and mobile portals.",
+      "Implementing structured page object models and parallel test runners for cross-browser verification.",
+      "Integrating quality gates into automated CI/CD deployment pipelines."
     ],
     granularStack: [
-      "Java 21 Enterprise Core",
-      "Selenium Grid Distributed Docker",
-      "AWS EKS (Kubernetes)",
-      "TestNG Parallel Worker Nodes",
-      "Spring WebFlux Reactive API",
-      "Slack / Teams Webhook Notifiers"
+      "Selenium Test Architecture",
+      "Parallel Test Execution Strategies",
+      "CI/CD Quality Gates",
+      "Risk-Based Test Coverage Metrics"
     ],
     metrics: [
-      "Reduced regression cycle execution from 8 hours down to 45 minutes (-40% to -85% time savings).",
-      "Zero flakiness across 50+ concurrent browser execution threads."
+      "Reduced regression cycle execution times by 40% with zero defect leakage.",
+      "Guaranteed test stability across multi-browser carrier customer portals."
     ]
   },
   "proj-fs-3": {
-    role: "High-Throughput Backend & Mediation Engineer",
+    role: "BSS/OSS QA Specialist (CDR Mediation & Rating Audit Engine)",
     challenges: [
-      "Parsing and rating 15,000+ TPS batch CDR files without thread contention or memory leaks.",
-      "Generating standard VZ450 Bill Data Tape (BDT) settlement records for Tier-1 carrier invoicing.",
-      "Integrating distributed Redis cache for instant subscriber balance lookups."
+      "Validating high-volume batch CDR files for mediation and rating accuracy without record loss.",
+      "Auditing standard VZ450 Bill Data Tape (BDT) settlement records for Tier-1 carrier invoicing.",
+      "Reconciling ledger discrepancies between rating engines and billing ledgers."
     ],
     granularStack: [
-      "Java 21 & Spring Boot 3",
-      "Diameter Ro / Gy Stack",
-      "Oracle PL/SQL Collections & Partitioning",
-      "Redis In-Memory Key-Value Cache",
-      "Kafka Topic Partitioning",
-      "Prometheus & Grafana Telemetry"
+      "Diameter Ro / Gy Protocol Audits",
+      "Oracle PL/SQL Billing Ledger Verification",
+      "CDR Reconciliation Matrices",
+      "Revenue Assurance Auditing"
     ],
     metrics: [
       "100% Zero financial leakage during simulated wholesale carrier interconnect settlement.",
