@@ -3,6 +3,7 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
+import { generateResumePDF } from "./src/server/pdfService.js";
 
 dotenv.config();
 
@@ -20,6 +21,25 @@ async function startServer() {
   const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
 
   app.use(express.json());
+
+  // API route for 1-Click Server-Side Vector ATS PDF Generation (Node.js + pdfkit)
+  app.get("/api/download-pdf", (req, res) => {
+    try {
+      generateResumePDF(res);
+    } catch (err: any) {
+      console.error("PDF Generation Error:", err);
+      res.status(500).json({ error: "Failed to generate PDF resume" });
+    }
+  });
+
+  app.post("/api/download-pdf", (req, res) => {
+    try {
+      generateResumePDF(res, req.body);
+    } catch (err: any) {
+      console.error("PDF Generation Error:", err);
+      res.status(500).json({ error: "Failed to generate PDF resume" });
+    }
+  });
 
   // API route for chat service
   app.post("/api/chat", async (req, res) => {

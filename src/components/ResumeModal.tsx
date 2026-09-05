@@ -122,6 +122,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const [includeCertifications, setIncludeCertifications] = useState(true);
   const [printLayout, setPrintLayout] = useState<"modern" | "compact" | "ats">("modern");
   const [isExporting, setIsExporting] = useState(false);
+  const [isDownloadingNodePDF, setIsDownloadingNodePDF] = useState(false);
 
   // AI Tailor state
   const [jobDescriptionInput, setJobDescriptionInput] = useState("");
@@ -141,6 +142,32 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
       setIsExporting(false);
       window.print();
     }, 400);
+  };
+
+  const handleDownloadNodeJSPDF = async (customData?: { targetRole?: string; summary?: string }) => {
+    setIsDownloadingNodePDF(true);
+    try {
+      const response = await fetch("/api/download-pdf", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(customData || {})
+      });
+      if (!response.ok) throw new Error("Server PDF generation failed");
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = customData?.targetRole ? "Vetrivel_Muthusamy_Tailored_Resume.pdf" : "Vetrivel_Muthusamy_Executive_Resume.pdf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Direct PDF download error, falling back to browser print:", err);
+      handleTriggerExportPDF();
+    } finally {
+      setIsDownloadingNodePDF(false);
+    }
   };
 
   const getBaseMarkdownResume = () => {
@@ -885,20 +912,29 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
               {/* Action Buttons */}
               <div className="space-y-2 pt-5 border-t border-slate-800">
                 <button
+                  onClick={() => handleDownloadNodeJSPDF()}
+                  disabled={isDownloadingNodePDF}
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-bold bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                >
+                  <Download size={14} className={isDownloadingNodePDF ? "animate-bounce" : ""} />
+                  <span>{isDownloadingNodePDF ? "GENERATING PDF..." : "⚡ 1-CLICK DIRECT DOWNLOAD PDF"}</span>
+                </button>
+
+                <button
                   onClick={handleTriggerExportPDF}
                   disabled={isExporting}
-                  className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-bold bg-sky-500 hover:bg-sky-400 text-white shadow-lg shadow-sky-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full py-2 px-4 rounded-xl text-xs font-mono font-bold bg-sky-500 hover:bg-sky-400 text-white shadow-md shadow-sky-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   <Printer size={14} />
-                  <span>{isExporting ? "PREPARING..." : "PRINT / SAVE AS PDF"}</span>
+                  <span>{isExporting ? "PREPARING..." : "PRINT / IN-BROWSER PDF"}</span>
                 </button>
 
                 <button
                   onClick={() => handleDownloadMarkdown(getBaseMarkdownResume(), "Vetrivel_Muthusamy_Resume.md")}
-                  className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-bold bg-slate-900 hover:bg-slate-850 text-slate-300 hover:text-white border border-slate-800 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-2 px-4 rounded-xl text-xs font-mono font-bold bg-slate-900 hover:bg-slate-850 text-slate-300 hover:text-white border border-slate-800 transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Download size={14} />
-                  <span>DOWNLOAD MARKDOWN</span>
+                  <FileText size={14} />
+                  <span>DOWNLOAD MARKDOWN (.MD)</span>
                 </button>
               </div>
             </div>
@@ -1049,6 +1085,18 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
 
                       <div className="flex items-center gap-2">
                         <button
+                          onClick={() => handleDownloadNodeJSPDF({ 
+                            targetRole: targetRoleInput.trim() || undefined,
+                            summary: tailoredData.tailoredSummary 
+                          })}
+                          disabled={isDownloadingNodePDF}
+                          className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold bg-emerald-500 hover:bg-emerald-400 text-white shadow-md shadow-emerald-500/25 transition-colors flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+                        >
+                          <Download size={13} className={isDownloadingNodePDF ? "animate-bounce" : ""} />
+                          <span>{isDownloadingNodePDF ? "Generating..." : "⚡ Direct PDF"}</span>
+                        </button>
+
+                        <button
                           onClick={() => {
                             navigator.clipboard.writeText(tailoredData.markdownResume);
                             setCopiedTailored(true);
@@ -1064,7 +1112,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
                           onClick={() => handleDownloadMarkdown(tailoredData.markdownResume, `Vetrivel_Muthusamy_Tailored_CV.md`)}
                           className="px-3 py-1.5 rounded-xl text-xs font-mono font-bold bg-slate-900 hover:bg-slate-850 text-slate-300 hover:text-white border border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer"
                         >
-                          <Download size={13} />
+                          <FileText size={13} />
                           <span>Markdown</span>
                         </button>
 
@@ -1073,7 +1121,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
                           className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold bg-sky-500 hover:bg-sky-400 text-white shadow-md shadow-sky-500/25 transition-colors flex items-center gap-1.5 cursor-pointer"
                         >
                           <Printer size={13} />
-                          <span>Print PDF</span>
+                          <span>Print</span>
                         </button>
                       </div>
                     </div>
