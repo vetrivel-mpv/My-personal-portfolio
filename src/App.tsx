@@ -19,7 +19,8 @@ import {
   Cpu,
   Network,
   Sparkles,
-  Command
+  Command,
+  Plane
 } from "lucide-react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
