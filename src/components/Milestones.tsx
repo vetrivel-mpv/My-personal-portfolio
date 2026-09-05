@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   History, 
   TrendingUp, 
@@ -103,6 +103,11 @@ const efficiencyImpactData = [
 
 export default function Milestones() {
   const [activeTab, setActiveTab] = useState<"growth" | "metrics">("growth");
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const CustomTimelineTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
@@ -225,54 +230,60 @@ export default function Milestones() {
             <span className="text-slate-500 dark:text-slate-400 font-medium">100% Zero Defect Release Audit</span>
           </div>
 
-          <div className="h-80 sm:h-96 w-full pt-6">
-            <ResponsiveContainer width="100%" height="100%">
-              {activeTab === "growth" ? (
-                <AreaChart data={growthTimelineData} margin={{ top: 10, right: 20, left: -20, bottom: 0 }}>
-                  <defs>
-                    <linearGradient id="subscribersGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#0284c7" stopOpacity={0.4} />
-                      <stop offset="95%" stopColor="#0284c7" stopOpacity={0} />
-                    </linearGradient>
-                    <linearGradient id="scriptsGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#10b981" stopOpacity={0.4} />
-                      <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-                  <XAxis dataKey="year" stroke="#94a3b8" fontSize={11} fontFamily="monospace" />
-                  <YAxis stroke="#94a3b8" fontSize={11} fontFamily="monospace" />
-                  <Tooltip content={<CustomTimelineTooltip />} />
-                  <Area 
-                    type="monotone" 
-                    dataKey="carrierSubscribersM" 
-                    name="Carrier Subscribers (M)" 
-                    stroke="#0284c7" 
-                    strokeWidth={3} 
-                    fillOpacity={1} 
-                    fill="url(#subscribersGrad)" 
-                  />
-                  <Area 
-                    type="monotone" 
-                    dataKey="automatedTestCases" 
-                    name="Automated Scripts" 
-                    stroke="#10b981" 
-                    strokeWidth={2} 
-                    fillOpacity={1} 
-                    fill="url(#scriptsGrad)" 
-                  />
-                </AreaChart>
-              ) : (
-                <BarChart data={efficiencyImpactData} margin={{ top: 10, right: 20, left: -20, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
-                  <XAxis dataKey="metric" stroke="#94a3b8" fontSize={10.5} fontFamily="monospace" />
-                  <YAxis stroke="#94a3b8" fontSize={11} fontFamily="monospace" />
-                  <Tooltip content={<CustomImpactTooltip />} />
-                  <Bar dataKey="beforeSkill" name="Legacy Baseline" fill="#64748b" radius={[6, 6, 0, 0]} />
-                  <Bar dataKey="afterArchitect" name="Optimized Architecture" fill="#0284c7" radius={[6, 6, 0, 0]} />
-                </BarChart>
-              )}
-            </ResponsiveContainer>
+          <div className="h-80 sm:h-96 w-full pt-6 min-w-0 min-h-[320px]">
+            {isMounted ? (
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={300}>
+                {activeTab === "growth" ? (
+                  <AreaChart data={growthTimelineData} margin={{ top: 10, right: 20, left: -20, bottom: 0 }}>
+                    <defs>
+                      <linearGradient id="subscribersGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#0284c7" stopOpacity={0.4} />
+                        <stop offset="95%" stopColor="#0284c7" stopOpacity={0} />
+                      </linearGradient>
+                      <linearGradient id="scriptsGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#10b981" stopOpacity={0.4} />
+                        <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
+                    <XAxis dataKey="year" stroke="#94a3b8" fontSize={11} fontFamily="monospace" />
+                    <YAxis stroke="#94a3b8" fontSize={11} fontFamily="monospace" />
+                    <Tooltip content={<CustomTimelineTooltip />} />
+                    <Area 
+                      type="monotone" 
+                      dataKey="carrierSubscribersM" 
+                      name="Carrier Subscribers (M)" 
+                      stroke="#0284c7" 
+                      strokeWidth={3} 
+                      fillOpacity={1} 
+                      fill="url(#subscribersGrad)" 
+                    />
+                    <Area 
+                      type="monotone" 
+                      dataKey="automatedTestCases" 
+                      name="Automated Scripts" 
+                      stroke="#10b981" 
+                      strokeWidth={2} 
+                      fillOpacity={1} 
+                      fill="url(#scriptsGrad)" 
+                    />
+                  </AreaChart>
+                ) : (
+                  <BarChart data={efficiencyImpactData} margin={{ top: 10, right: 20, left: -20, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.25} />
+                    <XAxis dataKey="metric" stroke="#94a3b8" fontSize={10.5} fontFamily="monospace" />
+                    <YAxis stroke="#94a3b8" fontSize={11} fontFamily="monospace" />
+                    <Tooltip content={<CustomImpactTooltip />} />
+                    <Bar dataKey="beforeSkill" name="Legacy Baseline" fill="#64748b" radius={[6, 6, 0, 0]} />
+                    <Bar dataKey="afterArchitect" name="Optimized Architecture" fill="#0284c7" radius={[6, 6, 0, 0]} />
+                  </BarChart>
+                )}
+              </ResponsiveContainer>
+            ) : (
+              <div className="w-full h-full min-h-[300px] flex items-center justify-center text-slate-400 font-mono text-xs">
+                Loading Telemetry Chart...
+              </div>
+            )}
           </div>
 
           {/* Legend row */}

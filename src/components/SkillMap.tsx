@@ -1,14 +1,5 @@
 import React, { useState } from "react";
 import { 
-  ResponsiveContainer, 
-  RadarChart, 
-  PolarGrid, 
-  PolarAngleAxis, 
-  PolarRadiusAxis, 
-  Radar, 
-  Tooltip
-} from "recharts";
-import { 
   Layers, 
   Sliders, 
   Database, 
