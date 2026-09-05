@@ -297,17 +297,46 @@
    Advanced PDF & Document Print Stylesheet
    =========================================== */
 
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
 @media print {
+  /* 1. Global Print Base */
+  html, body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-size: 8.5pt !important;
+    line-height: 1.35 !important;
+  }
+
+  /* 2. Hide all non-printable website layout elements */
   #portfolio-navbar,
-  #ai-chatbot-window,
-  #ai-chatbot-toggle-button,
+  main,
+  footer,
+  #admin-dashboard-toggle-btn,
   #theme-toggle-btn,
   #theme-menu-dropdown,
-  #admin-dashboard-toggle-btn,
   #visitor-view-btn,
-  #printPdfBtn,
-  #footer-copy-email-trigger,
   #command-palette-modal,
+  #ai-chatbot-window,
+  #ai-chatbot-toggle-button,
+  #clipboard-toast,
+  #printPdfBtn,
+  #resume-modal-backdrop,
+  #resume-modal-tabs,
+  #resume-modal-left-controls,
+  #resume-ai-left-controls,
+  #resume-ai-top-bar,
   .no-print,
   button,
   input,
@@ -315,56 +344,183 @@
   iframe,
   [role="button"] {
     display: none !important;
-  }
-
-  html, body {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    color: #0f172a !important;
-    font-size: 10.5pt !important;
-    line-height: 1.45 !important;
+    visibility: hidden !important;
+    height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
+  }
+
+  /* 3. Resume Modal Unwrapping during Print */
+  #resume-modal-container {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    visibility: visible !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
     width: 100% !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  main {
-    padding-top: 0 !important;
-    margin: 1cm !important;
-  }
-
-  .blur-\[130px\],
-  .blur-\[140px\],
-  .absolute,
-  .bg-gradient-to-r,
-  .bg-gradient-to-b {
-    background-image: none !important;
-    background: none !important;
-    filter: none !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    backdrop-filter: none !important;
+    border: none !important;
     box-shadow: none !important;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  #resume-modal-card {
+    position: static !important;
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+  }
+
+  /* 4. The Printable Resume Document Containers */
+  #printable-cv-document,
+  #printable-ai-cv-document,
+  #fallback-printable-cv {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 8mm 12mm !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     color: #0f172a !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  /* Force all children inside the printable document to be crisp black/slate text on white */
+  #printable-cv-document *,
+  #printable-ai-cv-document *,
+  #fallback-printable-cv * {
+    visibility: visible !important;
+    color: #0f172a !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  /* 5. Printable Structure & Page Breaks */
+  .cv-page-1,
+  .cv-page-2 {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .cv-page-break {
+    page-break-after: always !important;
+    break-after: page !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .cv-avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* 6. Typography & Accent Styles for Print */
+  .cv-print-name {
+    font-size: 16pt !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.1 !important;
+  }
+
+  .cv-print-title {
+    font-size: 9.5pt !important;
+    font-weight: 700 !important;
+    color: #0284c7 !important; /* Sky-600 */
+    line-height: 1.25 !important;
+  }
+
+  .cv-print-mobility-pill {
+    background-color: #f0fdf4 !important; /* Emerald-50 */
+    border: 1px solid #86efac !important; /* Emerald-300 */
+    color: #166534 !important; /* Emerald-800 */
+    font-size: 7.5pt !important;
+    font-weight: 600 !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+  }
+
+  .cv-print-section-header {
+    font-size: 9.5pt !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #0369a1 !important; /* Sky-700 */
+    border-bottom: 1.5px solid #0284c7 !important;
+    padding-bottom: 2pt !important;
+    margin-top: 7pt !important;
+    margin-bottom: 5pt !important;
     page-break-after: avoid !important;
     break-after: avoid !important;
   }
 
-  section,
-  article,
-  .glass-card,
-  .glass-panel {
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-    margin-bottom: 16pt !important;
-    background: #ffffff !important;
-    border: 1px solid #cbd5e1 !important;
-    box-shadow: none !important;
+  .cv-print-grid-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 5pt !important;
   }
 
-  .grid {
-    display: block !important;
+  .cv-print-card {
+    background-color: #f8fafc !important; /* Slate-50 */
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 4px !important;
+    padding: 4pt 6pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .cv-print-pill {
+    background-color: #f1f5f9 !important; /* Slate-100 */
+    border: 1px solid #cbd5e1 !important;
+    color: #1e293b !important;
+    font-size: 7.5pt !important;
+    padding: 2px 5px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+  }
+
+  .cv-print-chip {
+    background-color: #f1f5f9 !important; /* Slate-100 */
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    font-size: 7.5pt !important;
+    padding: 1.5pt 4pt !important;
+    border-radius: 3px !important;
+    display: inline-block !important;
+  }
+
+  .cv-print-muted {
+    color: #475569 !important; /* Slate-600 */
+    font-size: 7.5pt !important;
+  }
+
+  .cv-print-award-title {
+    color: #b45309 !important; /* Amber-700 */
+    font-weight: 700 !important;
+    font-size: 8pt !important;
   }
 }

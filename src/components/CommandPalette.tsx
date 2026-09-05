@@ -167,11 +167,11 @@ export default function CommandPalette({
     },
     {
       id: "act-print",
-      title: "Print Portfolio or Save as Clean PDF",
+      title: "Export Resume & Save Clean 2-Page PDF",
       category: "Actions",
       icon: <Printer size={16} className="text-emerald-400" />,
-      action: () => { onClose(); window.print(); },
-      keywords: ["print", "pdf", "save", "document"]
+      action: () => { onClose(); onOpenResume(); },
+      keywords: ["print", "pdf", "save", "document", "cv", "resume"]
     },
     {
       id: "act-copy-email",
