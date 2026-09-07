@@ -78,6 +78,19 @@ function parseInlineMarkdown(text: string): React.ReactNode[] {
 
 const SAMPLE_JOB_DESCRIPTIONS = [
   {
+    title: "Singtel Singapore 🇸🇬 — Enterprise Solution Design & Delivery Consultant",
+    role: "Principal Enterprise Solutions & Delivery Lead",
+    jd: `Role: Enterprise Solutions Strategy, Roadmap & Delivery Consultant
+Company: Singtel (Singapore)
+Location: Singapore 🇸🇬
+Impact & Scope:
+- Solution Strategy, Roadmap and Design: Translate business requirements into clear solution options, capability maps, target-state designs, transition plans, and application modernisation across Supply Chain, Logistics, Source-to-Pay (S2P), and Telecom BSS/OSS platforms.
+- Project & Delivery Ownership: Accountable for domain project governance, approving business requirements, and ensuring on-time, within-budget milestone execution.
+- Delivery Governance & Assurance: Oversee end-to-end integration, security, resilience, performance, cutover planning, and post-go-live stabilisation with zero defect leakage.
+- Operational Excellence & Vendor Management: Manage AMS vendors, offshore delivery pods of 15+ engineers, ensure L2/L3 support meets SLAs, drive root cause analysis (RCA), and continuous service improvement.
+- People Leadership & Stakeholder Influence: Guide project teams on design standards, communicate technical trade-offs to business stakeholders, and influence without relying solely on authority.`
+  },
+  {
     title: "Google / Tech QA Lead & WebOps Specialist (Singapore 🇸🇬 / USA 🇺🇸)",
     role: "Lead QA & Test Strategy Specialist",
     jd: `Role: Lead QA Engineer & Test Strategy Specialist (Cloud & Core Systems)

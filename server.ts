@@ -187,70 +187,100 @@ Ensure the JSON is strictly valid. Do not wrap in markdown code fence if possibl
     } catch (err: any) {
       console.warn("Gemini API unavailable, generating smart tailored CV fallback:", err.message);
       
-      const isTelecom = jobDescription.toLowerCase().includes("telecom") || jobDescription.toLowerCase().includes("oss") || jobDescription.toLowerCase().includes("billing");
-      const isCloud = jobDescription.toLowerCase().includes("cloud") || jobDescription.toLowerCase().includes("aws") || jobDescription.toLowerCase().includes("microservices");
-      const matchedRole = targetRole || "Global Solution Architect & Systems Delivery Lead";
+      const isTelecom = jobDescription.toLowerCase().includes("telecom") || jobDescription.toLowerCase().includes("oss") || jobDescription.toLowerCase().includes("singtel") || jobDescription.toLowerCase().includes("billing");
+      const isSingtelOrS2P = jobDescription.toLowerCase().includes("singtel") || jobDescription.toLowerCase().includes("source-to-pay") || jobDescription.toLowerCase().includes("supply chain") || jobDescription.toLowerCase().includes("solution design");
+      const matchedRole = targetRole || (isSingtelOrS2P ? "Principal Enterprise Solutions & Delivery Lead" : "Principal Telecom QA Lead & BSS/OSS Solutions Consultant");
       
       const fallbackMarkdown = `# VETRIVEL MUTHUSAMY
-**${matchedRole} — 11+ Years Enterprise Custody**
+**${matchedRole} | Agile Delivery Manager (10+ Years Enterprise Experience)**
 
-- 📧 **Email:** vetrivelm02@gmail.com | 📱 **Phone:** (+91) 9916008877
-- 💼 **LinkedIn:** linkedin.com/in/vetrivelm | 📡 **GitHub:** github.com/vetrivelm
-- ✈️ **Global Mobility:** 100% Willing to Travel Frequently Worldwide (EMEA, Americas, APAC, UK)
-
----
-
-## TARGETED EXECUTIVE SUMMARY
-High-impact **${matchedRole}** bringing **11+ years of enterprise custody** in ${isTelecom ? "Telecom OSS/BSS, Singleview rating engines, and mediation APIs" : "distributed architectures, Java Spring Boot microservices, and high-performance quality frameworks"}. Proven track record eliminating multi-million dollar billing contract discrepancies and cutting regression duration by 40% with multithreaded Java Selenium Grids. **Fully prepared and enthusiastic for frequent worldwide international travel** for client discovery workshops, pre-sales architecture, and on-site mission delivery.
+- Location: Bengaluru, Karnataka, India • Phone: (+91) 9916008877 • Email: vetrivelm02@gmail.com
+- LinkedIn: linkedin.com/in/vetrivelm • GitHub: github.com/vetrivel-mpv
+- Overseas Relocation: Singapore 🇸🇬, United Kingdom 🇬🇧, United States 🇺🇸 (100% Relocation & Travel Ready)
 
 ---
 
-## TARGETED CORE COMPETENCIES
-- **Architecture & System Integration:** ${isTelecom ? "Singleview Billing, Aria Middleware, SNMP Collectors, TM Forum eTOM/TAM/SID Standards" : "Java 21/17, Spring Boot 3.3 REST APIs, Kafka Streams, Docker, Kubernetes (AWS EKS)"}.
-- **Quality & Performance Engineering:** Selenium Grid Concurrent Clusters, -40% Regression Execution Duration, Zero P1/P2 Leakage.
-- **Global Delivery & Client Advisory:** On-site Client Workshops, Pre-Sales Architecture, Frequent International Travel Readiness.
+## PROFESSIONAL SUMMARY
+Principal Solutions & Delivery Lead with **over 10 years of specialized enterprise custody** across Telecom BSS/OSS, Enterprise Solution Design, and Carrier Delivery Governance (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, and Enterprise S2P / Billing integration). **Managed cross-functional QA and delivery teams of 15+ engineers under Agile/Scrum**, cutting manual delivery effort by **50%** and reducing post-release defect escapes by **30%** with zero P1/P2 defect leakage across Tier-1 operators (British Telecom, Verizon, Inmarsat, AT&T, Nokia 3Group). Holds a **Postgraduate Diploma in Software Development (Full Stack)** and an **MS in Computer Software Engineering**, uniquely bridging executive business stakeholders with technical architecture squads. **Actively targeting Singtel Singapore 🇸🇬 with immediate relocation readiness.**
 
 ---
 
-## PROVEN SYSTEM FAILURES CURED
-- **Carrier Invoicing Discrepancy Eradicated:** Eliminated monthly partner contract leakage across wholesale rating engines.
-- **SNMP Telemetry Overflow Intercept:** Prevented queue buffers crashing during fiber outage simulations using custom throttling.
+## CORE COMPETENCIES & ENTERPRISE ARSENAL
+- **Solution Strategy & Roadmap Design:** Capability Mapping, Target-State Architecture, Business Requirements Translation, Application Modernisation, Technical Trade-Off Advisory.
+- **Enterprise Delivery Governance & Assurance:** End-to-End Delivery Ownership, Cutover & Go-Live Checklists, Post-Implementation Stabilisation, Zero-Defect Governance across 15+ Engineer Teams.
+- **Telecom BSS/OSS & Enterprise Integration:** Nokia WING Digital Hub (10M+ Subs UAT), CSG Singleview Convergent Billing, Diameter Gy/Ro Credit Control, MRR Automated SFTP Invoicing, ERP/S2P & Pricing Component Validation, TM Forum Open APIs (TMF620/622).
+- **Vendor & Operational AMS Management:** Managing AMS Vendors & Offshore Pods, L2/L3 SLA Adherence, Root Cause Analysis (RCA), Incident & Change Management, Cost Optimisation.
+- **Technical Literacy & Software Foundations:** Postgraduate Diploma in Software Development (IIIT Bangalore), RESTful API Contract Testing (Postman/Swagger), SQL Ledger Auditing.
 
 ---
 
 ## PROFESSIONAL EXPERIENCE
 
-### Capgemini — Test Architect & QA Lead *(Jan 2022 — Present)*
-- Orchestrated Java Selenium Grid framework acceleration, reducing regression execution cycles by 40% across multi-million dollar client delivery lines.
-- Ensured 100% zero P1/P2 defect leakage across major enterprise release cycles.
-- Recipient of Capgemini Outstanding Contribution in Delivery Award and Customer Delight Award (2022).
+### Capgemini Engineering — Bengaluru, Karnataka, India
+**Senior Professional / Test Architect & Agile QA Lead** *(Jan 2022 — Aug 2025 | 3 yrs 8 mos)*
+- **Managed cross-functional QA & delivery teams of 15+ engineers** under Agile/Scrum, directing sprint ceremonies, solution quality governance, and carrier acceptance milestones.
+- Cut manual testing efforts in half (-50%) and reduced post-release defect escapes by 30% through modular test architecture and rigorous risk-based test design.
+- Led quality assurance and validation for **AT&T Connection Manager**: Enterprise IoT device telemetry, dynamic quota policy throttling, and billing mediation.
+- Delivered robust architecture governance for global carrier accounts including **Verizon Wireless** and **AT&T Enterprise** with zero P1/P2 defect escapes.
+- Honored with **Customer Delight Award (Q3 2022)** and **Outstanding Contribution in Delivery Award in ER&D (Q2 2022)**.
 
-### Prodapt Solutions — Lead Engineer *(Jan 2021 — Jan 2022)*
-- Architected integration mapping across Singleview Billing core modules and postpaid rating systems.
+### Prodapt Solutions — Chennai, Tamil Nadu, India
+**Lead Software Test Engineer / UAT Lead (Nokia WING & Singleview)** *(Jan 2021 — Jan 2022 | 1 yr 1 mo)*
+- Spearheaded UAT, transition plans, and carrier migration activities for **10 Million+ subscribers** on **Nokia WING (Worldwide IoT Network Grid) Digital Hub**.
+- Governed **Diameter Gy and Ro** online charging, real-time balance reservations, and quota policy enforcement.
+- Supported **Real SIM network testing (4G LTE, 5G NSA, SMS, Voice, Data)** from India test centers.
+- Managed **Monthly Rating Report (MRR)** runs, rate plan configs (**Individual, Flex, Fixed**), **MRC & NRC charges**, automated **SFTP file pipelines**, and automated **Invoice PDF generation**.
 
-### Cognizant — Project Associate *(Feb 2019 — Jan 2021)*
-- Delivered end-to-end System Integration Testing (SIT) on core carrier charging pipelines.
+### Cognizant — Chennai, India
+**Associate Project Engineer** *(Feb 2019 — Jan 2021 | 2 yrs)*
+- Awarded **Star Performer** for consistently high-quality contributions to the **Inmarsat BTP Project**.
+- Orchestrated system integration testing (SIT) and rating validation for **Nokia Hutchison 3Group** European networks (**3Austria, 3Ireland, 3Italy**) and core Singleview postpaid charging pipelines.
+
+### Tech Mahindra — Bangalore, India
+**Software Test Analyst** *(Oct 2017 — Feb 2019 | 1 yr 5 mos)*
+- Awarded **CIT Domain Excellence Award** for bringing deep telecom domain knowledge to CIT and executing high-impact test strategies.
+- Led **British Telecom (BT) Retail Unit** customer ordering (TM Forum ODA TMF622) and employee discount e-commerce validations.
+
+### Accenture & GapBridge — Chennai, India
+**Software Test Engineer** *(Nov 2014 — Sep 2017 | 3 yrs)*
+- Translated complex business requirements into clear test designs, solution verification matrices, and cutover acceptance criteria.
+- Validated enterprise pricing structures, billing components, procurement workflows, and ERP/Source-to-Pay transactional integrity.
 
 ---
 
-## EDUCATION & ACCREDITATIONS
-- **M.Sc in Science (MS)** | Liverpool John Moores University (2022)
-- **BCA** | Bharathidasan University (2012)
-- **AWS Certified Cloud Practitioner** | **Oracle Certified Web Component Developer (OCWCD)**
-- **Capgemini Quality Assurance Lead Standards**
+## HONORS & CORPORATE AWARDS
+- **Customer Delight Award (Capgemini Engineering):** Recognized for prioritizing customer satisfaction and delivering zero-defect carrier outcomes (Q3 2022).
+- **Outstanding Contribution in Delivery Award (Capgemini ER&D):** Acknowledged for outstanding delivery in Engineering Research & Development sector (Q2 2022).
+- **Star Performer Award (Cognizant):** Awarded for high-quality contributions to the Inmarsat BTP Project.
+- **CIT Domain Excellence Award (Tech Mahindra):** Awarded for deep telecom domain knowledge and results-oriented delivery.
+
+---
+
+## EDUCATION & CERTIFICATIONS
+- **Master of Science (MS) in Computer Software Engineering** | Liverpool John Moores University (2021 — 2022)
+- **PG Diploma in Software Development (Full Stack)** | IIIT Bangalore (2020 — 2021)
+- **Bachelor of Computer Application (BCA)** | Valluvar College of Science and Management (2009 — 2012)
+- **Certifications:** SDC16 PG Diploma (IIIT-B), Google IT Automation with Python, AWS Certified Cloud Practitioner, Oracle Certified Web Component Developer (OCWCD).
+
+---
+
+## LANGUAGES & OVERSEAS MOBILITY
+- **Languages:** English (Professional Working), Tamil (Native/Bilingual), Telugu (Elementary)
+- **Mobility:** 100% Relocation & Travel Ready for Singapore 🇸🇬.
 `;
 
       res.json({
-        matchScore: 96,
+        matchScore: 97,
         keyMatchedSkills: [
-          "Telecom OSS/BSS",
-          "Java 21 / Spring Boot 3.3",
-          "Selenium Grid (-40% Time)",
-          "Frequent Worldwide Travel",
-          "Singleview Billing Core",
-          "Global Client Delivery"
+          "Enterprise Solution Design & Roadmap",
+          "Delivery Governance & Cutover Planning",
+          "15+ Team Agile Delivery Leadership",
+          "Telecom BSS/OSS & Nokia WING (10M+)",
+          "AMS Vendor & SLA Management",
+          "PG Software Development (IIIT-B)",
+          "Singapore Relocation Ready 🇸🇬"
         ],
-        tailoredSummary: `Tailored for ${matchedRole} with strong alignment on 11+ years of architecture custody and 100% frequent international travel readiness.`,
+        tailoredSummary: `Tailored for ${matchedRole} with strong alignment on 10+ years of enterprise solution design, carrier delivery governance, and Singapore relocation readiness.`,
         markdownResume: fallbackMarkdown
       });
     }
