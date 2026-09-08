@@ -427,29 +427,29 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
       return (
         <div 
           id={isTailored ? "printable-ai-cv-document" : "printable-cv-document"}
-          className="flex-grow p-5 sm:p-8 overflow-y-auto bg-slate-900 font-sans text-xs text-slate-300 print:bg-white print:p-0 print:text-slate-900 print:overflow-visible transition-colors cv-1page-mode space-y-3 print:space-y-2"
+          className="flex-grow p-6 sm:p-9 overflow-y-auto bg-slate-900 font-sans text-xs text-slate-300 print:bg-white print:p-0 print:text-slate-900 print:overflow-visible transition-colors cv-1page-mode flex flex-col justify-between space-y-3.5 print:space-y-2.5"
         >
           {/* Header */}
-          <div className="pb-2 border-b-2 border-sky-500/80 print:border-b-2 print:border-slate-800 flex flex-col sm:flex-row sm:items-start justify-between gap-2">
-            <div className="space-y-0.5">
-              <h1 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight cv-print-name print:text-slate-950 font-sans">
+          <div className="pb-2.5 border-b-2 border-sky-500/80 print:border-b-2 print:border-slate-800 flex flex-col sm:flex-row sm:items-start justify-between gap-3 cv-avoid-break">
+            <div className="space-y-1">
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight cv-print-name print:text-slate-950 font-sans">
                 VETRIVEL MUTHUSAMY
               </h1>
-              <p className="text-xs font-semibold text-sky-400 print:text-sky-800 tracking-wide font-sans">
+              <p className="text-xs sm:text-sm font-semibold text-sky-400 print:text-sky-800 tracking-wide font-sans">
                 {isTailored && targetRoleInput.trim() 
                   ? `${targetRoleInput.trim()} | Agile Delivery Manager (10+ Yrs Exp)` 
                   : "Principal Telecom QA Lead & BSS/OSS Solutions Consultant | Agile Delivery Manager"}
               </p>
               <div className="pt-0.5">
-                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 print:bg-emerald-50 print:border-emerald-300 print:text-emerald-900 text-[10px] font-medium font-sans">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 print:bg-emerald-50 print:border-emerald-300 print:text-emerald-900 text-[10.5px] font-medium font-sans">
                   <Plane size={11} className="shrink-0" />
-                  <span><strong>Targeting:</strong> Singapore 🇸🇬 · United Kingdom 🇬🇧 · United States 🇺🇸 (100% Relocation Ready)</span>
+                  <span><strong>Targeting:</strong> Singapore 🇸🇬 · United Kingdom 🇬🇧 · United States 🇺🇸 (100% Relocation Ready & Immediate Mobility)</span>
                 </span>
               </div>
             </div>
 
-            {/* Single Line / Compact Contact details */}
-            <div className="text-left sm:text-right space-y-0.5 text-slate-300 print:text-slate-800 font-sans text-[10.5px] cv-print-muted shrink-0">
+            {/* Compact Contact details */}
+            <div className="text-left sm:text-right space-y-0.5 text-slate-300 print:text-slate-800 font-sans text-[11px] cv-print-muted shrink-0">
               <p className="flex items-center gap-1.5 sm:justify-end">
                 <MapPin size={11} className="text-indigo-400 shrink-0 print:hidden" />
                 <span>Bengaluru, Karnataka, India</span>
@@ -472,53 +472,53 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
           </div>
 
           {/* 1. PROFESSIONAL SUMMARY */}
-          <div className="space-y-0.5 cv-avoid-break">
-            <h2 className="text-[11px] font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
+          <div className="space-y-1 cv-avoid-break">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
               PROFESSIONAL SUMMARY
             </h2>
-            <p className="leading-relaxed text-slate-200 print:text-[8pt] print:text-slate-800 font-sans text-[10.5px]">
-              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong>over 10 years of specialized enterprise domain experience</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong>Managed cross-functional QA teams of 15+ engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong>50%</strong> and reducing post-release issues by <strong>30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon, Inmarsat, AT&T, Nokia 3Group). Holds a <strong>Postgraduate Diploma in Software Development</strong> (Full Stack), bridging software engineering with business delivery. <strong>Actively targeting overseas roles in Singapore, UK, and USA.</strong>
+            <p className="leading-relaxed text-slate-200 print:text-[8.5pt] print:leading-[1.4] print:text-slate-800 font-sans text-xs">
+              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong>over 10 years of specialized enterprise domain experience</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong>Managed cross-functional QA teams of 15+ engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong>50%</strong> and reducing post-release production defect escapes by <strong>30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a <strong>Postgraduate Diploma in Software Development</strong> (Full Stack), uniquely bridging technical software engineering, API contracts, and business stakeholder delivery. <strong>Actively targeting overseas leadership roles in Singapore, UK, and USA.</strong>
             </p>
           </div>
 
           {/* 2. CORE COMPETENCIES (4-Card Grid) */}
           <div className="space-y-1 cv-avoid-break">
-            <h2 className="text-[11px] font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
               CORE COMPETENCIES & TECHNICAL EXPERTISE
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-[10.5px] cv-print-grid-2">
-              <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
-                <strong className="text-white block font-sans font-bold text-[10.5px] mb-0.2 print:text-sky-900 print:text-[8pt]">
-                  Agile QA Leadership & Team Governance
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs cv-print-grid-2">
+              <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
+                  Agile QA Leadership & Governance (15+ Team)
                 </strong>
-                <span className="text-[10px] text-slate-300 print:text-[7.2pt] print:text-slate-700 leading-snug block font-sans">
-                  Managed 15+ QA Engineers, Sprint Ceremonies, Risk-Based Test Strategy, Carrier Acceptance Sign-Offs, Defect Triage (JIRA/Zephyr).
+                <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
+                  Managed 15+ QA Engineers, Sprint Ceremonies, Risk-Based Test Strategy, Carrier Acceptance Sign-Offs, Defect Lifecycle (JIRA/Zephyr).
                 </span>
               </div>
 
-              <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
-                <strong className="text-white block font-sans font-bold text-[10.5px] mb-0.2 print:text-sky-900 print:text-[8pt]">
+              <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
                   Telecom BSS & Nokia WING (10M+ Subs)
                 </strong>
-                <span className="text-[10px] text-slate-300 print:text-[7.2pt] print:text-slate-700 leading-snug block font-sans">
+                <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
                   CSG Singleview Billing, Nokia WING Migration UAT, Diameter Gy/Ro Charging, MRR, MRC/NRC Charges, SFTP & Invoicing PDF Generation.
                 </span>
               </div>
 
-              <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
-                <strong className="text-white block font-sans font-bold text-[10.5px] mb-0.2 print:text-sky-900 print:text-[8pt]">
+              <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
                   Enterprise IoT & Network Verification
                 </strong>
-                <span className="text-[10px] text-slate-300 print:text-[7.2pt] print:text-slate-700 leading-snug block font-sans">
+                <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
                   AT&T Connection Manager (Device Telemetry & Quota Throttling), Real SIM 4G LTE/5G NSA Testing (Voice, SMS, Data from India testbeds).
                 </span>
               </div>
 
-              <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
-                <strong className="text-white block font-sans font-bold text-[10.5px] mb-0.2 print:text-sky-900 print:text-[8pt]">
+              <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
                   Technical Literacy & Software Foundation
                 </strong>
-                <span className="text-[10px] text-slate-300 print:text-[7.2pt] print:text-slate-700 leading-snug block font-sans">
+                <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
                   PG Diploma Software Dev (Full Stack), REST API Contract Testing (Postman/Swagger), TM Forum Open APIs (TMF620/622), SQL Auditing.
                 </span>
               </div>
@@ -527,27 +527,27 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
 
           {/* 3. PROFESSIONAL EXPERIENCE (All 5 Roles) */}
           {includeTimeline && (
-            <div className="space-y-1.5 cv-avoid-break">
-              <h2 className="text-[11px] font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
+            <div className="space-y-2 cv-avoid-break">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
                 PROFESSIONAL EXPERIENCE
               </h2>
 
               {/* Capgemini */}
               <div className="space-y-0.5 cv-avoid-break">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.2 print:border-b print:border-slate-200">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.5 print:border-b print:border-slate-200">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-bold text-white text-[11px] print:text-[8.5pt] print:text-slate-950 font-sans">
+                    <h3 className="font-bold text-white text-xs print:text-[8.8pt] print:text-slate-950 font-sans">
                       Capgemini Engineering — Senior Professional / Test Architect & Agile QA Lead
                     </h3>
-                    <span className="text-[10px] text-sky-400 print:text-sky-800 font-sans hidden sm:inline">
+                    <span className="text-[10.5px] text-sky-400 print:text-sky-800 font-sans hidden sm:inline">
                       | Bengaluru, India
                     </span>
                   </div>
-                  <span className="text-[10px] text-slate-400 print:text-slate-600 font-sans font-medium">
+                  <span className="text-[10.5px] text-slate-400 print:text-slate-600 font-sans font-medium">
                     Jan 2022 — Aug 2025 (3 yrs 8 mos)
                   </span>
                 </div>
-                <ul className="list-disc list-inside space-y-0.5 text-[10px] text-slate-300 print:text-[7.5pt] print:text-slate-800 font-sans pl-1">
+                <ul className="list-disc list-inside space-y-0.5 text-[11px] text-slate-300 print:text-[8.2pt] print:text-slate-800 font-sans pl-1">
                   <li><strong>Managed cross-functional QA team of 15+ test engineers</strong> under Agile/Scrum; cut manual testing efforts by <strong>50%</strong> and defect escapes by <strong>30%</strong>.</li>
                   <li>Led QA and validation for <strong>AT&T Connection Manager</strong> (Enterprise IoT device telemetry, quota policy throttling, and billing mediation).</li>
                   <li>Delivered robust architecture governance for <strong>Verizon Wireless</strong> & <strong>AT&T Enterprise</strong> (Zero P1/P2 defect escapes; Awarded Customer Delight Q3 2022 & ER&D Outstanding Delivery Q2 2022).</li>
@@ -556,116 +556,133 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
 
               {/* Prodapt */}
               <div className="space-y-0.5 cv-avoid-break pt-0.5">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.2 print:border-b print:border-slate-200">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.5 print:border-b print:border-slate-200">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-bold text-white text-[11px] print:text-[8.5pt] print:text-slate-950 font-sans">
+                    <h3 className="font-bold text-white text-xs print:text-[8.8pt] print:text-slate-950 font-sans">
                       Prodapt Solutions — Lead Software Test Engineer (Nokia WING & Singleview)
                     </h3>
-                    <span className="text-[10px] text-sky-400 print:text-sky-800 font-sans hidden sm:inline">
+                    <span className="text-[10.5px] text-sky-400 print:text-sky-800 font-sans hidden sm:inline">
                       | Chennai, India
                     </span>
                   </div>
-                  <span className="text-[10px] text-slate-400 print:text-slate-600 font-sans font-medium">
+                  <span className="text-[10.5px] text-slate-400 print:text-slate-600 font-sans font-medium">
                     Jan 2021 — Jan 2022 (1 yr 1 mo)
                   </span>
                 </div>
-                <ul className="list-disc list-inside space-y-0.5 text-[10px] text-slate-300 print:text-[7.5pt] print:text-slate-800 font-sans pl-1">
+                <ul className="list-disc list-inside space-y-0.5 text-[11px] text-slate-300 print:text-[8.2pt] print:text-slate-800 font-sans pl-1">
                   <li>Spearheaded UAT & carrier migration for <strong>10 Million+ subscribers</strong> on <strong>Nokia WING (Worldwide IoT Network Grid) Digital Hub</strong>.</li>
                   <li>Governed <strong>Diameter Gy/Ro</strong> online charging, Real SIM 4G/5G NSA testing, Monthly Rating Reports (MRR), and automated SFTP invoice PDF generation.</li>
+                  <li>Validated complex charge models, SIM provisioning workflows, and billing mediation for global carrier tenants.</li>
                 </ul>
               </div>
 
               {/* Cognizant */}
               <div className="space-y-0.5 cv-avoid-break pt-0.5">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.2 print:border-b print:border-slate-200">
-                  <h3 className="font-bold text-white text-[11px] print:text-[8.5pt] print:text-slate-950 font-sans">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.5 print:border-b print:border-slate-200">
+                  <h3 className="font-bold text-white text-xs print:text-[8.8pt] print:text-slate-950 font-sans">
                     Cognizant — Associate Project Engineer
                   </h3>
-                  <span className="text-[10px] text-slate-400 print:text-slate-600 font-sans font-medium">
+                  <span className="text-[10.5px] text-slate-400 print:text-slate-600 font-sans font-medium">
                     Feb 2019 — Jan 2021 (2 yrs)
                   </span>
                 </div>
-                <p className="text-[10px] text-slate-300 print:text-[7.5pt] print:text-slate-800 font-sans pl-1">
+                <p className="text-[11px] text-slate-300 print:text-[8.2pt] print:text-slate-800 font-sans pl-1">
                   • Awarded <strong>Star Performer</strong> for Inmarsat BTP Project; validated SIT & postpaid rating for <strong>Nokia Hutchison 3Group Europe</strong> (3Austria, 3Ireland, 3Italy) and Singleview BSS pipelines.
                 </p>
               </div>
 
               {/* Tech Mahindra */}
               <div className="space-y-0.5 cv-avoid-break pt-0.5">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.2 print:border-b print:border-slate-200">
-                  <h3 className="font-bold text-white text-[11px] print:text-[8.5pt] print:text-slate-950 font-sans">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.5 print:border-b print:border-slate-200">
+                  <h3 className="font-bold text-white text-xs print:text-[8.8pt] print:text-slate-950 font-sans">
                     Tech Mahindra — Software Test Analyst
                   </h3>
-                  <span className="text-[10px] text-slate-400 print:text-slate-600 font-sans font-medium">
+                  <span className="text-[10.5px] text-slate-400 print:text-slate-600 font-sans font-medium">
                     Oct 2017 — Feb 2019 (1 yr 5 mos)
                   </span>
                 </div>
-                <p className="text-[10px] text-slate-300 print:text-[7.5pt] print:text-slate-800 font-sans pl-1">
+                <p className="text-[11px] text-slate-300 print:text-[8.2pt] print:text-slate-800 font-sans pl-1">
                   • Awarded <strong>CIT Domain Excellence Award</strong>; validated <strong>British Telecom (BT) Retail Unit</strong> customer ordering (TMF622) and employee discount e-commerce systems.
                 </p>
               </div>
 
               {/* Accenture & GapBridge */}
               <div className="space-y-0.5 cv-avoid-break pt-0.5">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.2 print:border-b print:border-slate-200">
-                  <h3 className="font-bold text-white text-[11px] print:text-[8.5pt] print:text-slate-950 font-sans">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/60 pb-0.5 print:border-b print:border-slate-200">
+                  <h3 className="font-bold text-white text-xs print:text-[8.8pt] print:text-slate-950 font-sans">
                     Accenture & GapBridge — Early Formative QA Engineering
                   </h3>
-                  <span className="text-[10px] text-slate-400 print:text-slate-600 font-sans font-medium">
+                  <span className="text-[10.5px] text-slate-400 print:text-slate-600 font-sans font-medium">
                     Nov 2014 — Sep 2017 (3 yrs)
                   </span>
                 </div>
-                <p className="text-[10px] text-slate-300 print:text-[7.5pt] print:text-slate-800 font-sans pl-1">
+                <p className="text-[11px] text-slate-300 print:text-[8.2pt] print:text-slate-800 font-sans pl-1">
                   • Translated business requirements into test designs for UAT, verifying enterprise service packages, pricing structures, and ERP billing components.
                 </p>
               </div>
             </div>
           )}
 
-          {/* 4. DENSE BOTTOM 2-COLUMN SECTION: AWARDS (LEFT) + EDUCATION/CERTS/LANGUAGES (RIGHT) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 border-t border-slate-800 print:border-t print:border-slate-300 cv-avoid-break cv-print-grid-2">
-            {/* Left Column: Awards */}
-            {includeAwards && (
-              <div className="space-y-1">
-                <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-amber-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
-                  HONORS & CORPORATE AWARDS
-                </h2>
-                <div className="space-y-1 text-[10px] font-sans">
-                  <div>
-                    <strong className="text-amber-400 cv-print-award-title block">🏆 Customer Delight Award</strong>
-                    <span className="text-slate-300 print:text-slate-700 block text-[9.5px]">Capgemini Engineering (Q3 2022) — Zero-defect carrier delivery.</span>
-                  </div>
-                  <div>
-                    <strong className="text-amber-400 cv-print-award-title block">🏆 Outstanding Delivery in ER&D</strong>
-                    <span className="text-slate-300 print:text-slate-700 block text-[9.5px]">Capgemini Engineering ER&D Sector (Q2 2022).</span>
-                  </div>
-                  <div>
-                    <strong className="text-amber-400 cv-print-award-title block">⭐ Star Performer & CIT Domain Excellence</strong>
-                    <span className="text-slate-300 print:text-slate-700 block text-[9.5px]">Cognizant (Inmarsat BTP) & Tech Mahindra (British Telecom).</span>
-                  </div>
+          {/* 4. HONORS & CORPORATE AWARDS (4 Highlights in 2x2 Grid) */}
+          {includeAwards && (
+            <div className="space-y-1 cv-avoid-break pt-1">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-amber-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
+                HONORS & CORPORATE AWARDS
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans cv-print-grid-2">
+                <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                  <strong className="text-amber-400 cv-print-award-title block text-[11px] print:text-[8.5pt]">🏆 Customer Delight Award</strong>
+                  <span className="text-slate-300 print:text-slate-700 block text-[10.5px] print:text-[7.8pt]">Capgemini Engineering (Q3 2022) — Zero-defect carrier delivery.</span>
+                </div>
+                <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                  <strong className="text-amber-400 cv-print-award-title block text-[11px] print:text-[8.5pt]">🏆 Outstanding Delivery in ER&D</strong>
+                  <span className="text-slate-300 print:text-slate-700 block text-[10.5px] print:text-[7.8pt]">Capgemini Engineering ER&D Sector (Q2 2022) milestone.</span>
+                </div>
+                <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                  <strong className="text-amber-400 cv-print-award-title block text-[11px] print:text-[8.5pt]">⭐ Star Performer Award</strong>
+                  <span className="text-slate-300 print:text-slate-700 block text-[10.5px] print:text-[7.8pt]">Cognizant — Inmarsat BTP Project high-quality contribution.</span>
+                </div>
+                <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                  <strong className="text-amber-400 cv-print-award-title block text-[11px] print:text-[8.5pt]">⭐ CIT Domain Excellence</strong>
+                  <span className="text-slate-300 print:text-slate-700 block text-[10.5px] print:text-[7.8pt]">Tech Mahindra — British Telecom transformation custody.</span>
                 </div>
               </div>
-            )}
+            </div>
+          )}
 
-            {/* Right Column: Education, Certs, Languages */}
-            {includeCertifications && (
-              <div className="space-y-1">
-                <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
-                  EDUCATION, CERTS & MOBILITY
-                </h2>
-                <div className="space-y-0.5 text-[9.5px] font-sans text-slate-300 print:text-slate-800">
-                  <p><strong>MS Comp Software Eng:</strong> Liverpool John Moores (2021-2022)</p>
-                  <p><strong>PG Diploma Software Dev:</strong> IIIT Bangalore Full Stack (2020-2021)</p>
-                  <p><strong>BCA (Comp Apps):</strong> Valluvar College / Bharathidasan (2009-2012)</p>
-                  <p><strong>Certs:</strong> AWS Cloud, Google Python, Oracle OCWCD, IIIT-B SDC16</p>
-                  <p className="text-emerald-400 print:text-emerald-800 font-bold pt-0.5 flex items-center gap-1">
-                    <Plane size={11} className="shrink-0" />
-                    <span>100% Relocation Ready (Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸)</span>
-                  </p>
+          {/* 5. EDUCATION, CERTIFICATIONS & MOBILITY */}
+          {includeCertifications && (
+            <div className="space-y-1.5 cv-avoid-break pt-1">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
+                EDUCATION, CERTIFICATIONS & OVERSEAS MOBILITY
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-sans">
+                <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                  <strong className="text-white block font-bold text-[10.5px] print:text-sky-900 print:text-[8.2pt]">MS Comp Software Eng</strong>
+                  <span className="text-slate-400 print:text-slate-700 block text-[10px] print:text-[7.5pt]">Liverpool John Moores (2021-22)</span>
+                </div>
+                <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                  <strong className="text-white block font-bold text-[10.5px] print:text-sky-900 print:text-[8.2pt]">PG Diploma Software Dev</strong>
+                  <span className="text-slate-400 print:text-slate-700 block text-[10px] print:text-[7.5pt]">IIIT Bangalore Full Stack (2020-21)</span>
+                </div>
+                <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
+                  <strong className="text-white block font-bold text-[10.5px] print:text-sky-900 print:text-[8.2pt]">BCA (Comp Apps)</strong>
+                  <span className="text-slate-400 print:text-slate-700 block text-[10px] print:text-[7.5pt]">Valluvar / Bharathidasan (2009-12)</span>
                 </div>
               </div>
-            )}
-          </div>
+
+              <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-emerald-50 print:border-emerald-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-[10.5px] font-sans">
+                <div className="text-slate-300 print:text-slate-800">
+                  <strong className="text-sky-400 print:text-slate-900">Certs: </strong>
+                  <span>AWS Cloud, Google Python, Oracle OCWCD, IIIT-B SDC16</span>
+                </div>
+                <div className="text-emerald-400 print:text-emerald-900 font-bold flex items-center gap-1 shrink-0">
+                  <Plane size={11} className="shrink-0" />
+                  <span>100% Relocation Ready (Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸)</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       );
     }
