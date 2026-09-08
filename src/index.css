@@ -437,6 +437,33 @@
     break-inside: avoid !important;
   }
 
+  /* 1-Page Dense Mode adjustments for crisp single-page print */
+  .cv-1page-mode {
+    font-size: 7.2pt !important;
+    line-height: 1.15 !important;
+  }
+
+  .cv-1page-mode .cv-print-name {
+    font-size: 13pt !important;
+    line-height: 1 !important;
+  }
+
+  .cv-1page-mode .cv-print-title {
+    font-size: 8pt !important;
+    line-height: 1.1 !important;
+  }
+
+  .cv-1page-mode .cv-print-section-header {
+    font-size: 7.8pt !important;
+    margin-top: 4pt !important;
+    margin-bottom: 2pt !important;
+    padding-bottom: 1pt !important;
+  }
+
+  .cv-1page-mode .cv-page-break {
+    display: none !important;
+  }
+
   /* 6. Typography & Accent Styles for Print */
   .cv-print-name {
     font-size: 16pt !important;

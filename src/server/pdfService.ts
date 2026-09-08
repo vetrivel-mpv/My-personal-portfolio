@@ -12,23 +12,30 @@ export interface ResumeData {
   relocationTarget?: string;
   summary?: string;
   customMarkdown?: string;
+  pageMode?: "1-page" | "2-page";
 }
 
 export function generateResumePDF(res: Response, customData?: ResumeData) {
+  const pageMode = customData?.pageMode || "1-page";
+  const margin = pageMode === "1-page" ? 24 : 32;
+
   const doc = new PDFDocument({
     size: "A4",
-    margin: 36, // 0.5 inch / 12.7mm margin
+    margin: margin,
     bufferPages: true,
     info: {
-      Title: "Vetrivel Muthusamy - Principal Telecom QA Lead & Solutions Consultant",
+      Title: "Vetrivel Muthusamy - Principal Telecom & Enterprise Solutions Lead",
       Author: "Vetrivel Muthusamy",
-      Subject: "Google & ATS Compliant Executive Resume",
-      Keywords: "Telecom, QA Lead, Singleview, Nokia WING, Agile Delivery, UAT, AT&T IoT, TM Forum, Singapore, UK, USA"
+      Subject: pageMode === "1-page" ? "1-Page Executive ATS Resume" : "2-Page Comprehensive Technical Resume",
+      Keywords: "Telecom, QA Lead, Solutions Consultant, Singleview, Nokia WING, Agile Delivery, UAT, AT&T IoT, Singtel, Singapore, UK, USA"
     }
   });
 
   res.setHeader("Content-Type", "application/pdf");
-  res.setHeader("Content-Disposition", 'attachment; filename="Vetrivel_Muthusamy_Resume.pdf"');
+  const filename = pageMode === "1-page" 
+    ? "Vetrivel_Muthusamy_1Page_Executive_Resume.pdf"
+    : "Vetrivel_Muthusamy_2Page_Detailed_Resume.pdf";
+  res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
 
   doc.pipe(res);
 
@@ -46,40 +53,184 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
   const darkBlue = "#0369a1";
   const textDark = "#1e293b";
   const textMuted = "#475569";
-  const bgBox = "#f8fafc";
   const borderBox = "#cbd5e1";
 
   // Helper for drawing clean section headers with horizontal rule
-  const drawSectionHeader = (title: string, topMargin: number = 8) => {
+  const drawSectionHeader = (title: string, topMargin: number = 6, lineWidth: number = pageMode === "1-page" ? 547 : 531) => {
     doc.moveDown(topMargin / 10);
-    doc.fillColor(darkBlue).font("Helvetica-Bold").fontSize(9.5).text(title.toUpperCase(), { characterSpacing: 0.5 });
+    doc.fillColor(darkBlue).font("Helvetica-Bold").fontSize(pageMode === "1-page" ? 8.5 : 9.5).text(title.toUpperCase(), { characterSpacing: 0.4 });
     const y = doc.y + 1;
-    doc.strokeColor(blue).lineWidth(1.2).moveTo(36, y).lineTo(559, y).stroke();
-    doc.moveDown(0.3);
+    doc.strokeColor(blue).lineWidth(1).moveTo(margin, y).lineTo(margin + lineWidth, y).stroke();
+    doc.moveDown(0.25);
   };
 
-  // ==========================================
-  // PAGE 1: HEADER, SUMMARY, SKILLS, SENIOR ROLES
-  // ==========================================
+  // =========================================================================
+  // OPTION 1: 1-PAGE ULTRA-DENSE EXECUTIVE FORMAT (100% UTILIZED, ZERO WASTE)
+  // =========================================================================
+  if (pageMode === "1-page") {
+    // Header
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(15).text(candidateName, { align: "left" });
+    doc.fillColor(darkBlue).font("Helvetica-Bold").fontSize(8.5).text(targetRole, { align: "left" });
+    doc.moveDown(0.1);
 
-  // Candidate Name
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(20).text(candidateName, { align: "left" });
+    // Mobility & Contacts on compact line
+    doc.fillColor("#047857").font("Helvetica-Bold").fontSize(7).text(`Mobility: ${relocation}  |  ${location}  |  ${phone}  |  ${email}  |  ${linkedin}  |  ${github}`);
+    
+    // Header Underline
+    doc.moveDown(0.2);
+    doc.strokeColor(navy).lineWidth(1.2).moveTo(margin, doc.y).lineTo(571, doc.y).stroke();
+    doc.moveDown(0.15);
+
+    // 1. PROFESSIONAL SUMMARY
+    drawSectionHeader("Professional Summary", 3);
+    const summaryText = customData?.summary || 
+      "Principal Telecom QA Lead & Solutions Consultant bringing over 10 years of specialized enterprise domain expertise in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro online charging, Real SIM 4G/5G NSA testing). Managed cross-functional QA teams of 15+ engineers under Agile/Scrum, cutting manual testing efforts by 50% and reducing post-release issues by 30% with zero defect leakage across British Telecom, Verizon, Inmarsat, and AT&T. Holds a Postgraduate Diploma in Software Development (Full Stack), uniquely bridging technical engineering with executive delivery. Actively targeting overseas opportunities in Singapore, UK, and USA.";
+    
+    doc.fillColor(textDark).font("Helvetica").fontSize(7.2).text(summaryText, {
+      align: "justify",
+      lineGap: 1.1
+    });
+
+    // 2. CORE COMPETENCIES (4 Compact Boxes)
+    drawSectionHeader("Core Competencies & Technical Arsenal", 4);
+    const colW = 265;
+    const x1 = margin;
+    const x2 = margin + colW + 17;
+    let sY = doc.y;
+
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(7.5).text("Agile QA Leadership & Governance (15+ Team)", x1, sY);
+    doc.fillColor(textDark).font("Helvetica").fontSize(6.8).text("Managed 15+ QA Engineers, Sprint Ceremonies, Risk-Based Strategy, Carrier UAT Sign-Offs, Defect Triage (JIRA/Zephyr).", x1, doc.y, { width: colW, lineGap: 0.8 });
+
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(7.5).text("Telecom BSS & Nokia WING (10M+ Subs)", x2, sY);
+    doc.fillColor(textDark).font("Helvetica").fontSize(6.8).text("CSG Singleview Billing, Nokia WING Migration UAT, Diameter Gy/Ro Charging, MRR, MRC/NRC Charges, SFTP & Invoicing PDF.", x2, doc.y, { width: colW, lineGap: 0.8 });
+
+    sY = Math.max(doc.y, sY + 22) + 3;
+
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(7.5).text("Enterprise IoT & Network Verification", x1, sY);
+    doc.fillColor(textDark).font("Helvetica").fontSize(6.8).text("AT&T Connection Manager (Device Telemetry & Quota Throttling), Real SIM 4G LTE/5G NSA Testing from India testbeds.", x1, doc.y, { width: colW, lineGap: 0.8 });
+
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(7.5).text("Technical Literacy & Software Foundation", x2, sY);
+    doc.fillColor(textDark).font("Helvetica").fontSize(6.8).text("PG Diploma Software Dev (Full Stack), REST API Contract Validation (Postman/Swagger), TM Forum Open APIs (TMF620/622), SQL.", x2, doc.y, { width: colW, lineGap: 0.8 });
+
+    doc.x = margin;
+    doc.y = sY + 23;
+
+    // 3. PROFESSIONAL EXPERIENCE
+    drawSectionHeader("Professional Experience", 4);
+
+    // Job 1: Capgemini
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8).text("Capgemini Engineering — Senior Professional / Test Architect & Agile QA Lead", margin, doc.y, { continued: true });
+    doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(7).text("  (Jan 2022 — Aug 2025 | 3 yrs 8 mos)", { align: "right" });
+    doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(6.8).text("Enterprise IoT & Global Carrier Solutions | Bengaluru, Karnataka, India", margin, doc.y);
+    doc.moveDown(0.1);
+
+    const capBullets1P = [
+      "Managed cross-functional QA team of 15+ test engineers under Agile/Scrum; cut manual testing efforts by 50% and defect escapes by 30%.",
+      "Led QA and validation for AT&T Connection Manager (Enterprise IoT device telemetry, real-time quota throttling, and billing mediation).",
+      "Delivered robust architecture governance for Verizon Wireless & AT&T Enterprise (Zero P1/P2 defect escapes; Awarded Customer Delight Q3 2022 & ER&D Outstanding Delivery Q2 2022)."
+    ];
+    capBullets1P.forEach(b => {
+      doc.fillColor(textDark).font("Helvetica").fontSize(7).text(`•  ${b}`, margin + 6, doc.y, { width: 535, lineGap: 1 });
+    });
+    doc.moveDown(0.25);
+
+    // Job 2: Prodapt
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8).text("Prodapt Solutions — Lead Software Test Engineer (Nokia WING & Singleview)", margin, doc.y, { continued: true });
+    doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(7).text("  (Jan 2021 — Jan 2022 | 1 yr 1 mo)", { align: "right" });
+    doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(6.8).text("Nokia WING Digital Hub & Singleview BSS | Chennai, Tamil Nadu, India", margin, doc.y);
+    doc.moveDown(0.1);
+
+    const prodaptBullets1P = [
+      "Spearheaded UAT & carrier migration for 10 Million+ subscribers on Nokia WING (Worldwide IoT Network Grid) Digital Hub.",
+      "Governed Diameter Gy/Ro online charging, Real SIM 4G/5G NSA testing, Monthly Rating Reports (MRR), and automated SFTP invoice PDF generation."
+    ];
+    prodaptBullets1P.forEach(b => {
+      doc.fillColor(textDark).font("Helvetica").fontSize(7).text(`•  ${b}`, margin + 6, doc.y, { width: 535, lineGap: 1 });
+    });
+    doc.moveDown(0.25);
+
+    // Jobs 3, 4, 5: Compact Progression
+    // Cognizant
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8).text("Cognizant — Associate Project Engineer", margin, doc.y, { continued: true });
+    doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(7).text("  (Feb 2019 — Jan 2021 | 2 yrs)", { align: "right" });
+    doc.fillColor(textDark).font("Helvetica").fontSize(7).text("•  Awarded Star Performer for Inmarsat BTP Project; validated SIT & postpaid rating for Nokia Hutchison 3Group Europe (3Austria, 3Ireland, 3Italy).", margin + 6, doc.y, { width: 535, lineGap: 1 });
+    doc.moveDown(0.2);
+
+    // Tech Mahindra
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8).text("Tech Mahindra — Software Test Analyst", margin, doc.y, { continued: true });
+    doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(7).text("  (Oct 2017 — Feb 2019 | 1 yr 5 mos)", { align: "right" });
+    doc.fillColor(textDark).font("Helvetica").fontSize(7).text("•  Awarded CIT Domain Excellence Award; led British Telecom (BT) Retail Unit customer ordering (TMF622) and employee discount portal validation.", margin + 6, doc.y, { width: 535, lineGap: 1 });
+    doc.moveDown(0.2);
+
+    // Early Career / GapBridge & Accenture
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8).text("Accenture & GapBridge — Early Formative QA Engineering", margin, doc.y, { continued: true });
+    doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(7).text("  (Nov 2014 — Sep 2017 | 3 yrs)", { align: "right" });
+    doc.fillColor(textDark).font("Helvetica").fontSize(7).text("•  Translated business requirements into test designs for UAT, verifying enterprise service packages, pricing structures, and ERP billing components.", margin + 6, doc.y, { width: 535, lineGap: 1 });
+    doc.moveDown(0.2);
+
+    // 4. BOTTOM DENSE 2-COLUMN SECTION: AWARDS & EDUCATION/CERTS
+    const bottomY = doc.y + 2;
+    doc.strokeColor(borderBox).lineWidth(0.8).moveTo(margin, bottomY).lineTo(571, bottomY).stroke();
+    doc.y = bottomY + 3;
+
+    let bY = doc.y;
+
+    // Left Column: Awards
+    doc.fillColor(darkBlue).font("Helvetica-Bold").fontSize(8).text("HONORS & CORPORATE AWARDS", x1, bY);
+    doc.strokeColor(blue).lineWidth(0.8).moveTo(x1, doc.y + 1).lineTo(x1 + colW, doc.y + 1).stroke();
+    doc.moveDown(0.2);
+
+    const awardsList = [
+      { name: "Customer Delight Award", org: "Capgemini (Q3 2022) — Zero-defect carrier delivery" },
+      { name: "Outstanding Delivery in ER&D", org: "Capgemini (Q2 2022) — ER&D Sector" },
+      { name: "Star Performer Award", org: "Cognizant — Inmarsat BTP Project contribution" },
+      { name: "CIT Domain Excellence", org: "Tech Mahindra — BT transformation domain custody" }
+    ];
+    awardsList.forEach(a => {
+      doc.fillColor("#b45309").font("Helvetica-Bold").fontSize(7).text(`★ ${a.name}: `, x1 + 2, doc.y, { continued: true });
+      doc.fillColor(textDark).font("Helvetica").fontSize(6.6).text(a.org);
+    });
+
+    // Right Column: Education & Certifications
+    doc.fillColor(darkBlue).font("Helvetica-Bold").fontSize(8).text("EDUCATION, CERTS & LANGUAGES", x2, bY);
+    doc.strokeColor(blue).lineWidth(0.8).moveTo(x2, doc.y + 1).lineTo(x2 + colW, doc.y + 1).stroke();
+    doc.moveDown(0.2);
+
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(7).text("• MS in Comp Software Eng ", x2 + 2, doc.y, { continued: true });
+    doc.fillColor(textDark).font("Helvetica").fontSize(6.6).text("| Liverpool John Moores Univ (2021-2022)");
+
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(7).text("• PG Diploma (Software Dev) ", x2 + 2, doc.y, { continued: true });
+    doc.fillColor(textDark).font("Helvetica").fontSize(6.6).text("| IIIT Bangalore Full Stack (2020-2021)");
+
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(7).text("• BCA (Computer Apps) ", x2 + 2, doc.y, { continued: true });
+    doc.fillColor(textDark).font("Helvetica").fontSize(6.6).text("| Bharathidasan / Valluvar College (2009-2012)");
+
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(7).text("• Certs: ", x2 + 2, doc.y, { continued: true });
+    doc.fillColor(textDark).font("Helvetica").fontSize(6.6).text("AWS Cloud, Google Python, Oracle OCWCD, IIIT-B SDC16");
+
+    doc.fillColor("#047857").font("Helvetica-Bold").fontSize(6.8).text("• Languages & Mobility: English, Tamil, Telugu | 100% Relocation Ready (Singapore, UK, USA)", x2 + 2, doc.y);
+
+    doc.end();
+    return;
+  }
+
+  // =========================================================================
+  // OPTION 2: 2-PAGE DETAILED TECHNICAL LEADERSHIP FORMAT (PROPORTIONALLY BALANCED)
+  // =========================================================================
   
-  // Target Role
-  doc.fillColor(blue).font("Helvetica-Bold").fontSize(10).text(targetRole, { align: "left" });
+  // ---------------- PAGE 1 ----------------
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(18).text(candidateName, { align: "left" });
+  doc.fillColor(blue).font("Helvetica-Bold").fontSize(9.5).text(targetRole, { align: "left" });
   doc.moveDown(0.15);
 
-  // Relocation Pill / Text
   doc.fillColor("#047857").font("Helvetica-Bold").fontSize(8).text(`• Mobility: ${relocation}`);
   doc.moveDown(0.15);
 
-  // Contact Coordinates Line
   const contactText = `${location}  |  ${phone}  |  ${email}  |  ${linkedin}  |  ${github}`;
   doc.fillColor(textMuted).font("Helvetica").fontSize(8).text(contactText);
   
-  // Header underline
   doc.moveDown(0.3);
-  doc.strokeColor(navy).lineWidth(1.5).moveTo(36, doc.y).lineTo(559, doc.y).stroke();
+  doc.strokeColor(navy).lineWidth(1.5).moveTo(32, doc.y).lineTo(563, doc.y).stroke();
   doc.moveDown(0.2);
 
   // 1. PROFESSIONAL SUMMARY
@@ -92,42 +243,37 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
     lineGap: 1.5
   });
 
-  // 2. CORE COMPETENCIES & TECHNICAL EXPERTISE
+  // 2. CORE COMPETENCIES
   drawSectionHeader("Core Competencies & Technical Arsenal", 6);
-  
-  const colWidth = 255;
-  const startX1 = 36;
-  const startX2 = 304;
+  const colW2 = 255;
+  const startX1 = 32;
+  const startX2 = 300;
   let skillsY = doc.y;
 
-  // Box 1
   doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Agile QA Leadership & Governance", startX1, skillsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Managed 15+ QA Engineers, Sprint Ceremonies, Risk-Based Strategy, Carrier UAT Sign-Offs, Defect Triage (JIRA/Zephyr).", startX1, doc.y, { width: colWidth, lineGap: 1 });
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Managed 15+ QA Engineers, Sprint Ceremonies, Risk-Based Strategy, Carrier UAT Sign-Offs, Defect Triage (JIRA/Zephyr).", startX1, doc.y, { width: colW2, lineGap: 1 });
 
-  // Box 2
   doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Telecom BSS & Nokia WING (10M+ Subs)", startX2, skillsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("CSG Singleview Billing, Nokia WING Migration UAT, Diameter Gy/Ro Charging, MRR, MRC/NRC Charges, Invoicing PDF Generation.", startX2, doc.y, { width: colWidth, lineGap: 1 });
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("CSG Singleview Billing, Nokia WING Migration UAT, Diameter Gy/Ro Charging, MRR, MRC/NRC Charges, Invoicing PDF Generation.", startX2, doc.y, { width: colW2, lineGap: 1 });
 
   skillsY = Math.max(doc.y, skillsY + 28) + 4;
 
-  // Box 3
   doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Enterprise IoT & Network Verification", startX1, skillsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("AT&T Connection Manager (Device Telemetry & Quota Throttling), Real SIM 4G LTE/5G NSA (Voice, SMS, Data from India testbeds).", startX1, doc.y, { width: colWidth, lineGap: 1 });
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("AT&T Connection Manager (Device Telemetry & Quota Throttling), Real SIM 4G LTE/5G NSA (Voice, SMS, Data from India testbeds).", startX1, doc.y, { width: colW2, lineGap: 1 });
 
-  // Box 4
   doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Technical Literacy & Software Foundation", startX2, skillsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("PG Diploma Software Dev (Full Stack), REST API Contract Testing (Postman/Swagger), TM Forum Open APIs (TMF620/622), SQL Auditing.", startX2, doc.y, { width: colWidth, lineGap: 1 });
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("PG Diploma Software Dev (Full Stack), REST API Contract Testing (Postman/Swagger), TM Forum Open APIs (TMF620/622), SQL Auditing.", startX2, doc.y, { width: colW2, lineGap: 1 });
 
-  doc.x = 36;
+  doc.x = 32;
   doc.y = skillsY + 30;
 
-  // 3. PROFESSIONAL EXPERIENCE (PART 1: SENIOR ROLES)
+  // 3. PROFESSIONAL EXPERIENCE (PART 1)
   drawSectionHeader("Professional Experience (Senior Leadership)", 6);
 
-  // Job 1: Capgemini Engineering
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Capgemini Engineering — Senior Professional / Test Architect & Agile QA Lead", 36, doc.y, { continued: true });
+  // Job 1: Capgemini
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Capgemini Engineering — Senior Professional / Test Architect & Agile QA Lead", 32, doc.y, { continued: true });
   doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(8).text("  (Jan 2022 — Aug 2025 | 3 yrs 8 mos)", { align: "right" });
-  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("Enterprise IoT & Global Carrier Solutions | Bengaluru, Karnataka, India", 36, doc.y);
+  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("Enterprise IoT & Global Carrier Solutions | Bengaluru, Karnataka, India", 32, doc.y);
   doc.moveDown(0.2);
 
   const capgeminiBullets = [
@@ -135,19 +281,17 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
     "Cut manual testing efforts by 50% and reduced post-release production defect escapes by 30% through modular test architecture.",
     "Led QA and validation for AT&T Connection Manager: Enterprise IoT device telemetry, real-time data quota policy throttling, and billing mediation.",
     "Delivered robust architecture governance for global carrier accounts including Verizon Wireless and AT&T Enterprise with zero P1/P2 defect escapes.",
-    "Honored with Customer Delight Award (Q3 2022) and Outstanding Contribution in Delivery Award (Q2 2022)."
+    "Honored with Customer Delight Award (Q3 2022) and Outstanding Contribution in Delivery Award in ER&D (Q2 2022)."
   ];
-
   capgeminiBullets.forEach((bullet) => {
-    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 44, doc.y, { width: 510, lineGap: 1.2 });
+    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 40, doc.y, { width: 515, lineGap: 1.2 });
   });
-
   doc.moveDown(0.4);
 
-  // Job 2: Prodapt Solutions
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Prodapt Solutions — Lead Software Test Engineer (Nokia WING & Singleview)", 36, doc.y, { continued: true });
+  // Job 2: Prodapt
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Prodapt Solutions — Lead Software Test Engineer (Nokia WING & Singleview)", 32, doc.y, { continued: true });
   doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(8).text("  (Jan 2021 — Jan 2022 | 1 yr 1 mo)", { align: "right" });
-  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("Nokia WING Digital Hub & Singleview BSS | Chennai, Tamil Nadu, India", 36, doc.y);
+  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("Nokia WING Digital Hub & Singleview BSS | Chennai, Tamil Nadu, India", 32, doc.y);
   doc.moveDown(0.2);
 
   const prodaptBullets = [
@@ -156,29 +300,33 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
     "Supported Real SIM network testing (4G LTE, 5G NSA, SMS, Voice, Data) from India test centers.",
     "Managed Monthly Rating Report (MRR) runs, rate plan configs (Individual, Flex, Fixed), MRC & NRC charges, automated SFTP pipelines, and invoice PDF generation."
   ];
-
   prodaptBullets.forEach((bullet) => {
-    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 44, doc.y, { width: 510, lineGap: 1.2 });
+    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 40, doc.y, { width: 515, lineGap: 1.2 });
   });
 
-  // ==========================================
-  // PAGE 2: CONTINUED EXPERIENCE, AWARDS, EDUCATION, CERTS, LANGUAGES
-  // ==========================================
-  doc.addPage({ margin: 36, size: "A4" });
+  // Page 1 Footer Milestone Banner (Filling Page 1 Smoothly)
+  doc.moveDown(0.5);
+  const milestoneY = doc.y;
+  doc.rect(32, milestoneY, 531, 38).fillAndStroke("#f8fafc", "#cbd5e1");
+  doc.fillColor(darkBlue).font("Helvetica-Bold").fontSize(8).text("VERIFIED ENTERPRISE CARRIER IMPACT & GOVERNANCE HIGHLIGHTS", 42, milestoneY + 7);
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.2).text("✓ 10M+ Subscriber Carrier UAT & Migration  |  ✓ Zero P1/P2 Defect Leakage  |  ✓ 15+ QA Engineer Agile Governance  |  ✓ -50% Manual Effort Optimization", 42, milestoneY + 20);
 
-  // Header banner on Page 2
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(10).text("VETRIVEL MUTHUSAMY", 36, 36, { continued: true });
+  // ---------------- PAGE 2 ----------------
+  doc.addPage({ margin: 32, size: "A4" });
+
+  // Page 2 Header Banner
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(10).text("VETRIVEL MUTHUSAMY", 32, 32, { continued: true });
   doc.fillColor(textMuted).font("Helvetica").fontSize(8).text("  —  Curriculum Vitae (Page 2 of 2)", { align: "right" });
-  doc.strokeColor(navy).lineWidth(0.8).moveTo(36, doc.y + 2).lineTo(559, doc.y + 2).stroke();
+  doc.strokeColor(navy).lineWidth(0.8).moveTo(32, doc.y + 2).lineTo(563, doc.y + 2).stroke();
   doc.moveDown(0.4);
 
-  // 3. CONTINUED PROFESSIONAL EXPERIENCE
+  // Continued Experience
   drawSectionHeader("Professional Experience (Career Progression)", 2);
 
   // Job 3: Cognizant
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Cognizant — Associate Project Engineer", 36, doc.y, { continued: true });
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Cognizant — Associate Project Engineer", 32, doc.y, { continued: true });
   doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(8).text("  (Feb 2019 — Jan 2021 | 2 yrs)", { align: "right" });
-  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("Inmarsat BTP & European Carrier Transformations | Chennai, India", 36, doc.y);
+  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("Inmarsat BTP & European Carrier Transformations | Chennai, India", 32, doc.y);
   doc.moveDown(0.2);
 
   const cognizantBullets = [
@@ -186,15 +334,14 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
     "Orchestrated system integration testing (SIT) and rating validation for Nokia Hutchison 3Group European networks (3Austria, 3Ireland, 3Italy) and core Singleview postpaid charging pipelines."
   ];
   cognizantBullets.forEach((bullet) => {
-    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 44, doc.y, { width: 510, lineGap: 1.2 });
+    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 40, doc.y, { width: 515, lineGap: 1.2 });
   });
-
   doc.moveDown(0.4);
 
   // Job 4: Tech Mahindra
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Tech Mahindra — Software Test Analyst", 36, doc.y, { continued: true });
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Tech Mahindra — Software Test Analyst", 32, doc.y, { continued: true });
   doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(8).text("  (Oct 2017 — Feb 2019 | 1 yr 5 mos)", { align: "right" });
-  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("British Telecom (BT) Retail Transformation | Bangalore, India", 36, doc.y);
+  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("British Telecom (BT) Retail Transformation | Bangalore, India", 32, doc.y);
   doc.moveDown(0.2);
 
   const tmBullets = [
@@ -202,15 +349,14 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
     "Led British Telecom (BT) Retail Unit customer ordering (TM Forum ODA TMF622) and employee discount e-commerce validations."
   ];
   tmBullets.forEach((bullet) => {
-    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 44, doc.y, { width: 510, lineGap: 1.2 });
+    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 40, doc.y, { width: 515, lineGap: 1.2 });
   });
-
   doc.moveDown(0.4);
 
   // Job 5: Accenture & GapBridge
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Accenture & GapBridge — Early Formative QA Engineering", 36, doc.y, { continued: true });
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(9).text("Accenture & GapBridge — Early Formative QA Engineering", 32, doc.y, { continued: true });
   doc.fillColor(textMuted).font("Helvetica-Bold").fontSize(8).text("  (Nov 2014 — Sep 2017 | 3 yrs)", { align: "right" });
-  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("Enterprise Telecom Test Systems | Chennai, India", 36, doc.y);
+  doc.fillColor(darkBlue).font("Helvetica-Oblique").fontSize(8).text("Enterprise Telecom Test Systems | Chennai, India", 32, doc.y);
   doc.moveDown(0.2);
 
   const gapbridgeBullets = [
@@ -218,54 +364,51 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
     "Executed end-to-end test cases for User Acceptance Testing (UAT), aligning client objectives and verifying service pricing and billing structures."
   ];
   gapbridgeBullets.forEach((bullet) => {
-    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 44, doc.y, { width: 510, lineGap: 1.2 });
+    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`•  ${bullet}`, 40, doc.y, { width: 515, lineGap: 1.2 });
   });
 
-  // 4. HONORS & CORPORATE AWARDS
+  // 4. HONORS & AWARDS
   drawSectionHeader("Honors & Corporate Awards", 6);
   let awardsY = doc.y;
 
   doc.fillColor("#b45309").font("Helvetica-Bold").fontSize(8.5).text("Customer Delight Award", startX1, awardsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Capgemini Engineering — Recognizing customer-first excellence (Q3 2022).", startX1, doc.y, { width: colWidth });
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Capgemini Engineering — Recognizing customer-first excellence (Q3 2022).", startX1, doc.y, { width: colW2 });
 
   doc.fillColor("#b45309").font("Helvetica-Bold").fontSize(8.5).text("Outstanding Delivery in ER&D", startX2, awardsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Capgemini Engineering ER&D Sector (Q2 2022).", startX2, doc.y, { width: colWidth });
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Capgemini Engineering ER&D Sector (Q2 2022).", startX2, doc.y, { width: colW2 });
 
   awardsY = Math.max(doc.y, awardsY + 22) + 3;
 
   doc.fillColor("#b45309").font("Helvetica-Bold").fontSize(8.5).text("Star Performer Award", startX1, awardsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Cognizant — High-quality contributions to Inmarsat BTP Project.", startX1, doc.y, { width: colWidth });
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Cognizant — High-quality contributions to Inmarsat BTP Project.", startX1, doc.y, { width: colW2 });
 
   doc.fillColor("#b45309").font("Helvetica-Bold").fontSize(8.5).text("CIT Domain Excellence Award", startX2, awardsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Tech Mahindra — Deep domain knowledge in British Telecom transformation.", startX2, doc.y, { width: colWidth });
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Tech Mahindra — Deep domain knowledge in British Telecom transformation.", startX2, doc.y, { width: colW2 });
 
-  doc.x = 36;
+  doc.x = 32;
   doc.y = awardsY + 24;
 
-  // 5. ACADEMIC BACKGROUND & EDUCATION
+  // 5. EDUCATION
   drawSectionHeader("Academic Background & Education", 6);
-  const eduWidth = 170;
+  const eduWidth = 175;
   let eduY = doc.y;
 
-  // Degree 1
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Master of Science (MS)", 36, eduY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Computer Software Engineering", 36, doc.y);
-  doc.fillColor(textMuted).font("Helvetica").fontSize(7.2).text("Liverpool John Moores Univ (2021-2022)", 36, doc.y, { width: eduWidth });
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Master of Science (MS)", 32, eduY);
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Computer Software Engineering", 32, doc.y);
+  doc.fillColor(textMuted).font("Helvetica").fontSize(7.2).text("Liverpool John Moores Univ (2021-2022)", 32, doc.y, { width: eduWidth });
 
-  // Degree 2
   doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("PG Diploma (Software Dev)", 210, eduY);
   doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Full Stack Development", 210, doc.y);
   doc.fillColor(textMuted).font("Helvetica").fontSize(7.2).text("IIIT Bangalore (2020-2021)", 210, doc.y, { width: eduWidth });
 
-  // Degree 3
   doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Bachelor of Comp App (BCA)", 384, eduY);
   doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Computer Programming", 384, doc.y);
   doc.fillColor(textMuted).font("Helvetica").fontSize(7.2).text("Valluvar College / Bharathidasan (2009-2012)", 384, doc.y, { width: eduWidth });
 
-  doc.x = 36;
+  doc.x = 32;
   doc.y = eduY + 32;
 
-  // 6. CERTIFICATIONS & ACCREDITATIONS
+  // 6. CERTIFICATIONS
   drawSectionHeader("Certifications & Accreditations", 4);
   const certs = [
     "SDC16 - PG Diploma in Software Development (Full Stack) — IIIT Bangalore",
@@ -274,15 +417,15 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
     "Oracle Certified Web Component Developer (OCWCD)"
   ];
   certs.forEach((cert) => {
-    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`✓  ${cert}`, 44, doc.y, { lineGap: 1 });
+    doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`✓  ${cert}`, 40, doc.y, { lineGap: 1 });
   });
 
-  // 7. LANGUAGES & OVERSEAS RELOCATION FOOTER
+  // 7. LANGUAGES & RELOCATION FOOTER
   doc.moveDown(0.4);
-  doc.strokeColor(borderBox).lineWidth(0.8).moveTo(36, doc.y).lineTo(559, doc.y).stroke();
+  doc.strokeColor(borderBox).lineWidth(0.8).moveTo(32, doc.y).lineTo(563, doc.y).stroke();
   doc.moveDown(0.3);
 
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8).text("LANGUAGES: ", 36, doc.y, { continued: true });
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8).text("LANGUAGES: ", 32, doc.y, { continued: true });
   doc.fillColor(textDark).font("Helvetica").fontSize(8).text("English (Professional Working)  |  Tamil (Native/Bilingual)  |  Telugu (Elementary)", { continued: true });
   doc.fillColor("#047857").font("Helvetica-Bold").fontSize(8).text("    ✈ 100% Relocation Ready (Singapore, UK, USA)", { align: "right" });
 

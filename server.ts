@@ -25,7 +25,8 @@ async function startServer() {
   // API route for 1-Click Server-Side Vector ATS PDF Generation (Node.js + pdfkit)
   app.get("/api/download-pdf", (req, res) => {
     try {
-      generateResumePDF(res);
+      const pageMode = (req.query.pageMode as "1-page" | "2-page") || "1-page";
+      generateResumePDF(res, { pageMode });
     } catch (err: any) {
       console.error("PDF Generation Error:", err);
       res.status(500).json({ error: "Failed to generate PDF resume" });
