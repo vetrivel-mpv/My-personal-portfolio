@@ -27,6 +27,7 @@ import {
   Orbit,
   Code
 } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
 interface SkillItem {
   id: string;
@@ -274,7 +275,7 @@ export default function SkillMap() {
 
   return (
     <section 
-      id="skills-analytics-section" 
+      id="skills-section" 
       className="py-24 px-4 md:px-8 xl:px-16 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-500 relative overflow-hidden"
     >
       {/* Background ambient orbs */}
@@ -284,26 +285,18 @@ export default function SkillMap() {
       <div className="max-w-7xl mx-auto space-y-14">
         
         {/* Section Header */}
-        <div className="space-y-4 text-left">
-          <div className="flex items-center gap-2 select-none">
-            <span className="h-[1px] w-6 bg-sky-500" />
-            <span className="font-mono text-xs text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest">
-              ANIMATED SKILL GALAXY & FULL-STACK ARSENAL
-            </span>
-          </div>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <SectionHeader
+            badgeNumber="04"
+            badgeText="TECHNICAL ARSENAL & PROTOCOLS"
+            badgeColor="purple"
+            title="Technical Competencies &"
+            gradientWord="Protocol Matrix"
+            description="Explore Vetrivel's 11+ years of carrier domain custody across CSG Singleview BSS, 5G/4G OSS Southbound mediation, TM Forum ODA, and Full-Stack Node.js/Next.js systems in an interactive galaxy."
+          />
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <div className="space-y-2">
-              <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight font-sans">
-                Interactive Skill Constellation
-              </h2>
-              <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                Explore Vetrivel&apos;s 11+ years of carrier domain custody across CSG Singleview BSS, 5G/4G OSS Southbound mediation, TM Forum ODA, and Full-Stack Java 21/React 19 microservices in an animated interactive matrix.
-              </p>
-            </div>
-
-            {/* View Mode Switcher */}
-            <div className="flex items-center gap-1.5 p-1.5 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 self-start lg:self-auto select-none">
+          {/* View Mode Switcher */}
+          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 self-start lg:self-end pb-2 select-none">
               <button
                 onClick={() => setActiveTab("galaxy")}
                 className={`px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
@@ -341,7 +334,6 @@ export default function SkillMap() {
               </button>
             </div>
           </div>
-        </div>
 
         {/* Tab 1: Animated 3D Orbit Galaxy View */}
         {activeTab === "galaxy" && (
@@ -354,7 +346,7 @@ export default function SkillMap() {
               <div className="relative z-10 flex flex-col items-center">
                 <div className="relative w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-sky-500 via-indigo-500 to-emerald-400 shadow-xl shadow-sky-500/20">
                   <img
-                    src="/assets/vetrivel_avatar_architect.jpg"
+                    src="/assets/vetrivel_original_blazer.jpg"
                     alt="Vetrivel Muthusamy Core"
                     className="w-full h-full rounded-full object-cover"
                   />

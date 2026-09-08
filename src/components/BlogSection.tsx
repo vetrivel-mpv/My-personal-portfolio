@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { BookOpen, Search, Clock, Calendar, ChevronRight, X, ArrowRight, Sparkles, Share2, Check } from "lucide-react";
 import { BlogPost } from "../types";
+import SectionHeader from "./SectionHeader";
 
 interface BlogSectionProps {
   blogs: BlogPost[];
@@ -53,30 +54,21 @@ export default function BlogSection({ blogs }: BlogSectionProps) {
     >
       <div className="max-w-5xl mx-auto space-y-16">
         
-        {/* Title Block */}
-        <div className="space-y-4 text-left">
-          <div className="flex items-center gap-2 select-none">
-            <span className="h-[1px] w-6 bg-indigo-500" />
-            <span className="font-mono text-xs text-indigo-600 dark:text-indigo-400 font-bold uppercase tracking-widest">
-              SYSTEM MEMOIRS & CHRONICLES
-            </span>
-          </div>
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+          <SectionHeader
+            badgeNumber="07"
+            badgeText="ARCHITECTURAL MEMOIRS & FIELD LOGS"
+            badgeColor="indigo"
+            title="Engineering Insights &"
+            gradientWord="Technical Reflections"
+            description="Technical logs, architectural deep dives, and system learnings accumulated over 11+ years within enterprise carrier infrastructures."
+          />
 
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-            <div className="space-y-2">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight font-sans">
-                Engineering Reflections
-              </h2>
-              <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
-                Technical logs, architectural deep dives, and system learnings accumulated over 11 years within enterprise carrier infrastructures.
-              </p>
-            </div>
-
-            {/* Live Count Indicator */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl glass-pill text-indigo-700 dark:text-indigo-300 text-xs font-mono self-start sm:self-auto select-none">
-              <BookOpen size={14} className="text-indigo-500 dark:text-indigo-400" />
-              <span>{filteredBlogs.length} Memoirs Live</span>
-            </div>
+          {/* Live Count Indicator */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl glass-pill text-indigo-700 dark:text-indigo-300 text-xs font-mono self-start sm:self-end pb-2 select-none">
+            <BookOpen size={14} className="text-indigo-500 dark:text-indigo-400" />
+            <span>{filteredBlogs.length} Memoirs Live</span>
           </div>
         </div>
 
@@ -85,11 +77,11 @@ export default function BlogSection({ blogs }: BlogSectionProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             <div className="lg:col-span-7 relative h-64 sm:h-80 lg:h-96 overflow-hidden">
               <img
-                src="/assets/vetrivel_comic_executive_stage.jpg"
+                src="/assets/vetrivel_original_blazer.jpg"
                 alt="Vetrivel Muthusamy - Keynote Speaker & Solution Architect"
                 className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-950/90 hidden lg:block" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-950/40 to-slate-950 hidden lg:block" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent lg:hidden" />
               <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-xl bg-slate-950/80 backdrop-blur-md border border-indigo-500/30 text-indigo-300 text-xs font-mono font-bold flex items-center gap-1.5">
                 <Sparkles size={13} className="text-indigo-400" />

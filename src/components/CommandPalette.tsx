@@ -58,84 +58,75 @@ export default function CommandPalette({
   const commands: CommandItem[] = useMemo(() => [
     {
       id: "nav-home",
-      title: "Story & Executive Summary",
+      title: "01 // Executive Overview & Carrier Telemetry",
       category: "Navigation",
       icon: <Compass size={16} className="text-sky-500" />,
       shortcut: "H",
       action: () => { onNavigateSection("home"); onClose(); },
-      keywords: ["intro", "hero", "about", "vetrivel", "experience", "home"]
+      keywords: ["intro", "hero", "about", "vetrivel", "experience", "home", "telemetry"]
     },
     {
-      id: "nav-storyboard",
-      title: "Interactive Graphic Novel Chronicles",
+      id: "nav-recruiter",
+      title: "02 // Recruiter & Global Mobility Command Deck",
       category: "Navigation",
-      icon: <Sparkles size={16} className="text-purple-500" />,
-      shortcut: "C",
-      action: () => { onNavigateSection("storyboard"); onClose(); },
-      keywords: ["comic", "storyboard", "chronicles", "nokia", "wing", "satellite", "ai", "episodes"]
-    },
-    {
-      id: "nav-vision",
-      title: "Why Solution Architect? (Career Evolution)",
-      category: "Navigation",
-      icon: <Terminal size={16} className="text-indigo-500" />,
-      shortcut: "V",
-      action: () => { onNavigateSection("vision-section"); onClose(); },
-      keywords: ["vision", "mission", "career", "timeline", "capgemini", "transition"]
+      icon: <Terminal size={16} className="text-sky-500" />,
+      shortcut: "R",
+      action: () => { onNavigateSection("recruiter-hub"); onClose(); },
+      keywords: ["recruiter", "hiring", "singapore", "uk", "usa", "visa", "summary", "mobility"]
     },
     {
       id: "nav-blueprint",
-      title: "Carrier Systems Interactive Blueprint",
+      title: "03 // Carrier Systems Interactive Blueprint",
       category: "Navigation",
-      icon: <Layers size={16} className="text-blue-500" />,
+      icon: <Layers size={16} className="text-emerald-500" />,
       shortcut: "B",
       action: () => { onNavigateSection("blueprint-section"); onClose(); },
-      keywords: ["architecture", "telecom", "oss", "bss", "singleview", "spring", "layers"]
-    },
-    {
-      id: "nav-metrics",
-      title: "Delivery Metrics & Trajectory Analytics",
-      category: "Navigation",
-      icon: <Cpu size={16} className="text-emerald-500" />,
-      shortcut: "M",
-      action: () => { onNavigateSection("milestones-analytics"); onClose(); },
-      keywords: ["charts", "metrics", "subscribers", "endpoints", "growth", "recharts"]
+      keywords: ["architecture", "telecom", "oss", "bss", "singleview", "node", "spring", "layers"]
     },
     {
       id: "nav-skills",
-      title: "Qualification Matrix & Radar",
+      title: "04 // Technical Competencies & Protocol Matrix",
       category: "Navigation",
-      icon: <Award size={16} className="text-amber-500" />,
+      icon: <Award size={16} className="text-purple-500" />,
       shortcut: "S",
-      action: () => { onNavigateSection("skills-analytics-section"); onClose(); },
-      keywords: ["skills", "java", "selenium", "agile", "aws", "certifications", "radar", "travel"]
+      action: () => { onNavigateSection("skills-section"); onClose(); },
+      keywords: ["skills", "node", "nextjs", "diameter", "nokia", "singleview", "playwright", "galaxy"]
     },
     {
       id: "nav-projects",
-      title: "Featured Case Studies & Projects",
+      title: "05 // Architectural Deployments & Projects",
       category: "Navigation",
-      icon: <FolderGit2 size={16} className="text-purple-500" />,
+      icon: <FolderGit2 size={16} className="text-sky-500" />,
       shortcut: "P",
       action: () => { onNavigateSection("projects"); onClose(); },
-      keywords: ["projects", "verizon", "capgemini", "inmarsat", "bt", "work"]
+      keywords: ["projects", "verizon", "capgemini", "inmarsat", "bt", "work", "github"]
+    },
+    {
+      id: "nav-milestones",
+      title: "06 // Career Milestones & Corporate Honors",
+      category: "Navigation",
+      icon: <Cpu size={16} className="text-amber-500" />,
+      shortcut: "M",
+      action: () => { onNavigateSection("milestones-analytics"); onClose(); },
+      keywords: ["charts", "metrics", "subscribers", "endpoints", "growth", "awards", "recharts"]
     },
     {
       id: "nav-blogs",
-      title: "Engineering Reflections & Memoirs",
+      title: "07 // Engineering Insights & Memoirs",
       category: "Navigation",
-      icon: <BookOpen size={16} className="text-teal-500" />,
-      shortcut: "R",
+      icon: <BookOpen size={16} className="text-indigo-500" />,
+      shortcut: "I",
       action: () => { onNavigateSection("reflections"); onClose(); },
-      keywords: ["blog", "articles", "reading", "resilience", "scrum", "architecture"]
+      keywords: ["blog", "articles", "reading", "resilience", "scrum", "architecture", "whitepaper"]
     },
     {
       id: "nav-contact",
-      title: "Contact & Advisory Booking",
+      title: "08 // Global Inquiries & Executive Contact",
       category: "Navigation",
-      icon: <Mail size={16} className="text-rose-500" />,
+      icon: <Mail size={16} className="text-emerald-500" />,
       shortcut: "C",
       action: () => { onNavigateSection("contact"); onClose(); },
-      keywords: ["contact", "email", "phone", "message", "hire", "consult", "travel"]
+      keywords: ["contact", "email", "phone", "message", "hire", "consult", "singapore", "mobility"]
     },
     // Actions
     {

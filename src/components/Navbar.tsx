@@ -98,11 +98,12 @@ export default function Navbar({
   const navLinks = [
     { href: "#home", label: "Overview", id: "home", num: "01" },
     { href: "#recruiter-hub", label: "Recruiter Hub", id: "recruiter-hub", num: "02" },
-    { href: "#storyboard", label: "Missions", id: "storyboard", num: "03" },
-    { href: "#skills-analytics-section", label: "Telecom Matrix", id: "skills-analytics-section", num: "04" },
-    { href: "#projects", label: "Carriers", id: "projects", num: "05" },
-    { href: "#milestones-analytics", label: "Experience", id: "milestones-analytics", num: "06" },
-    { href: "#contact", label: "Contact", id: "contact", num: "07" }
+    { href: "#blueprint-section", label: "Architecture", id: "blueprint-section", num: "03" },
+    { href: "#skills-section", label: "Technical Matrix", id: "skills-section", num: "04" },
+    { href: "#projects", label: "Case Studies", id: "projects", num: "05" },
+    { href: "#milestones-analytics", label: "Milestones", id: "milestones-analytics", num: "06" },
+    { href: "#reflections", label: "Insights", id: "reflections", num: "07" },
+    { href: "#contact", label: "Contact", id: "contact", num: "08" }
   ];
 
   return (
@@ -120,13 +121,13 @@ export default function Navbar({
             : "bg-white/70 dark:bg-slate-950/60 backdrop-blur-lg border border-slate-200/80 dark:border-slate-800/80"
         }`}
       >
-        {/* LEFT: Brand Emblem with Mini Avatar & Status Beacon */}
+        {/* LEFT: Brand Emblem with Executive Portrait & Status Beacon */}
         <div className="flex items-center gap-2.5 shrink-0">
           <a href="#home" className="flex items-center gap-2.5 group">
             <div className="relative">
               <div className="w-9 h-9 rounded-2xl overflow-hidden border border-sky-500/50 shadow-md group-hover:border-sky-400 transition-all duration-300 group-hover:scale-105">
                 <img
-                  src="/assets/vetrivel_comic_tech_architect.jpg"
+                  src="/assets/vetrivel_original_blazer.jpg"
                   alt="Vetrivel Muthusamy"
                   className="w-full h-full object-cover"
                 />
@@ -344,7 +345,7 @@ export default function Navbar({
             <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-850">
               <div className="flex items-center gap-2.5">
                 <img
-                  src="/assets/vetrivel_avatar_architect.jpg"
+                  src="/assets/vetrivel_original_blazer.jpg"
                   alt="Vetrivel"
                   className="w-9 h-9 rounded-xl object-cover border border-sky-500/40"
                 />

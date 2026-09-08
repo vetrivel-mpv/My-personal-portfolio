@@ -25,6 +25,7 @@ import {
   GitFork
 } from "lucide-react";
 import { Project } from "../types";
+import SectionHeader from "./SectionHeader";
 
 interface ProjectDetailDeepDive {
   role: string;
@@ -284,29 +285,20 @@ export default function ProjectGallery({ projects }: ProjectGalleryProps) {
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Section Header */}
-        <div className="space-y-4 text-left">
-          <div className="flex items-center gap-2 select-none">
-            <span className="h-[1px] w-6 bg-sky-500" />
-            <span className="font-mono text-xs text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest">
-              PORTFOLIO SHOWCASE & FULL-STACK REPOSITORIES
-            </span>
-          </div>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <SectionHeader
+            badgeNumber="05"
+            badgeText="ENTERPRISE ENGAGEMENTS & CODE"
+            badgeColor="sky"
+            title="Enterprise Engagements &"
+            gradientWord="Full-Stack Projects"
+            description="Explore enterprise Telecom OSS/BSS case studies alongside modern open-source Full-Stack developments in Node.js, Next.js, Playwright automated testing, TM Forum Open APIs, and AI engineering."
+          />
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <div className="space-y-2">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight font-sans">
-                Architectural Deployments & GitHub Projects
-              </h2>
-              <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                Explore enterprise Telecom OSS/BSS case studies alongside modern open-source Full-Stack developments in Node.js, Next.js, Playwright automated testing, TM Forum Open APIs, and AI engineering.
-              </p>
-            </div>
-
-            {/* Total count badge */}
-            <div className="shrink-0 flex items-center gap-2 px-3.5 py-1.5 glass-pill rounded-xl text-xs font-mono text-slate-700 dark:text-slate-300">
-              <FolderGit2 size={14} className="text-sky-500 dark:text-sky-400" />
-              <span>{filteredProjects.length} SHOWCASED PROJECTS</span>
-            </div>
+          {/* Total count badge */}
+          <div className="shrink-0 flex items-center gap-2 px-3.5 py-1.5 glass-pill rounded-xl text-xs font-mono text-slate-700 dark:text-slate-300 self-start lg:self-end pb-2">
+            <FolderGit2 size={14} className="text-sky-500 dark:text-sky-400" />
+            <span>{filteredProjects.length} SHOWCASED PROJECTS</span>
           </div>
         </div>
 

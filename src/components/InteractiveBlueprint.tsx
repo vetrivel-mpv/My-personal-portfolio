@@ -18,6 +18,7 @@ import {
   Radio,
   FileCheck
 } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
 interface LayerDetail {
   id: string;
@@ -100,29 +101,20 @@ export default function InteractiveBlueprint() {
     >
       <div className="max-w-7xl mx-auto space-y-16">
         
-        {/* Title Block */}
-        <div className="space-y-4 text-left">
-          <div className="flex items-center gap-2 select-none">
-            <span className="h-[1px] w-6 bg-sky-500" />
-            <span className="font-mono text-xs text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest">
-              TELECOM CARRIER BLUEPRINT SANDBOX
-            </span>
-          </div>
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <SectionHeader
+            badgeNumber="03"
+            badgeText="TELECOM BLUEPRINT SANDBOX"
+            badgeColor="emerald"
+            title="Carrier 4-Tier Interactive"
+            gradientWord="Architecture Blueprint"
+            description="Explore the end-to-end carrier architecture designed and audited by Vetrivel. Click on any tier below to audit its telecom protocols, failure modes cured, and TM Forum standards."
+          />
           
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <div className="space-y-2">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight font-sans">
-                Carrier 4-Tier Interactive Architecture
-              </h2>
-              <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                Explore the end-to-end carrier architecture designed and audited by Vetrivel. Click on any tier below to audit its telecom protocols, failure modes cured, and TM Forum standards.
-              </p>
-            </div>
-            
-            <div className="shrink-0 flex items-center gap-2 px-3.5 py-1.5 glass-pill rounded-xl text-xs font-mono text-slate-700 dark:text-slate-300">
-              <Terminal size={13} className="text-sky-500 dark:text-sky-400" />
-              <span>TM FORUM ODA COMPLIANT</span>
-            </div>
+          <div className="shrink-0 flex items-center gap-2 px-3.5 py-1.5 glass-pill rounded-xl text-xs font-mono text-slate-700 dark:text-slate-300 self-start lg:self-end pb-2">
+            <Terminal size={13} className="text-emerald-500 dark:text-emerald-400" />
+            <span>TM FORUM ODA COMPLIANT</span>
           </div>
         </div>
 
@@ -132,14 +124,14 @@ export default function InteractiveBlueprint() {
             {/* Left 7 cols: 16:9 Image */}
             <div className="lg:col-span-7 relative h-64 sm:h-80 lg:h-96 overflow-hidden">
               <img 
-                src="/assets/vetrivel_comic_cloud_architect.jpg" 
+                src="/assets/vetrivel_original_portrait.jpg" 
                 alt="Vetrivel Muthusamy - Cloud Architecture Studio" 
                 className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-950/90 hidden lg:block" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-950/40 to-slate-950 hidden lg:block" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent lg:hidden" />
-              <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-xl bg-slate-950/80 backdrop-blur-md border border-sky-500/30 text-sky-300 text-xs font-mono font-bold flex items-center gap-1.5">
-                <Sparkles size={13} className="text-sky-400" />
+              <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-xl bg-slate-950/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold flex items-center gap-1.5">
+                <Sparkles size={13} className="text-emerald-400" />
                 <span>ACTIVE ARCHITECTURAL CANVAS</span>
               </div>
             </div>

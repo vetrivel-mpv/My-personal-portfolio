@@ -24,6 +24,7 @@ import {
   CartesianGrid,
   Legend
 } from "recharts";
+import SectionHeader from "./SectionHeader";
 
 // Trajectory telemetry dataset from real LinkedIn career history
 const growthTimelineData = [
@@ -168,33 +169,24 @@ export default function Milestones() {
     >
       <div className="max-w-7xl mx-auto space-y-12">
         
-        {/* Title Block */}
+        {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-          <div className="space-y-4 text-left">
-            <div className="flex items-center gap-2 select-none">
-              <span className="h-[1px] w-6 bg-sky-500" />
-              <span className="font-mono text-xs text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest">
-                VERIFIABLE HISTORICAL DATA & IMPACT
-              </span>
-            </div>
-            
-            <div className="space-y-2">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight font-sans">
-                Career Trajectory & Delivery Analytics
-              </h2>
-              <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                Analyzing 11+ years of cumulative scale: from test execution specialist to leading multi-million subscriber BSS transformations and automated Selenium grids.
-              </p>
-            </div>
-          </div>
+          <SectionHeader
+            badgeNumber="06"
+            badgeText="CAREER TRAJECTORY & TELEMETRY"
+            badgeColor="amber"
+            title="Career Trajectory &"
+            gradientWord="Delivery Analytics"
+            description="Analyzing 11+ years of cumulative scale: from test execution specialist to leading multi-million subscriber BSS transformations, Agile QA squads of 15+, and corporate honors."
+          />
 
           {/* Switcher Tabs */}
-          <div className="flex items-center gap-1.5 p-1 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 self-start lg:self-auto select-none">
+          <div className="flex items-center gap-1.5 p-1 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 self-start lg:self-end pb-2 select-none">
             <button
               onClick={() => setActiveTab("growth")}
               className={`px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                 activeTab === "growth"
-                  ? "bg-sky-500 text-white shadow-md shadow-sky-500/25"
+                  ? "bg-amber-500 text-white shadow-md shadow-amber-500/25"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white"
               }`}
             >
@@ -206,7 +198,7 @@ export default function Milestones() {
               onClick={() => setActiveTab("metrics")}
               className={`px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                 activeTab === "metrics"
-                  ? "bg-sky-500 text-white shadow-md shadow-sky-500/25"
+                  ? "bg-amber-500 text-white shadow-md shadow-amber-500/25"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white"
               }`}
             >

@@ -458,7 +458,7 @@ export default function LearningRadar() {
               <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
                 <div className="lg:col-span-7 relative h-64 sm:h-80 lg:h-96 overflow-hidden">
                   <img
-                    src="/assets/vetrivel_comic_ai_laboratory.jpg"
+                    src="/assets/vetrivel_original_portrait.jpg"
                     alt="Vetrivel Muthusamy - AI Telco Laboratory"
                     className="w-full h-full object-cover object-center"
                   />

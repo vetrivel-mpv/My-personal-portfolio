@@ -34,7 +34,7 @@ interface HeroProps {
 }
 
 type SimulationScenario = "idle" | "burst" | "failover" | "idempotency" | "audit";
-type AvatarMode = "real" | "comic-architect" | "comic-travel" | "comic-noc";
+type AvatarMode = "blazer" | "portrait" | "blue" | "casual";
 
 const TELECOM_OPERATORS = [
   { name: "Nokia WING Digital Hub", code: "NOKIA 10M+", region: "Global IoT Grid", logo: "🌐", desc: "10M+ Subs Migration, Gy/Ro, MRR & PDF Invoicing" },
@@ -63,8 +63,8 @@ export default function Hero({
     "[14:20:07] ⚡ Ingestion cluster healthy across 8 Kafka consumer nodes"
   ]);
 
-  // Avatar persona state (Real Photo + Comic Tech Guy styles)
-  const [avatarMode, setAvatarMode] = useState<AvatarMode>("comic-architect");
+  // Executive portrait state
+  const [avatarMode, setAvatarMode] = useState<AvatarMode>("blazer");
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [copiedEmail, setCopiedEmail] = useState(false);
 
@@ -130,10 +130,10 @@ export default function Hero({
   };
 
   const getAvatarImageSrc = () => {
-    if (avatarMode === "real") return "/assets/vetrivel_original_blazer.jpg";
-    if (avatarMode === "comic-architect") return "/assets/vetrivel_comic_tech_architect.jpg";
-    if (avatarMode === "comic-travel") return "/assets/vetrivel_comic_global_traveler.jpg";
-    return "/assets/vetrivel_comic_noc_commander.jpg";
+    if (avatarMode === "portrait") return "/assets/vetrivel_original_portrait.jpg";
+    if (avatarMode === "blue") return "/assets/vetrivel_original_blue_shirt.jpg";
+    if (avatarMode === "casual") return "/assets/vetrivel_original_casual_white.jpg";
+    return "/assets/vetrivel_original_blazer.jpg";
   };
 
   const handleCopyEmail = () => {
@@ -272,17 +272,17 @@ export default function Hero({
 
           </div>
 
-          {/* RIGHT 5 COLS: Animated Comic Tech Guy & Avatar Persona Card */}
+          {/* RIGHT 5 COLS: Executive Architect Cockpit & Live Telemetry Panel */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center">
             
             {/* 3D Holographic Perspective Container */}
             <div 
-              className="perspective-1000 w-full max-w-sm"
+              className="perspective-1000 w-full max-w-md"
               onMouseMove={handleCardMouseMove}
               onMouseLeave={handleCardMouseLeave}
             >
               <div 
-                className="relative rounded-3xl p-5 glass-panel border border-sky-500/40 bg-white/90 dark:bg-slate-900/90 shadow-2xl transition-transform duration-200 ease-out transform-style-3d overflow-hidden space-y-4"
+                className="relative rounded-3xl p-5 glass-panel border border-sky-500/40 bg-white/95 dark:bg-slate-900/95 shadow-2xl transition-transform duration-200 ease-out transform-style-3d overflow-hidden space-y-4"
                 style={{
                   transform: `rotateY(${mousePos.x}deg) rotateX(${mousePos.y}deg)`
                 }}
@@ -294,137 +294,115 @@ export default function Hero({
                 <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border border-sky-500/20 border-dashed animate-spin-slow pointer-events-none" />
                 <div className="absolute -bottom-10 -left-10 w-44 h-44 rounded-full border border-indigo-500/20 border-dotted animate-spin-reverse pointer-events-none" />
 
-                {/* Persona Switcher Tabs */}
+                {/* Header Strip with Live Status */}
                 <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800 relative z-10">
                   <div className="flex items-center gap-2">
-                    <Sparkles size={13} className="text-purple-500 animate-pulse" />
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
                     <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-800 dark:text-sky-300">
-                      AVATAR TRANSLATOR
+                      LEAD ARCHITECT COCKPIT
                     </span>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-1 bg-slate-100 dark:bg-slate-950 p-0.5 rounded-xl border border-slate-200 dark:border-slate-800">
-                    <button
-                      onClick={() => setAvatarMode("real")}
-                      title="Real Original Photo"
-                      className={`px-2 py-1 rounded-lg text-[9.5px] font-mono font-bold transition-colors cursor-pointer ${
-                        avatarMode === "real" ? "bg-emerald-600 text-white shadow-xs" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                      }`}
-                    >
-                      👔 REAL
-                    </button>
-                    <button
-                      onClick={() => setAvatarMode("comic-architect")}
-                      title="Comic Tech Architect"
-                      className={`px-2 py-1 rounded-lg text-[9.5px] font-mono font-bold transition-colors cursor-pointer ${
-                        avatarMode === "comic-architect" ? "bg-purple-600 text-white shadow-xs" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                      }`}
-                    >
-                      ⚡ COMIC
-                    </button>
-                    <button
-                      onClick={() => setAvatarMode("comic-travel")}
-                      title="Comic Global Traveler"
-                      className={`px-2 py-1 rounded-lg text-[9.5px] font-mono font-bold transition-colors cursor-pointer ${
-                        avatarMode === "comic-travel" ? "bg-amber-500 text-white shadow-xs" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                      }`}
-                    >
-                      🌍 TRAVEL
-                    </button>
-                    <button
-                      onClick={() => setAvatarMode("comic-noc")}
-                      title="Comic NOC Commander"
-                      className={`px-2 py-1 rounded-lg text-[9.5px] font-mono font-bold transition-colors cursor-pointer ${
-                        avatarMode === "comic-noc" ? "bg-sky-500 text-white shadow-xs" : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                      }`}
-                    >
-                      📡 NOC
-                    </button>
+                  <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-sky-400 text-[10px] font-mono font-bold">
+                    <Activity size={11} className="animate-pulse" />
+                    <span>{tpsRate.toLocaleString()} TPS ACTIVE</span>
                   </div>
                 </div>
 
-                {/* Main Avatar Image with Glowing Cyber Frame */}
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700/80 aspect-square group shadow-xl bg-slate-100 dark:bg-slate-950">
+                {/* Executive Portrait Frame */}
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700/80 aspect-[4/3] group shadow-xl bg-slate-950">
                   <img
-                    src={getAvatarImageSrc()}
-                    alt="Vetrivel Muthusamy - Architect & Lead Consultant"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    src="/assets/vetrivel_original_blazer.jpg"
+                    alt="Vetrivel Muthusamy - Principal Telecom QA Lead"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                   
-                  {/* Persona Badge Overlay */}
-                  <div className="absolute bottom-3 left-3 right-3 p-2 rounded-xl glass-panel border border-white/20 dark:border-slate-700/80 text-xs font-mono text-white flex items-center justify-between bg-slate-950/80 backdrop-blur-md">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-                      <span className="font-bold text-[10.5px]">
-                        {avatarMode === "real" && "VETRIVEL (ORIGINAL PHOTO)"}
-                        {avatarMode === "comic-architect" && "COMIC TECH HERO (5G/CLOUD)"}
-                        {avatarMode === "comic-travel" && "COMIC GLOBAL TRAVELER"}
-                        {avatarMode === "comic-noc" && "COMIC NOC COMMANDER"}
+                  {/* Executive Credentials Overlay */}
+                  <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-white/20 dark:border-slate-700/80 text-xs font-mono text-white flex items-center justify-between">
+                    <div className="space-y-0.5">
+                      <div className="flex items-center gap-1.5">
+                        <Award size={13} className="text-amber-400" />
+                        <span className="font-bold text-[11px] tracking-tight">VETRIVEL MUTHUSAMY</span>
+                      </div>
+                      <span className="text-[9.5px] text-sky-300 block">
+                        Principal QA Lead & BSS/OSS Consultant
                       </span>
                     </div>
-                    <span className="text-[9.5px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold border border-sky-500/30">
-                      {avatarMode === "real" ? "REAL" : "COMIC"}
+                    <span className="text-[9.5px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40">
+                      VERIFIED LEAD
                     </span>
                   </div>
                 </div>
 
-                {/* 4 Quick Switcher Thumbnails Strip */}
-                <div className="grid grid-cols-4 gap-2 pt-1">
-                  <button
-                    onClick={() => setAvatarMode("real")}
-                    title="Original Photo"
-                    className={`rounded-xl overflow-hidden aspect-square border-2 transition-all cursor-pointer ${
-                      avatarMode === "real" ? "border-emerald-500 scale-105 shadow-md" : "border-slate-200 dark:border-slate-800 opacity-60 hover:opacity-100"
-                    }`}
-                  >
-                    <img src="/assets/vetrivel_original_blazer.jpg" alt="Real Portrait" className="w-full h-full object-cover" />
-                  </button>
-
-                  <button
-                    onClick={() => setAvatarMode("comic-architect")}
-                    title="Comic Tech Hero"
-                    className={`rounded-xl overflow-hidden aspect-square border-2 transition-all cursor-pointer ${
-                      avatarMode === "comic-architect" ? "border-purple-500 scale-105 shadow-md" : "border-slate-200 dark:border-slate-800 opacity-60 hover:opacity-100"
-                    }`}
-                  >
-                    <img src="/assets/vetrivel_comic_tech_architect.jpg" alt="Comic Tech Hero" className="w-full h-full object-cover" />
-                  </button>
-
-                  <button
-                    onClick={() => setAvatarMode("comic-travel")}
-                    title="Comic Global Traveler"
-                    className={`rounded-xl overflow-hidden aspect-square border-2 transition-all cursor-pointer ${
-                      avatarMode === "comic-travel" ? "border-amber-500 scale-105 shadow-md" : "border-slate-200 dark:border-slate-800 opacity-60 hover:opacity-100"
-                    }`}
-                  >
-                    <img src="/assets/vetrivel_comic_global_traveler.jpg" alt="Comic Traveler" className="w-full h-full object-cover" />
-                  </button>
-
-                  <button
-                    onClick={() => setAvatarMode("comic-noc")}
-                    title="Comic NOC Commander"
-                    className={`rounded-xl overflow-hidden aspect-square border-2 transition-all cursor-pointer ${
-                      avatarMode === "comic-noc" ? "border-sky-500 scale-105 shadow-md" : "border-slate-200 dark:border-slate-800 opacity-60 hover:opacity-100"
-                    }`}
-                  >
-                    <img src="/assets/vetrivel_comic_noc_commander.jpg" alt="Comic NOC" className="w-full h-full object-cover" />
-                  </button>
+                {/* 4 Quantified Key Metrics */}
+                <div className="grid grid-cols-2 gap-2 text-left font-mono">
+                  <div className="p-2.5 rounded-xl bg-slate-100/90 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 space-y-0.5">
+                    <span className="text-[9.5px] text-slate-500 dark:text-slate-400 uppercase block font-medium">SUBSCRIBER SCALE</span>
+                    <span className="text-xs sm:text-sm font-extrabold text-sky-600 dark:text-sky-400">10M+ MIGRATION</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-slate-100/90 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 space-y-0.5">
+                    <span className="text-[9.5px] text-slate-500 dark:text-slate-400 uppercase block font-medium">QA MANAGEMENT</span>
+                    <span className="text-xs sm:text-sm font-extrabold text-indigo-600 dark:text-indigo-400">15+ ENGINEERS</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-slate-100/90 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 space-y-0.5">
+                    <span className="text-[9.5px] text-slate-500 dark:text-slate-400 uppercase block font-medium">MANUAL EFFORT</span>
+                    <span className="text-xs sm:text-sm font-extrabold text-emerald-600 dark:text-emerald-400">-50% CUT</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-slate-100/90 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 space-y-0.5">
+                    <span className="text-[9.5px] text-slate-500 dark:text-slate-400 uppercase block font-medium">DEFECT LEAKAGE</span>
+                    <span className="text-xs sm:text-sm font-extrabold text-amber-600 dark:text-amber-400">ZERO P1/P2</span>
+                  </div>
                 </div>
 
-                {/* Telemetry Live Meters */}
-                <div className="grid grid-cols-3 gap-2 pt-1 text-center font-mono">
-                  <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-850">
-                    <span className="block text-[9px] text-slate-500 dark:text-slate-400 uppercase">EXPERIENCE</span>
-                    <span className="text-xs font-bold text-sky-600 dark:text-sky-400">10+ YRS</span>
+                {/* Live Simulation Stress-Test Triggers */}
+                <div className="space-y-1.5 pt-1 border-t border-slate-200 dark:border-slate-800 font-mono">
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase block">
+                    INTERACTIVE PROTOCOL STRESS SIMULATOR:
+                  </span>
+                  <div className="grid grid-cols-3 gap-1.5">
+                    <button
+                      onClick={() => triggerSimulation("burst")}
+                      className={`py-1.5 px-2 rounded-lg text-[10px] font-bold border transition-all cursor-pointer ${
+                        simScenario === "burst" 
+                          ? "bg-amber-500 text-white border-amber-400 shadow-md animate-pulse"
+                          : "bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-amber-500/50"
+                      }`}
+                    >
+                      ⚡ Burst 10k TPS
+                    </button>
+                    <button
+                      onClick={() => triggerSimulation("failover")}
+                      className={`py-1.5 px-2 rounded-lg text-[10px] font-bold border transition-all cursor-pointer ${
+                        simScenario === "failover" 
+                          ? "bg-rose-500 text-white border-rose-400 shadow-md animate-pulse"
+                          : "bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-rose-500/50"
+                      }`}
+                    >
+                      🛡️ OCS Failover
+                    </button>
+                    <button
+                      onClick={() => triggerSimulation("audit")}
+                      className={`py-1.5 px-2 rounded-lg text-[10px] font-bold border transition-all cursor-pointer ${
+                        simScenario === "audit" 
+                          ? "bg-sky-500 text-white border-sky-400 shadow-md animate-pulse"
+                          : "bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-sky-500/50"
+                      }`}
+                    >
+                      🔍 WING Audit
+                    </button>
                   </div>
-                  <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-850">
-                    <span className="block text-[9px] text-slate-500 dark:text-slate-400 uppercase">MANUAL EFFORT</span>
-                    <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400">-50%</span>
-                  </div>
-                  <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-850">
-                    <span className="block text-[9px] text-slate-500 dark:text-slate-400 uppercase">POST-RELEASE</span>
-                    <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">-30% DEF</span>
-                  </div>
+                </div>
+
+                {/* Real-time Telemetry Stream Log */}
+                <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-[10px] text-slate-300 space-y-1 text-left">
+                  {simulationLogs.map((log, idx) => (
+                    <div key={idx} className="truncate text-slate-400 font-mono">
+                      {log}
+                    </div>
+                  ))}
                 </div>
 
               </div>

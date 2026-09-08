@@ -25,7 +25,6 @@ import {
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import RecruiterHub from "./components/RecruiterHub";
-import ComicStoryboard from "./components/ComicStoryboard";
 import ResumeModal from "./components/ResumeModal";
 import InteractiveBlueprint from "./components/InteractiveBlueprint";
 import Milestones from "./components/Milestones";
@@ -86,11 +85,10 @@ export default function App() {
       const sections = [
         "home",
         "recruiter-hub",
-        "storyboard",
-        "skills-analytics-section",
+        "blueprint-section",
+        "skills-section",
         "projects",
         "milestones-analytics",
-        "blueprint-section",
         "reflections",
         "contact"
       ];
@@ -196,8 +194,8 @@ export default function App() {
               onNavigateSection={scrollToSection}
             />
 
-            {/* 3. Interactive Graphic Novel Comic Chronicles */}
-            <ComicStoryboard />
+            {/* 3. Interactive Carrier Systems Blueprint */}
+            <InteractiveBlueprint />
 
             {/* 4. Telecom Skill Matrix & Live Protocol Simulator */}
             <SkillMap />
@@ -208,15 +206,10 @@ export default function App() {
             {/* 6. Career Milestones & Corporate Honors */}
             <Milestones />
 
-            {/* 7. Interactive Carrier Systems Blueprint */}
-            <div id="blueprint-section">
-              <InteractiveBlueprint />
-            </div>
-
-            {/* 8. Engineering Reflections & Technical Chronicles */}
+            {/* 7. Engineering Reflections & Technical Chronicles */}
             <BlogSection blogs={blogs} />
 
-            {/* 9. Contact & Consultation Scheduler */}
+            {/* 8. Contact & Consultation Scheduler */}
             <ContactForm onMessageSubmitted={handleRefreshData} />
 
           </div>

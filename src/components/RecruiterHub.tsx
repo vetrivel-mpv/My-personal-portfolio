@@ -22,6 +22,7 @@ import {
   Star,
   ExternalLink
 } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
 interface RecruiterHubProps {
   onOpenResume: () => void;
@@ -166,25 +167,17 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-          <div className="space-y-3 text-left">
-            <div className="flex items-center gap-2 select-none">
-              <span className="h-[1px] w-6 bg-sky-500" />
-              <span className="font-mono text-xs text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest flex items-center gap-1.5">
-                <Sparkles size={13} className="animate-pulse" />
-                <span>EXECUTIVE RECRUITER & HIRING HUB</span>
-              </span>
-            </div>
-            
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight font-sans">
-              Recruiter Quick-Look Brief
-            </h2>
-            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-              Designed for Hiring Managers & Executive Recruiters seeking specialized Telecom QA leadership, 15+ team Agile management, and global carrier delivery.
-            </p>
-          </div>
+          <SectionHeader
+            badgeNumber="02"
+            badgeText="EXECUTIVE RECRUITER & HIRING HUB"
+            badgeColor="sky"
+            title="Recruiter & Global Mobility"
+            gradientWord="Command Center"
+            description="Designed for Hiring Managers & Executive Recruiters seeking specialized Telecom QA leadership, 15+ team Agile management, and global carrier delivery across Singapore, UK, and US markets."
+          />
 
           {/* Quick Action Buttons */}
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3 self-start lg:self-end pb-2">
             <button
               onClick={onOpenResume}
               className="px-4 py-2.5 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white shadow-md shadow-sky-500/20 transition-all flex items-center gap-2 cursor-pointer hover:scale-[1.02]"
