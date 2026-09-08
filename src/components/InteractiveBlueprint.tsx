@@ -82,7 +82,7 @@ export default function InteractiveBlueprint() {
       subtitle: "Full-Stack Portal & Real-Time Service Assurance Deck",
       status: "ACTIVE",
       icon: <Activity className="text-emerald-500 dark:text-emerald-400" size={18} />,
-      techStack: ["React 19", "TypeScript", "Tailwind CSS", "Spring Boot 3.x", "CI/CD GitLab", "Recharts Telemetry"],
+      techStack: ["Node.js", "Next.js", "TypeScript", "Tailwind CSS", "Spring Boot 3.x", "CI/CD GitLab", "Recharts Telemetry"],
       telcoProtocols: ["TMF620 Product Catalog", "TMF622 Product Ordering", "TMF638 Service Inventory", "TMF648 Quote API", "WCAG 2.1 AA"],
       description: "The executive operational dashboard rendering live telemetry metrics, carrier SLA compliance monitors, interactive blueprint toggles, and subscriber lifecycle audit logs.",
       failureCured: "Lack of end-to-end SLA trace visibility during multi-partner carrier launches. Engineered real-time interactive dashboards for instantaneous verification.",

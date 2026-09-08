@@ -220,11 +220,11 @@ const PROJECT_DEEP_DIVES: Record<string, ProjectDetailDeepDive> = {
       "Optimizing token latency for near-instant AI resume generation."
     ],
     granularStack: [
-      "React 19 & TypeScript",
+      "Node.js & Next.js (TypeScript)",
       "Tailwind CSS & Glassmorphism Tokens",
       "Google Gen AI SDK (Gemini 2.5 Flash)",
-      "Node.js Express Server",
-      "Vite Build Pipeline",
+      "Express.js & PDFKit Vector Engine",
+      "Playwright & Automated Testing",
       "Print CSS & Markdown Parsers"
     ],
     metrics: [
@@ -298,7 +298,7 @@ export default function ProjectGallery({ projects }: ProjectGalleryProps) {
                 Architectural Deployments & GitHub Projects
               </h2>
               <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                Explore enterprise Telecom OSS/BSS case studies alongside modern open-source Full-Stack developments in React 19, Java 21 Spring Boot microservices, and AI engineering.
+                Explore enterprise Telecom OSS/BSS case studies alongside modern open-source Full-Stack developments in Node.js, Next.js, Playwright automated testing, TM Forum Open APIs, and AI engineering.
               </p>
             </div>
 

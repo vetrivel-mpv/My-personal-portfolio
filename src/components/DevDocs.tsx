@@ -15,7 +15,7 @@ export default function DevDocs() {
           <span>◈</span> 1. System Architecture Overview
         </h3>
         <p className="text-sm text-slate-300 leading-relaxed">
-          The application follows a modern **Clean-Stack Single-Page Application (SPA)** architecture, powered by **React 19**, **Vite 6**, and **Tailwind CSS v4**. It features an elegant dual-storage engine designed to start completely functional with rich resume pre-seed data, falling back gracefully to standard local key-value state persistence or integrating seamlessly with cloud-hosted Firestore database instances if configured.
+          The application follows a modern **Clean-Stack Full-Stack Architecture**, powered by a **Node.js Express & PDFKit Vector Backend Service**, **Modern TypeScript & Advanced Component Architecture (Next.js/React standard)**, **Vite 6**, and **Tailwind CSS v4**. It features an elegant dual-storage engine designed to start completely functional with rich resume pre-seed data, falling back gracefully to standard local key-value state persistence or integrating seamlessly with cloud-hosted Firestore database instances if configured.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
           <div className="bg-slate-950 p-4 rounded-lg border border-slate-800/80">

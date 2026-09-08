@@ -195,21 +195,20 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 - Email: vetrivelm02@gmail.com
 - LinkedIn: linkedin.com/in/vetrivelm
 - GitHub: github.com/vetrivel-mpv
-- Overseas Relocation: Singapore 🇸🇬, United Kingdom 🇬🇧, United States 🇺🇸 (100% Relocation & Travel Ready)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Senior Telecom QA Lead & Solutions Delivery Consultant with **over 10 years of specialized enterprise domain experience** in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). **Managed cross-functional QA teams of 15+ engineers under Agile/Scrum**, cutting manual testing efforts by **50%** and reducing post-release issues by **30%** with zero defect leakage across Tier-1 carriers (British Telecom, Verizon, Inmarsat, AT&T, Nokia 3Group). Holds a **Postgraduate Diploma in Software Development**, uniquely bridging the gap between technical software engineering, API contracts, and business stakeholder delivery. **Actively targeting overseas roles in Singapore, UK, and USA.**
+Senior Telecom QA Lead & Solutions Delivery Consultant with **over 10 years of specialized enterprise domain experience** in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). **Managed cross-functional QA teams of 15+ engineers under Agile/Scrum**, cutting manual testing efforts by **50%** and reducing post-release issues by **30%** with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a **Postgraduate Diploma in Software Development (Full Stack)**, uniquely bridging the gap between technical software engineering, Node.js backend architectures, REST/TM Forum Open APIs, modern web engineering, and large-scale carrier delivery.
 
 ---
 
 ## CORE COMPETENCIES & TECHNICAL ARSENAL
-- **Agile QA Leadership & Governance:** Managed 15+ QA Engineers, Sprint Planning & Scrum Ceremonies, Carrier UAT Governance, Defect Lifecycle Management (JIRA/Zephyr), Risk-Based Test Strategy.
-- **Telecom BSS & Convergent Billing:** Nokia WING Digital Hub (10M+ Subs Migration UAT), CSG Singleview Core Billing, OCS/CCS Convergent Charging (3GPP 32.296, Diameter Gy/Ro), Monthly Rating Report (MRR), MRC & NRC Charge Models, Rate Plan Configurations (Individual, Flex, Fixed), Wholesale Invoicing (VZ450 BDT), Automated SFTP Pipelines, End-to-End Invoice PDF Generation.
-- **Enterprise IoT & Network Verification:** AT&T Connection Manager (Enterprise IoT Device Usage Tracking & Dynamic Quota Throttling), Real SIM Network Testing (4G LTE, 5G NSA, Voice, SMS, Data from India testbeds).
-- **Technical Literacy & Software Engineering:** Postgraduate Diploma in Software Development (Full Stack), RESTful API Contract Testing (Postman/Swagger), TM Forum Open APIs (TMF620 Catalog, TMF622 Ordering), JSON/XML Data Validation, Relational Database & SQL Schema Auditing.
-- **Testing Architecture & Optimization:** Functional Testing, Integration & E2E Validation, Data Migration Reconciliation, Test Suite Modularization (-50% Manual Effort Reduction).
+- **Backend & Systems Engineering:** Node.js, Express.js, TypeScript, RESTful Microservices, GraphQL, Python (Automation), SQL (PostgreSQL, Oracle DB), Redis.
+- **Advanced Frontend & Modern Web:** Next.js, Modern TypeScript/JavaScript (ESNext), Component Architecture, TailwindCSS, WebSockets, High-Performance Responsive UI.
+- **Test Automation & QA Architecture:** Playwright, Cypress, Selenium Grid, Postman/Newman, RestAssured, Supertest, CI/CD (GitHub Actions, Jenkins), JIRA/Zephyr.
+- **Telecom BSS/OSS & Network Protocols:** CSG Singleview Billing, Nokia WING (10M+ Subs Migration UAT), Diameter Gy/Ro (OCS/OFCS), Real SIM 4G/5G NSA Testing, TM Forum Open APIs (TMF620/622).
+- **Agile QA Leadership & Governance:** Managing 15+ QA Engineers, Sprint Planning & Scrum Ceremonies, Carrier UAT Governance, Defect Lifecycle Management (JIRA/Zephyr), Risk-Based Test Strategy.
 
 ---
 
@@ -230,7 +229,7 @@ Senior Telecom QA Lead & Solutions Delivery Consultant with **over 10 years of s
 - Supported **Real SIM network testing (4G LTE, 5G NSA, SMS, Voice, Data)** from India test centers.
 - Managed **Monthly Rating Report (MRR)** runs, rate plan configs (**Individual, Flex, Fixed rate plans**), **MRC & NRC charges**, automated **SFTP file transfer pipelines**, and automated **Invoice PDF generation**.
 
-### Cognizant — Bangaon Area / Chennai, India
+### Cognizant — Chennai, India
 **Associate Project Engineer** | *February 2019 — January 2021 (2 years)*
 - Awarded **Star Performer** for consistently high-quality contributions to the **Inmarsat BTP Project**.
 - Orchestrated system integration testing (SIT) and rating validation for **Nokia Hutchison 3Group** European networks (**3Austria, 3Ireland, 3Italy**) and core Singleview postpaid charging pipelines.
@@ -271,11 +270,9 @@ Senior Telecom QA Lead & Solutions Delivery Consultant with **over 10 years of s
 
 ---
 
-## LANGUAGES & OVERSEAS RELOCATION
-- **English:** Professional Working Proficiency
-- **Tamil:** Native or Bilingual Proficiency
-- **Telugu:** Elementary Proficiency
-- **Overseas Mobility:** 100% Ready for Relocation to Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸.
+## LANGUAGES & CARRIER ECOSYSTEMS
+- **Languages:** English (Professional Working Proficiency), Tamil (Native or Bilingual), Telugu (Elementary)
+- **Carrier Ecosystems:** British Telecom (UK), Verizon Wireless (US), AT&T Enterprise (US), Inmarsat, Nokia Hutchison 3Group.
 `;
   };
 
@@ -427,9 +424,9 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
       return (
         <div 
           id={isTailored ? "printable-ai-cv-document" : "printable-cv-document"}
-          className="flex-grow p-6 sm:p-9 overflow-y-auto bg-slate-900 font-sans text-xs text-slate-300 print:bg-white print:p-0 print:text-slate-900 print:overflow-visible transition-colors cv-1page-mode flex flex-col justify-between space-y-3.5 print:space-y-2.5"
+          className="w-full max-w-[850px] mx-auto p-6 sm:p-8 bg-slate-900 font-sans text-xs text-slate-300 rounded-2xl border border-slate-800 shadow-2xl print:bg-white print:p-0 print:border-none print:shadow-none print:text-slate-900 print:w-full print:max-w-none print:rounded-none transition-all cv-1page-mode flex flex-col justify-between space-y-3.5 print:space-y-2.5"
         >
-          {/* Header */}
+          {/* Header (Clean, ATS-Optimized, without relocation badges on formal CV) */}
           <div className="pb-2.5 border-b-2 border-sky-500/80 print:border-b-2 print:border-slate-800 flex flex-col sm:flex-row sm:items-start justify-between gap-3 cv-avoid-break">
             <div className="space-y-1">
               <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight cv-print-name print:text-slate-950 font-sans">
@@ -440,12 +437,6 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
                   ? `${targetRoleInput.trim()} | Agile Delivery Manager (10+ Yrs Exp)` 
                   : "Principal Telecom QA Lead & BSS/OSS Solutions Consultant | Agile Delivery Manager"}
               </p>
-              <div className="pt-0.5">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 print:bg-emerald-50 print:border-emerald-300 print:text-emerald-900 text-[10.5px] font-medium font-sans">
-                  <Plane size={11} className="shrink-0" />
-                  <span><strong>Targeting:</strong> Singapore 🇸🇬 · United Kingdom 🇬🇧 · United States 🇺🇸 (100% Relocation Ready & Immediate Mobility)</span>
-                </span>
-              </div>
             </div>
 
             {/* Compact Contact details */}
@@ -477,49 +468,49 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
               PROFESSIONAL SUMMARY
             </h2>
             <p className="leading-relaxed text-slate-200 print:text-[8.5pt] print:leading-[1.4] print:text-slate-800 font-sans text-xs">
-              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong>over 10 years of specialized enterprise domain experience</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong>Managed cross-functional QA teams of 15+ engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong>50%</strong> and reducing post-release production defect escapes by <strong>30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a <strong>Postgraduate Diploma in Software Development</strong> (Full Stack), uniquely bridging technical software engineering, API contracts, and business stakeholder delivery. <strong>Actively targeting overseas leadership roles in Singapore, UK, and USA.</strong>
+              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong>over 10 years of specialized enterprise domain mastery</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T Enterprise IoT Connection Manager, CSG Singleview Core Billing, Diameter Gy/Ro online charging, Real SIM 4G/5G NSA testing). <strong>Managed cross-functional QA teams of 15+ test engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong>50%</strong> and reducing post-release defect escapes by <strong>30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a <strong>Postgraduate Diploma in Software Development (Full Stack)</strong>, uniquely bridging technical software engineering, Node.js backend architectures, REST/TM Forum Open APIs, modern frontend engineering, and large-scale telecom carrier delivery.
             </p>
           </div>
 
-          {/* 2. CORE COMPETENCIES (4-Card Grid) */}
+          {/* 2. TECHNICAL SKILLS & ENGINEERING ARSENAL (4 High-Density Cards) */}
           <div className="space-y-1 cv-avoid-break">
             <h2 className="text-xs font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
-              CORE COMPETENCIES & TECHNICAL EXPERTISE
+              TECHNICAL SKILLS & ENGINEERING ARSENAL
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs cv-print-grid-2">
               <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
                 <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
-                  Agile QA Leadership & Governance (15+ Team)
+                  Backend & Systems Engineering
                 </strong>
                 <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
-                  Managed 15+ QA Engineers, Sprint Ceremonies, Risk-Based Test Strategy, Carrier Acceptance Sign-Offs, Defect Lifecycle (JIRA/Zephyr).
+                  Node.js, Express.js, TypeScript, RESTful Microservices, GraphQL, Python (Automation), SQL (PostgreSQL, Oracle DB), Redis.
                 </span>
               </div>
 
               <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
                 <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
-                  Telecom BSS & Nokia WING (10M+ Subs)
+                  Advanced Frontend & Modern Web
                 </strong>
                 <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
-                  CSG Singleview Billing, Nokia WING Migration UAT, Diameter Gy/Ro Charging, MRR, MRC/NRC Charges, SFTP & Invoicing PDF Generation.
+                  Next.js, Modern TypeScript/JavaScript (ESNext), Component Architecture, TailwindCSS, WebSockets, High-Performance Responsive UI.
                 </span>
               </div>
 
               <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
                 <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
-                  Enterprise IoT & Network Verification
+                  Test Automation & QA Architecture
                 </strong>
                 <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
-                  AT&T Connection Manager (Device Telemetry & Quota Throttling), Real SIM 4G LTE/5G NSA Testing (Voice, SMS, Data from India testbeds).
+                  Playwright, Cypress, Selenium Grid, Postman/Newman, RestAssured, Supertest, CI/CD (GitHub Actions, Jenkins), JIRA/Zephyr.
                 </span>
               </div>
 
               <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
                 <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
-                  Technical Literacy & Software Foundation
+                  Telecom BSS/OSS & Network Protocols
                 </strong>
                 <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
-                  PG Diploma Software Dev (Full Stack), REST API Contract Testing (Postman/Swagger), TM Forum Open APIs (TMF620/622), SQL Auditing.
+                  CSG Singleview Billing, Nokia WING (10M+ Subs), Diameter Gy/Ro (OCS/OFCS), Real SIM 4G/5G NSA Testing, TM Forum Open APIs (TMF620/622).
                 </span>
               </div>
             </div>
@@ -650,11 +641,11 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
             </div>
           )}
 
-          {/* 5. EDUCATION, CERTIFICATIONS & MOBILITY */}
+          {/* 5. EDUCATION, CERTIFICATIONS & CARRIER SCOPE (Full Width Utilization) */}
           {includeCertifications && (
             <div className="space-y-1.5 cv-avoid-break pt-1">
               <h2 className="text-xs font-bold uppercase tracking-wider text-sky-400 print:text-slate-900 border-b border-slate-800 print:border-b print:border-slate-300 pb-0.5 cv-print-section-header font-sans">
-                EDUCATION, CERTIFICATIONS & OVERSEAS MOBILITY
+                EDUCATION, CERTIFICATIONS & DOMAIN ECOSYSTEM
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-sans">
                 <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
@@ -671,14 +662,14 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
                 </div>
               </div>
 
-              <div className="p-2 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-emerald-50 print:border-emerald-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-[10.5px] font-sans">
+              <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-[10.5px] font-sans">
                 <div className="text-slate-300 print:text-slate-800">
-                  <strong className="text-sky-400 print:text-slate-900">Certs: </strong>
-                  <span>AWS Cloud, Google Python, Oracle OCWCD, IIIT-B SDC16</span>
+                  <strong className="text-sky-400 print:text-slate-900">Certifications: </strong>
+                  <span>AWS Certified Cloud Practitioner  |  Google IT Automation with Python  |  Oracle OCWCD  |  IIIT-B SDC16</span>
                 </div>
-                <div className="text-emerald-400 print:text-emerald-900 font-bold flex items-center gap-1 shrink-0">
-                  <Plane size={11} className="shrink-0" />
-                  <span>100% Relocation Ready (Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸)</span>
+                <div className="text-slate-400 print:text-slate-700 font-medium">
+                  <strong className="text-sky-400 print:text-slate-900">Languages: </strong>
+                  <span>English, Tamil, Telugu</span>
                 </div>
               </div>
             </div>
@@ -691,7 +682,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
     return (
       <div 
         id={isTailored ? "printable-ai-cv-document" : "printable-cv-document"}
-        className="flex-grow p-6 sm:p-10 overflow-y-auto bg-slate-900 font-sans text-xs text-slate-300 print:bg-white print:p-0 print:text-slate-900 print:overflow-visible transition-colors"
+        className="w-full max-w-[850px] mx-auto p-6 sm:p-10 bg-slate-900 font-sans text-xs text-slate-300 rounded-2xl border border-slate-800 shadow-2xl print:bg-white print:p-0 print:border-none print:shadow-none print:text-slate-900 print:w-full print:max-w-none print:rounded-none transition-all"
       >
         {/* ================= PAGE 1 ================= */}
         <div className="cv-page-1 space-y-4 print:space-y-3">
@@ -707,12 +698,6 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
                   ? `${targetRoleInput.trim()} | Agile Delivery Manager (10+ Yrs Exp)` 
                   : "Principal Telecom QA Lead & BSS/OSS Solutions Consultant | Agile Delivery Manager"}
               </p>
-              <div className="pt-0.5">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 print:bg-emerald-50 print:border-emerald-300 print:text-emerald-900 text-[10.5px] font-medium font-sans">
-                  <Plane size={12} className="shrink-0" />
-                  <span><strong>Targeting:</strong> Singapore 🇸🇬 · United Kingdom 🇬🇧 · United States 🇺🇸 (100% Relocation & Travel Ready)</span>
-                </span>
-              </div>
             </div>
 
             {/* Clean Single-Column / Right-aligned Contact info for ATS Machine Reading */}
@@ -742,7 +727,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
               PROFESSIONAL SUMMARY
             </h2>
             <p className="leading-relaxed text-slate-200 print:text-[8.5pt] print:text-slate-800 font-sans text-[11px]">
-              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong>over 10 years of specialized enterprise domain experience</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong>Managed cross-functional QA teams of 15+ engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong>50%</strong> and reducing post-release issues by <strong>30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon, Inmarsat, AT&T, Nokia 3Group). Holds a <strong>Postgraduate Diploma in Software Development</strong>, uniquely bridging technical software engineering, API contracts, and business stakeholder delivery. <strong>Actively targeting overseas roles in Singapore, UK, and USA.</strong>
+              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong>over 10 years of specialized enterprise domain experience</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong>Managed cross-functional QA teams of 15+ engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong>50%</strong> and reducing post-release issues by <strong>30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon, Inmarsat, AT&T, Nokia 3Group). Holds a <strong>Postgraduate Diploma in Software Development (Full Stack)</strong>, uniquely bridging technical software engineering, Node.js backend architectures, REST/TM Forum Open APIs, modern web engineering, and large-scale carrier delivery.
             </p>
           </div>
 
@@ -754,37 +739,37 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] cv-print-grid-2">
               <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
                 <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
-                  Agile QA Leadership & Team Governance
+                  Backend & Systems Engineering
                 </strong>
                 <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
-                  Managed 15+ QA Engineers, Sprint Ceremonies, Risk-Based Test Strategy, Carrier Acceptance Sign-Offs, Defect Triage (JIRA/Zephyr).
+                  Node.js, Express.js, TypeScript, RESTful Microservices, GraphQL, Python (Automation), SQL (PostgreSQL, Oracle DB), Redis.
                 </span>
               </div>
 
               <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
                 <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
-                  Telecom BSS & Nokia WING (10M+ Subs)
+                  Advanced Frontend & Modern Web
                 </strong>
                 <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
-                  CSG Singleview Billing, Nokia WING Migration UAT, Diameter Gy/Ro Charging, MRR, MRC/NRC Charges, SFTP & Invoicing PDF Generation.
+                  Next.js, Modern TypeScript/JavaScript (ESNext), Component Architecture, TailwindCSS, WebSockets, High-Performance UI.
                 </span>
               </div>
 
               <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
                 <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
-                  Enterprise IoT & Network Verification
+                  Test Automation & QA Architecture
                 </strong>
                 <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
-                  AT&T Connection Manager (Device Telemetry & Dynamic Quota Throttling), Real SIM 4G LTE/5G NSA (Voice, SMS, Data from India testbeds).
+                  Playwright, Cypress, Selenium Grid, Postman/Newman, RestAssured, Supertest, CI/CD (GitHub Actions, Jenkins), JIRA/Zephyr.
                 </span>
               </div>
 
               <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 print:bg-slate-50 print:border-slate-200 cv-print-card">
                 <strong className="text-white block font-sans font-bold text-[11px] mb-0.5 print:text-sky-900 print:text-[8.5pt]">
-                  Technical Literacy & Software Foundation
+                  Telecom BSS/OSS & Network Protocols
                 </strong>
                 <span className="text-[10.5px] text-slate-300 print:text-[7.8pt] print:text-slate-700 leading-snug block font-sans">
-                  PG Diploma Software Development (Full Stack), REST API Contract Testing (Postman/Swagger), TM Forum Open APIs (TMF620/622), SQL Auditing.
+                  CSG Singleview Billing, Nokia WING (10M+ Subs), Diameter Gy/Ro (OCS/OFCS), Real SIM 4G/5G NSA Testing, TM Forum Open APIs.
                 </span>
               </div>
             </div>
@@ -968,7 +953,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
             </div>
           )}
 
-          {/* 5. ACADEMIC BACKGROUND & CERTIFICATIONS */}
+          {/* 5. ACADEMIC BACKGROUND & EDUCATION */}
           {includeCertifications && (
             <div className="space-y-2 cv-avoid-break">
               <div>
@@ -1016,7 +1001,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
             </div>
           )}
 
-          {/* 6. LANGUAGES & OVERSEAS RELOCATION */}
+          {/* 6. LANGUAGES & CARRIER ECOSYSTEMS */}
           <div className="space-y-1.5 pt-2 border-t border-slate-800 print:border-t print:border-slate-300 cv-avoid-break">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs font-sans">
               <div className="flex items-center gap-2">
@@ -1026,9 +1011,9 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
                 <span className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-slate-200 print:bg-slate-100 print:border-slate-300 print:text-slate-800 text-[10px] font-medium">Telugu (Elementary)</span>
               </div>
 
-              <div className="text-emerald-400 print:text-emerald-800 font-bold text-[10.5px] flex items-center gap-1.5">
-                <Plane size={12} className="shrink-0" />
-                <span>100% Ready for Relocation & Frequent Travel (Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸)</span>
+              <div className="text-slate-400 print:text-slate-700 font-medium text-[10.5px]">
+                <strong className="text-sky-400 print:text-slate-900">Carrier Accounts: </strong>
+                <span>British Telecom (UK), Verizon Wireless (US), AT&T (US), Inmarsat, Nokia 3Group</span>
               </div>
             </div>
           </div>
@@ -1272,7 +1257,9 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
             </div>
 
             {/* Right: Live Preview Sheet (Google & ATS Standard) */}
-            {renderATSFormattedResume(false)}
+            <div className="flex-grow p-4 sm:p-8 overflow-y-auto bg-slate-950/70 flex justify-center items-start print:bg-white print:p-0 print:overflow-visible">
+              {renderATSFormattedResume(false)}
+            </div>
           </div>
         )}
 

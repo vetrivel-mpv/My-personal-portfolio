@@ -143,22 +143,22 @@ export default function SkillMap() {
     },
     {
       id: "domain-tech",
-      name: "Technical Literacy & Software Foundation (PG Software Dev)",
-      shortName: "Tech Literacy & Architecture",
-      tagline: "Postgraduate in Software Development, REST APIs, JSON/XML, TM Forum ODA & Microservices",
+      name: "Full-Stack Software Engineering & Node.js Systems (PG Software Dev)",
+      shortName: "Node.js & Modern Web Systems",
+      tagline: "Node.js Microservices, Next.js, TypeScript, Playwright Automation, TM Forum Open APIs & SQL",
       icon: <Database className="text-purple-500 dark:text-purple-400" size={18} />,
       color: "purple",
       orbitAngle: 216,
-      overallRating: 94,
-      yearsOfExp: 7,
-      description: "Armed with a Postgraduate Diploma in Software Development, brings high technical literacy to review API contracts, debug database tables, inspect payload structures, and bridge software developers with business teams.",
-      keyHighlight: "Leverages software engineering depth to conduct in-depth API contract verification (TM Forum Open APIs) and communicate seamlessly with development architects.",
+      overallRating: 96,
+      yearsOfExp: 8,
+      description: "Armed with a Postgraduate Diploma in Software Development (Full Stack), uniquely bridges Node.js backend systems, modern Next.js frontend architecture, test automation frameworks (Playwright, Postman), and TM Forum Open APIs with large-scale telecom carrier operations.",
+      keyHighlight: "Builds high-throughput Node.js microservices, automates end-to-end API test suites with Playwright/Newman, and conducts deep TM Forum Open API contract validation.",
       operators: ["Capgemini Engineering", "TM Forum Open API Labs", "Inmarsat Platform"],
       skills: [
-        { id: "tch-1", name: "PG Diploma in Software Development", proficiency: 96, years: 7, description: "Academic foundation in full-stack concepts, SDLC, OOP, data structures & cloud basics", standard: "PG Education" },
-        { id: "tch-2", name: "REST API & Postman Contract Testing", proficiency: 95, years: 8, description: "Validating Swagger/OpenAPI endpoints, JSON/XML payloads, HTTP status codes, headers", standard: "OpenAPI 3.0" },
-        { id: "tch-3", name: "TM Forum ODA Open APIs", proficiency: 94, years: 7, description: "TMF620 (Product Catalog), TMF622 (Product Ordering), SID 21.0 data model alignment", standard: "TM Forum ODA" },
-        { id: "tch-4", name: "Database Schema & SQL Auditing", proficiency: 93, years: 9, description: "Relational database queries, table joins, CDR ledger verification, data schema checks", standard: "SQL / RDBMS" }
+        { id: "tch-1", name: "Node.js & Backend Architecture", proficiency: 96, years: 8, description: "Express.js, TypeScript, RESTful microservices, GraphQL, Redis caching, async event pipelines", standard: "Node.js / Express" },
+        { id: "tch-2", name: "Modern Frontend & Next.js", proficiency: 95, years: 7, description: "Next.js, modern ESNext, component architecture, TailwindCSS, high-performance responsive UI", standard: "Next.js / TypeScript" },
+        { id: "tch-3", name: "Test Automation (Playwright & Postman)", proficiency: 98, years: 9, description: "Playwright, Cypress, Postman/Newman, Supertest, CI/CD automated test pipelines", standard: "Automated QA" },
+        { id: "tch-4", name: "TM Forum ODA Open APIs & SQL", proficiency: 95, years: 8, description: "TMF620 (Catalog), TMF622 (Ordering), SID 21.0 data schemas, Oracle/PostgreSQL ledger auditing", standard: "TM Forum ODA" }
       ]
     },
     {

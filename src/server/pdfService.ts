@@ -56,26 +56,25 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
   const borderBox = "#cbd5e1";
 
   // Helper for drawing clean section headers with horizontal rule
-  const drawSectionHeader = (title: string, topMargin: number = 6, lineWidth: number = pageMode === "1-page" ? 547 : 531) => {
+  const drawSectionHeader = (title: string, topMargin: number = 5, lineWidth: number = pageMode === "1-page" ? 539 : 531) => {
     doc.moveDown(topMargin / 10);
-    doc.fillColor(darkBlue).font("Helvetica-Bold").fontSize(pageMode === "1-page" ? 8.5 : 9.5).text(title.toUpperCase(), { characterSpacing: 0.4 });
-    const y = doc.y + 1;
-    doc.moveDown(0.25);
+    doc.fillColor(darkBlue).font("Helvetica-Bold").fontSize(pageMode === "1-page" ? 10 : 9.5).text(title.toUpperCase(), { characterSpacing: 0.5 });
+    const y = doc.y + 1.5;
+    doc.strokeColor(blue).lineWidth(1.2).moveTo(margin, y).lineTo(margin + lineWidth, y).stroke();
+    doc.moveDown(0.35);
   };
 
   // =========================================================================
   // OPTION 1: 1-PAGE ULTRA-DENSE EXECUTIVE FORMAT (100% UTILIZED, ZERO WASTE)
   // =========================================================================
   if (pageMode === "1-page") {
-    const contentWidth = 595.28 - 2 * margin; // 547.28 pt
+    const contentWidth = 595.28 - 2 * margin; // 539.28 pt
 
-    // Header
-    doc.fillColor(navy).font("Helvetica-Bold").fontSize(21).text(candidateName, margin, doc.y);
+    // Header (Clean, professional, without relocation badges on formal CV)
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(22).text(candidateName, margin, doc.y);
     doc.fillColor(darkBlue).font("Helvetica-Bold").fontSize(11).text(targetRole);
     doc.moveDown(0.25);
 
-    // Mobility & Contacts on compact line
-    doc.fillColor("#047857").font("Helvetica-Bold").fontSize(8.8).text(`✈ TARGET COUNTRIES: ${relocation}`);
     const contactLine = `${location}  |  ${phone}  |  ${email}  |  ${linkedin}  |  ${github}`;
     doc.fillColor(textDark).font("Helvetica").fontSize(8.8).text(contactLine);
     
@@ -87,38 +86,38 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
     // 1. PROFESSIONAL SUMMARY
     drawSectionHeader("Professional Summary", 3, contentWidth);
     const summaryText = customData?.summary || 
-      "Senior Telecom QA Lead & Solutions Delivery Consultant with over 10 years of specialized enterprise domain experience in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro online charging, Real SIM 4G/5G NSA testing). Managed cross-functional QA teams of 15+ engineers under Agile/Scrum, cutting manual testing efforts by 50% and reducing post-release production defect escapes by 30% with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a Postgraduate Diploma in Software Development (Full Stack), uniquely bridging technical software engineering, API contracts, and business stakeholder delivery. Actively targeting overseas leadership roles in Singapore, UK, and USA.";
+      "Senior Telecom QA Lead & Solutions Delivery Architect with over 10 years of specialized enterprise domain mastery in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T Enterprise IoT Connection Manager, CSG Singleview Core Billing, Diameter Gy/Ro online charging, Real SIM 4G/5G NSA testing). Managed cross-functional QA teams of 15+ test engineers under Agile/Scrum, cutting manual testing efforts by 50% and reducing post-release defect escapes by 30% with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a Postgraduate Diploma in Software Development (Full Stack), seamlessly unifying Node.js backend architectures, REST/TM Forum Open APIs, modern frontend engineering, and large-scale telecom carrier delivery.";
     
     doc.fillColor(textDark).font("Helvetica").fontSize(8.8).text(summaryText, {
       align: "justify",
       lineGap: 2.5
     });
 
-    // 2. CORE COMPETENCIES (4 Structured Boxes)
-    drawSectionHeader("Core Competencies & Technical Arsenal", 4, contentWidth);
+    // 2. TECHNICAL SKILLS & ENGINEERING ARSENAL (4 High-Density Cards: Node.js, Frontend, QA, Telecom)
+    drawSectionHeader("Technical Skills & Engineering Arsenal", 4, contentWidth);
     const colW = (contentWidth - 14) / 2;
     const x1 = margin;
     const x2 = margin + colW + 14;
     let sY = doc.y;
 
-    doc.rect(x1, sY, colW, 46).fillAndStroke("#f8fafc", "#cbd5e1");
-    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.8).text("Agile QA Leadership & Governance (15+ Team)", x1 + 8, sY + 6);
-    doc.fillColor(textDark).font("Helvetica").fontSize(8.1).text("Managed 15+ QA Engineers, Sprint Ceremonies, Risk-Based Test Strategy, Carrier Acceptance Sign-Offs, Defect Triage (JIRA/Zephyr).", x1 + 8, sY + 19, { width: colW - 16, lineGap: 1.5 });
+    doc.rect(x1, sY, colW, 48).fillAndStroke("#f8fafc", "#cbd5e1");
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.8).text("Backend & Systems Engineering", x1 + 8, sY + 6);
+    doc.fillColor(textDark).font("Helvetica").fontSize(8).text("Node.js, Express.js, TypeScript, RESTful Microservices, GraphQL, Python (Automation), SQL (PostgreSQL, Oracle DB), Redis.", x1 + 8, sY + 20, { width: colW - 16, lineGap: 1.5 });
 
-    doc.rect(x2, sY, colW, 46).fillAndStroke("#f8fafc", "#cbd5e1");
-    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.8).text("Telecom BSS & Nokia WING (10M+ Subs)", x2 + 8, sY + 6);
-    doc.fillColor(textDark).font("Helvetica").fontSize(8.1).text("CSG Singleview Billing, Nokia WING Migration UAT, Diameter Gy/Ro Charging, MRR, MRC/NRC Charges, SFTP & Invoicing PDF Generation.", x2 + 8, sY + 19, { width: colW - 16, lineGap: 1.5 });
+    doc.rect(x2, sY, colW, 48).fillAndStroke("#f8fafc", "#cbd5e1");
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.8).text("Advanced Frontend & Modern Web", x2 + 8, sY + 6);
+    doc.fillColor(textDark).font("Helvetica").fontSize(8).text("Next.js, Modern TypeScript/JavaScript (ESNext), Component Architecture, TailwindCSS, WebSockets, High-Performance Responsive UI.", x2 + 8, sY + 20, { width: colW - 16, lineGap: 1.5 });
 
-    sY = sY + 52;
-    doc.rect(x1, sY, colW, 46).fillAndStroke("#f8fafc", "#cbd5e1");
-    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.8).text("Enterprise IoT & Network Verification", x1 + 8, sY + 6);
-    doc.fillColor(textDark).font("Helvetica").fontSize(8.1).text("AT&T Connection Manager (Device Telemetry & Quota Throttling), Real SIM 4G LTE/5G NSA Testing (Voice, SMS, Data from India testbeds).", x1 + 8, sY + 19, { width: colW - 16, lineGap: 1.5 });
+    sY = sY + 54;
+    doc.rect(x1, sY, colW, 48).fillAndStroke("#f8fafc", "#cbd5e1");
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.8).text("Test Automation & QA Architecture", x1 + 8, sY + 6);
+    doc.fillColor(textDark).font("Helvetica").fontSize(8).text("Playwright, Cypress, Selenium Grid, Postman/Newman, RestAssured, Supertest, CI/CD (GitHub Actions, Jenkins), JIRA/Zephyr.", x1 + 8, sY + 20, { width: colW - 16, lineGap: 1.5 });
 
-    doc.rect(x2, sY, colW, 46).fillAndStroke("#f8fafc", "#cbd5e1");
-    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.8).text("Technical Literacy & Software Foundation", x2 + 8, sY + 6);
-    doc.fillColor(textDark).font("Helvetica").fontSize(8.1).text("PG Diploma Software Dev (Full Stack), REST API Contract Testing (Postman/Swagger), TM Forum Open APIs (TMF620/622), SQL Auditing.", x2 + 8, sY + 19, { width: colW - 16, lineGap: 1.5 });
+    doc.rect(x2, sY, colW, 48).fillAndStroke("#f8fafc", "#cbd5e1");
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.8).text("Telecom BSS/OSS & Network Protocols", x2 + 8, sY + 6);
+    doc.fillColor(textDark).font("Helvetica").fontSize(8).text("CSG Singleview Billing, Nokia WING (10M+ Subs), Diameter Gy/Ro (OCS/OFCS), Real SIM 4G/5G NSA Testing, TM Forum Open APIs (TMF620/622).", x2 + 8, sY + 20, { width: colW - 16, lineGap: 1.5 });
 
-    doc.y = sY + 53;
+    doc.y = sY + 55;
 
     // 3. PROFESSIONAL EXPERIENCE
     drawSectionHeader("Professional Experience", 4, contentWidth);
@@ -216,12 +215,10 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
 
     doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.4).text("Certifications: ", margin, doc.y, { continued: true });
     doc.fillColor(textDark).font("Helvetica").fontSize(8.1).text("AWS Certified Cloud Practitioner  |  Google IT Automation with Python  |  Oracle OCWCD  |  IIIT-B SDC16");
+    doc.moveDown(0.2);
 
-    // 6. Mobility Banner Footer
-    doc.moveDown(0.45);
-    const footY = doc.y;
-    doc.rect(margin, footY, contentWidth, 26).fillAndStroke("#f0fdf4", "#86efac");
-    doc.fillColor("#166534").font("Helvetica-Bold").fontSize(8.5).text("✈ OVERSEAS RELOCATION & TRAVEL READY: Singapore 🇸🇬 · United Kingdom 🇬🇧 · United States 🇺🇸 (100% Prepared)", margin + 12, footY + 8);
+    doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.4).text("Languages & Carrier Scope: ", margin, doc.y, { continued: true });
+    doc.fillColor(textDark).font("Helvetica").fontSize(8.1).text("English (Professional), Tamil (Native), Telugu  |  British Telecom (UK), Verizon Wireless (US), AT&T (US), Inmarsat, Nokia 3Group.");
 
     doc.end();
     return;
@@ -236,9 +233,6 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
   doc.fillColor(blue).font("Helvetica-Bold").fontSize(9.5).text(targetRole, { align: "left" });
   doc.moveDown(0.15);
 
-  doc.fillColor("#047857").font("Helvetica-Bold").fontSize(8).text(`• Mobility: ${relocation}`);
-  doc.moveDown(0.15);
-
   const contactText = `${location}  |  ${phone}  |  ${email}  |  ${linkedin}  |  ${github}`;
   doc.fillColor(textMuted).font("Helvetica").fontSize(8).text(contactText);
   
@@ -249,33 +243,33 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
   // 1. PROFESSIONAL SUMMARY
   drawSectionHeader("Professional Summary", 4);
   const summaryText = customData?.summary || 
-    "Senior Telecom QA Lead & Solutions Delivery Consultant with over 10 years of specialized enterprise domain experience in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). Managed cross-functional QA teams of 15+ engineers under Agile/Scrum, cutting manual testing efforts by 50% and reducing post-release issues by 30% with zero defect leakage across Tier-1 carriers (British Telecom, Verizon, Inmarsat, AT&T, Nokia 3Group). Holds a Postgraduate Diploma in Software Development, uniquely bridging technical software engineering, API contracts, and business stakeholder delivery. Actively targeting overseas roles in Singapore, UK, and USA.";
+    "Senior Telecom QA Lead & Solutions Delivery Architect with over 10 years of specialized enterprise domain experience in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T Enterprise IoT Connection Manager, CSG Singleview Core Billing, Diameter Gy/Ro online charging, Real SIM 4G/5G NSA testing). Managed cross-functional QA teams of 15+ test engineers under Agile/Scrum, cutting manual testing efforts by 50% and reducing post-release defect escapes by 30% with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a Postgraduate Diploma in Software Development (Full Stack), seamlessly unifying Node.js backend architectures, REST/TM Forum Open APIs, modern frontend engineering, and large-scale telecom carrier delivery.";
   
   doc.fillColor(textDark).font("Helvetica").fontSize(8.2).text(summaryText, {
     align: "justify",
     lineGap: 1.5
   });
 
-  // 2. CORE COMPETENCIES
-  drawSectionHeader("Core Competencies & Technical Arsenal", 6);
+  // 2. TECHNICAL ARSENAL
+  drawSectionHeader("Technical Skills & Engineering Arsenal", 6);
   const colW2 = 255;
   const startX1 = 32;
   const startX2 = 300;
   let skillsY = doc.y;
 
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Agile QA Leadership & Governance", startX1, skillsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Managed 15+ QA Engineers, Sprint Ceremonies, Risk-Based Strategy, Carrier UAT Sign-Offs, Defect Triage (JIRA/Zephyr).", startX1, doc.y, { width: colW2, lineGap: 1 });
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Backend & Systems Engineering", startX1, skillsY);
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Node.js, Express.js, TypeScript, RESTful Microservices, GraphQL, Python (Automation), SQL (PostgreSQL, Oracle DB), Redis.", startX1, doc.y, { width: colW2, lineGap: 1 });
 
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Telecom BSS & Nokia WING (10M+ Subs)", startX2, skillsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("CSG Singleview Billing, Nokia WING Migration UAT, Diameter Gy/Ro Charging, MRR, MRC/NRC Charges, Invoicing PDF Generation.", startX2, doc.y, { width: colW2, lineGap: 1 });
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Advanced Frontend & Modern Web", startX2, skillsY);
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Next.js, Modern TypeScript/JavaScript (ESNext), Component Architecture, TailwindCSS, WebSockets, High-Performance UI.", startX2, doc.y, { width: colW2, lineGap: 1 });
 
   skillsY = Math.max(doc.y, skillsY + 28) + 4;
 
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Enterprise IoT & Network Verification", startX1, skillsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("AT&T Connection Manager (Device Telemetry & Quota Throttling), Real SIM 4G LTE/5G NSA (Voice, SMS, Data from India testbeds).", startX1, doc.y, { width: colW2, lineGap: 1 });
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Test Automation & QA Architecture", startX1, skillsY);
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("Playwright, Cypress, Selenium Grid, Postman/Newman, RestAssured, Supertest, CI/CD (GitHub Actions, Jenkins), JIRA/Zephyr.", startX1, doc.y, { width: colW2, lineGap: 1 });
 
-  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Technical Literacy & Software Foundation", startX2, skillsY);
-  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("PG Diploma Software Dev (Full Stack), REST API Contract Testing (Postman/Swagger), TM Forum Open APIs (TMF620/622), SQL Auditing.", startX2, doc.y, { width: colW2, lineGap: 1 });
+  doc.fillColor(navy).font("Helvetica-Bold").fontSize(8.5).text("Telecom BSS/OSS & Network Protocols", startX2, skillsY);
+  doc.fillColor(textDark).font("Helvetica").fontSize(7.5).text("CSG Singleview Billing, Nokia WING (10M+ Subs), Diameter Gy/Ro (OCS/OFCS), Real SIM 4G/5G NSA Testing, TM Forum Open APIs.", startX2, doc.y, { width: colW2, lineGap: 1 });
 
   doc.x = 32;
   doc.y = skillsY + 30;
@@ -433,14 +427,13 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
     doc.fillColor(textDark).font("Helvetica").fontSize(7.8).text(`✓  ${cert}`, 40, doc.y, { lineGap: 1 });
   });
 
-  // 7. LANGUAGES & RELOCATION FOOTER
+  // 7. LANGUAGES & DOMAIN FOOTER
   doc.moveDown(0.4);
   doc.strokeColor(borderBox).lineWidth(0.8).moveTo(32, doc.y).lineTo(563, doc.y).stroke();
   doc.moveDown(0.3);
 
   doc.fillColor(navy).font("Helvetica-Bold").fontSize(8).text("LANGUAGES: ", 32, doc.y, { continued: true });
-  doc.fillColor(textDark).font("Helvetica").fontSize(8).text("English (Professional Working)  |  Tamil (Native/Bilingual)  |  Telugu (Elementary)", { continued: true });
-  doc.fillColor("#047857").font("Helvetica-Bold").fontSize(8).text("    ✈ 100% Relocation Ready (Singapore, UK, USA)", { align: "right" });
+  doc.fillColor(textDark).font("Helvetica").fontSize(8).text("English (Professional Working)  |  Tamil (Native/Bilingual)  |  Telugu (Elementary)");
 
   doc.end();
 }
