@@ -81,6 +81,11 @@ export default function App() {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 350);
 
+      if (window.scrollY < 120) {
+        setActiveSection("home");
+        return;
+      }
+
       // Section spy
       const sections = [
         "home",
@@ -93,13 +98,13 @@ export default function App() {
         "contact"
       ];
 
-      const scrollPosition = window.scrollY + 200;
-      for (const sectionId of sections) {
+      const scrollPosition = window.scrollY + 220;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
         const el = document.getElementById(sectionId);
         if (el) {
           const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
+          if (scrollPosition >= top) {
             setActiveSection(sectionId);
             break;
           }
@@ -165,6 +170,7 @@ export default function App() {
         onViewAsVisitor={() => setIsAdminMode(false)}
         onOpenResume={() => setIsResumeOpen(true)}
         onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
+        onNavigateSection={scrollToSection}
         activeSection={activeSection}
       />
 

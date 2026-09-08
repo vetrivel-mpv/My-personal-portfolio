@@ -31,6 +31,7 @@ interface NavbarProps {
   onViewAsVisitor: () => void;
   onOpenResume?: () => void;
   onOpenCommandPalette?: () => void;
+  onNavigateSection?: (sectionId: string) => void;
   activeSection?: string;
 }
 
@@ -40,6 +41,7 @@ export default function Navbar({
   onViewAsVisitor, 
   onOpenResume,
   onOpenCommandPalette,
+  onNavigateSection,
   activeSection = "home"
 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -99,33 +101,50 @@ export default function Navbar({
     { href: "#home", label: "Overview", id: "home", num: "01" },
     { href: "#recruiter-hub", label: "Recruiter Hub", id: "recruiter-hub", num: "02" },
     { href: "#blueprint-section", label: "Architecture", id: "blueprint-section", num: "03" },
-    { href: "#skills-section", label: "Technical Matrix", id: "skills-section", num: "04" },
-    { href: "#projects", label: "Case Studies", id: "projects", num: "05" },
+    { href: "#skills-section", label: "Skills", id: "skills-section", num: "04" },
+    { href: "#projects", label: "Projects", id: "projects", num: "05" },
     { href: "#milestones-analytics", label: "Milestones", id: "milestones-analytics", num: "06" },
     { href: "#reflections", label: "Insights", id: "reflections", num: "07" },
     { href: "#contact", label: "Contact", id: "contact", num: "08" }
   ];
 
+  const handleNavClick = (e: React.MouseEvent, sectionId: string) => {
+    e.preventDefault();
+    if (onNavigateSection) {
+      onNavigateSection(sectionId);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header
       id="portfolio-navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-3 sm:px-6 md:px-8 flex justify-center ${
-        isScrolled ? "py-2 sm:py-2.5" : "py-3 sm:py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-3 sm:px-4 md:px-6 flex justify-center ${
+        isScrolled ? "py-2 sm:py-2.5" : "py-3 sm:py-3.5"
       }`}
     >
       {/* Floating Futuristic Command Capsule */}
       <div 
-        className={`w-full max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-5 py-2 rounded-2xl sm:rounded-3xl transition-all duration-300 relative ${
+        className={`w-full max-w-7xl mx-auto flex items-center justify-between gap-2 px-3 sm:px-4 py-2 rounded-2xl sm:rounded-3xl transition-all duration-300 relative ${
           isScrolled
-            ? "glass-panel bg-white/90 dark:bg-slate-950/85 backdrop-blur-xl shadow-2xl shadow-sky-500/5 border border-slate-200/90 dark:border-sky-500/30"
-            : "bg-white/70 dark:bg-slate-950/60 backdrop-blur-lg border border-slate-200/80 dark:border-slate-800/80"
+            ? "glass-panel bg-white/95 dark:bg-slate-950/90 backdrop-blur-xl shadow-2xl shadow-sky-500/5 border border-slate-200/90 dark:border-sky-500/30"
+            : "bg-white/80 dark:bg-slate-950/70 backdrop-blur-lg border border-slate-200/80 dark:border-slate-800/80"
         }`}
       >
         {/* LEFT: Brand Emblem with Executive Portrait & Status Beacon */}
-        <div className="flex items-center gap-2.5 shrink-0">
-          <a href="#home" className="flex items-center gap-2.5 group">
+        <div className="flex items-center gap-2 shrink-0">
+          <a 
+            href="#home" 
+            onClick={(e) => handleNavClick(e, "home")}
+            className="flex items-center gap-2 group cursor-pointer"
+          >
             <div className="relative">
-              <div className="w-9 h-9 rounded-2xl overflow-hidden border border-sky-500/50 shadow-md group-hover:border-sky-400 transition-all duration-300 group-hover:scale-105">
+              <div className="w-8.5 h-8.5 rounded-xl overflow-hidden border border-sky-500/50 shadow-md group-hover:border-sky-400 transition-all duration-300 group-hover:scale-105">
                 <img
                   src="/assets/vetrivel_original_blazer.jpg"
                   alt="Vetrivel Muthusamy"
@@ -136,40 +155,35 @@ export default function Navbar({
             </div>
 
             <div className="flex flex-col text-left justify-center">
-              <div className="flex items-center gap-1.5 leading-tight">
+              <div className="flex items-center gap-1 leading-tight">
                 <span className="font-sans font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors whitespace-nowrap">
                   Vetrivel<span className="text-sky-500 dark:text-sky-400">.M</span>
                 </span>
-                <span className="hidden xl:inline-flex items-center px-2 py-0.2 rounded-full text-[9px] font-mono font-bold bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30 whitespace-nowrap">
+                <span className="hidden 2xl:inline-flex items-center px-1.5 py-0.2 rounded-full text-[8.5px] font-mono font-bold bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30 whitespace-nowrap">
                   QA LEAD
                 </span>
               </div>
-              <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono text-slate-500 dark:text-slate-400 tracking-wider whitespace-nowrap">
-                <span>10+ YRS TELECOM</span>
+              <span className="hidden md:inline-flex items-center gap-1 text-[9.5px] font-mono text-slate-500 dark:text-slate-400 tracking-wider whitespace-nowrap">
+                <span>10+ YRS</span>
                 <span className="text-slate-400 dark:text-slate-600">•</span>
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-0.5">
-                  <Globe2 size={10} />
-                  <span>SG • UK • US</span>
-                </span>
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">SG • UK • US</span>
               </span>
             </div>
           </a>
         </div>
 
         {/* CENTER: Cyber Navigation Hub with Numbered Tabs */}
-        <nav className="hidden lg:flex items-center gap-1 p-1 rounded-2xl bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/90 shadow-inner select-none">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 p-1 rounded-2xl bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/90 shadow-inner select-none overflow-x-auto scrollbar-none">
           {navLinks.map(link => {
             const isActive = activeSection === link.id;
-            const isRecruiter = link.id === "recruiter-hub";
             return (
               <a
                 key={link.id}
                 href={link.href}
-                className={`relative px-3 py-1.5 rounded-xl text-xs font-mono tracking-wider transition-all duration-200 flex items-center gap-1.5 whitespace-nowrap ${
+                onClick={(e) => handleNavClick(e, link.id)}
+                className={`relative px-2 xl:px-2.5 py-1.5 rounded-xl text-[11px] xl:text-xs font-mono tracking-wider transition-all duration-200 flex items-center gap-1 whitespace-nowrap cursor-pointer ${
                   isActive
                     ? "bg-white dark:bg-gradient-to-r dark:from-sky-500/20 dark:via-blue-600/20 dark:to-indigo-500/20 text-sky-600 dark:text-sky-300 font-bold border border-slate-200 dark:border-sky-500/40 shadow-xs"
-                    : isRecruiter
-                    ? "text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 font-bold bg-sky-500/10 dark:bg-sky-500/15 border border-sky-500/30"
                     : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/60 font-medium"
                 }`}
               >

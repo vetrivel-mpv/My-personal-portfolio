@@ -143,7 +143,10 @@ export default function Hero({
   };
 
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 md:px-8 xl:px-16 overflow-hidden bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-[92vh] flex flex-col justify-center transition-colors duration-500">
+    <section 
+      id="home" 
+      className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 md:px-8 xl:px-16 overflow-hidden bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-[92vh] flex flex-col justify-center transition-colors duration-500"
+    >
       
       {/* Background Auroras */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-sky-500/10 dark:bg-sky-500/15 rounded-full blur-[140px] pointer-events-none -z-10" />
