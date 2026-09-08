@@ -30,7 +30,7 @@ interface RecruiterHubProps {
   onNavigateSection: (sectionId: string) => void;
 }
 
-type CountryFilter = "all" | "singapore" | "uk" | "usa" | "europe";
+type CountryFilter = "all" | "singapore" | "uk" | "usa" | "switzerland" | "luxembourg" | "europe";
 
 interface CountryHighlight {
   id: CountryFilter;
@@ -39,7 +39,7 @@ interface CountryHighlight {
   targetMarket: string;
   relevantExperience: string[];
   keyClientMatches: string[];
-  visaReadiness: string;
+  visaSponsorship: string;
 }
 
 const COUNTRY_HIGHLIGHTS: Record<CountryFilter, CountryHighlight> = {
@@ -47,15 +47,15 @@ const COUNTRY_HIGHLIGHTS: Record<CountryFilter, CountryHighlight> = {
     id: "all",
     country: "Global Telecom Markets",
     flag: "🌐",
-    targetMarket: "Worldwide Enterprise & Carrier Deployments",
+    targetMarket: "Worldwide Enterprise & Carrier Deployments (Seeking Visa Sponsorship)",
     relevantExperience: [
       "10+ Years of specialized Mobile OSS/BSS domain expertise across Tier-1 telecom operators.",
       "Managed cross-functional QA teams of 15+ engineers under Agile/Scrum delivery frameworks.",
       "Spearheaded UAT and carrier migration for 10M+ subscribers on Nokia WING (Worldwide IoT Network Grid).",
       "Postgraduate in Software Development (IIIT Bangalore) ensuring high technical API literacy."
     ],
-    keyClientMatches: ["British Telecom", "AT&T Enterprise", "Verizon Wireless", "Inmarsat Satellite", "Nokia 3Group"],
-    visaReadiness: "100% Ready for International Relocation, Work Sponsorship & Frequent Worldwide Travel"
+    keyClientMatches: ["British Telecom", "AT&T Enterprise", "Verizon Wireless", "Swisscom", "SES Satellites", "Inmarsat", "Nokia 3Group"],
+    visaSponsorship: "Seeking Work Visa Sponsorship • 100% Ready for Relocation & Global Mobility"
   },
   singapore: {
     id: "singapore",
@@ -69,7 +69,7 @@ const COUNTRY_HIGHLIGHTS: Record<CountryFilter, CountryHighlight> = {
       "Proven delivery leadership managing 15+ QA engineers with 50% test cycle optimization."
     ],
     keyClientMatches: ["Singtel", "StarHub", "M1 Singapore", "Circles.Life", "Nokia APAC Grid"],
-    visaReadiness: "Eligible and prepared for Singapore Employment Pass (EP) sponsorship & immediate relocation."
+    visaSponsorship: "Seeking Singapore Employment Pass (EP) Sponsorship • 100% Relocation Ready"
   },
   uk: {
     id: "uk",
@@ -83,7 +83,7 @@ const COUNTRY_HIGHLIGHTS: Record<CountryFilter, CountryHighlight> = {
       "Holds Master of Science (MS) in Software Engineering from Liverpool John Moores University (UK)."
     ],
     keyClientMatches: ["British Telecom (BT)", "Vodafone UK", "Inmarsat Satellite", "EE", "Virgin Media O2"],
-    visaReadiness: "Eligible for UK Skilled Worker Visa sponsorship; MS degree from Liverpool John Moores University."
+    visaSponsorship: "Seeking UK Skilled Worker Visa Sponsorship • MS from Liverpool John Moores Univ (UK)"
   },
   usa: {
     id: "usa",
@@ -97,11 +97,39 @@ const COUNTRY_HIGHLIGHTS: Record<CountryFilter, CountryHighlight> = {
       "Managed distributed Agile delivery teams across global US/India time zones."
     ],
     keyClientMatches: ["AT&T Enterprise", "Verizon Wireless", "T-Mobile USA", "Dish Wireless", "CSG International"],
-    visaReadiness: "Available for US H-1B transfer, L-1, or international business travel deployments."
+    visaSponsorship: "Seeking US H-1B / L-1 / Work Visa Sponsorship • 100% Relocation Ready"
+  },
+  switzerland: {
+    id: "switzerland",
+    country: "Switzerland & DACH",
+    flag: "🇨🇭",
+    targetMarket: "Swiss Telecom Networks (Zurich, Geneva, Bern) & Enterprise IoT Infrastructure",
+    relevantExperience: [
+      "Multi-country European rating harmonization, roaming settlement (TAP3/RAP), and CSG Singleview charging pipelines.",
+      "Mission-critical carrier UAT governance with zero P1/P2 defect escapes and 50% manual testing effort reduction.",
+      "Strong technical software foundations (Node.js, REST APIs, SQL, Python automation) bridging business rules and engineering pods.",
+      "Master of Science (MS) in Computer Software Engineering from UK university."
+    ],
+    keyClientMatches: ["Swisscom", "Sunrise UPC", "Salt Mobile", "Nokia Zurich Hub", "Swiss Re Enterprise"],
+    visaSponsorship: "Seeking Swiss Work Permit / Canton Visa Sponsorship • 100% Relocation Ready"
+  },
+  luxembourg: {
+    id: "luxembourg",
+    country: "Luxembourg & Benelux",
+    flag: "🇱🇺",
+    targetMarket: "Luxembourg SatCom, FinTech Telecom & Multi-Tenant Carrier Clouds",
+    relevantExperience: [
+      "Extensive domain mastery in satellite teleport billing mediation and mediation rating validation (Awarded Star Performer on Inmarsat).",
+      "10M+ subscriber migration custody on Nokia Worldwide IoT Grid (WING) and automated rating report (MRR) pipelines.",
+      "Governed Diameter Gy/Ro online charging, Real SIM 4G/5G NSA testing, and automated SFTP invoice PDF generation.",
+      "Postgraduate in Software Development ensuring high technical API literacy and modern web systems."
+    ],
+    keyClientMatches: ["SES Satellites", "POST Luxembourg", "Proximus Luxembourg", "Orange Luxembourg", "Tango"],
+    visaSponsorship: "Seeking Luxembourg Work Permit / EU Blue Card Sponsorship • 100% Relocation Ready"
   },
   europe: {
     id: "europe",
-    country: "Europe (DACH & Western Europe)",
+    country: "European Union & DACH",
     flag: "🇪🇺",
     targetMarket: "Multi-Country Rating Harmonization & Carrier BSS Modernization",
     relevantExperience: [
@@ -110,7 +138,7 @@ const COUNTRY_HIGHLIGHTS: Record<CountryFilter, CountryHighlight> = {
       "Awarded multiple Capgemini Customer Delight and Delivery Excellence awards for European carrier satisfaction."
     ],
     keyClientMatches: ["Nokia 3Austria", "Nokia 3Ireland", "3Italy", "Deutsche Telekom", "Orange"],
-    visaReadiness: "Ready for EU Blue Card sponsorship and European on-site deployment assignments."
+    visaSponsorship: "Seeking EU Blue Card / Work Permit Sponsorship • 100% Relocation Ready"
   }
 };
 
@@ -146,7 +174,7 @@ Experience: 10+ Years (Mobile OSS/BSS, Nokia WING 10M+, AT&T IoT, CSG Singleview
 Management Scale: Managed 15+ QA Engineers under Agile/Scrum
 Domain: Diameter Gy/Ro, 4G/5G NSA Real SIM, MRR Invoicing, MRC/NRC Rate Plans, TM Forum ODA
 Education: PG Diploma in Software Development (IIIT Bangalore) | MS in Software Engineering (LJMU)
-Target Locations: Singapore, United Kingdom, United States (100% Relocation & Travel Ready)
+Target Locations: Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸, Switzerland 🇨🇭, Luxembourg 🇱🇺 (Seeking Work Visa Sponsorship • 100% Relocation Ready)
 Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetrivelmpv.com`;
 
     navigator.clipboard.writeText(brief);
@@ -173,7 +201,7 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
             badgeColor="sky"
             title="Recruiter & Global Mobility"
             gradientWord="Command Center"
-            description="Designed for Hiring Managers & Executive Recruiters seeking specialized Telecom QA leadership, 15+ team Agile management, and global carrier delivery across Singapore, UK, and US markets."
+            description="Designed for Hiring Managers & Executive Recruiters seeking specialized Telecom QA leadership, 15+ team Agile management, and global carrier delivery across Singapore, UK, USA, Switzerland, and Luxembourg."
           />
 
           {/* Quick Action Buttons */}
@@ -219,7 +247,7 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
             }`}
           >
             <Globe2 size={14} />
-            <span>Target Country Alignment</span>
+            <span>Target Country Alignment & Visas</span>
           </button>
 
           <button
@@ -299,7 +327,7 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
                   <span>THE RECRUITER VALUE PROPOSITION</span>
                 </div>
                 <p className="text-sm text-slate-700 leading-relaxed">
-                  Vetrivel Muthusamy bridges the critical gap between <strong className="text-slate-950 font-bold">complex telecom business rules</strong>, <strong className="text-slate-950 font-bold">carrier protocol governance (Gy/Ro, 4G/5G NSA)</strong>, and <strong className="text-slate-950 font-bold">modern software engineering teams</strong>. With a <strong className="text-slate-950 font-bold">Postgraduate in Software Development</strong> and over a decade of carrier QA leadership, he provides executive confidence, cuts manual test effort in half (-50%), and ensures zero defect leakage for Tier-1 operators.
+                  Vetrivel Muthusamy bridges the critical gap between <strong className="text-slate-950 font-bold">complex telecom business rules</strong>, <strong className="text-slate-950 font-bold">carrier protocol governance (Gy/Ro, 4G/5G NSA)</strong>, and <strong className="text-slate-950 font-bold">modern software engineering teams</strong>. With a <strong className="text-slate-950 font-bold">Postgraduate in Software Development</strong>, <strong className="text-slate-950 font-bold">MS from UK</strong>, and over a decade of carrier QA leadership, he is <strong className="text-sky-900 font-bold">seeking work visa sponsorship and 100% ready for international relocation</strong> across Singapore, UK, USA, Switzerland, and Luxembourg.
                 </p>
                 
                 <div className="flex flex-wrap items-center gap-2 pt-2">
@@ -312,8 +340,8 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
                   <span className="px-2.5 py-1 rounded-lg bg-white border border-indigo-200 text-[11px] font-mono font-bold text-indigo-800">
                     British Telecom Retail
                   </span>
-                  <span className="px-2.5 py-1 rounded-lg bg-white border border-purple-200 text-[11px] font-mono font-bold text-purple-800">
-                    Inmarsat Global Satellite
+                  <span className="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-[11px] font-mono font-bold text-amber-800">
+                    Swisscom & Satellite BSS
                   </span>
                 </div>
               </div>
@@ -368,9 +396,9 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
                 </div>
 
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200">
-                  <span className="text-slate-500">Relocation:</span>
-                  <span className="font-bold text-emerald-700">
-                    100% Ready (SG • UK • US)
+                  <span className="text-slate-500">Sponsorship:</span>
+                  <span className="font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                    Seeking Visa Sponsorship
                   </span>
                 </div>
               </div>
@@ -396,7 +424,7 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
             
             {/* Country Selector Pills */}
             <div className="flex flex-wrap items-center gap-2">
-              {(["all", "singapore", "uk", "usa", "europe"] as CountryFilter[]).map((countryKey) => {
+              {(["all", "singapore", "uk", "usa", "switzerland", "luxembourg", "europe"] as CountryFilter[]).map((countryKey) => {
                 const item = COUNTRY_HIGHLIGHTS[countryKey];
                 return (
                   <button
@@ -429,8 +457,9 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
                   </div>
                 </div>
 
-                <div className="px-3.5 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono font-bold">
-                  {activeHighlight.visaReadiness}
+                <div className="px-3.5 py-1.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs font-mono font-bold flex items-center gap-1.5">
+                  <Plane size={13} className="text-amber-600" />
+                  <span>{activeHighlight.visaSponsorship}</span>
                 </div>
               </div>
 

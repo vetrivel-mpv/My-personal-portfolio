@@ -91,26 +91,28 @@ Impact & Scope:
 - People Leadership & Stakeholder Influence: Guide project teams on design standards, communicate technical trade-offs to business stakeholders, and influence without relying solely on authority.`
   },
   {
-    title: "Google / Tech QA Lead & WebOps Specialist (Singapore 🇸🇬 / USA 🇺🇸)",
-    role: "Lead QA & Test Strategy Specialist",
-    jd: `Role: Lead QA Engineer & Test Strategy Specialist (Cloud & Core Systems)
-Location: Singapore / USA
+    title: "Swisscom Switzerland 🇨🇭 — Senior Telecom BSS/OSS QA Architect",
+    role: "Senior Telecom BSS/OSS QA Architect & Lead",
+    jd: `Role: Senior Telecom BSS/OSS QA Architect & Lead
+Company: Swisscom / Telecom Enterprise
+Location: Zurich / Bern, Switzerland 🇨🇭
 Responsibilities:
-- Drive software quality through comprehensive test strategy design, defect lifecycle management, and UI/UX validation across enterprise services.
-- Collaborate with cross-functional development squads throughout the product lifecycle, from sprint planning to release sign-offs.
-- Validate API contracts, data integration pipelines, and carrier/enterprise SLA conformance.
-- Lead and mentor test engineers under Agile/Scrum, executing regression suites and maintaining zero defect leakage.`
+- Drive end-to-end quality assurance across convergent billing (Diameter Gy/Ro), real-time rating engines, and 5G network slices.
+- Lead and govern cross-functional test teams under Agile/Scrum, defining master test plans and zero-defect release criteria.
+- Validate API contracts (REST, JSON, TM Forum Open APIs) and automated regression test pipelines.
+- Ensure seamless carrier UAT sign-offs and wholesale roaming billing reconciliation.`
   },
   {
-    title: "Telecom QA Lead & UAT Test Manager (Singapore 🇸🇬)",
-    role: "Lead Telecom QA & UAT Manager",
-    jd: `Role: Lead Telecom QA & UAT Manager (Carrier Systems)
-Location: Singapore (APAC Delivery Hub)
-Requirements:
-- 10+ years of deep domain experience in Mobile OSS/BSS, Convergent Billing, Nokia WING/eSIM, and real-time charging (Diameter Gy/Ro).
-- Proven track record managing cross-functional QA teams of 10-15+ engineers under Agile/Scrum frameworks.
-- Strong technical literacy in API contract testing (REST/JSON, Postman, TM Forum Open APIs) with academic/practical software foundations.
-- End-to-end expertise in carrier UAT sign-offs, data migration audits, and Monthly Rating Report (MRR) invoicing reconciliation.`
+    title: "SES Satellites Luxembourg 🇱🇺 — SatCom & Telecom Billing Systems Consultant",
+    role: "SatCom & Telecom Solutions Delivery Consultant",
+    jd: `Role: SatCom & Telecom Solutions Delivery Consultant
+Company: SES Satellites / Telecom Enterprise
+Location: Betzdorf / Luxembourg City, Luxembourg 🇱🇺
+Responsibilities:
+- Guide multi-tenant billing mediation, teleport usage reconciliation, and enterprise rating models.
+- Lead UAT test governance for satellite IoT fleet telemetry and convergent charging systems.
+- Manage cross-functional QA squads, automated reporting pipelines (MRR), and customer invoice generation.
+- Bridge software engineering teams and business stakeholders with strong technical architecture leadership.`
   },
   {
     title: "Telecom BSS/OSS Solutions Consultant (London, UK 🇬🇧)",
@@ -122,6 +124,17 @@ Key Responsibilities:
 - Lead requirement analysis, rating plan modeling (MRC/NRC), and wholesale mediation reconciliation.
 - Bridge development engineering teams with business stakeholders utilizing strong software architecture and API literacy.
 - Ensure zero-defect release governance and seamless UAT acceptance criteria.`
+  },
+  {
+    title: "Google / Tech QA Lead & WebOps Specialist (Singapore 🇸🇬 / USA 🇺🇸)",
+    role: "Lead QA & Test Strategy Specialist",
+    jd: `Role: Lead QA Engineer & Test Strategy Specialist (Cloud & Core Systems)
+Location: Singapore / USA
+Responsibilities:
+- Drive software quality through comprehensive test strategy design, defect lifecycle management, and UI/UX validation across enterprise services.
+- Collaborate with cross-functional development squads throughout the product lifecycle, from sprint planning to release sign-offs.
+- Validate API contracts, data integration pipelines, and carrier/enterprise SLA conformance.
+- Lead and mentor test engineers under Agile/Scrum, executing regression suites and maintaining zero defect leakage.`
   }
 ];
 
@@ -141,7 +154,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   // AI Tailor state
   const [jobDescriptionInput, setJobDescriptionInput] = useState("");
   const [targetRoleInput, setTargetRoleInput] = useState("");
-  const [travelPreference, setTravelPreference] = useState("100% Ready for Overseas Relocation & Frequent Travel (Singapore, UK, USA)");
+  const [travelPreference, setTravelPreference] = useState("Seeking Work Visa Sponsorship (Singapore, UK, USA, Switzerland, Luxembourg)");
   const [isGeneratingAI, setIsGeneratingAI] = useState(false);
   const [generationStep, setGenerationStep] = useState("");
   const [tailoredData, setTailoredData] = useState<TailoredResumeData | null>(null);
@@ -199,7 +212,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 ---
 
 ## PROFESSIONAL SUMMARY
-Senior Telecom QA Lead & Solutions Delivery Consultant with **over 10 years of specialized enterprise domain experience** in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). **Managed cross-functional QA teams of 15+ engineers under Agile/Scrum**, cutting manual testing efforts by **50%** and reducing post-release issues by **30%** with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a **Postgraduate Diploma in Software Development (Full Stack)**, uniquely bridging the gap between technical software engineering, Node.js backend architectures, REST/TM Forum Open APIs, modern web engineering, and large-scale carrier delivery.
+Senior Telecom QA Lead & Solutions Delivery Consultant with **over 10 years of specialized enterprise domain experience** in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). **Managed cross-functional QA teams of 15+ engineers under Agile/Scrum**, cutting manual testing efforts by **50%** and reducing post-release issues by **30%** with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a **Postgraduate Diploma in Software Development (Full Stack)** and **Master of Science (MS)** from Liverpool John Moores University (UK). **Seeking work visa sponsorship and 100% prepared for international relocation across Singapore, UK, USA, Switzerland, and Luxembourg.**
 
 ---
 
@@ -272,7 +285,7 @@ Senior Telecom QA Lead & Solutions Delivery Consultant with **over 10 years of s
 
 ## LANGUAGES & CARRIER ECOSYSTEMS
 - **Languages:** English (Professional Working Proficiency), Tamil (Native or Bilingual), Telugu (Elementary)
-- **Carrier Ecosystems:** British Telecom (UK), Verizon Wireless (US), AT&T Enterprise (US), Inmarsat, Nokia Hutchison 3Group.
+- **Carrier Ecosystems:** British Telecom (UK), Verizon Wireless (US), AT&T Enterprise (US), Swisscom (CH), SES Satellites (LU), Inmarsat, Nokia Hutchison 3Group.
 `;
   };
 
@@ -314,7 +327,7 @@ Senior Telecom QA Lead & Solutions Delivery Consultant with **over 10 years of s
           jobDescription: jobDescriptionInput.trim(),
           targetRole: targetRoleInput.trim() || undefined,
           travelPreference: travelPreference,
-          focusAreas: "Telecom OSS/BSS, Nokia WING, CSG Singleview, 15+ QA Team Management, PG Software Development, Singapore/UK/USA Relocation"
+          focusAreas: "Telecom OSS/BSS, Nokia WING, CSG Singleview, 15+ QA Team Management, PG Software Development, Seeking Visa Sponsorship for Singapore/UK/USA/Switzerland/Luxembourg"
         })
       });
 
@@ -334,12 +347,12 @@ Senior Telecom QA Lead & Solutions Delivery Consultant with **over 10 years of s
 
 - Location: Bengaluru, Karnataka, India • Phone: (+91) 9916008877 • Email: vetrivelm02@gmail.com
 - LinkedIn: linkedin.com/in/vetrivelm • GitHub: github.com/vetrivel-mpv
-- Overseas Relocation: Singapore 🇸🇬, United Kingdom 🇬🇧, United States 🇺🇸 (100% Relocation & Travel Ready)
+- Target Countries: Singapore 🇸🇬, United Kingdom 🇬🇧, United States 🇺🇸, Switzerland 🇨🇭, Luxembourg 🇱🇺 (Seeking Work Visa Sponsorship • 100% Relocation Ready)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specialized enterprise domain expertise** in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro online charging, Real SIM 4G/5G NSA verification). **Managed cross-functional QA teams of 15+ test engineers under Agile/Scrum**, cutting manual test efforts by **50%** and defect escapes by **30%** with zero defect leakage across British Telecom, Verizon, Inmarsat, and AT&T. Holds a **Postgraduate Diploma in Software Development** (Full Stack). **100% eager and prepared for international relocation to Singapore, UK, and USA.**
+Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specialized enterprise domain expertise** in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro online charging, Real SIM 4G/5G NSA verification). **Managed cross-functional QA teams of 15+ test engineers under Agile/Scrum**, cutting manual test efforts by **50%** and defect escapes by **30%** with zero defect leakage across British Telecom, Verizon, Inmarsat, and AT&T. Holds a **Postgraduate Diploma in Software Development** (Full Stack) and **Master of Science (MS)** from Liverpool John Moores University (UK). **Seeking work visa sponsorship and 100% eager for international relocation to Singapore, UK, USA, Switzerland, and Luxembourg.**
 
 ---
 
@@ -397,7 +410,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
 
 ## LANGUAGES & OVERSEAS RELOCATION
 - **Languages:** English (Professional Working), Tamil (Native/Bilingual), Telugu (Elementary)
-- **Target Countries:** Singapore 🇸🇬, United Kingdom 🇬🇧, United States 🇺🇸 (100% Relocation & Travel Ready)
+- **Target Countries:** Singapore 🇸🇬, United Kingdom 🇬🇧, United States 🇺🇸, Switzerland 🇨🇭, Luxembourg 🇱🇺 (Seeking Work Visa Sponsorship • 100% Relocation Ready)
 `;
 
       setTailoredData({
@@ -408,7 +421,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
           "Telecom OSS/BSS & Singleview",
           "Diameter Gy/Ro Online Charging",
           "PG Software Development",
-          "Singapore / UK / USA Relocation"
+          "Visa Sponsorship Ready (SG/UK/US/CH/LU)"
         ],
         tailoredSummary: `Aligned for ${matchedRole} with deep emphasis on 10+ years of Telecom BSS/OSS domain mastery, 15+ engineer Agile leadership, and end-to-end billing transformation for Tier-1 telcos including AT&T, Nokia WING, and British Telecom.`,
         markdownResume: fallbackMarkdown
@@ -468,7 +481,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
               PROFESSIONAL SUMMARY
             </h2>
             <p className="leading-relaxed text-slate-700 print:text-[8.5pt] print:leading-[1.4] print:text-slate-800 font-sans text-xs">
-              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong className="text-slate-950 font-bold">over 10 years of specialized enterprise domain mastery</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T Enterprise IoT Connection Manager, CSG Singleview Core Billing, Diameter Gy/Ro online charging, Real SIM 4G/5G NSA testing). <strong className="text-slate-950 font-bold">Managed cross-functional QA teams of 15+ test engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong className="text-slate-950 font-bold">50%</strong> and reducing post-release defect escapes by <strong className="text-slate-950 font-bold">30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a <strong className="text-slate-950 font-bold">Postgraduate Diploma in Software Development (Full Stack)</strong>, uniquely bridging technical software engineering, Node.js backend architectures, REST/TM Forum Open APIs, modern frontend engineering, and large-scale telecom carrier delivery.
+              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong className="text-slate-950 font-bold">over 10 years of specialized enterprise domain mastery</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T Enterprise IoT Connection Manager, CSG Singleview Core Billing, Diameter Gy/Ro online charging, Real SIM 4G/5G NSA testing). <strong className="text-slate-950 font-bold">Managed cross-functional QA teams of 15+ test engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong className="text-slate-950 font-bold">50%</strong> and reducing post-release defect escapes by <strong className="text-slate-950 font-bold">30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon Wireless, Inmarsat, AT&T Enterprise, and Nokia 3Group). Holds a <strong className="text-slate-950 font-bold">Postgraduate Diploma in Software Development (Full Stack)</strong> and <strong className="text-slate-950 font-bold">Master of Science (MS)</strong> from Liverpool John Moores University (UK). <strong className="text-slate-950 font-bold">Seeking work visa sponsorship and 100% prepared for international relocation across Singapore, UK, USA, Switzerland, and Luxembourg.</strong>
             </p>
           </div>
 
@@ -727,7 +740,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
               PROFESSIONAL SUMMARY
             </h2>
             <p className="leading-relaxed text-slate-700 print:text-[8.5pt] print:text-slate-800 font-sans text-[11px]">
-              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong className="text-slate-950 font-bold">over 10 years of specialized enterprise domain experience</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong className="text-slate-950 font-bold">Managed cross-functional QA teams of 15+ engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong className="text-slate-950 font-bold">50%</strong> and reducing post-release issues by <strong className="text-slate-950 font-bold">30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon, Inmarsat, AT&T, Nokia 3Group). Holds a <strong className="text-slate-950 font-bold">Postgraduate Diploma in Software Development (Full Stack)</strong>, uniquely bridging technical software engineering, Node.js backend architectures, REST/TM Forum Open APIs, modern web engineering, and large-scale carrier delivery.
+              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong className="text-slate-950 font-bold">over 10 years of specialized enterprise domain experience</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong className="text-slate-950 font-bold">Managed cross-functional QA teams of 15+ engineers under Agile/Scrum</strong>, cutting manual testing efforts by <strong className="text-slate-950 font-bold">50%</strong> and reducing post-release issues by <strong className="text-slate-950 font-bold">30%</strong> with zero defect leakage across Tier-1 carriers (British Telecom, Verizon, Inmarsat, AT&T, Nokia 3Group). Holds a <strong className="text-slate-950 font-bold">Postgraduate Diploma in Software Development (Full Stack)</strong> and <strong className="text-slate-950 font-bold">Master of Science (MS)</strong> from Liverpool John Moores University (UK). <strong className="text-slate-950 font-bold">Seeking work visa sponsorship and 100% prepared for international relocation across Singapore, UK, USA, Switzerland, and Luxembourg.</strong>
             </p>
           </div>
 
@@ -906,22 +919,16 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
               {/* Accenture & GapBridge */}
               <div className="space-y-1 cv-avoid-break pt-0.5">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-200 pb-0.5">
-                  <div>
-                    <h3 className="font-bold text-slate-950 text-[11.5px] print:text-[9pt] font-sans">
-                      Accenture & GapBridge — Early Formative QA Engineering
-                    </h3>
-                    <span className="text-[10.5px] text-sky-800 font-sans">
-                      Enterprise Telecom Test Systems | Chennai, India
-                    </span>
-                  </div>
+                  <h3 className="font-bold text-slate-950 text-xs print:text-[8.8pt] font-sans">
+                    Accenture & GapBridge — Early Formative QA Engineering
+                  </h3>
                   <span className="text-[10.5px] text-slate-600 font-sans font-medium">
                     Nov 2014 — Sep 2017 (3 yrs)
                   </span>
                 </div>
-                <ul className="list-disc list-inside space-y-0.5 text-[10.5px] text-slate-700 print:text-[8pt] print:text-slate-800 font-sans pl-1">
-                  <li>Gathered and translated business requirements into meticulous test plans and test designs for carrier acceptance.</li>
-                  <li>Executed end-to-end test cases for User Acceptance Testing (UAT), aligning client objectives and verifying service pricing and billing structures.</li>
-                </ul>
+                <p className="text-[11px] text-slate-700 print:text-[8.2pt] print:text-slate-800 font-sans pl-1">
+                  • Translated business requirements into test designs for UAT, verifying enterprise service packages, pricing structures, and ERP billing components.
+                </p>
               </div>
             </div>
           )}
@@ -1013,7 +1020,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
 
               <div className="text-slate-700 font-medium text-[10.5px]">
                 <strong className="text-slate-900">Carrier Accounts: </strong>
-                <span>British Telecom (UK), Verizon Wireless (US), AT&T (US), Inmarsat, Nokia 3Group</span>
+                <span>British Telecom (UK), Verizon Wireless (US), AT&T (US), Swisscom (CH), SES Satellites (LU), Inmarsat, Nokia 3Group</span>
               </div>
             </div>
           </div>
@@ -1071,9 +1078,9 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[10.5px] font-mono font-bold">
-              <Plane size={12} className="animate-pulse" />
-              <span>OVERSEAS READY: SG 🇸🇬 · UK 🇬🇧 · US 🇺🇸</span>
+            <span className="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-[10.5px] font-mono font-bold">
+              <Plane size={12} className="text-amber-600 animate-pulse" />
+              <span>SEEKING SPONSORSHIP: SG 🇸🇬 · UK 🇬🇧 · US 🇺🇸 · CH 🇨🇭 · LU 🇱🇺</span>
             </span>
             <button
               onClick={onClose}
@@ -1106,13 +1113,18 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
                 </div>
 
                 {/* Global Mobility Card */}
-                <div className="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 space-y-1">
-                  <div className="flex items-center gap-1.5 text-sky-800 text-xs font-mono font-bold">
-                    <Plane size={13} />
-                    <span>TARGET COUNTRIES</span>
+                <div className="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 space-y-1.5">
+                  <div className="flex items-center justify-between text-sky-800 text-xs font-mono font-bold">
+                    <span className="flex items-center gap-1.5">
+                      <Plane size={13} />
+                      <span>TARGET COUNTRIES</span>
+                    </span>
+                    <span className="text-[9.5px] text-amber-800 bg-amber-100 px-1.5 py-0.2 rounded border border-amber-300">
+                      SPONSORSHIP
+                    </span>
                   </div>
-                  <p className="text-[11px] text-slate-700">
-                    Actively seeking roles in <strong className="text-slate-900">Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸</strong> (100% Relocation & Travel Ready).
+                  <p className="text-[11px] text-slate-700 leading-relaxed">
+                    Seeking Work Visa Sponsorship for <strong className="text-slate-900">Singapore 🇸🇬, UK 🇬🇧, USA 🇺🇸, Switzerland 🇨🇭, Luxembourg 🇱🇺</strong> (100% Relocation Ready).
                   </p>
                 </div>
 
@@ -1338,17 +1350,19 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
                   <div className="space-y-1">
                     <label className="text-[10.5px] font-mono text-slate-600 uppercase font-bold flex items-center gap-1.5">
                       <Plane size={12} className="text-emerald-600" />
-                      <span>Target Country & Relocation</span>
+                      <span>Target Country (Visa Sponsorship)</span>
                     </label>
                     <select
                       value={travelPreference}
                       onChange={(e) => setTravelPreference(e.target.value)}
                       className="w-full px-3 py-2 text-xs font-mono rounded-xl bg-white border border-slate-200 text-slate-900 focus:outline-none focus:border-sky-500 cursor-pointer"
                     >
-                      <option value="100% Ready for Relocation to Singapore, UK, USA">🌏 100% Ready for Relocation (Singapore, UK, USA)</option>
-                      <option value="Targeting Singapore (Immediate Visa Readiness)">🇸🇬 Singapore (Immediate Readiness)</option>
-                      <option value="Targeting United Kingdom (Skilled Worker Ready)">🇬🇧 United Kingdom (Skilled Worker Ready)</option>
-                      <option value="Targeting United States (Relocation Ready)">🇺🇸 United States (Relocation Ready)</option>
+                      <option value="Seeking Work Visa Sponsorship (Singapore, UK, USA, Switzerland, Luxembourg)">🌏 Seeking Sponsorship (SG, UK, US, CH, LU)</option>
+                      <option value="Targeting Singapore — Seeking Employment Pass (EP) Sponsorship">🇸🇬 Singapore — Seeking EP Sponsorship</option>
+                      <option value="Targeting United Kingdom — Seeking Skilled Worker Visa Sponsorship">🇬🇧 UK — Seeking Skilled Worker Sponsorship</option>
+                      <option value="Targeting United States — Seeking H-1B / L-1 Visa Sponsorship">🇺🇸 USA — Seeking H-1B / L-1 Sponsorship</option>
+                      <option value="Targeting Switzerland — Seeking Swiss Work Permit Sponsorship">🇨🇭 Switzerland — Seeking Work Permit Sponsorship</option>
+                      <option value="Targeting Luxembourg — Seeking Work Permit / EU Blue Card Sponsorship">🇱🇺 Luxembourg — Seeking EU Blue Card Sponsorship</option>
                     </select>
                   </div>
                 </div>
@@ -1503,7 +1517,7 @@ Senior Telecom QA Lead & Solutions Consultant bringing **over 10 years of specia
                       Google & Tech ATS Resume Tailoring
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed font-sans">
-                      Paste any Job Description on the left pane or pick a sample preset. Gemini AI will analyze the JD, match Vetrivel&apos;s 10+ years of Telecom OSS/BSS, 15+ QA team management, and PG Software Development degree, emphasize his Singapore/UK/USA relocation readiness, and generate an ATS-optimized CV.
+                      Paste any Job Description on the left pane or pick a sample preset. Gemini AI will analyze the JD, match Vetrivel&apos;s 10+ years of Telecom OSS/BSS, 15+ QA team management, and PG Software Development degree, emphasize his Singapore/UK/USA/Switzerland/Luxembourg visa sponsorship readiness, and generate an ATS-optimized CV.
                     </p>
                   </div>
                 </div>

@@ -111,7 +111,7 @@ export default function Navbar({
               <span className="hidden md:inline-flex items-center gap-1 text-[9.5px] font-mono text-slate-500 tracking-wider whitespace-nowrap">
                 <span>10+ YRS</span>
                 <span className="text-slate-400">•</span>
-                <span className="text-emerald-700 font-bold">SG 🇸🇬 • UK 🇬🇧 • US 🇺🇸</span>
+                <span className="text-emerald-700 font-bold">SG 🇸🇬 • UK 🇬🇧 • US 🇺🇸 • CH 🇨🇭 • LU 🇱🇺</span>
               </span>
             </div>
           </a>
@@ -240,9 +240,9 @@ export default function Navbar({
                 />
                 <div>
                   <span className="font-bold text-slate-900 text-xs block">Vetrivel Muthusamy</span>
-                  <span className="text-[10px] text-emerald-700 flex items-center gap-1">
+                  <span className="text-[10px] text-amber-700 font-bold flex items-center gap-1">
                     <Plane size={10} />
-                    <span>Global Travel Ready</span>
+                    <span>Seeking Visa Sponsorship</span>
                   </span>
                 </div>
               </div>

@@ -27,7 +27,7 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
       Title: "Vetrivel Muthusamy - Principal Telecom & Enterprise Solutions Lead",
       Author: "Vetrivel Muthusamy",
       Subject: pageMode === "1-page" ? "1-Page Executive ATS Resume" : "2-Page Comprehensive Technical Resume",
-      Keywords: "Telecom, QA Lead, Solutions Consultant, Singleview, Nokia WING, Agile Delivery, UAT, AT&T IoT, Singtel, Singapore, UK, USA"
+      Keywords: "Telecom, QA Lead, Solutions Consultant, Singleview, Nokia WING, Agile Delivery, UAT, AT&T IoT, Singtel, Singapore, UK, USA, Switzerland, Luxembourg"
     }
   });
 
@@ -46,7 +46,7 @@ export function generateResumePDF(res: Response, customData?: ResumeData) {
   const email = customData?.email || "vetrivelm02@gmail.com";
   const linkedin = customData?.linkedin || "linkedin.com/in/vetrivelm";
   const github = customData?.github || "github.com/vetrivel-mpv";
-  const relocation = customData?.relocationTarget || "Targeting Singapore 🇸🇬 · United Kingdom 🇬🇧 · United States 🇺🇸 (100% Relocation Ready)";
+  const relocation = customData?.relocationTarget || "Targeting Singapore 🇸🇬 · UK 🇬🇧 · USA 🇺🇸 · Switzerland 🇨🇭 · Luxembourg 🇱🇺 (Seeking Visa Sponsorship)";
 
   const navy = "#0f172a";
   const blue = "#0284c7";

@@ -99,12 +99,12 @@ export default function Hero({
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span>AVAILABLE FOR GLOBAL ROLES</span>
+                <span>OPEN TO RELOCATION • SEEKING VISA SPONSORSHIP</span>
               </span>
 
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 border border-sky-300 text-sky-800 text-xs font-mono font-bold shadow-xs">
                 <Globe2 size={13} className="animate-pulse" />
-                <span>OVERSEAS READY: SINGAPORE 🇸🇬 • UK 🇬🇧 • USA 🇺🇸</span>
+                <span>SG 🇸🇬 • UK 🇬🇧 • US 🇺🇸 • SWISS 🇨🇭 • LUX 🇱🇺</span>
               </span>
 
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-300 text-indigo-800 text-xs font-mono font-bold shadow-xs">
@@ -137,7 +137,7 @@ export default function Hero({
 
             {/* Narrative Passage */}
             <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl font-sans font-normal">
-              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong className="text-slate-950 font-bold">over 10 years of specialized enterprise domain expertise</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong className="text-slate-950 font-bold">Managed cross-functional QA teams of 15+ engineers under Agile</strong>, cutting manual testing efforts by <strong className="text-slate-950 font-bold">50%</strong> and achieving zero defect leakage. Holds a <strong className="text-slate-950 font-bold">Postgraduate in Software Development</strong> (IIIT Bangalore) and <strong className="text-slate-950 font-bold">Master of Science (MS)</strong> from Liverpool John Moores University (UK).
+              Senior Telecom QA Lead & Solutions Delivery Consultant with <strong className="text-slate-950 font-bold">over 10 years of specialized enterprise domain expertise</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong className="text-slate-950 font-bold">Managed cross-functional QA teams of 15+ engineers under Agile</strong>, cutting manual testing efforts by <strong className="text-slate-950 font-bold">50%</strong> and achieving zero defect leakage. Holds a <strong className="text-slate-950 font-bold">Postgraduate in Software Development</strong> (IIIT Bangalore) and <strong className="text-slate-950 font-bold">Master of Science (MS)</strong> from Liverpool John Moores University (UK). <strong className="text-sky-900">Actively exploring overseas opportunities and seeking work visa sponsorship across Singapore, UK, USA, Switzerland, and Luxembourg.</strong>
             </p>
 
             {/* 3 Strategic Key Focus Pillars */}
@@ -165,10 +165,10 @@ export default function Hero({
               <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 hover:border-emerald-500/50 transition-colors">
                 <div className="flex items-center gap-2 text-emerald-700 text-xs font-mono font-bold mb-1">
                   <Globe2 size={14} />
-                  <span>03 / OVERSEAS READY</span>
+                  <span>03 / SPONSORSHIP READY</span>
                 </div>
                 <p className="text-[11px] text-slate-600 leading-snug">
-                  Immediate readiness for Singapore (EP), UK (Skilled Worker), and USA (H-1B/L-1).
+                  Seeking Visa Sponsorship for Singapore (EP), UK (Skilled Worker), USA, Switzerland & Luxembourg.
                 </p>
               </div>
             </div>
@@ -234,13 +234,13 @@ export default function Hero({
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                     </span>
                     <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-900">
-                      EXECUTIVE PROFILE & MOBILITY
+                      GLOBAL MOBILITY & SPONSORSHIP
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-[10.5px] font-mono font-bold">
-                    <Plane size={11} className="text-sky-600" />
-                    <span>GLOBAL MOBILITY</span>
+                  <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-[10px] font-mono font-bold">
+                    <Plane size={11} className="text-amber-600" />
+                    <span>SEEKING SPONSORSHIP</span>
                   </div>
                 </div>
 
@@ -269,14 +269,16 @@ export default function Hero({
                   </div>
                 </div>
 
-                {/* International Mobility Readiness Strip */}
+                {/* International Mobility Readiness Strip with Sponsorship Status */}
                 <div className="p-3 rounded-2xl bg-sky-50/80 border border-sky-100 space-y-1.5">
                   <div className="flex items-center justify-between text-[10.5px] font-mono font-bold text-sky-900">
                     <span className="flex items-center gap-1">
                       <Globe2 size={12} className="text-sky-600" />
-                      <span>TARGET MARKETS & RELOCATION READINESS</span>
+                      <span>TARGET COUNTRIES (VISA SPONSORSHIP)</span>
                     </span>
-                    <span className="text-emerald-700">100% READY</span>
+                    <span className="text-[9.5px] text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300 font-bold">
+                      NEED SPONSORSHIP
+                    </span>
                   </div>
                   <div className="grid grid-cols-3 gap-1.5 text-[10px] font-mono text-center">
                     <div className="p-1.5 rounded-lg bg-white border border-sky-200 font-bold text-slate-800">
@@ -287,6 +289,15 @@ export default function Hero({
                     </div>
                     <div className="p-1.5 rounded-lg bg-white border border-sky-200 font-bold text-slate-800">
                       🇺🇸 USA (H1B/L1)
+                    </div>
+                    <div className="p-1.5 rounded-lg bg-white border border-sky-200 font-bold text-slate-800">
+                      🇨🇭 Swiss (Permit)
+                    </div>
+                    <div className="p-1.5 rounded-lg bg-white border border-sky-200 font-bold text-slate-800">
+                      🇱🇺 Luxemburg (EU)
+                    </div>
+                    <div className="p-1.5 rounded-lg bg-white border border-sky-200 font-bold text-slate-800">
+                      🇪🇺 Europe / DACH
                     </div>
                   </div>
                 </div>
@@ -347,7 +358,7 @@ export default function Hero({
               </span>
             </div>
             <span className="hidden sm:inline text-[11px] text-slate-500">
-              UK • USA • GLOBAL SATELLITE • EUROPE (AUSTRIA, IRELAND, ITALY)
+              UK • USA • SWITZERLAND • LUXEMBOURG • GLOBAL SATELLITE • EUROPE
             </span>
           </div>
 
