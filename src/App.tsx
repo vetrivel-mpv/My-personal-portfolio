@@ -147,21 +147,16 @@ export default function App() {
     }
   };
 
-  const setThemeExplicitly = (theme: "light" | "dark" | "system") => {
-    localStorage.setItem("vetrivel_portfolio_theme_mode", theme);
+  // Enforce Light Theme System-Wide
+  useEffect(() => {
     const root = document.documentElement;
-    if (theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      root.classList.add("dark");
-      root.classList.remove("light");
-    } else {
-      root.classList.remove("dark");
-      root.classList.add("light");
-    }
-    triggerToast(`✓ Theme set to ${theme.toUpperCase()}`);
-  };
+    root.classList.remove("dark");
+    root.classList.add("light");
+    localStorage.setItem("vetrivel_portfolio_theme_mode", "light");
+  }, []);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 transition-colors duration-500 font-sans antialiased">
+    <div className="min-h-screen flex flex-col justify-between bg-slate-50 text-slate-900 transition-colors duration-500 font-sans antialiased">
       
       {/* Floating Redesigned Glass Navbar */}
       <Navbar
@@ -319,7 +314,6 @@ export default function App() {
           const chatBtn = document.getElementById("ai-chatbot-toggle-button");
           if (chatBtn) chatBtn.click();
         }}
-        onSetTheme={setThemeExplicitly}
         onTriggerToast={triggerToast}
       />
 

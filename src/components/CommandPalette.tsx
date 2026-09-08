@@ -25,7 +25,7 @@ import {
 interface CommandItem {
   id: string;
   title: string;
-  category: "Navigation" | "Actions" | "Themes" | "Social";
+  category: "Navigation" | "Actions" | "Social";
   icon: React.ReactNode;
   shortcut?: string;
   action: () => void;
@@ -38,7 +38,6 @@ interface CommandPaletteProps {
   onNavigateSection: (id: string) => void;
   onOpenResume: () => void;
   onOpenAI: () => void;
-  onSetTheme: (theme: "light" | "dark" | "system") => void;
   onTriggerToast: (msg: string) => void;
 }
 
@@ -48,7 +47,6 @@ export default function CommandPalette({
   onNavigateSection,
   onOpenResume,
   onOpenAI,
-  onSetTheme,
   onTriggerToast
 }: CommandPaletteProps) {
   const [query, setQuery] = useState("");
@@ -176,31 +174,6 @@ export default function CommandPalette({
       },
       keywords: ["copy", "email", "clipboard", "mail"]
     },
-    // Themes
-    {
-      id: "theme-dark",
-      title: "Switch Theme: Dark Cyber Mode",
-      category: "Themes",
-      icon: <Moon size={16} className="text-indigo-400" />,
-      action: () => { onSetTheme("dark"); onClose(); },
-      keywords: ["dark", "night", "theme", "black"]
-    },
-    {
-      id: "theme-light",
-      title: "Switch Theme: Light Clean Mode",
-      category: "Themes",
-      icon: <Sun size={16} className="text-amber-500" />,
-      action: () => { onSetTheme("light"); onClose(); },
-      keywords: ["light", "day", "theme", "white"]
-    },
-    {
-      id: "theme-system",
-      title: "Switch Theme: System Default",
-      category: "Themes",
-      icon: <Monitor size={16} className="text-emerald-400" />,
-      action: () => { onSetTheme("system"); onClose(); },
-      keywords: ["system", "auto", "theme", "os"]
-    },
     // Social
     {
       id: "soc-linkedin",
@@ -218,7 +191,7 @@ export default function CommandPalette({
       action: () => { window.open("https://github.com/vetrivelm", "_blank"); onClose(); },
       keywords: ["github", "code", "repo", "git"]
     }
-  ], [onNavigateSection, onOpenResume, onOpenAI, onSetTheme, onTriggerToast, onClose]);
+  ], [onNavigateSection, onOpenResume, onOpenAI, onTriggerToast, onClose]);
 
   const filteredCommands = useMemo(() => {
     if (!query.trim()) return commands;
