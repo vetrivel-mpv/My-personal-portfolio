@@ -97,9 +97,13 @@ export default function InteractiveBlueprint() {
   return (
     <section 
       id="blueprint-section" 
-      className="py-24 px-4 md:px-8 xl:px-16 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-500 relative"
+      className="py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 bg-slate-50 text-slate-900 border-b border-slate-200 transition-colors duration-500 relative"
     >
-      <div className="max-w-7xl mx-auto space-y-16">
+      {/* Ambient background glows */}
+      <div className="absolute top-0 left-1/3 w-[600px] h-[400px] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] bg-sky-500/5 rounded-full blur-[150px] pointer-events-none -z-10" />
+
+      <div className="w-full max-w-[1600px] 2xl:max-w-[1720px] mx-auto space-y-12">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
@@ -112,14 +116,14 @@ export default function InteractiveBlueprint() {
             description="Explore the end-to-end carrier architecture designed and audited by Vetrivel. Click on any tier below to audit its telecom protocols, failure modes cured, and TM Forum standards."
           />
           
-          <div className="shrink-0 flex items-center gap-2 px-3.5 py-1.5 glass-pill rounded-xl text-xs font-mono text-slate-700 dark:text-slate-300 self-start lg:self-end pb-2">
-            <Terminal size={13} className="text-emerald-500 dark:text-emerald-400" />
+          <div className="shrink-0 flex items-center gap-2 px-3.5 py-1.5 glass-pill rounded-xl text-xs font-mono text-slate-700 self-start lg:self-end pb-2 shadow-xs">
+            <Terminal size={13} className="text-emerald-600" />
             <span>TM FORUM ODA COMPLIANT</span>
           </div>
         </div>
 
         {/* Visual Architecture Studio Showcase Banner */}
-        <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-950">
+        <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-950">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             {/* Left 7 cols: 16:9 Image */}
             <div className="lg:col-span-7 relative h-64 sm:h-80 lg:h-96 overflow-hidden">
@@ -170,9 +174,9 @@ export default function InteractiveBlueprint() {
           
           {/* Left: 4-Layer Selector Cards */}
           <div className="lg:col-span-5 space-y-3.5">
-            <div className="flex items-center justify-between pb-1 text-xs font-mono text-slate-500 dark:text-slate-400">
+            <div className="flex items-center justify-between pb-1 text-xs font-mono text-slate-500">
               <span>SELECT ARCHITECTURAL TIER</span>
-              <span className="text-sky-600 dark:text-sky-400 font-bold">END-TO-END STACK</span>
+              <span className="text-sky-600 font-bold">END-TO-END STACK</span>
             </div>
 
             {layers.map((layer, index) => {
@@ -183,24 +187,24 @@ export default function InteractiveBlueprint() {
                   onClick={() => setSelectedLayerId(layer.id)}
                   className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 relative flex items-center justify-between cursor-pointer focus:outline-none ${
                     isSelected
-                      ? "bg-white dark:bg-slate-900 border-sky-500 shadow-xl shadow-sky-500/10 scale-[1.02]"
-                      : "glass-card border-slate-200 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700 text-slate-800 dark:text-slate-200"
+                      ? "bg-white border-sky-500 shadow-xl shadow-sky-500/10 scale-[1.02]"
+                      : "glass-card border-slate-200 hover:border-slate-300 text-slate-800"
                   }`}
                 >
                   <div className="flex items-center gap-3.5 min-w-0">
                     <div className={`w-9 h-9 rounded-xl shrink-0 flex items-center justify-center text-xs font-mono font-bold transition-all ${
                       isSelected
-                        ? "bg-sky-500 text-white shadow-md shadow-sky-500/30"
-                        : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
+                        ? "bg-sky-600 text-white shadow-md shadow-sky-500/30"
+                        : "bg-slate-100 text-slate-600"
                     }`}>
                       0{index + 1}
                     </div>
                     
                     <div className="space-y-0.5 truncate">
-                      <h4 className="text-xs font-bold leading-tight text-slate-900 dark:text-white truncate">
+                      <h4 className="text-xs font-bold leading-tight text-slate-900 truncate">
                         {layer.name.replace(/^\d+\.\s*/, "")}
                       </h4>
-                      <p className="text-[11px] font-mono text-slate-500 dark:text-slate-400 truncate">
+                      <p className="text-[11px] font-mono text-slate-500 truncate">
                         {layer.subtitle}
                       </p>
                     </div>
@@ -208,8 +212,8 @@ export default function InteractiveBlueprint() {
 
                   <span className={`shrink-0 ml-2 px-2 py-0.5 rounded text-[9px] font-mono font-bold tracking-wider ${
                     isSelected 
-                      ? "bg-sky-500/20 text-sky-700 dark:text-sky-300 border border-sky-500/40"
-                      : "bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+                      ? "bg-sky-500/15 text-sky-800 border border-sky-400"
+                      : "bg-slate-100 text-slate-500"
                   }`}>
                     {layer.status}
                   </span>
@@ -220,42 +224,42 @@ export default function InteractiveBlueprint() {
 
           {/* Right: Detailed Deep Dive Inspector */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/80 space-y-6 shadow-2xl">
+            <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-slate-200 bg-white space-y-6 shadow-xl">
               
               {/* Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-200 dark:border-slate-800">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-slate-200">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                  <div className="p-2.5 rounded-xl bg-slate-100 border border-slate-200">
                     {currentLayer.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-extrabold text-slate-900 dark:text-white font-sans">
+                    <h3 className="text-lg font-extrabold text-slate-900 font-sans">
                       {currentLayer.name}
                     </h3>
-                    <p className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                    <p className="text-xs font-mono text-slate-500">
                       {currentLayer.subtitle}
                     </p>
                   </div>
                 </div>
 
-                <span className="self-start sm:self-auto px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                <span className="self-start sm:self-auto px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
                   {currentLayer.status} PRODUCTION READY
                 </span>
               </div>
 
               {/* Description */}
               <div className="space-y-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold block">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold block">
                   LAYER ARCHITECTURE SPECIFICATION
                 </span>
-                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
                   {currentLayer.description}
                 </p>
               </div>
 
               {/* Telco Protocols Supported */}
               <div className="space-y-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold block flex items-center gap-1.5">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-sky-700 font-bold block flex items-center gap-1.5">
                   <FileCheck size={13} />
                   <span>TELCO PROTOCOLS & INTERFACES MEDIATED</span>
                 </span>
@@ -263,7 +267,7 @@ export default function InteractiveBlueprint() {
                   {currentLayer.telcoProtocols.map((proto, pIdx) => (
                     <span 
                       key={pIdx}
-                      className="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/20 font-medium"
+                      className="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-sky-50 text-sky-800 border border-sky-200 font-medium"
                     >
                       ⚡ {proto}
                     </span>
@@ -273,22 +277,22 @@ export default function InteractiveBlueprint() {
 
               {/* Failure Mode Cured & Business Impact */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 space-y-1.5">
-                  <div className="flex items-center gap-2 text-rose-500 dark:text-rose-400 text-xs font-mono font-bold">
+                <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-rose-700 text-xs font-mono font-bold">
                     <ShieldCheck size={14} />
                     <span>FAILURE MODE CURED</span>
                   </div>
-                  <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">
+                  <p className="text-[11px] text-slate-700 leading-relaxed">
                     {currentLayer.failureCured}
                   </p>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 space-y-1.5">
-                  <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold">
+                <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-100 space-y-1.5">
+                  <div className="flex items-center gap-2 text-emerald-800 text-xs font-mono font-bold">
                     <CheckCircle2 size={14} />
                     <span>BUSINESS VALUE & ROI</span>
                   </div>
-                  <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">
+                  <p className="text-[11px] text-slate-700 leading-relaxed">
                     {currentLayer.businessImpact}
                   </p>
                 </div>
@@ -296,14 +300,14 @@ export default function InteractiveBlueprint() {
 
               {/* Tech Stack Chips */}
               <div className="space-y-2 pt-1">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold block">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold block">
                   DEPLOYED TECHNOLOGIES
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {currentLayer.techStack.map((tech, tIdx) => (
                     <span 
                       key={tIdx}
-                      className="px-2 py-0.5 rounded-lg text-[10.5px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                      className="px-2 py-0.5 rounded-lg text-[10.5px] font-mono bg-slate-100 text-slate-700 border border-slate-200"
                     >
                       {tech}
                     </span>

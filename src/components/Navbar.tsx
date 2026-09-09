@@ -75,7 +75,7 @@ export default function Navbar({
     >
       {/* Floating Futuristic Command Capsule */}
       <div 
-        className={`w-full max-w-7xl mx-auto flex items-center justify-between gap-3 px-3 sm:px-4 py-2 rounded-2xl sm:rounded-3xl transition-all duration-300 relative ${
+        className={`w-full max-w-[1600px] 2xl:max-w-[1720px] mx-auto flex items-center justify-between gap-3 px-3 sm:px-5 md:px-6 py-2 rounded-2xl sm:rounded-3xl transition-all duration-300 relative ${
           isScrolled
             ? "glass-panel bg-white/95 backdrop-blur-xl shadow-2xl shadow-sky-500/8 border border-slate-200/90"
             : "bg-white/90 backdrop-blur-lg border border-slate-200/80 shadow-sm"

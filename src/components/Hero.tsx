@@ -73,28 +73,28 @@ export default function Hero({
   return (
     <section 
       id="home" 
-      className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 md:px-8 xl:px-16 overflow-hidden bg-slate-50 text-slate-900 min-h-[92vh] flex flex-col justify-center transition-colors duration-500"
+      className="relative pt-28 pb-16 md:pt-36 md:pb-24 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 overflow-hidden bg-slate-50 text-slate-900 min-h-[92vh] flex flex-col justify-center transition-colors duration-500"
     >
       
       {/* Background Auroras */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-sky-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[500px] h-[350px] bg-indigo-500/10 rounded-full blur-[130px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-10 w-[450px] h-[300px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-sky-500/10 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-[600px] h-[400px] bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-10 w-[500px] h-[350px] bg-emerald-500/10 rounded-full blur-[130px] pointer-events-none -z-10" />
 
       {/* Grid pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto w-full space-y-12">
+      <div className="w-full max-w-[1600px] 2xl:max-w-[1720px] mx-auto space-y-12">
         
         {/* TOP ROW: Identity + Executive Showcase Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center">
           
-          {/* LEFT 7 COLS: Core Strategic Identity & Overview */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          {/* LEFT 7 COLS (8 on 2xl): Core Strategic Identity & Overview */}
+          <div className="lg:col-span-7 2xl:col-span-7 space-y-6 text-left">
             
             {/* Status Badges Row */}
             <div className="flex flex-wrap items-center gap-2 select-none">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-emerald-500/40 text-emerald-700 text-xs font-mono font-bold shadow-xs">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-emerald-500/40 text-emerald-800 text-xs font-mono font-bold shadow-xs">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -109,13 +109,18 @@ export default function Hero({
 
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-300 text-indigo-800 text-xs font-mono font-bold shadow-xs">
                 <ShieldCheck size={13} />
-                <span>LED 15+ QA ENGINEERS (AGILE)</span>
+                <span>LED 15+ QA SQUAD</span>
+              </span>
+
+              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-300 text-purple-800 text-xs font-mono font-bold shadow-xs">
+                <Network size={13} />
+                <span>10.4M+ WING SUBS</span>
               </span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.1] font-sans">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.08] font-sans">
                 Vetrivel <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600">
                   Muthusamy
@@ -136,13 +141,13 @@ export default function Hero({
             </div>
 
             {/* Narrative Passage */}
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl font-sans font-normal">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-3xl font-sans font-normal">
               Senior Telecom QA Lead & Solutions Delivery Consultant with <strong className="text-slate-950 font-bold">over 10 years of specialized enterprise domain expertise</strong> in Mobile OSS/BSS (Nokia WING 10M+ subscriber migration, AT&T IoT Connection Manager, CSG Singleview, Diameter Gy/Ro, Real SIM 4G/5G NSA testing). <strong className="text-slate-950 font-bold">Managed cross-functional QA teams of 15+ engineers under Agile</strong>, cutting manual testing efforts by <strong className="text-slate-950 font-bold">50%</strong> and achieving zero defect leakage. Holds a <strong className="text-slate-950 font-bold">Postgraduate in Software Development</strong> (IIIT Bangalore) and <strong className="text-slate-950 font-bold">Master of Science (MS)</strong> from Liverpool John Moores University (UK). <strong className="text-sky-900">Actively exploring overseas opportunities and seeking work visa sponsorship across Singapore, UK, USA, Switzerland, and Luxembourg.</strong>
             </p>
 
-            {/* 3 Strategic Key Focus Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
-              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 hover:border-sky-500/50 transition-colors">
+            {/* 4 Strategic Key Focus Pillars */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 pt-1">
+              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 hover:border-sky-500/50 transition-all hover:shadow-md">
                 <div className="flex items-center gap-2 text-sky-700 text-xs font-mono font-bold mb-1">
                   <Network size={14} />
                   <span>01 / 10M+ WING & BSS</span>
@@ -152,23 +157,33 @@ export default function Hero({
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 hover:border-indigo-500/50 transition-colors">
+              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 hover:border-indigo-500/50 transition-all hover:shadow-md">
                 <div className="flex items-center gap-2 text-indigo-700 text-xs font-mono font-bold mb-1">
                   <Cpu size={14} />
-                  <span>02 / 15+ QA LEADERSHIP</span>
+                  <span>02 / 15+ QA SQUAD</span>
                 </div>
                 <p className="text-[11px] text-slate-600 leading-snug">
                   Led 15+ QA engineers in Agile/Scrum, defect triage, sprint planning & carrier UAT sign-offs.
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 hover:border-emerald-500/50 transition-colors">
+              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 hover:border-emerald-500/50 transition-all hover:shadow-md">
                 <div className="flex items-center gap-2 text-emerald-700 text-xs font-mono font-bold mb-1">
-                  <Globe2 size={14} />
-                  <span>03 / SPONSORSHIP READY</span>
+                  <Zap size={14} />
+                  <span>03 / -50% EFFORT CUT</span>
                 </div>
                 <p className="text-[11px] text-slate-600 leading-snug">
-                  Seeking Visa Sponsorship for Singapore (EP), UK (Skilled Worker), USA, Switzerland & Luxembourg.
+                  Optimized test cycles by 50% with zero defect leakage across Tier-1 carriers.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-2xl glass-card border border-slate-200/90 hover:border-amber-500/50 transition-all hover:shadow-md">
+                <div className="flex items-center gap-2 text-amber-700 text-xs font-mono font-bold mb-1">
+                  <Globe2 size={14} />
+                  <span>04 / VISA SPONSORSHIP</span>
+                </div>
+                <p className="text-[11px] text-slate-600 leading-snug">
+                  Seeking Visa Sponsorship for Singapore (EP), UK (Skilled), USA, Swiss & Luxembourg.
                 </p>
               </div>
             </div>
@@ -186,17 +201,25 @@ export default function Hero({
 
               <button
                 onClick={() => onNavigateSection?.("recruiter-hub")}
-                className="px-5 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-white border border-slate-300 hover:border-sky-500/60 text-slate-800 transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-xs"
+                className="px-5 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-white border border-slate-300 hover:border-sky-500/60 text-slate-800 transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-xs hover:shadow-md"
               >
                 <Briefcase size={14} className="text-sky-600" />
                 <span>Recruiter Command Hub</span>
               </button>
 
               <button
+                onClick={() => onNavigateSection?.("blueprint-section")}
+                className="px-4 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition-colors flex items-center gap-2 cursor-pointer"
+              >
+                <Layers size={14} className="text-indigo-600" />
+                <span>4-Tier Blueprint</span>
+              </button>
+
+              <button
                 onClick={onExploreProjects}
                 className="px-4 py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition-colors flex items-center gap-2 cursor-pointer"
               >
-                <Layers size={14} />
+                <Sparkles size={14} className="text-amber-600" />
                 <span>Carrier Engagements</span>
               </button>
 
@@ -212,16 +235,16 @@ export default function Hero({
           </div>
 
           {/* RIGHT 5 COLS: Executive Global Mobility & Carrier Credentials Showcase Card */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center">
+          <div className="lg:col-span-5 2xl:col-span-5 flex flex-col items-center justify-center">
             
             {/* 3D Perspective Container */}
             <div 
-              className="perspective-1000 w-full max-w-md"
+              className="perspective-1000 w-full max-w-md xl:max-w-lg"
               onMouseMove={handleCardMouseMove}
               onMouseLeave={handleCardMouseLeave}
             >
               <div 
-                className="relative rounded-3xl p-5 bg-white border border-slate-200 shadow-2xl transition-transform duration-200 ease-out transform-style-3d overflow-hidden space-y-4 text-left"
+                className="relative rounded-3xl p-5 sm:p-6 bg-white border border-slate-200 shadow-2xl transition-transform duration-200 ease-out transform-style-3d overflow-hidden space-y-4 text-left"
                 style={{
                   transform: `rotateY(${mousePos.x}deg) rotateX(${mousePos.y}deg)`
                 }}
@@ -294,7 +317,7 @@ export default function Hero({
                       🇨🇭 Swiss (Permit)
                     </div>
                     <div className="p-1.5 rounded-lg bg-white border border-sky-200 font-bold text-slate-800">
-                      🇱🇺 Luxemburg (EU)
+                      🇱🇺 Luxembourg (EU)
                     </div>
                     <div className="p-1.5 rounded-lg bg-white border border-sky-200 font-bold text-slate-800">
                       🇪🇺 Europe / DACH
@@ -358,7 +381,7 @@ export default function Hero({
               </span>
             </div>
             <span className="hidden sm:inline text-[11px] text-slate-500">
-              UK • USA • SWITZERLAND • LUXEMBOURG • GLOBAL SATELLITE • EUROPE
+              UK 🇬🇧 • USA 🇺🇸 • SWITZERLAND 🇨🇭 • LUXEMBOURG 🇱🇺 • SINGAPORE 🇸🇬 • EUROPE 🇪🇺
             </span>
           </div>
 
@@ -374,7 +397,7 @@ export default function Hero({
               {[...TELECOM_OPERATORS, ...TELECOM_OPERATORS].map((op, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-sky-500/50 transition-colors shrink-0 cursor-default group shadow-xs"
+                  className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-sky-500/50 transition-colors shrink-0 cursor-default group shadow-xs hover:shadow-md"
                 >
                   <span className="text-lg">{op.logo}</span>
                   <div className="text-left font-mono space-y-0.5">
@@ -386,7 +409,7 @@ export default function Hero({
                         {op.code}
                       </span>
                     </div>
-                    <p className="text-[10px] text-slate-500 truncate max-w-[200px]">
+                    <p className="text-[10px] text-slate-500 truncate max-w-[220px]">
                       {op.desc}
                     </p>
                   </div>

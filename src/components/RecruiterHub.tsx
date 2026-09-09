@@ -185,13 +185,13 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
   return (
     <section 
       id="recruiter-hub" 
-      className="py-16 md:py-24 px-4 md:px-8 xl:px-16 bg-white text-slate-900 border-b border-slate-200 transition-colors duration-500 relative"
+      className="py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 bg-white text-slate-900 border-b border-slate-200 transition-colors duration-500 relative"
     >
       {/* Background Gradients */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[350px] bg-sky-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[350px] bg-indigo-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-sky-500/5 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto space-y-10">
+      <div className="w-full max-w-[1600px] 2xl:max-w-[1720px] mx-auto space-y-10">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
@@ -216,7 +216,7 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
 
             <button
               onClick={handleCopyRecruiterBrief}
-              className="px-4 py-2.5 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 transition-all flex items-center gap-2 cursor-pointer shadow-xs"
+              className="px-4 py-2.5 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 transition-all flex items-center gap-2 cursor-pointer shadow-xs hover:shadow-md"
             >
               {copiedBrief ? <Check size={13} className="text-emerald-600" /> : <Copy size={13} />}
               <span>{copiedBrief ? "Brief Copied!" : "Copy Recruiter Brief"}</span>
@@ -225,12 +225,12 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
         </div>
 
         {/* Recruiter Navigation Tabs */}
-        <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-4">
+        <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-4 select-none">
           <button
             onClick={() => setActiveTab("summary")}
-            className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
+            className={`px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
               activeTab === "summary"
-                ? "bg-sky-600 text-white shadow-sm"
+                ? "bg-sky-600 text-white shadow-md shadow-sky-600/20 scale-[1.02]"
                 : "bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200"
             }`}
           >
@@ -240,9 +240,9 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
 
           <button
             onClick={() => setActiveTab("countries")}
-            className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
+            className={`px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
               activeTab === "countries"
-                ? "bg-sky-600 text-white shadow-sm"
+                ? "bg-sky-600 text-white shadow-md shadow-sky-600/20 scale-[1.02]"
                 : "bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200"
             }`}
           >
@@ -252,9 +252,9 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
 
           <button
             onClick={() => setActiveTab("checklist")}
-            className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
+            className={`px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
               activeTab === "checklist"
-                ? "bg-sky-600 text-white shadow-sm"
+                ? "bg-sky-600 text-white shadow-md shadow-sky-600/20 scale-[1.02]"
                 : "bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200"
             }`}
           >
@@ -264,9 +264,9 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
 
           <button
             onClick={() => setActiveTab("fastfacts")}
-            className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
+            className={`px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-2 ${
               activeTab === "fastfacts"
-                ? "bg-sky-600 text-white shadow-sm"
+                ? "bg-sky-600 text-white shadow-md shadow-sky-600/20 scale-[1.02]"
                 : "bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200"
             }`}
           >
@@ -277,140 +277,197 @@ Email: vetrivelm02@gmail.com | Phone: (+91) 9916008877 | Portfolio: https://vetr
 
         {/* TAB 1: 30-SECOND EXECUTIVE SUMMARY */}
         {activeTab === "summary" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 animate-fadeIn">
+          <div className="space-y-6 animate-fadeIn">
             
-            {/* Left 8 Cols: Key Metric Cards */}
-            <div className="lg:col-span-8 space-y-4">
-              
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-1 shadow-xs">
+            {/* Top Row 4-Column High-Density Metrics Bar */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+              <div className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-1.5 shadow-xs hover:shadow-md transition-all">
+                <div className="flex items-center justify-between">
                   <div className="text-2xl sm:text-3xl font-extrabold text-sky-700 font-sans">
                     10+ Years
                   </div>
-                  <div className="text-xs font-mono font-bold text-slate-900">
-                    Telecom Domain Mastery
-                  </div>
-                  <p className="text-[11px] text-slate-600 leading-relaxed">
-                    Mobile OSS/BSS, Nokia WING, CSG Singleview & Convergent Charging.
-                  </p>
+                  <span className="p-1.5 rounded-lg bg-sky-100 text-sky-700 font-mono text-[10px] font-bold">DOMAIN</span>
                 </div>
+                <div className="text-xs font-mono font-bold text-slate-900">
+                  Telecom Domain Mastery
+                </div>
+                <p className="text-[11px] text-slate-600 leading-relaxed">
+                  Mobile OSS/BSS, Nokia WING, CSG Singleview & Convergent Charging.
+                </p>
+              </div>
 
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-1 shadow-xs">
+              <div className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-1.5 shadow-xs hover:shadow-md transition-all">
+                <div className="flex items-center justify-between">
                   <div className="text-2xl sm:text-3xl font-extrabold text-indigo-700 font-sans">
-                    15+ Engineers
+                    15+ Squad
                   </div>
-                  <div className="text-xs font-mono font-bold text-slate-900">
-                    Managed under Agile
-                  </div>
-                  <p className="text-[11px] text-slate-600 leading-relaxed">
-                    Sprint planning, defect triage (JIRA), risk-based testing & UAT sign-offs.
-                  </p>
+                  <span className="p-1.5 rounded-lg bg-indigo-100 text-indigo-700 font-mono text-[10px] font-bold">AGILE</span>
                 </div>
+                <div className="text-xs font-mono font-bold text-slate-900">
+                  Managed QA Engineers
+                </div>
+                <p className="text-[11px] text-slate-600 leading-relaxed">
+                  Sprint planning, defect triage (JIRA), risk-based testing & UAT sign-offs.
+                </p>
+              </div>
 
-                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-1 shadow-xs">
+              <div className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-1.5 shadow-xs hover:shadow-md transition-all">
+                <div className="flex items-center justify-between">
                   <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700 font-sans">
                     10.4M+ Subs
                   </div>
-                  <div className="text-xs font-mono font-bold text-slate-900">
-                    Nokia WING Migration
-                  </div>
-                  <p className="text-[11px] text-slate-600 leading-relaxed">
-                    100% data fidelity, zero revenue leakage, MRR batch runs & SFTP invoicing.
-                  </p>
+                  <span className="p-1.5 rounded-lg bg-emerald-100 text-emerald-700 font-mono text-[10px] font-bold">SCALE</span>
                 </div>
+                <div className="text-xs font-mono font-bold text-slate-900">
+                  Nokia WING Migration
+                </div>
+                <p className="text-[11px] text-slate-600 leading-relaxed">
+                  100% data fidelity, zero revenue leakage, MRR batch runs & SFTP invoicing.
+                </p>
               </div>
 
-              {/* Core Candidate Pitch */}
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-3 shadow-xs">
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-800">
-                  <ShieldCheck size={16} className="text-sky-600" />
-                  <span>THE RECRUITER VALUE PROPOSITION</span>
+              <div className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-1.5 shadow-xs hover:shadow-md transition-all">
+                <div className="flex items-center justify-between">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-amber-700 font-sans">
+                    -50% Effort
+                  </div>
+                  <span className="p-1.5 rounded-lg bg-amber-100 text-amber-800 font-mono text-[10px] font-bold">OPTIMIZED</span>
                 </div>
+                <div className="text-xs font-mono font-bold text-slate-900">
+                  Zero Defect Escapes
+                </div>
+                <p className="text-[11px] text-slate-600 leading-relaxed">
+                  Modular test architecture reducing manual cycle effort and post-release bugs.
+                </p>
+              </div>
+            </div>
+
+            {/* Middle Row: Candidate Value Pitch (Left 8 cols) + Coordinates & Quick Actions (Right 4 cols) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              
+              {/* Left 8 Cols: Value Proposition Deck */}
+              <div className="lg:col-span-8 p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-4 shadow-xs">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-900">
+                    <ShieldCheck size={16} className="text-sky-600" />
+                    <span>THE RECRUITER VALUE PROPOSITION</span>
+                  </div>
+                  <span className="text-[11px] font-mono text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 font-bold">
+                    100% READY FOR RELOCATION
+                  </span>
+                </div>
+                
                 <p className="text-sm text-slate-700 leading-relaxed">
                   Vetrivel Muthusamy bridges the critical gap between <strong className="text-slate-950 font-bold">complex telecom business rules</strong>, <strong className="text-slate-950 font-bold">carrier protocol governance (Gy/Ro, 4G/5G NSA)</strong>, and <strong className="text-slate-950 font-bold">modern software engineering teams</strong>. With a <strong className="text-slate-950 font-bold">Postgraduate in Software Development</strong>, <strong className="text-slate-950 font-bold">MS from UK</strong>, and over a decade of carrier QA leadership, he is <strong className="text-sky-900 font-bold">seeking work visa sponsorship and 100% ready for international relocation</strong> across Singapore, UK, USA, Switzerland, and Luxembourg.
                 </p>
                 
-                <div className="flex flex-wrap items-center gap-2 pt-2">
-                  <span className="px-2.5 py-1 rounded-lg bg-white border border-sky-200 text-[11px] font-mono font-bold text-sky-800">
-                    Nokia WING 10M+ Hub
+                <div className="space-y-2 pt-1">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold block">
+                    VERIFIED CARRIER DOMAIN VALIDATIONS
                   </span>
-                  <span className="px-2.5 py-1 rounded-lg bg-white border border-emerald-200 text-[11px] font-mono font-bold text-emerald-800">
-                    AT&T Connection Manager
-                  </span>
-                  <span className="px-2.5 py-1 rounded-lg bg-white border border-indigo-200 text-[11px] font-mono font-bold text-indigo-800">
-                    British Telecom Retail
-                  </span>
-                  <span className="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-[11px] font-mono font-bold text-amber-800">
-                    Swisscom & Satellite BSS
-                  </span>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-3 py-1 rounded-xl bg-white border border-sky-200 text-xs font-mono font-bold text-sky-800">
+                      Nokia WING 10M+ Hub
+                    </span>
+                    <span className="px-3 py-1 rounded-xl bg-white border border-emerald-200 text-xs font-mono font-bold text-emerald-800">
+                      AT&T Connection Manager
+                    </span>
+                    <span className="px-3 py-1 rounded-xl bg-white border border-indigo-200 text-xs font-mono font-bold text-indigo-800">
+                      British Telecom Retail
+                    </span>
+                    <span className="px-3 py-1 rounded-xl bg-white border border-amber-200 text-xs font-mono font-bold text-amber-800">
+                      Swisscom & Satellite BSS
+                    </span>
+                    <span className="px-3 py-1 rounded-xl bg-white border border-purple-200 text-xs font-mono font-bold text-purple-800">
+                      Verizon Wireless Wholesale
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-            </div>
-
-            {/* Right 4 Cols: Quick Contact & Coordinates */}
-            <div className="lg:col-span-4 p-6 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-5 shadow-xs">
-              
-              <div className="space-y-1">
-                <div className="text-xs font-mono font-bold text-sky-700 uppercase tracking-wider">
-                  DIRECT RECRUITER CONTACT
-                </div>
-                <h3 className="text-xl font-bold text-slate-950 font-sans">
-                  Vetrivel Muthusamy
-                </h3>
-                <div className="text-xs text-slate-500">
-                  Bengaluru, India • Available for Global Roles
-                </div>
-              </div>
-
-              <div className="space-y-2.5 text-xs font-mono">
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200">
-                  <span className="text-slate-500">Email:</span>
+                <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
-                    onClick={handleCopyEmail}
-                    className="font-bold text-sky-700 hover:underline flex items-center gap-1 cursor-pointer"
+                    onClick={onOpenResume}
+                    className="px-4 py-2.5 rounded-xl text-xs font-mono font-bold bg-sky-600 hover:bg-sky-500 text-white transition-all flex items-center gap-2 cursor-pointer shadow-xs"
                   >
-                    {copiedEmail ? <Check size={12} className="text-emerald-600" /> : <Copy size={12} />}
-                    <span>{copiedEmail ? "Copied!" : "vetrivelm02@gmail.com"}</span>
+                    <FileText size={14} />
+                    <span>View Formatted CV</span>
+                  </button>
+
+                  <button
+                    onClick={onExploreProjects}
+                    className="px-4 py-2.5 rounded-xl text-xs font-mono font-bold bg-white border border-slate-300 hover:bg-slate-100 text-slate-800 transition-all flex items-center gap-2 cursor-pointer"
+                  >
+                    <Briefcase size={14} className="text-sky-600" />
+                    <span>Explore Carrier Projects</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Right 4 Cols: Recruiter Direct Coordinates */}
+              <div className="lg:col-span-4 p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-4 shadow-xs">
+                
+                <div className="space-y-0.5 border-b border-slate-200 pb-3">
+                  <div className="text-xs font-mono font-bold text-sky-700 uppercase tracking-wider">
+                    DIRECT RECRUITER CONTACT
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-950 font-sans">
+                    Vetrivel Muthusamy
+                  </h3>
+                  <div className="text-xs text-slate-500">
+                    Bengaluru, India • Global Overseas Delivery
+                  </div>
+                </div>
+
+                <div className="space-y-2.5 text-xs font-mono">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200">
+                    <span className="text-slate-500">Email:</span>
+                    <button
+                      onClick={handleCopyEmail}
+                      className="font-bold text-sky-700 hover:underline flex items-center gap-1 cursor-pointer"
+                    >
+                      {copiedEmail ? <Check size={12} className="text-emerald-600" /> : <Copy size={12} />}
+                      <span>{copiedEmail ? "Copied!" : "vetrivelm02@gmail.com"}</span>
+                    </button>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200">
+                    <span className="text-slate-500">Phone:</span>
+                    <a href="tel:+919916008877" className="font-bold text-slate-800 hover:text-sky-600">
+                      (+91) 9916008877
+                    </a>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200">
+                    <span className="text-slate-500">LinkedIn:</span>
+                    <a 
+                      href="https://linkedin.com/in/vetrivelm" 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="font-bold text-sky-700 hover:underline flex items-center gap-1"
+                    >
+                      <span>/in/vetrivelm</span>
+                      <ExternalLink size={11} />
+                    </a>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200">
+                    <span className="text-slate-500">Sponsorship:</span>
+                    <span className="font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                      Seeking Visa Sponsorship
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <button
+                    onClick={onOpenResume}
+                    className="w-full py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white shadow-md shadow-sky-600/20 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01]"
+                  >
+                    <Bot size={15} />
+                    <span>AI Custom Tailor CV</span>
                   </button>
                 </div>
 
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200">
-                  <span className="text-slate-500">Phone:</span>
-                  <a href="tel:+919916008877" className="font-bold text-slate-800 hover:text-sky-600">
-                    (+91) 9916008877
-                  </a>
-                </div>
-
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200">
-                  <span className="text-slate-500">LinkedIn:</span>
-                  <a 
-                    href="https://linkedin.com/in/vetrivelm" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="font-bold text-sky-700 hover:underline flex items-center gap-1"
-                  >
-                    <span>/in/vetrivelm</span>
-                    <ExternalLink size={11} />
-                  </a>
-                </div>
-
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200">
-                  <span className="text-slate-500">Sponsorship:</span>
-                  <span className="font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-                    Seeking Visa Sponsorship
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <button
-                  onClick={onOpenResume}
-                  className="w-full py-3 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white shadow-md shadow-sky-600/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <Bot size={15} />
-                  <span>AI Custom Tailor CV</span>
-                </button>
               </div>
 
             </div>

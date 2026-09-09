@@ -276,13 +276,13 @@ export default function SkillMap() {
   return (
     <section 
       id="skills-section" 
-      className="py-24 px-4 md:px-8 xl:px-16 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-500 relative overflow-hidden"
+      className="py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 bg-slate-50 text-slate-900 border-b border-slate-200 transition-colors duration-500 relative overflow-hidden"
     >
       {/* Background ambient orbs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/5 dark:bg-sky-500/10 rounded-full blur-[150px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[700px] bg-sky-500/5 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto space-y-14">
+      <div className="w-full max-w-[1600px] 2xl:max-w-[1720px] mx-auto space-y-12">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
@@ -296,51 +296,51 @@ export default function SkillMap() {
           />
 
           {/* View Mode Switcher */}
-          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl glass-card border border-slate-200 dark:border-slate-800 self-start lg:self-end pb-2 select-none">
-              <button
-                onClick={() => setActiveTab("galaxy")}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
-                  activeTab === "galaxy"
-                    ? "bg-sky-500 text-white shadow-md shadow-sky-500/25"
-                    : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white"
-                }`}
-              >
-                <Orbit size={14} className={activeTab === "galaxy" ? "animate-spin-slow" : ""} />
-                <span>3D ORBIT GALAXY</span>
-              </button>
+          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl glass-card border border-slate-200 self-start lg:self-end pb-2 select-none">
+            <button
+              onClick={() => setActiveTab("galaxy")}
+              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+                activeTab === "galaxy"
+                  ? "bg-sky-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]"
+                  : "text-slate-600 hover:text-slate-950 hover:bg-slate-100"
+              }`}
+            >
+              <Orbit size={14} className={activeTab === "galaxy" ? "animate-spin-slow" : ""} />
+              <span>3D ORBIT GALAXY</span>
+            </button>
 
-              <button
-                onClick={() => setActiveTab("grid")}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
-                  activeTab === "grid"
-                    ? "bg-sky-500 text-white shadow-md shadow-sky-500/25"
-                    : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white"
-                }`}
-              >
-                <Activity size={14} />
-                <span>SIGNAL EQUALIZER</span>
-              </button>
+            <button
+              onClick={() => setActiveTab("grid")}
+              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+                activeTab === "grid"
+                  ? "bg-sky-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]"
+                  : "text-slate-600 hover:text-slate-950 hover:bg-slate-100"
+              }`}
+            >
+              <Activity size={14} />
+              <span>SIGNAL EQUALIZER</span>
+            </button>
 
-              <button
-                onClick={() => setActiveTab("terminal")}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
-                  activeTab === "terminal"
-                    ? "bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-md shadow-sky-500/25"
-                    : "text-sky-600 dark:text-sky-400 hover:text-slate-950 dark:hover:text-white bg-sky-500/10"
-                }`}
-              >
-                <Terminal size={14} />
-                <span>LIVE TELCO SANDBOX</span>
-              </button>
-            </div>
+            <button
+              onClick={() => setActiveTab("terminal")}
+              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+                activeTab === "terminal"
+                  ? "bg-gradient-to-r from-sky-600 to-indigo-600 text-white shadow-md shadow-sky-600/25 scale-[1.02]"
+                  : "text-sky-700 hover:text-slate-950 bg-sky-50"
+              }`}
+            >
+              <Terminal size={14} />
+              <span>LIVE TELCO SANDBOX</span>
+            </button>
           </div>
+        </div>
 
         {/* Tab 1: Animated 3D Orbit Galaxy View */}
         {activeTab === "galaxy" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left 6 Cols: Animated Rotating Orbit Galaxy Stage */}
-            <div className="lg:col-span-6 p-6 sm:p-8 rounded-3xl glass-panel border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/70 shadow-2xl flex flex-col items-center justify-center relative min-h-[460px] overflow-hidden">
+            <div className="lg:col-span-6 p-6 sm:p-8 rounded-3xl glass-panel border border-slate-200 bg-white/90 shadow-xl flex flex-col items-center justify-center relative min-h-[460px] overflow-hidden">
               
               {/* Central Pulsing Avatar Core */}
               <div className="relative z-10 flex flex-col items-center">
@@ -359,8 +359,8 @@ export default function SkillMap() {
               </div>
 
               {/* Orbiting concentric rings */}
-              <div className="absolute w-[360px] h-[360px] rounded-full border border-sky-500/20 border-dashed animate-spin-slow pointer-events-none" />
-              <div className="absolute w-[260px] h-[260px] rounded-full border border-indigo-500/20 border-dotted animate-spin-reverse pointer-events-none" />
+              <div className="absolute w-[360px] h-[360px] rounded-full border border-sky-500/25 border-dashed animate-spin-slow pointer-events-none" />
+              <div className="absolute w-[260px] h-[260px] rounded-full border border-indigo-500/25 border-dotted animate-spin-reverse pointer-events-none" />
 
               {/* Orbit Satellite Nodes positioned along the circle */}
               {skillDomains.map((domain, index) => {
@@ -377,20 +377,20 @@ export default function SkillMap() {
                     style={{
                       transform: `translate(${x}px, ${y}px)`
                     }}
-                    className={`absolute z-20 p-2.5 rounded-2xl border transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-lg hover:scale-110 focus:outline-none ${
+                    className={`absolute z-20 p-2.5 rounded-2xl border transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md hover:scale-110 focus:outline-none ${
                       isSelected
-                        ? "bg-white dark:bg-slate-900 border-sky-500 text-slate-900 dark:text-white shadow-sky-500/40 ring-2 ring-sky-400/50 scale-110"
-                        : "glass-card border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700"
+                        ? "bg-white border-sky-500 text-slate-900 shadow-sky-500/30 ring-2 ring-sky-400/50 scale-110"
+                        : "glass-card border-slate-200 text-slate-700 hover:border-slate-300 bg-white/95"
                     }`}
                   >
-                    <div className="p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 shrink-0">
+                    <div className="p-1.5 rounded-xl bg-slate-100 shrink-0">
                       {domain.icon}
                     </div>
                     <div className="text-left font-mono pr-1">
                       <span className="block text-[11px] font-bold leading-tight">
                         {domain.shortName}
                       </span>
-                      <span className="text-[9.5px] text-sky-600 dark:text-sky-400 font-bold">
+                      <span className="text-[9.5px] text-sky-700 font-bold">
                         {domain.overallRating}%
                       </span>
                     </div>
@@ -398,47 +398,47 @@ export default function SkillMap() {
                 );
               })}
 
-              <div className="absolute bottom-3 text-center text-[10.5px] font-mono text-slate-500 dark:text-slate-500">
+              <div className="absolute bottom-3 text-center text-[10.5px] font-mono text-slate-500">
                 [CLICK ANY ORBIT NODE TO INSPECT COMPETENCIES]
               </div>
             </div>
 
             {/* Right 6 Cols: Selected Domain Deep-Dive Inspector */}
             <div className="lg:col-span-6 space-y-5 text-left">
-              <div className="p-6 sm:p-8 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/80 space-y-6 shadow-2xl">
+              <div className="p-6 sm:p-8 rounded-3xl glass-card border border-slate-200 bg-white space-y-6 shadow-xl">
                 
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
                   <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xs">
+                    <div className="p-3 rounded-2xl bg-slate-100 border border-slate-200 shadow-xs">
                       {currentDomain.icon}
                     </div>
                     <div>
-                      <h3 className="text-lg font-extrabold text-slate-900 dark:text-white">
+                      <h3 className="text-lg font-extrabold text-slate-900">
                         {currentDomain.name}
                       </h3>
-                      <p className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                      <p className="text-xs font-mono text-slate-500">
                         {currentDomain.tagline}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-2 self-start sm:self-auto">
-                    <span className="text-2xl font-extrabold text-sky-600 dark:text-sky-400 font-sans">
+                    <span className="text-2xl font-extrabold text-sky-700 font-sans">
                       {currentDomain.overallRating}%
                     </span>
-                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase font-bold">RATING</span>
+                    <span className="text-[10px] font-mono text-slate-500 uppercase font-bold">RATING</span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
                   {currentDomain.description}
                 </p>
 
                 {/* Operators Verified Ribbon */}
-                <div className="p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-850 space-y-1.5">
-                  <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 text-xs font-mono font-bold">
+                <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                  <div className="flex items-center gap-2 text-sky-700 text-xs font-mono font-bold">
                     <Globe2 size={14} />
                     <span>VERIFIED OPERATOR ENGAGEMENTS</span>
                   </div>
@@ -446,7 +446,7 @@ export default function SkillMap() {
                     {currentDomain.operators.map((op, oIdx) => (
                       <span
                         key={oIdx}
-                        className="px-2.5 py-0.5 rounded-lg text-[11px] font-mono bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 font-medium"
+                        className="px-2.5 py-0.5 rounded-lg text-[11px] font-mono bg-white text-slate-800 border border-slate-200 font-medium shadow-xs"
                       >
                         ✓ {op}
                       </span>
@@ -460,19 +460,19 @@ export default function SkillMap() {
                     <div key={skill.id} className="space-y-1">
                       <div className="flex items-center justify-between text-xs font-mono">
                         <div className="flex items-center gap-2">
-                          <span className="text-slate-800 dark:text-slate-200 font-bold">{skill.name}</span>
+                          <span className="text-slate-800 font-bold">{skill.name}</span>
                           {skill.standard && (
-                            <span className="px-1.5 py-0.2 rounded text-[9px] bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 border border-slate-200 dark:border-slate-700">
+                            <span className="px-1.5 py-0.2 rounded text-[9px] bg-slate-100 text-sky-800 border border-slate-200">
                               {skill.standard}
                             </span>
                           )}
                         </div>
-                        <div className="flex items-center gap-3 text-slate-500 dark:text-slate-400">
+                        <div className="flex items-center gap-3 text-slate-500">
                           <span>{skill.years} Yrs</span>
-                          <span className="text-sky-600 dark:text-sky-400 font-bold">{skill.proficiency}%</span>
+                          <span className="text-sky-700 font-bold">{skill.proficiency}%</span>
                         </div>
                       </div>
-                      <div className="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                      <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
                         <div 
                           className="h-full bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600 rounded-full transition-all duration-500"
                           style={{ width: `${skill.proficiency}%` }}
@@ -494,15 +494,15 @@ export default function SkillMap() {
             {skillDomains.map(domain => (
               <div 
                 key={domain.id}
-                className="p-6 rounded-3xl glass-card border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 transition-all duration-300 space-y-5 group"
+                className="p-6 rounded-3xl glass-card border border-slate-200 hover:border-sky-500/50 bg-white transition-all duration-300 space-y-5 group shadow-sm hover:shadow-md"
               >
                 <div className="flex items-center justify-between">
-                  <div className="p-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                  <div className="p-2.5 rounded-2xl bg-slate-100 border border-slate-200">
                     {domain.icon}
                   </div>
 
                   {/* Animated Equalizer Wave */}
-                  <div className="flex items-end gap-1 h-5 px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                  <div className="flex items-end gap-1 h-5 px-2 py-1 rounded-lg bg-slate-100 border border-slate-200">
                     <span className="w-1 bg-sky-500 rounded-full animate-sound-1" />
                     <span className="w-1 bg-indigo-500 rounded-full animate-sound-2" />
                     <span className="w-1 bg-emerald-500 rounded-full animate-sound-3" />
@@ -510,23 +510,23 @@ export default function SkillMap() {
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors">
+                  <h3 className="text-base font-extrabold text-slate-900 group-hover:text-sky-700 transition-colors">
                     {domain.name}
                   </h3>
-                  <p className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                  <p className="text-[11px] font-mono text-slate-500">
                     {domain.yearsOfExp} Years Professional Custody
                   </p>
                 </div>
 
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3">
+                <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
                   {domain.description}
                 </p>
 
-                <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800">
+                <div className="space-y-2 pt-2 border-t border-slate-200">
                   {domain.skills.map(s => (
                     <div key={s.id} className="flex items-center justify-between text-[11px] font-mono">
-                      <span className="text-slate-700 dark:text-slate-300 truncate max-w-[200px]">{s.name}</span>
-                      <span className="text-sky-600 dark:text-sky-400 font-bold">{s.proficiency}%</span>
+                      <span className="text-slate-700 truncate max-w-[200px]">{s.name}</span>
+                      <span className="text-sky-700 font-bold">{s.proficiency}%</span>
                     </div>
                   ))}
                 </div>
@@ -541,9 +541,9 @@ export default function SkillMap() {
             
             {/* Left 4 Cols: Protocol Action Buttons */}
             <div className="lg:col-span-4 space-y-3">
-              <div className="pb-1 text-xs font-mono text-slate-600 dark:text-slate-400 flex items-center justify-between">
+              <div className="pb-1 text-xs font-mono text-slate-600 flex items-center justify-between">
                 <span>SELECT PROTOCOL SCENARIO</span>
-                <span className="text-sky-600 dark:text-sky-400">[CLICK TO TEST]</span>
+                <span className="text-sky-700 font-bold">[CLICK TO TEST]</span>
               </div>
 
               {[
@@ -558,15 +558,15 @@ export default function SkillMap() {
                   disabled={isExecutingProtocol}
                   className={`w-full text-left p-3.5 rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-between ${
                     activeProtocolTest === proto.id
-                      ? "bg-white dark:bg-slate-900 border-sky-500 shadow-md shadow-sky-500/20 text-slate-900 dark:text-white scale-[1.02]"
-                      : "glass-card border-slate-200 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300"
+                      ? "bg-white border-sky-500 shadow-md shadow-sky-500/20 text-slate-900 scale-[1.02]"
+                      : "glass-card border-slate-200 hover:border-slate-300 text-slate-700 bg-white"
                   }`}
                 >
                   <div className="space-y-0.5">
                     <span className="text-xs font-mono font-bold block">{proto.title}</span>
-                    <span className="text-[10.5px] text-slate-500 dark:text-slate-400 font-mono block">{proto.desc}</span>
+                    <span className="text-[10.5px] text-slate-500 font-mono block">{proto.desc}</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30">
+                  <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-sky-50 text-sky-800 border border-sky-200">
                     {proto.badge}
                   </span>
                 </button>
@@ -575,7 +575,7 @@ export default function SkillMap() {
 
             {/* Right 8 Cols: Interactive Cyber Terminal */}
             <div className="lg:col-span-8">
-              <div className="p-6 rounded-3xl bg-slate-900 dark:bg-slate-950 border border-slate-800 shadow-2xl space-y-4 font-mono text-xs text-slate-100">
+              <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl space-y-4 font-mono text-xs text-slate-100">
                 
                 {/* Terminal Window Topbar */}
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800">

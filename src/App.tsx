@@ -173,7 +173,7 @@ export default function App() {
       <main className="flex-grow">
         {isAdminMode ? (
           // Admin Command Dashboard
-          <div className="animate-fade-up max-w-7xl mx-auto py-24 px-4 md:px-8">
+          <div className="animate-fade-up w-full max-w-[1600px] 2xl:max-w-[1720px] mx-auto py-24 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20">
             <AdminDashboard onDataChanged={handleRefreshData} />
           </div>
         ) : (
@@ -218,62 +218,62 @@ export default function App() {
       </main>
 
       {/* Redesigned Luxury Footer */}
-      <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/80 py-12 px-4 md:px-8 lg:px-12 transition-colors duration-500">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left select-none">
+      <footer className="bg-white border-t border-slate-200 py-12 px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 transition-colors duration-500">
+        <div className="w-full max-w-[1600px] 2xl:max-w-[1720px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left select-none">
           
           <div className="space-y-2">
             <div className="flex items-center justify-center md:justify-start gap-2.5">
-              <div className="w-7 h-7 bg-sky-500 text-white rounded-lg flex items-center justify-center font-mono font-bold text-xs">
+              <div className="w-7 h-7 bg-sky-600 text-white rounded-lg flex items-center justify-center font-mono font-bold text-xs shadow-xs">
                 VM
               </div>
-              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-white font-sans">
+              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 font-sans">
                 VETRIVEL MUTHUSAMY
               </h4>
             </div>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 max-w-md">
-              Solution Architect & Lead Test Architect · TM Forum ODA, CSG Singleview BSS, Java 21 Spring Boot Microservices, and Global Mobility.
+            <p className="text-[11px] text-slate-600 max-w-md font-sans">
+              Principal Telecom QA Lead & Solutions Consultant · Nokia WING 10M+, CSG Singleview BSS, TM Forum ODA, and Global Mobility (SG 🇸🇬, UK 🇬🇧, USA 🇺🇸, CH 🇨🇭, LU 🇱🇺).
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-slate-600 dark:text-slate-400">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-slate-600">
             <button 
               onClick={handleCopyEmail}
               id="footer-copy-email-trigger"
-              className="hover:text-sky-600 dark:hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer font-mono font-bold text-xs"
+              className="hover:text-sky-600 transition-colors flex items-center gap-1.5 cursor-pointer font-mono font-bold text-xs"
               title="Click to copy email"
             >
-              <Mail size={13} className="shrink-0 text-sky-500" />
+              <Mail size={13} className="shrink-0 text-sky-600" />
               <span>vetrivelm02@gmail.com</span>
             </button>
-            <span className="text-slate-300 dark:text-slate-700 hidden md:inline">·</span>
+            <span className="text-slate-300 hidden md:inline">·</span>
             
             <a 
               href="https://linkedin.com/in/vetrivelm" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-sky-600 dark:hover:text-white font-bold text-xs flex items-center gap-1.5"
+              className="hover:text-sky-600 font-bold text-xs flex items-center gap-1.5"
             >
-              <Linkedin size={13} className="text-sky-500" />
+              <Linkedin size={13} className="text-sky-600" />
               <span>LinkedIn</span>
             </a>
-            <span className="text-slate-300 dark:text-slate-700 hidden md:inline">·</span>
+            <span className="text-slate-300 hidden md:inline">·</span>
 
             <a 
               href="https://github.com/vetrivelm" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-sky-600 dark:hover:text-white font-bold text-xs flex items-center gap-1.5"
+              className="hover:text-sky-600 font-bold text-xs flex items-center gap-1.5"
             >
-              <Github size={13} className="text-slate-600 dark:text-slate-300" />
+              <Github size={13} className="text-slate-600" />
               <span>GitHub</span>
             </a>
-            <span className="text-slate-300 dark:text-slate-700 hidden md:inline">·</span>
+            <span className="text-slate-300 hidden md:inline">·</span>
 
             <button
               onClick={() => setIsCommandPaletteOpen(true)}
-              className="hover:text-sky-600 dark:hover:text-white font-bold text-xs flex items-center gap-1 cursor-pointer"
+              className="hover:text-sky-600 font-bold text-xs flex items-center gap-1 cursor-pointer"
             >
-              <Command size={12} className="text-sky-500" />
+              <Command size={12} className="text-sky-600" />
               <span>⌘K</span>
             </button>
           </div>
